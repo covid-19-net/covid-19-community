@@ -1,10 +1,10 @@
 # Covid-19-Community
 
-This project is a community effort to build a Neo4j Knowledge Graph (KG) that links heterogenous data about the COVID-19 to help fight this outbreak!
+This project is a community effort to build a Neo4j Knowledge Graph (KG) that links heterogenous data about COVID-19 to help fight this outbreak! It serves as a sandbox and incubator project and the best ideas will be incorporated into the Covid-19-Net KG.
 
 Join "GraphHackers, Let’s Unite to Help Save the World — [Graphs4Good 2020](https://medium.com/neo4j/graphhackers-lets-unite-to-help-save-the-world-graphs4good-2020-fed53562b41f)".
 
-What kind of data can you contribute? Here are some ideas:
+What kind of data can you contribute? Here are some of our ideas.
 
 ![](docs/datatypes.png)
 
@@ -27,7 +27,7 @@ You can run the Jupyter Notebooks in this repo in your web browser:
 
 [![Binder](https://aws-uswest2-binder.pangeo.io/badge_logo.svg)](https://aws-uswest2-binder.pangeo.io/v2/gh/covid-19-net/covid-19-community/master?urlpath=lab)
 
-Then naviate to the notebooks folder and run the following notebooks:
+Once Jupyter Lab launches, navigate to the notebooks folder and run the following notebooks:
 
 * 1a-Strains.ipynb (downloads the latest SARS-CoV-2 strain data and creates node and relationship files in the data folder)
 
@@ -41,6 +41,8 @@ Then naviate to the notebooks folder and run the following notebooks:
 ## A prototype Subgraph that represents relationships for Virus Strains
 
 ![](docs/strains.png)
+
+This subgraph maps the relationships between the Pathogen that causes the Outbreak, the strains of the virus, the host (human or animal), and the locations where it was found.
 
 ## How to run this project locally
 
@@ -69,11 +71,27 @@ Activate the conda environment
 conda activate covid-19-community
 ```
 
-3. Launch Jupyter Lab
+3. Install Neo4j Desktop
+
+[Download Neo4j](https://neo4j.com/download/)
+
+Then, launch the Neo4j Browser, create an empty database, and set the password to "neo4jbinder"
+
+4. Set Environment Variable
+
+Set a NEO4J_HOME environment variable with the path to the database installation.
+
+(Example path from Mac OS: /Users/username/Library/Application Support/Neo4j Desktop/Application/neo4jDatabases/database-993db298-6374-4f0a-9a9a-d0783480877a/installation-3.5.14)
+
+5. Launch Jupyter Lab
 
 ```
 jupyter lab
 ```
+
+6. Browse KG in Neo4j Browser
+
+After you create the graph database by running the Jupyter Notebooks, start the database in Neo4j Browser to interactively explore the KG.
 
 
 
