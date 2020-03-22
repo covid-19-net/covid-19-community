@@ -1,0 +1,10 @@
+name:ID(dashboard_name),description,url,:LABEL
+JUH-COVID-19,Coronavirus COVID-19 Global Cases by the Center for Systems Science and Engineering (CSSE) at John Hopkins University,https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6,Dashboard
+Singapore-COVID-19,Dashboard of the COVID-19 Virus Outbreak in Singapore,https://co.vid19.sg/dashboard,Dashboard
+Nextstrain-COVID-19,Genomic epidemiology of novel coronavirus,https://nextstrain.org/ncov,Dashboard
+TheBaseLab-COVID-19,Data & News Update,https://coronavirus.thebaselab.com/,Dashboard
+BBC-COVID-19,Coronavirus: A visual guide to the pandemic,https://www.bbc.com/news/world-51235105,Dashboard
+HealthMap-COVID-19,Novel Coronavirus (COVID-19),https://www.healthmap.org/covid-19/?mod=article_inline,Dashboard
+HongKong-COVID-19,Coronavirus Disease (COVID-19) in HK,https://www.coronavirus.gov.hk/eng/index.html,Dashboard
+KINEVIZ-COVID-19,Global SARS-CoV-2 (COVID-19) Tracking,https://www.kineviz.com/covid19,Dashboard
+OurWorldInData-COVID-19,Coronavirus Disease (COVID-19) – Statistics and Research,https://ourworldindata.org/coronavirus,Dashboard
