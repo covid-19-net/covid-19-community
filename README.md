@@ -53,9 +53,7 @@ We have separated data download and curation from the graph database creation.
 
 Jupyter Notebooks are used to download the latest raw data files, curate and harmonize the data, and then save Nodes and Relationships as .csv files in the /data directory.
 
-The Nodes, Relationships, and their Properties are named according to these [conventions](https://neo4j.com/docs/cypher-manual/current/syntax/naming/).
-
-The headers of the Node and Relationship .csv files must be formated according to the Neo4j [formatting rules]((https://neo4j.com/docs/operations-manual/current/tools/import/file-header-format/) for batch upload.
+The Nodes, Relationships, and their Properties are named according to these [conventions](https://neo4j.com/docs/cypher-manual/current/syntax/naming/). The headers of the Node and Relationship .csv files must be formated according to the Neo4j [formatting rules](https://neo4j.com/docs/operations-manual/current/tools/import/file-header-format/) for batch upload.
 
 The graph database is created from the following files:
 
