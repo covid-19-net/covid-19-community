@@ -25,7 +25,7 @@ What kind of data can you contribute? Here are some ideas:
 
 You can run the Jupyter Notebooks in this repo in your web browser:
 
-[![Binder](https://aws-uswest2-binder.pangeo.io/badge_logo.svg)](https://aws-uswest2-binder.pangeo.io/v2/gh/pwrose/coronavirus-knowledge-graph/master?urlpath=lab)
+[![Binder](https://aws-uswest2-binder.pangeo.io/badge_logo.svg)](https://aws-uswest2-binder.pangeo.io/v2/gh/covid-19-net/covid-19-community/master?urlpath=lab)
 
 Then naviate to the notebooks folder and run the following notebooks:
 
@@ -42,7 +42,38 @@ Then naviate to the notebooks folder and run the following notebooks:
 
 ![](docs/strains.png)
 
+## How to run this project locally
 
+1. Fork this project
+
+A [fork](https://help.github.com/en/articles/fork-a-repo) is a copy of a repository in your GitHub account. Forking a repository allows you to freely experiment with changes without affecting the original project.
+
+In the top-right corner of this GitHub page, click ```Fork```.
+
+Then, download all materials to your laptop by cloning your copy of the repository, where ```your-user-name``` is your GitHub user name. To clone the repository from a Terminal window or the Anaconda prompt (Windows), run:
+
+```
+git clone https://github.com/your-user-name/covid-19-community.git
+cd covid-19-community
+```
+
+2. Create a conda environment
+
+The file `environment.yml` specifies the Python version and all packages required by the tutorial. 
+```
+conda env create -f environment.yml
+```
+
+Activate the conda environment
+```
+conda activate covid-19-community
+```
+
+3. Launch Jupyter Lab
+
+```
+jupyter lab
+```
 
 
 
