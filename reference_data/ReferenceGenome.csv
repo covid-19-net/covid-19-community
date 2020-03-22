@@ -1,0 +1,4 @@
+genbank_accession:ID(reference_genbank_accession),:LABEL
+NC_045512,Genome;ReferenceGenome
+NC_019843,Genome;ReferenceGenome
+NC_004718,Genome;ReferenceGenome

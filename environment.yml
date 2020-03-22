@@ -1,0 +1,20 @@
+name: covid-19-community 
+
+channels:
+  - anaconda
+  - conda-forge
+
+dependencies:
+  - python>=3.6
+  - openjdk==8.0.152
+  - jupyter
+  - jupyterlab
+  - pandas
+  - fbprophet
+  - matplotlib
+  - plotly
+  - biopython
+  - pip
+  - pip:
+    - py2neo==4.3.0
+    - neo4jupyter==0.1.2

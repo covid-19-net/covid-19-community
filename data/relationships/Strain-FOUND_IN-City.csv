@@ -1,0 +1,265 @@
+:START_ID(strain_id),:END_ID(strain_city),:TYPE
+Anhui/SZ005/2020,Suzhou,FOUND_IN
+Australia/NSW01/2020,Sydney,FOUND_IN
+Australia/NSW02/2020,Sydney,FOUND_IN
+Australia/NSW03/2020,Sydney,FOUND_IN
+Australia/NSW05/2020,Sydney,FOUND_IN
+Australia/NSW06/2020,Sydney,FOUND_IN
+Australia/NSW07/2020,Sydney,FOUND_IN
+Australia/NSW08/2020,Sydney,FOUND_IN
+Australia/NSW09/2020,Sydney,FOUND_IN
+Australia/NSW10/2020,Sydney,FOUND_IN
+Australia/NSW11/2020,Sydney,FOUND_IN
+Australia/NSW12/2020,Sydney,FOUND_IN
+Australia/NSW13/2020,Sydney,FOUND_IN
+Australia/NSW14/2020,Sydney,FOUND_IN
+Australia/QLD01/2020,Gold Coast,FOUND_IN
+Australia/QLD02/2020,Gold Coast,FOUND_IN
+Australia/QLD03/2020,Gold Coast,FOUND_IN
+Australia/QLD04/2020,Gold Coast,FOUND_IN
+Australia/QLD09/2020,Gold Coast,FOUND_IN
+Australia/VIC01/2020,Clayton,FOUND_IN
+Australia/VIC02/2020,Melbourne,FOUND_IN
+Australia/VIC03/2020,Melbourne,FOUND_IN
+Australia/VIC04/2020,Melbourne,FOUND_IN
+Australia/VIC05/2020,Melbourne,FOUND_IN
+Australia/VIC06/2020,Melbourne,FOUND_IN
+Australia/VIC07/2020,Melbourne,FOUND_IN
+Belgium/GHB-03021/2020,Leuven,FOUND_IN
+Brazil-RJ/314/2020,Rio de Janeiro,FOUND_IN
+Brazil/BA-312/2020,Feira de Santana,FOUND_IN
+Brazil/ES-225/2020,Vila Velha,FOUND_IN
+Brazil/SPBR-01/2020,Sao Paulo,FOUND_IN
+Brazil/SPBR-02/2020,Sao Paulo,FOUND_IN
+Brazil/SPBR-05/2020,Sao Paulo,FOUND_IN
+Brazil/SPBR-06/2020,Sao Paulo,FOUND_IN
+Brazil/SPBR-07/2020,Sao Paulo,FOUND_IN
+Brazil/SPBR-08/2020,Sao Paulo,FOUND_IN
+Brazil/SPBR-09/2020,Sao Paulo,FOUND_IN
+Brazil/SPBR-10/2020,Brasilia,FOUND_IN
+Brazil/SPBR-11/2020,Sao Paulo,FOUND_IN
+Brazil/SPBR-12/2020,Sao Paulo,FOUND_IN
+Brazil/SPBR-13/2020,Sao Paulo,FOUND_IN
+Brazil/SPBR-14/2020,Sao Paulo,FOUND_IN
+China/IQTC01/2020,Guangzhou,FOUND_IN
+China/IQTC02/2020,Guangzhou,FOUND_IN
+China/WH-09/2020,Wuhan,FOUND_IN
+China/WHU01/2020,Wuhan,FOUND_IN
+China/WHU02/2020,Wuhan,FOUND_IN
+Chongqing/YC01/2020,Yongchuan,FOUND_IN
+Chongqing/ZX01/2020,Zhongxian,FOUND_IN
+England/Sheff01/2020,Yorkshire,FOUND_IN
+England/Sheff02/2020,Yorkshire,FOUND_IN
+Finland/1/2020,Rovaniemi,FOUND_IN
+Foshan/20SF207/2020,Foshan,FOUND_IN
+Foshan/20SF210/2020,Foshan,FOUND_IN
+Foshan/20SF211/2020,Foshan,FOUND_IN
+France/BFC2094/2020,Montreux-Chateau,FOUND_IN
+France/BFC2147/2020,Thise,FOUND_IN
+France/GE1583/2020,Strasbourg,FOUND_IN
+France/GE1973/2020,Reims,FOUND_IN
+France/GE1977/2020,Reims,FOUND_IN
+France/HF1684/2020,Crépy en Valois,FOUND_IN
+France/HF1795/2020,Compiègne,FOUND_IN
+France/HF1805/2020,Compiègne,FOUND_IN
+France/HF1870/2020,Compiègne,FOUND_IN
+France/HF1871/2020,Compiègne,FOUND_IN
+France/HF1986/2020,Compiègne,FOUND_IN
+France/HF1988/2020,Compiègne,FOUND_IN
+France/HF1989/2020,Compiègne,FOUND_IN
+France/HF1993/2020,Compiègne,FOUND_IN
+France/HF1995/2020,Compiègne,FOUND_IN
+France/HF2039/2020,Crépy en Valois,FOUND_IN
+France/HF2151/2020,Compiègne,FOUND_IN
+France/HF2174/2020,Compiègne,FOUND_IN
+France/IDF0372-isl/2020,Paris,FOUND_IN
+France/IDF0372/2020,Paris,FOUND_IN
+France/IDF0373/2020,Paris,FOUND_IN
+France/IDF0386-islP1/2020,Paris,FOUND_IN
+France/IDF0386-islP3/2020,Paris,FOUND_IN
+France/IDF0515-isl/2020,Paris,FOUND_IN
+France/IDF0515/2020,Paris,FOUND_IN
+France/IDF0571/2020,Paris,FOUND_IN
+France/IDF0626/2020,Paris,FOUND_IN
+France/IDF1980/2020,Pontoise,FOUND_IN
+France/N1620/2020,Rouen,FOUND_IN
+France/PL1643/2020,Nantes,FOUND_IN
+France/RA739/2020,Contamines,FOUND_IN
+Germany/BavPat1/2020,Starnberg,FOUND_IN
+Germany/BavPat2/2020,Munich,FOUND_IN
+Germany/BavPat3/2020,Munich,FOUND_IN
+Germany/NRW-011/2020,Duesseldorf,FOUND_IN
+Guangdong/20SF012/2020,Shenzhen,FOUND_IN
+Guangdong/20SF013/2020,Shenzhen,FOUND_IN
+Guangdong/20SF014/2020,Shenzhen,FOUND_IN
+Guangdong/20SF025/2020,Shenzhen,FOUND_IN
+Guangdong/20SF028/2020,Zhuhai,FOUND_IN
+Guangdong/20SF040/2020,Zhuhai,FOUND_IN
+Guangdong/20SF174/2020,Zhuhai,FOUND_IN
+Guangzhou/20SF206/2020,Guangzhou,FOUND_IN
+Guangzhou/GZMU0014/2020,Guangzhou,FOUND_IN
+Guangzhou/GZMU0016/2020,Guangzhou,FOUND_IN
+Guangzhou/GZMU0030/2020,Guangzhou,FOUND_IN
+Guangzhou/GZMU0031/2020,Guangzhou,FOUND_IN
+Guangzhou/GZMU0042/2020,Guangzhou,FOUND_IN
+Guangzhou/GZMU0044/2020,Guangzhou,FOUND_IN
+Guangzhou/GZMU0047/2020,Guangzhou,FOUND_IN
+Guangzhou/GZMU0048/2020,Guangzhou,FOUND_IN
+Hangzhou/HZ-1/2020,Hangzhou,FOUND_IN
+Hangzhou/HZCDC0001/2020,Hangzhou,FOUND_IN
+Hangzhou/ZJU-01/2020,Hangzhou,FOUND_IN
+Hangzhou/ZJU-02/2020,Hangzhou,FOUND_IN
+Hangzhou/ZJU-03/2020,Hangzhou,FOUND_IN
+Hangzhou/ZJU-04/2020,Hangzhou,FOUND_IN
+Hangzhou/ZJU-05/2020,Hangzhou,FOUND_IN
+Hangzhou/ZJU-06/2020,Hangzhou,FOUND_IN
+Hangzhou/ZJU-07/2020,Hangzhou,FOUND_IN
+Hefei/2/2020,Hefei,FOUND_IN
+Henan/IVDC-HeN-002/2020,Zhengzhou,FOUND_IN
+HongKong/case42_VM20002493/2020,Hong Kong,FOUND_IN
+HongKong/case48_VM20002507/2020,Hong Kong,FOUND_IN
+HongKong/case49_VM20002508/2020,Hong Kong,FOUND_IN
+HongKong/case52_VM20002582/2020,Hong Kong,FOUND_IN
+HongKong/case78_VM20002849/2020,Hong Kong,FOUND_IN
+Hungary/mbl1/2020,Budapest,FOUND_IN
+Italy/INMI1-cs/2020,Rome,FOUND_IN
+Italy/INMI1-isl/2020,Rome,FOUND_IN
+Italy/SPL1/2020,Rome,FOUND_IN
+Italy/UniSR1/2020,Milan,FOUND_IN
+Japan/AI/I-004/2020,Aichi,FOUND_IN
+Japan/KY-V-029/2020,Kyoto,FOUND_IN
+Japan/TY-WK-012/2020,Tokyo,FOUND_IN
+Japan/TY-WK-501/2020,Tokyo,FOUND_IN
+Japan/TY-WK-521/2020,Tokyo,FOUND_IN
+Jiangsu/IVDC-JS-001/2020,Huaian,FOUND_IN
+Jiangxi/IVDC-JX-002/2020,Pingxiang,FOUND_IN
+Jingzhou/HBCDC-HB-01/2020,Jingzhou,FOUND_IN
+Nepal/61/2020,Kathmandu,FOUND_IN
+Netherlands/Andel_1365066/2020,Andel,FOUND_IN
+Netherlands/Berlicum_1363564/2020,Berlicum,FOUND_IN
+Netherlands/Blaricum_1364780/2020,Blaricum,FOUND_IN
+Netherlands/Coevorden_1363618/2020,Coevorden,FOUND_IN
+Netherlands/Dalen_1363624/2020,Dalen,FOUND_IN
+Netherlands/Delft_1363424/2020,Delft,FOUND_IN
+Netherlands/Diemen_1363454/2020,Diemen,FOUND_IN
+Netherlands/Eindhoven_1363782/2020,Eindhoven,FOUND_IN
+Netherlands/Haarlem_1363688/2020,Haarlem,FOUND_IN
+Netherlands/Hardinxveld_Giessendam_1364806/2020,Hardinxveld Giessendam,FOUND_IN
+Netherlands/Helmond_1363548/2020,Helmond,FOUND_IN
+Netherlands/Loon_op_zand_1363512/2020,Loon op zand,FOUND_IN
+Netherlands/Naarden_1364774/2020,Naarden,FOUND_IN
+Netherlands/Nieuwendijk_1363582/2020,Nieuwendijk,FOUND_IN
+Netherlands/Nootdorp_1364222/2020,Nootdorp,FOUND_IN
+Netherlands/Oisterwijk_1364072/2020,Oisterwijk,FOUND_IN
+Netherlands/Oss_1363500/2020,Oss,FOUND_IN
+Netherlands/Rotterdam_1363790/2020,Rotterdam,FOUND_IN
+Netherlands/Rotterdam_1364040/2020,Rotterdam,FOUND_IN
+Netherlands/Rotterdam_1364740/2020,Rotterdam,FOUND_IN
+Netherlands/Tilburg_/2020,Tilburg,FOUND_IN
+Netherlands/Tilburg_1363354/2020,Tilburg,FOUND_IN
+Netherlands/Tilburg_1364286/2020,Tilburg,FOUND_IN
+Netherlands/Utrecht_1363564/2020,Utrecht,FOUND_IN
+Netherlands/Utrecht_1363628/2020,Utrecht,FOUND_IN
+Netherlands/Utrecht_1364066/2020,Utrecht,FOUND_IN
+Netherlands/Zeewolde_1365080/2020,Zeewolde,FOUND_IN
+NetherlandsL/Houten_1363498/2020,Houten,FOUND_IN
+NewZealand/01/2020,Auckland,FOUND_IN
+Nonthaburi/61/2020,Bangkok,FOUND_IN
+Nonthaburi/74/2020,Bangkok,FOUND_IN
+Shandong/IVDC-SD-001/2020,Qingdao,FOUND_IN
+Shenzhen/HKU-SZ-002/2020,Shenzhen,FOUND_IN
+Shenzhen/HKU-SZ-005/2020,Shenzhen,FOUND_IN
+Shenzhen/SZTH-001/2020,Shenzhen,FOUND_IN
+Shenzhen/SZTH-002/2020,Shenzhen,FOUND_IN
+Shenzhen/SZTH-003/2020,Shenzhen,FOUND_IN
+Shenzhen/SZTH-004/2020,Shenzhen,FOUND_IN
+Sichuan/IVDC-SC-001/2020,Chengdu,FOUND_IN
+Singapore/1/2020,Singapore,FOUND_IN
+Singapore/10/2020,Singapore,FOUND_IN
+Singapore/11/2020,Singapore,FOUND_IN
+Singapore/12/2020,Singapore,FOUND_IN
+Singapore/13/2020,Singapore,FOUND_IN
+Singapore/14/2020,Singapore,FOUND_IN
+Singapore/2/2020,Singapore,FOUND_IN
+Singapore/3/2020,Singapore,FOUND_IN
+Singapore/4/2020,Singapore,FOUND_IN
+Singapore/5/2020,Singapore,FOUND_IN
+Singapore/6/2020,Singapore,FOUND_IN
+Singapore/7/2020,Singapore,FOUND_IN
+Singapore/8/2020,Singapore,FOUND_IN
+Singapore/9/2020,Singapore,FOUND_IN
+SouthKorea/KCDC03/2020,Gyeonggi,FOUND_IN
+SouthKorea/KCDC05/2020,Seoul,FOUND_IN
+SouthKorea/KCDC06/2020,Seoul,FOUND_IN
+SouthKorea/KCDC07/2020,Seoul,FOUND_IN
+SouthKorea/KCDC12/2020,Gyeonggi,FOUND_IN
+SouthKorea/KCDC24/2020,Chungcheongnam,FOUND_IN
+Spain/Valencia1/2020,Valencia,FOUND_IN
+Spain/Valencia2/2020,Valencia,FOUND_IN
+Spain/Valencia3/2020,Valencia,FOUND_IN
+Sweden/01/2020,Jönköping,FOUND_IN
+Taiwan/2/2020,Kaohsiung,FOUND_IN
+Taiwan/3/2020,Taipei,FOUND_IN
+Taiwan/4/2020,Taipei,FOUND_IN
+Taiwan/CGMH-CGU-01/2020,Taoyuan,FOUND_IN
+Taiwan/NTU01/2020,Taipei,FOUND_IN
+Taiwan/NTU02/2020,Taipei,FOUND_IN
+Taiwan/NTU03/2020,Taipei,FOUND_IN
+Tianmen/HBCDC-HB-07/2020,Tianmen,FOUND_IN
+USA/AZ1/2020,Phoenix,FOUND_IN
+USA/CA-CDPH-UC5/2020,San Francisco,FOUND_IN
+USA/CA-CDPH-UC6/2020,San Francisco,FOUND_IN
+USA/CA-CDPH-UC7/2020,San Francisco,FOUND_IN
+USA/CA-CDPH-UC8/2020,San Francisco,FOUND_IN
+USA/CA-CDPH-UC9/2020,San Francisco,FOUND_IN
+USA/CA1/2020,Los Angeles,FOUND_IN
+USA/IL1/2020,Chicago,FOUND_IN
+USA/MA1/2020,Boston,FOUND_IN
+USA/UC-CDPH-UC11/2020,San Francisco,FOUND_IN
+USA/WA-UW29/2020,Kirkland,FOUND_IN
+USA/WA-UW34/2020,Kirkland,FOUND_IN
+USA/WA-UW35/2020,Seattle,FOUND_IN
+USA/WA-UW47/2020,Seattle,FOUND_IN
+USA/WA-UW56/2020,Seattle,FOUND_IN
+USA/WA-UW69/2020,Seattle,FOUND_IN
+USA/WA-UW74/2020,Seattle,FOUND_IN
+USA/WA-UW75/2020,Seattle,FOUND_IN
+Vietnam/CM295/2020,Hanoi,FOUND_IN
+Vietnam/CM296/2020,Hanoi,FOUND_IN
+Wales/PHW10/2020,Cardiff,FOUND_IN
+Wuhan-Hu-1/2019,Wuhan,FOUND_IN
+Wuhan/HBCDC-HB-01/2019,Wuhan,FOUND_IN
+Wuhan/HBCDC-HB-02/2019,Wuhan,FOUND_IN
+Wuhan/HBCDC-HB-02/2020,Wuhan,FOUND_IN
+Wuhan/HBCDC-HB-03/2019,Wuhan,FOUND_IN
+Wuhan/HBCDC-HB-03/2020,Wuhan,FOUND_IN
+Wuhan/HBCDC-HB-04/2019,Wuhan,FOUND_IN
+Wuhan/HBCDC-HB-04/2020,Wuhan,FOUND_IN
+Wuhan/HBCDC-HB-05/2020,Wuhan,FOUND_IN
+Wuhan/HBCDC-HB-06/2020,Wuhan,FOUND_IN
+Wuhan/IPBCAMS-WH-01/2019,Wuhan,FOUND_IN
+Wuhan/IPBCAMS-WH-02/2019,Wuhan,FOUND_IN
+Wuhan/IPBCAMS-WH-03/2019,Wuhan,FOUND_IN
+Wuhan/IPBCAMS-WH-04/2019,Wuhan,FOUND_IN
+Wuhan/IPBCAMS-WH-05/2020,Wuhan,FOUND_IN
+Wuhan/IVDC-HB-01/2019,Wuhan,FOUND_IN
+Wuhan/IVDC-HB-04/2020,Wuhan,FOUND_IN
+Wuhan/IVDC-HB-05/2019,Wuhan,FOUND_IN
+Wuhan/IVDC-HB-envF13-20/2020,Wuhan,FOUND_IN
+Wuhan/IVDC-HB-envF13-21/2020,Wuhan,FOUND_IN
+Wuhan/IVDC-HB-envF13/2020,Wuhan,FOUND_IN
+Wuhan/IVDC-HB-envF54/2020,Wuhan,FOUND_IN
+Wuhan/WH01/2019,Wuhan,FOUND_IN
+Wuhan/WH02/2019,Wuhan,FOUND_IN
+Wuhan/WH03/2020,Wuhan,FOUND_IN
+Wuhan/WH04/2020,Wuhan,FOUND_IN
+Wuhan/WH05/2020,Wuhan,FOUND_IN
+Wuhan/WIV02/2019,Wuhan,FOUND_IN
+Wuhan/WIV04/2019,Wuhan,FOUND_IN
+Wuhan/WIV05/2019,Wuhan,FOUND_IN
+Wuhan/WIV06/2019,Wuhan,FOUND_IN
+Wuhan/WIV07/2019,Wuhan,FOUND_IN
+Yunnan/IVDC-YN-003/2020,Kunming,FOUND_IN
+Zhejiang/WZ-01/2020,Hangzhou,FOUND_IN
+Zhejiang/WZ-02/2020,Hangzhou,FOUND_IN
+bat/Yunnan/RaTG13/2013,Pu'er,FOUND_IN

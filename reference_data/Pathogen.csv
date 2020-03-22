@@ -1,0 +1,4 @@
+taxonomy_id:ID(pathogen_taxonomy_id),acronym,name,:LABEL
+2697049,SARS-CoV-2,Severe acute respiratory syndrome coronavirus 2,Pathogen
+1335626,MERS-CoV,Middle East respiratory syndrome-related coronavirus,Pathogen
+694009,SARS-CoV,Severe acute respiratory syndrome-related coronavirus,Pathogen
