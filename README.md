@@ -35,8 +35,8 @@ Once Jupyter Lab launches, navigate to the notebooks folder and run the followin
 |Notebook|Description|
 |:-------|:----------|
 |[1a-Strains](../notebooks/1-Strains.ipynb)| Downloads the latest SARS-CoV-2 strain data and creates node and relationship files in the data directory|
-|1b-...|Future notebooks that add new nodes and relationship files|
-|[2-CreateGraph](../notebooks/2-CreateGraph.ipynb)|Creates a Neo4j Knowledge Graph by batch-uploading the nodes and relationship files|
+|1b-...|Future notebooks that add new node and relationship files|
+|[2-CreateGraph](../notebooks/2-CreateGraph.ipynb)|Creates a Neo4j Knowledge Graph by batch-uploading the node and relationship files|
 |[3-ExampleQueries](../notebooks/3-ExampleQueries.ipynb)| Runs [Cypher](https://neo4j.com/developer/cypher-query-language/) queries on the Knowledge Graph|
 
 
@@ -49,7 +49,7 @@ This subgraph maps the relationships between the Pathogen (SARS-CoV-2) that caus
 ## Data Creation and Organization
 We have separated data download and curation from the graph database creation. 
 
-1. Data Download and Curation
+**1. Data Download and Curation**
 
 Jupyter Notebooks are used to download the latest raw data files, curate and harmonize the data, and then save Nodes and Relationships as .csv files in the /data directory.
 
@@ -61,7 +61,7 @@ We use the Node and Relationship names for the data files, for example, the rela
 
 **(:City)-[:EXPLORE_IN]-(:Dashboard)**
 
-are stored in two Node files: [Outbreak.csv](../reference_data/nodes/Outbreak.csv), [Dashboard.csv](../reference_data/nodes/Dashboard.csv) and two Relationship files: [Outbreak-EXPLORE_IN-Dashboard.csv](../reference_data/relationships/Outbreak-EXPLORE_IN-Dashboard.csv), [City-EXPLORE_IN-Dashboard.csv](../reference_data/relationships/City-EXPLORE_IN-Dashboard.csv).
+are stored in three Node files: [Outbreak.csv](../reference_data/nodes/Outbreak.csv), [Dashboard.csv](../reference_data/nodes/Dashboard.csv), [City.csv](../data/nodes/City.csv) and two Relationship files: [Outbreak-EXPLORE_IN-Dashboard.csv](../reference_data/relationships/Outbreak-EXPLORE_IN-Dashboard.csv), [City-EXPLORE_IN-Dashboard.csv](../reference_data/relationships/City-EXPLORE_IN-Dashboard.csv).
 
 The graph database is created from the following files:
 
@@ -71,7 +71,7 @@ The graph database is created from the following files:
 |reference_data|Node and Relationship .csv files that are manually created and updated|
 |data|Node and Relationship .csv files created automatically by running the Jupyter Notebooks. These files are overwritten. Do not edit these files.|
 
-2. Batch-up of Node and Relationship files
+**2. Batch-up of Node and Relationship files**
 
 The [2-CreateGraph.ipynb](../notebooks/2-CreateGraph.ipynb) notebook [batch-uploades the .csv files](https://neo4j.com/docs/operations-manual/current/tools/import/) into an empty Neo4j database.
 
