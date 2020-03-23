@@ -1,4 +1,5 @@
 id:ID(host_id),age,sex,exposure_location,taxonomy_id,date_submitted,:LABEL
+/Belgium/SN-03031/2020,,,Kessel-Lo,9606,2020-03-22,Person
 Anhui/SZ005/2020,,,Anhui,9606,2020-03-05,Person
 Australia/NSW01/2020,,,Hubei,9606,2020-02-06,Person
 Australia/NSW02/2020,,,New South Wales,9606,2020-02-11,Person
@@ -25,6 +26,11 @@ Australia/VIC04/2020,,,Victoria,9606,2020-03-20,Person
 Australia/VIC05/2020,,,Victoria,9606,2020-03-20,Person
 Australia/VIC06/2020,,,Victoria,9606,2020-03-20,Person
 Australia/VIC07/2020,,,Victoria,9606,2020-03-20,Person
+Australia/VIC08/2020,,,Victoria,9606,2020-03-22,Person
+Australia/VIC09/2020,,,Victoria,9606,2020-03-22,Person
+Australia/VIC10/2020,,,Victoria,9606,2020-03-22,Person
+Australia/VIC11/2020,,,Victoria,9606,2020-03-22,Person
+Australia/VIC12/2020,,,Victoria,9606,2020-03-22,Person
 Beijing/105/2020,,,Beijing,9606,2020-03-06,Person
 Beijing/231/2020,,,Beijing,9606,2020-03-06,Person
 Beijing/233/2020,,,Beijing,9606,2020-03-06,Person
@@ -33,9 +39,16 @@ Beijing/IVDC-BJ-005/2020,,,Beijing,9606,2020-02-09,Person
 Belgium/BA-02291/2020,,,Leuven,9606,2020-03-16,Person
 Belgium/BC-03016/2020,,,Sint-Niklaas,9606,2020-03-16,Person
 Belgium/BM-03012/2020,,,Italy,9606,2020-03-16,Person
+Belgium/DB-03023/2020,,,Couthuin,9606,2020-03-22,Person
+Belgium/DBA-03032/2020,,,Leuven,9606,2020-03-22,Person
+Belgium/DBD-03024/2020,,,Kessel-Lo,9606,2020-03-22,Person
 Belgium/GHB-03021/2020,,,Hubei,9606,2020-02-07,Person
+Belgium/GMH-03022/2020,,,Holsbeek,9606,2020-03-22,Person
+Belgium/MTR-03021/2020,,,Holsbeek,9606,2020-03-22,Person
+Belgium/MTR-03026/2020,,,Holsbeek,9606,2020-03-22,Person
 Belgium/QKJ-03015/2020,,,Brussels,9606,2020-03-16,Person
 Belgium/SH-03014/2020,,,Huldenberg,9606,2020-03-16,Person
+Belgium/UMF-03025/2020,,,Kessel-Lo,9606,2020-03-22,Person
 Belgium/VAG-03013/2020,,,Huldenberg,9606,2020-03-16,Person
 Belgium/VLM-03011/2020,,,Huldenberg,9606,2020-03-16,Person
 Brazil-RJ/314/2020,,,Rio de Janeiro,9606,2020-03-11,Person
@@ -204,6 +217,10 @@ Chongqing/YC01/2020,,,Chongqing,9606,2020-02-09,Person
 Chongqing/ZX01/2020,,,Chongqing,9606,2020-02-09,Person
 Congo/KN-13/2020,,,Kinshasa,9606,2020-03-15,Person
 CzechRepublic/951/2020,,,Italy,9606,2020-03-12,Person
+Denmark/SSI-01/2020,,,Copenhagen,9606,2020-03-20,Person
+Denmark/SSI-02/2020,,,Copenhagen,9606,2020-03-20,Person
+Denmark/SSI-03/2020,,,Copenhagen,9606,2020-03-20,Person
+Denmark/SSI-04/2020,,,Copenhagen,9606,2020-03-20,Person
 Denmark/SSI-05/2020,,,Copenhagen,9606,2020-03-20,Person
 Denmark/SSI-09/2020,,,Copenhagen,9606,2020-03-20,Person
 Denmark/SSI-101/2020,,,,9606,2020-03-18,Person
@@ -271,6 +288,18 @@ Finland/FIN03032020C/2020,,,Italy,9606,2020-03-08,Person
 Foshan/20SF207/2020,,,Guangdong,9606,2020-01-29,Person
 Foshan/20SF210/2020,,,Guangdong,9606,2020-01-29,Person
 Foshan/20SF211/2020,,,Guangdong,9606,2020-01-29,Person
+France/B2330/2020,,,Bretagne,9606,2020-03-22,Person
+France/B2334/2020,,,Bretagne,9606,2020-03-22,Person
+France/B2335/2020,,,Bretagne,9606,2020-03-22,Person
+France/B2336/2020,,,Bretagne,9606,2020-03-22,Person
+France/B2337/2020,,,Bretagne,9606,2020-03-22,Person
+France/B2340/2020,,,Bretagne,9606,2020-03-22,Person
+France/B2343/2020,,,Bretagne,9606,2020-03-22,Person
+France/B2344/2020,,,Bretagne,9606,2020-03-22,Person
+France/B2346/2020,,,Bretagne,9606,2020-03-22,Person
+France/B2348/2020,,,Bretagne,9606,2020-03-22,Person
+France/B2349/2020,,,Bretagne,9606,2020-03-22,Person
+France/B2351/2020,,,Bretagne,9606,2020-03-22,Person
 France/BFC2094/2020,,,Bourgogne-France-Comté,9606,2020-03-18,Person
 France/BFC2147/2020,,,Bourgogne-France-Comté,9606,2020-03-18,Person
 France/GE1583/2020,,,Grand Est,9606,2020-03-15,Person
@@ -289,6 +318,10 @@ France/HF1995/2020,,,Hauts de France,9606,2020-03-15,Person
 France/HF2039/2020,,,Hauts de France,9606,2020-03-18,Person
 France/HF2151/2020,,,Hauts de France,9606,2020-03-18,Person
 France/HF2174/2020,,,Hauts de France,9606,2020-03-18,Person
+France/HF2196/2020,,,Hauts de France,9606,2020-03-22,Person
+France/HF2234/2020,,,Hauts de France,9606,2020-03-22,Person
+France/HF2237/2020,,,Hauts de France,9606,2020-03-22,Person
+France/HF2239/2020,,,Hauts de France,9606,2020-03-22,Person
 France/IDF0372-isl/2020,,,Ile de France,9606,2020-02-18,Person
 France/IDF0372/2020,,,Ile de France,9606,2020-01-29,Person
 France/IDF0373/2020,,,Ile de France,9606,2020-01-29,Person
@@ -300,15 +333,26 @@ France/IDF0571/2020,,,Ile de France,9606,2020-02-19,Person
 France/IDF0626/2020,,,Ile de France,9606,2020-02-08,Person
 France/IDF1980/2020,,,Ile de France,9606,2020-03-15,Person
 France/IDF2075/2020,,,Ile de France,9606,2020-03-18,Person
+France/IDF2256/2020,,,Ile de France,9606,2020-03-22,Person
+France/IDF2278/2020,,,Ile de France,9606,2020-03-22,Person
+France/IDF2279/2020,,,Ile de France,9606,2020-03-22,Person
+France/IDF2284/2020,,,Ile de France,9606,2020-03-22,Person
 France/N1620/2020,,,Normandie,9606,2020-03-15,Person
+France/N2223/2020,,,Normandie,9606,2020-03-22,Person
 France/PL1643/2020,,,Pays de la Loire,9606,2020-03-15,Person
 France/RA739/2020,,,Auvergne Rhone Alpes,9606,2020-02-14,Person
 Fujian/13/2020,,,Fujian,9606,2020-02-19,Person
 Fujian/8/2020,,,Fujian,9606,2020-02-19,Person
+Ge/Tb-712/2020,,,Tbilisi,9606,2020-03-22,Person
+Georgia/Tb-273/2020,,,Tbilisi,9606,2020-03-22,Person
+Georgia/Tb-390/2020,,,Tbilisi,9606,2020-03-22,Person
 Georgia/Tb-468/2020,,,Tbilisi,9606,2020-03-18,Person
 Georgia/Tb-477/2020,,,Tbilisi,9606,2020-03-18,Person
+Georgia/Tb-537/2020,,,Tbilisi,9606,2020-03-22,Person
 Georgia/Tb-54/2020,,,Tbilisi,9606,2020-03-18,Person
+Georgia/Tb-673/2020,,,Tbilisi,9606,2020-03-22,Person
 Georgia/Tb-82/2020,,,Tbilisi,9606,2020-03-18,Person
+Georgia/Tb/2020,,,Tbilisi,9606,2020-03-22,Person
 Germany/Baden-Wuerttemberg-1/2020,,,Lombardy,9606,2020-02-28,Person
 Germany/BavPat1/2020,,,Bavaria,9606,2020-01-31,Person
 Germany/BavPat2/2020,,,Iran,9606,2020-03-13,Person
@@ -403,6 +447,8 @@ Hangzhou/ZJU-04/2020,,,Zhejiang,9606,2020-03-20,Person
 Hangzhou/ZJU-05/2020,,,Zhejiang,9606,2020-03-19,Person
 Hangzhou/ZJU-06/2020,,,Zhejiang,9606,2020-03-20,Person
 Hangzhou/ZJU-07/2020,,,Zhejiang,9606,2020-03-21,Person
+Hangzhou/ZJU-08/2020,,,Hangzhou,9606,2020-03-22,Person
+Hangzhou/ZJU-09/2020,,,Hangzhou,9606,2020-03-22,Person
 Hefei/2/2020,,,Anhui,9606,2020-02-24,Person
 Henan/IVDC-HeN-002/2020,,,Henan,9606,2020-02-09,Person
 HongKong/CUHK1/2020,,,Hong Kong,9606,2020-03-20,Person
@@ -447,6 +493,7 @@ Jiangsu/JS02/2020,,,Jiangsu,9606,2020-02-22,Person
 Jiangsu/JS03/2020,,,Jiangsu,9606,2020-02-22,Person
 Jiangxi/IVDC-JX-002/2020,,,Jiangxi,9606,2020-02-09,Person
 Jingzhou/HBCDC-HB-01/2020,,,Hubei,9606,2020-02-26,Person
+Kuwait/KU12/2020,,,Hawali,9606,2020-03-22,Person
 Luxembourg/Lux1/2020,,,Luxembourg,9606,2020-03-07,Person
 Mexico/CDMX-InDRE_01/2020,,,Lombardy,9606,2020-03-01,Person
 Nepal/61/2020,,,Hubei,9606,2020-02-14,Person
@@ -636,16 +683,21 @@ Netherlands/ZuidHolland_8/2020,,,South Holland,9606,2020-03-12,Person
 Netherlands/ZuidHolland_9/2020,,,South Holland,9606,2020-03-12,Person
 NetherlandsL/Houten_1363498/2020,,,Utrecht,9606,2020-03-07,Person
 NewZealand/01/2020,,,Iran,9606,2020-03-05,Person
+NewZealand/20VR0189/2020,,,Auckland,9606,2020-03-22,Person
+NewZealand/20VR019/2020,,,Auckland,9606,2020-03-22,Person
 Nigeria/Lagos01/2020,,,Italy,9606,2020-03-06,Person
 Nonthaburi/61/2020,,,Hubei,9606,2020-01-17,Person
 Nonthaburi/74/2020,,,Hubei,9606,2020-01-17,Person
 NorthernIreland/HSCNI01/2020,,,Northern Ireland,9606,2020-03-16,Person
 Panama/328677/2020,,,Comunitat Valenciana,9606,2020-03-16,Person
 Peru/010/2020,,,Lima,9606,2020-03-19,Person
+Poland/PL_P1/2020,,,Zielonogorskie,9606,2020-03-22,Person
 Portugal/CV62/2020,,,Portugal,9606,2020-03-09,Person
 Portugal/CV63/2020,,,Portugal,9606,2020-03-09,Person
 Russia/StPetersburg-3524/2020,,,Saint Petersburg,9606,2020-03-19,Person
 SaudiArabia/KAIMRC-Alghoribi/2020,,,Riyadh,9606,2020-03-21,Person
+SaudiArabia/SCDC-3321/2020,,,,9606,2020-03-22,Person
+SaudiArabia/SCDC-3324/2020,,,,9606,2020-03-22,Person
 Scotland/CVR01/2020,,,Scotland,9606,2020-03-04,Person
 Scotland/CVR02/2020,,,Scotland,9606,2020-03-10,Person
 Scotland/CVR03/2020,,,Scotland,9606,2020-03-10,Person
@@ -712,6 +764,11 @@ SouthKorea/SNU01/2020,,,Hubei,9606,2020-02-21,Person
 Spain/Valencia1/2020,,,Comunitat Valenciana,9606,2020-03-12,Person
 Spain/Valencia2/2020,,,Comunitat Valenciana,9606,2020-03-12,Person
 Spain/Valencia3/2020,,,Comunitat Valenciana,9606,2020-03-14,Person
+Spain/Valencia4/2020,,,Comunitat Valenciana,9606,2020-03-22,Person
+Spain/Valencia5/2020,,,Comunitat Valenciana,9606,2020-03-22,Person
+Spain/Valencia6/2020,,,Comunitat Valenciana,9606,2020-03-22,Person
+Spain/Valencia7/2020,,,Comunitat Valenciana,9606,2020-03-22,Person
+Spain/Valencia8/2020,,,Comunitat Valenciana,9606,2020-03-22,Person
 Sweden/01/2020,,,Småland,9606,2020-02-22,Person
 Switzerland/1000477102/2020,,,Zurich,9606,2020-03-03,Person
 Switzerland/1000477377/2020,,,Zurich,9606,2020-03-03,Person
@@ -937,6 +994,8 @@ USA/WA7-UW4/2020,,,Washington,9606,2020-03-05,Person
 USA/WA8-UW5/2020,,,Washington,9606,2020-03-05,Person
 USA/WA9-UW6/2020,,,Washington,9606,2020-03-05,Person
 USA/WI1/2020,,,Hubei,9606,2020-02-10,Person
+USA/WI2/2020,,,Wisconsin,9606,2020-03-22,Person
+USA/WI4/2020,,,Wisconsin,9606,2020-03-22,Person
 Vietnam/38142/2020,,,Thanh Hoa,9606,2020-03-21,Person
 Vietnam/39607/2020,,,Quangning,9606,2020-03-21,Person
 Vietnam/CM295/2020,,,Red River Delta,9606,2020-03-21,Person
@@ -944,6 +1003,7 @@ Vietnam/CM296/2020,,,Red River Delta,9606,2020-03-21,Person
 Vietnam/CM99/2020,,,Vinhphuc,9606,2020-03-21,Person
 Vietnam/VR03-38142/2020,,,Hubei,9606,2020-02-10,Person
 Wales/PHW03/2020,,,Wales,9606,2020-03-12,Person
+Wales/PHW04/2020,,,Wales,9606,2020-03-16,Person
 Wales/PHW05/2020,,,Wales,9606,2020-03-12,Person
 Wales/PHW06/2020,,,Wales,9606,2020-03-17,Person
 Wales/PHW07/2020,,,Wales,9606,2020-03-19,Person

@@ -1,4 +1,5 @@
 :START_ID(host_id),:END_ID(strain_admin1),:TYPE
+/Belgium/SN-03031/2020,Kessel-Lo,LOCATED_IN
 Anhui/SZ005/2020,Anhui,LOCATED_IN
 Australia/NSW01/2020,New South Wales,LOCATED_IN
 Australia/NSW02/2020,New South Wales,LOCATED_IN
@@ -25,6 +26,11 @@ Australia/VIC04/2020,Victoria,LOCATED_IN
 Australia/VIC05/2020,Victoria,LOCATED_IN
 Australia/VIC06/2020,Victoria,LOCATED_IN
 Australia/VIC07/2020,Victoria,LOCATED_IN
+Australia/VIC08/2020,Victoria,LOCATED_IN
+Australia/VIC09/2020,Victoria,LOCATED_IN
+Australia/VIC10/2020,Victoria,LOCATED_IN
+Australia/VIC11/2020,Victoria,LOCATED_IN
+Australia/VIC12/2020,Victoria,LOCATED_IN
 Beijing/105/2020,Beijing,LOCATED_IN
 Beijing/231/2020,Beijing,LOCATED_IN
 Beijing/233/2020,Beijing,LOCATED_IN
@@ -33,9 +39,16 @@ Beijing/IVDC-BJ-005/2020,Beijing,LOCATED_IN
 Belgium/BA-02291/2020,Leuven,LOCATED_IN
 Belgium/BC-03016/2020,Sint-Niklaas,LOCATED_IN
 Belgium/BM-03012/2020,Kraainem,LOCATED_IN
+Belgium/DB-03023/2020,Couthuin,LOCATED_IN
+Belgium/DBA-03032/2020,Leuven,LOCATED_IN
+Belgium/DBD-03024/2020,Kessel-Lo,LOCATED_IN
 Belgium/GHB-03021/2020,Flanders,LOCATED_IN
+Belgium/GMH-03022/2020,Holsbeek,LOCATED_IN
+Belgium/MTR-03021/2020,Holsbeek,LOCATED_IN
+Belgium/MTR-03026/2020,Holsbeek,LOCATED_IN
 Belgium/QKJ-03015/2020,Brussels,LOCATED_IN
 Belgium/SH-03014/2020,Huldenberg,LOCATED_IN
+Belgium/UMF-03025/2020,Kessel-Lo,LOCATED_IN
 Belgium/VAG-03013/2020,Huldenberg,LOCATED_IN
 Belgium/VLM-03011/2020,Huldenberg,LOCATED_IN
 Brazil-RJ/314/2020,Rio de Janeiro,LOCATED_IN
@@ -204,6 +217,10 @@ Chongqing/YC01/2020,Chongqing,LOCATED_IN
 Chongqing/ZX01/2020,Chongqing,LOCATED_IN
 Congo/KN-13/2020,Kinshasa,LOCATED_IN
 CzechRepublic/951/2020,Usti nad Labem,LOCATED_IN
+Denmark/SSI-01/2020,Copenhagen,LOCATED_IN
+Denmark/SSI-02/2020,Copenhagen,LOCATED_IN
+Denmark/SSI-03/2020,Copenhagen,LOCATED_IN
+Denmark/SSI-04/2020,Copenhagen,LOCATED_IN
 Denmark/SSI-05/2020,Copenhagen,LOCATED_IN
 Denmark/SSI-09/2020,Copenhagen,LOCATED_IN
 Denmark/SSI-102/2020,Copenhagen,LOCATED_IN
@@ -269,6 +286,18 @@ Finland/FIN03032020C/2020,Helsinki,LOCATED_IN
 Foshan/20SF207/2020,Guangdong,LOCATED_IN
 Foshan/20SF210/2020,Guangdong,LOCATED_IN
 Foshan/20SF211/2020,Guangdong,LOCATED_IN
+France/B2330/2020,Bretagne,LOCATED_IN
+France/B2334/2020,Bretagne,LOCATED_IN
+France/B2335/2020,Bretagne,LOCATED_IN
+France/B2336/2020,Bretagne,LOCATED_IN
+France/B2337/2020,Bretagne,LOCATED_IN
+France/B2340/2020,Bretagne,LOCATED_IN
+France/B2343/2020,Bretagne,LOCATED_IN
+France/B2344/2020,Bretagne,LOCATED_IN
+France/B2346/2020,Bretagne,LOCATED_IN
+France/B2348/2020,Bretagne,LOCATED_IN
+France/B2349/2020,Bretagne,LOCATED_IN
+France/B2351/2020,Bretagne,LOCATED_IN
 France/BFC2094/2020,Bourgogne-France-Comté,LOCATED_IN
 France/BFC2147/2020,Bourgogne-France-Comté,LOCATED_IN
 France/GE1583/2020,Grand Est,LOCATED_IN
@@ -287,6 +316,10 @@ France/HF1995/2020,Hauts de France,LOCATED_IN
 France/HF2039/2020,Hauts de France,LOCATED_IN
 France/HF2151/2020,Hauts de France,LOCATED_IN
 France/HF2174/2020,Hauts de France,LOCATED_IN
+France/HF2196/2020,Hauts de France,LOCATED_IN
+France/HF2234/2020,Hauts de France,LOCATED_IN
+France/HF2237/2020,Hauts de France,LOCATED_IN
+France/HF2239/2020,Hauts de France,LOCATED_IN
 France/IDF0372-isl/2020,Ile de France,LOCATED_IN
 France/IDF0372/2020,Ile de France,LOCATED_IN
 France/IDF0373/2020,Ile de France,LOCATED_IN
@@ -298,15 +331,26 @@ France/IDF0571/2020,Ile de France,LOCATED_IN
 France/IDF0626/2020,Ile de France,LOCATED_IN
 France/IDF1980/2020,Ile de France,LOCATED_IN
 France/IDF2075/2020,Ile de France,LOCATED_IN
+France/IDF2256/2020,Ile de France,LOCATED_IN
+France/IDF2278/2020,Ile de France,LOCATED_IN
+France/IDF2279/2020,Ile de France,LOCATED_IN
+France/IDF2284/2020,Ile de France,LOCATED_IN
 France/N1620/2020,Normandie,LOCATED_IN
+France/N2223/2020,Normandie,LOCATED_IN
 France/PL1643/2020,Pays de la Loire,LOCATED_IN
 France/RA739/2020,Auvergne Rhone Alpes,LOCATED_IN
 Fujian/13/2020,Fujian,LOCATED_IN
 Fujian/8/2020,Fujian,LOCATED_IN
+Ge/Tb-712/2020,Tbilisi,LOCATED_IN
+Georgia/Tb-273/2020,Tbilisi,LOCATED_IN
+Georgia/Tb-390/2020,Tbilisi,LOCATED_IN
 Georgia/Tb-468/2020,Tbilisi,LOCATED_IN
 Georgia/Tb-477/2020,Tbilisi,LOCATED_IN
+Georgia/Tb-537/2020,Tbilisi,LOCATED_IN
 Georgia/Tb-54/2020,Tbilisi,LOCATED_IN
+Georgia/Tb-673/2020,Tbilisi,LOCATED_IN
 Georgia/Tb-82/2020,Tbilisi,LOCATED_IN
+Georgia/Tb/2020,Tbilisi,LOCATED_IN
 Germany/Baden-Wuerttemberg-1/2020,Baden-Wuerttemberg,LOCATED_IN
 Germany/BavPat1/2020,Bavaria,LOCATED_IN
 Germany/BavPat2/2020,Bavaria,LOCATED_IN
@@ -401,6 +445,8 @@ Hangzhou/ZJU-04/2020,Zhejiang,LOCATED_IN
 Hangzhou/ZJU-05/2020,Zhejiang,LOCATED_IN
 Hangzhou/ZJU-06/2020,Zhejiang,LOCATED_IN
 Hangzhou/ZJU-07/2020,Zhejiang,LOCATED_IN
+Hangzhou/ZJU-08/2020,Hangzhou,LOCATED_IN
+Hangzhou/ZJU-09/2020,Hangzhou,LOCATED_IN
 Hefei/2/2020,Anhui,LOCATED_IN
 Henan/IVDC-HeN-002/2020,Henan,LOCATED_IN
 HongKong/CUHK1/2020,Hong Kong,LOCATED_IN
@@ -444,6 +490,7 @@ Jiangsu/JS02/2020,Jiangsu,LOCATED_IN
 Jiangsu/JS03/2020,Jiangsu,LOCATED_IN
 Jiangxi/IVDC-JX-002/2020,Jiangxi,LOCATED_IN
 Jingzhou/HBCDC-HB-01/2020,Hubei,LOCATED_IN
+Kuwait/KU12/2020,Hawali,LOCATED_IN
 Luxembourg/Lux1/2020,Luxembourg,LOCATED_IN
 Mexico/CDMX-InDRE_01/2020,Mexico City,LOCATED_IN
 Nepal/61/2020,Kathmandu,LOCATED_IN
@@ -633,12 +680,15 @@ Netherlands/ZuidHolland_8/2020,South Holland,LOCATED_IN
 Netherlands/ZuidHolland_9/2020,South Holland,LOCATED_IN
 NetherlandsL/Houten_1363498/2020,Utrecht,LOCATED_IN
 NewZealand/01/2020,Auckland,LOCATED_IN
+NewZealand/20VR0189/2020,Auckland,LOCATED_IN
+NewZealand/20VR019/2020,Auckland,LOCATED_IN
 Nigeria/Lagos01/2020,Lagos,LOCATED_IN
 Nonthaburi/61/2020,Nonthaburi,LOCATED_IN
 Nonthaburi/74/2020,Nonthaburi,LOCATED_IN
 NorthernIreland/HSCNI01/2020,Northern Ireland,LOCATED_IN
 Panama/328677/2020,Panama City,LOCATED_IN
 Peru/010/2020,Lima,LOCATED_IN
+Poland/PL_P1/2020,Zielonogorskie,LOCATED_IN
 Portugal/CV62/2020,Portugal,LOCATED_IN
 Portugal/CV63/2020,Portugal,LOCATED_IN
 Russia/StPetersburg-3524/2020,Saint Petersburg,LOCATED_IN
@@ -709,6 +759,11 @@ SouthKorea/SNU01/2020,South Korea,LOCATED_IN
 Spain/Valencia1/2020,Comunitat Valenciana,LOCATED_IN
 Spain/Valencia2/2020,Comunitat Valenciana,LOCATED_IN
 Spain/Valencia3/2020,Comunitat Valenciana,LOCATED_IN
+Spain/Valencia4/2020,Comunitat Valenciana,LOCATED_IN
+Spain/Valencia5/2020,Comunitat Valenciana,LOCATED_IN
+Spain/Valencia6/2020,Comunitat Valenciana,LOCATED_IN
+Spain/Valencia7/2020,Comunitat Valenciana,LOCATED_IN
+Spain/Valencia8/2020,Comunitat Valenciana,LOCATED_IN
 Sweden/01/2020,Småland,LOCATED_IN
 Switzerland/1000477102/2020,Zurich,LOCATED_IN
 Switzerland/1000477377/2020,Zurich,LOCATED_IN
@@ -933,6 +988,8 @@ USA/WA7-UW4/2020,Washington,LOCATED_IN
 USA/WA8-UW5/2020,Washington,LOCATED_IN
 USA/WA9-UW6/2020,Washington,LOCATED_IN
 USA/WI1/2020,Wisconsin,LOCATED_IN
+USA/WI2/2020,Wisconsin,LOCATED_IN
+USA/WI4/2020,Wisconsin,LOCATED_IN
 Vietnam/38142/2020,Thanh Hoa,LOCATED_IN
 Vietnam/39607/2020,Quangning,LOCATED_IN
 Vietnam/CM295/2020,Red River Delta,LOCATED_IN
@@ -940,6 +997,7 @@ Vietnam/CM296/2020,Red River Delta,LOCATED_IN
 Vietnam/CM99/2020,Vinhphuc,LOCATED_IN
 Vietnam/VR03-38142/2020,Thanh Hoa,LOCATED_IN
 Wales/PHW03/2020,Wales,LOCATED_IN
+Wales/PHW04/2020,Wales,LOCATED_IN
 Wales/PHW05/2020,Wales,LOCATED_IN
 Wales/PHW06/2020,Wales,LOCATED_IN
 Wales/PHW07/2020,Wales,LOCATED_IN

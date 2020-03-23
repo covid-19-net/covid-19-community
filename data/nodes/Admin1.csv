@@ -1,4 +1,5 @@
 name:ID(strain_admin1),:LABEL
+Kessel-Lo,Admin1
 Anhui,Admin1
 New South Wales,Admin1
 Queensland,Admin1
@@ -7,7 +8,9 @@ Beijing,Admin1
 Leuven,Admin1
 Sint-Niklaas,Admin1
 Kraainem,Admin1
+Couthuin,Admin1
 Flanders,Admin1
+Holsbeek,Admin1
 Brussels,Admin1
 Huldenberg,Admin1
 Rio de Janeiro,Admin1
@@ -31,6 +34,7 @@ Copenhagen,Admin1
 England,Admin1
 Finland,Admin1
 Helsinki,Admin1
+Bretagne,Admin1
 Bourgogne-France-Comté,Admin1
 Grand Est,Admin1
 Hauts de France,Admin1
@@ -44,6 +48,7 @@ Baden-Wuerttemberg,Admin1
 Bavaria,Admin1
 North Rhine Westphalia,Admin1
 Zhejiang,Admin1
+Hangzhou,Admin1
 Henan,Admin1
 Hong Kong,Admin1
 Central Hungary,Admin1
@@ -61,6 +66,7 @@ Osaka,Admin1
 Tokyo,Admin1
 Jiangsu,Admin1
 Jiangxi,Admin1
+Hawali,Admin1
 Luxembourg,Admin1
 Mexico City,Admin1
 Kathmandu,Admin1
@@ -80,6 +86,7 @@ Nonthaburi,Admin1
 Northern Ireland,Admin1
 Panama City,Admin1
 Lima,Admin1
+Zielonogorskie,Admin1
 Portugal,Admin1
 Saint Petersburg,Admin1
 Riyadh,Admin1

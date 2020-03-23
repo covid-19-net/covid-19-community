@@ -1,4 +1,5 @@
 :START_ID(strain_id),:END_ID(strain_admin1),:TYPE
+/Belgium/SN-03031/2020,Kessel-Lo,FOUND_IN
 Anhui/SZ005/2020,Anhui,FOUND_IN
 Australia/NSW01/2020,New South Wales,FOUND_IN
 Australia/NSW02/2020,New South Wales,FOUND_IN
@@ -25,6 +26,11 @@ Australia/VIC04/2020,Victoria,FOUND_IN
 Australia/VIC05/2020,Victoria,FOUND_IN
 Australia/VIC06/2020,Victoria,FOUND_IN
 Australia/VIC07/2020,Victoria,FOUND_IN
+Australia/VIC08/2020,Victoria,FOUND_IN
+Australia/VIC09/2020,Victoria,FOUND_IN
+Australia/VIC10/2020,Victoria,FOUND_IN
+Australia/VIC11/2020,Victoria,FOUND_IN
+Australia/VIC12/2020,Victoria,FOUND_IN
 Beijing/105/2020,Beijing,FOUND_IN
 Beijing/231/2020,Beijing,FOUND_IN
 Beijing/233/2020,Beijing,FOUND_IN
@@ -33,9 +39,16 @@ Beijing/IVDC-BJ-005/2020,Beijing,FOUND_IN
 Belgium/BA-02291/2020,Leuven,FOUND_IN
 Belgium/BC-03016/2020,Sint-Niklaas,FOUND_IN
 Belgium/BM-03012/2020,Kraainem,FOUND_IN
+Belgium/DB-03023/2020,Couthuin,FOUND_IN
+Belgium/DBA-03032/2020,Leuven,FOUND_IN
+Belgium/DBD-03024/2020,Kessel-Lo,FOUND_IN
 Belgium/GHB-03021/2020,Flanders,FOUND_IN
+Belgium/GMH-03022/2020,Holsbeek,FOUND_IN
+Belgium/MTR-03021/2020,Holsbeek,FOUND_IN
+Belgium/MTR-03026/2020,Holsbeek,FOUND_IN
 Belgium/QKJ-03015/2020,Brussels,FOUND_IN
 Belgium/SH-03014/2020,Huldenberg,FOUND_IN
+Belgium/UMF-03025/2020,Kessel-Lo,FOUND_IN
 Belgium/VAG-03013/2020,Huldenberg,FOUND_IN
 Belgium/VLM-03011/2020,Huldenberg,FOUND_IN
 Brazil-RJ/314/2020,Rio de Janeiro,FOUND_IN
@@ -204,6 +217,10 @@ Chongqing/YC01/2020,Chongqing,FOUND_IN
 Chongqing/ZX01/2020,Chongqing,FOUND_IN
 Congo/KN-13/2020,Kinshasa,FOUND_IN
 CzechRepublic/951/2020,Usti nad Labem,FOUND_IN
+Denmark/SSI-01/2020,Copenhagen,FOUND_IN
+Denmark/SSI-02/2020,Copenhagen,FOUND_IN
+Denmark/SSI-03/2020,Copenhagen,FOUND_IN
+Denmark/SSI-04/2020,Copenhagen,FOUND_IN
 Denmark/SSI-05/2020,Copenhagen,FOUND_IN
 Denmark/SSI-09/2020,Copenhagen,FOUND_IN
 Denmark/SSI-102/2020,Copenhagen,FOUND_IN
@@ -269,6 +286,18 @@ Finland/FIN03032020C/2020,Helsinki,FOUND_IN
 Foshan/20SF207/2020,Guangdong,FOUND_IN
 Foshan/20SF210/2020,Guangdong,FOUND_IN
 Foshan/20SF211/2020,Guangdong,FOUND_IN
+France/B2330/2020,Bretagne,FOUND_IN
+France/B2334/2020,Bretagne,FOUND_IN
+France/B2335/2020,Bretagne,FOUND_IN
+France/B2336/2020,Bretagne,FOUND_IN
+France/B2337/2020,Bretagne,FOUND_IN
+France/B2340/2020,Bretagne,FOUND_IN
+France/B2343/2020,Bretagne,FOUND_IN
+France/B2344/2020,Bretagne,FOUND_IN
+France/B2346/2020,Bretagne,FOUND_IN
+France/B2348/2020,Bretagne,FOUND_IN
+France/B2349/2020,Bretagne,FOUND_IN
+France/B2351/2020,Bretagne,FOUND_IN
 France/BFC2094/2020,Bourgogne-France-Comté,FOUND_IN
 France/BFC2147/2020,Bourgogne-France-Comté,FOUND_IN
 France/GE1583/2020,Grand Est,FOUND_IN
@@ -287,6 +316,10 @@ France/HF1995/2020,Hauts de France,FOUND_IN
 France/HF2039/2020,Hauts de France,FOUND_IN
 France/HF2151/2020,Hauts de France,FOUND_IN
 France/HF2174/2020,Hauts de France,FOUND_IN
+France/HF2196/2020,Hauts de France,FOUND_IN
+France/HF2234/2020,Hauts de France,FOUND_IN
+France/HF2237/2020,Hauts de France,FOUND_IN
+France/HF2239/2020,Hauts de France,FOUND_IN
 France/IDF0372-isl/2020,Ile de France,FOUND_IN
 France/IDF0372/2020,Ile de France,FOUND_IN
 France/IDF0373/2020,Ile de France,FOUND_IN
@@ -298,15 +331,26 @@ France/IDF0571/2020,Ile de France,FOUND_IN
 France/IDF0626/2020,Ile de France,FOUND_IN
 France/IDF1980/2020,Ile de France,FOUND_IN
 France/IDF2075/2020,Ile de France,FOUND_IN
+France/IDF2256/2020,Ile de France,FOUND_IN
+France/IDF2278/2020,Ile de France,FOUND_IN
+France/IDF2279/2020,Ile de France,FOUND_IN
+France/IDF2284/2020,Ile de France,FOUND_IN
 France/N1620/2020,Normandie,FOUND_IN
+France/N2223/2020,Normandie,FOUND_IN
 France/PL1643/2020,Pays de la Loire,FOUND_IN
 France/RA739/2020,Auvergne Rhone Alpes,FOUND_IN
 Fujian/13/2020,Fujian,FOUND_IN
 Fujian/8/2020,Fujian,FOUND_IN
+Ge/Tb-712/2020,Tbilisi,FOUND_IN
+Georgia/Tb-273/2020,Tbilisi,FOUND_IN
+Georgia/Tb-390/2020,Tbilisi,FOUND_IN
 Georgia/Tb-468/2020,Tbilisi,FOUND_IN
 Georgia/Tb-477/2020,Tbilisi,FOUND_IN
+Georgia/Tb-537/2020,Tbilisi,FOUND_IN
 Georgia/Tb-54/2020,Tbilisi,FOUND_IN
+Georgia/Tb-673/2020,Tbilisi,FOUND_IN
 Georgia/Tb-82/2020,Tbilisi,FOUND_IN
+Georgia/Tb/2020,Tbilisi,FOUND_IN
 Germany/Baden-Wuerttemberg-1/2020,Baden-Wuerttemberg,FOUND_IN
 Germany/BavPat1/2020,Bavaria,FOUND_IN
 Germany/BavPat2/2020,Bavaria,FOUND_IN
@@ -401,6 +445,8 @@ Hangzhou/ZJU-04/2020,Zhejiang,FOUND_IN
 Hangzhou/ZJU-05/2020,Zhejiang,FOUND_IN
 Hangzhou/ZJU-06/2020,Zhejiang,FOUND_IN
 Hangzhou/ZJU-07/2020,Zhejiang,FOUND_IN
+Hangzhou/ZJU-08/2020,Hangzhou,FOUND_IN
+Hangzhou/ZJU-09/2020,Hangzhou,FOUND_IN
 Hefei/2/2020,Anhui,FOUND_IN
 Henan/IVDC-HeN-002/2020,Henan,FOUND_IN
 HongKong/CUHK1/2020,Hong Kong,FOUND_IN
@@ -444,6 +490,7 @@ Jiangsu/JS02/2020,Jiangsu,FOUND_IN
 Jiangsu/JS03/2020,Jiangsu,FOUND_IN
 Jiangxi/IVDC-JX-002/2020,Jiangxi,FOUND_IN
 Jingzhou/HBCDC-HB-01/2020,Hubei,FOUND_IN
+Kuwait/KU12/2020,Hawali,FOUND_IN
 Luxembourg/Lux1/2020,Luxembourg,FOUND_IN
 Mexico/CDMX-InDRE_01/2020,Mexico City,FOUND_IN
 Nepal/61/2020,Kathmandu,FOUND_IN
@@ -633,12 +680,15 @@ Netherlands/ZuidHolland_8/2020,South Holland,FOUND_IN
 Netherlands/ZuidHolland_9/2020,South Holland,FOUND_IN
 NetherlandsL/Houten_1363498/2020,Utrecht,FOUND_IN
 NewZealand/01/2020,Auckland,FOUND_IN
+NewZealand/20VR0189/2020,Auckland,FOUND_IN
+NewZealand/20VR019/2020,Auckland,FOUND_IN
 Nigeria/Lagos01/2020,Lagos,FOUND_IN
 Nonthaburi/61/2020,Nonthaburi,FOUND_IN
 Nonthaburi/74/2020,Nonthaburi,FOUND_IN
 NorthernIreland/HSCNI01/2020,Northern Ireland,FOUND_IN
 Panama/328677/2020,Panama City,FOUND_IN
 Peru/010/2020,Lima,FOUND_IN
+Poland/PL_P1/2020,Zielonogorskie,FOUND_IN
 Portugal/CV62/2020,Portugal,FOUND_IN
 Portugal/CV63/2020,Portugal,FOUND_IN
 Russia/StPetersburg-3524/2020,Saint Petersburg,FOUND_IN
@@ -709,6 +759,11 @@ SouthKorea/SNU01/2020,South Korea,FOUND_IN
 Spain/Valencia1/2020,Comunitat Valenciana,FOUND_IN
 Spain/Valencia2/2020,Comunitat Valenciana,FOUND_IN
 Spain/Valencia3/2020,Comunitat Valenciana,FOUND_IN
+Spain/Valencia4/2020,Comunitat Valenciana,FOUND_IN
+Spain/Valencia5/2020,Comunitat Valenciana,FOUND_IN
+Spain/Valencia6/2020,Comunitat Valenciana,FOUND_IN
+Spain/Valencia7/2020,Comunitat Valenciana,FOUND_IN
+Spain/Valencia8/2020,Comunitat Valenciana,FOUND_IN
 Sweden/01/2020,Småland,FOUND_IN
 Switzerland/1000477102/2020,Zurich,FOUND_IN
 Switzerland/1000477377/2020,Zurich,FOUND_IN
@@ -933,6 +988,8 @@ USA/WA7-UW4/2020,Washington,FOUND_IN
 USA/WA8-UW5/2020,Washington,FOUND_IN
 USA/WA9-UW6/2020,Washington,FOUND_IN
 USA/WI1/2020,Wisconsin,FOUND_IN
+USA/WI2/2020,Wisconsin,FOUND_IN
+USA/WI4/2020,Wisconsin,FOUND_IN
 Vietnam/38142/2020,Thanh Hoa,FOUND_IN
 Vietnam/39607/2020,Quangning,FOUND_IN
 Vietnam/CM295/2020,Red River Delta,FOUND_IN

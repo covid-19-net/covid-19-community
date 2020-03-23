@@ -1,4 +1,5 @@
 name:ID(strain_city),:LABEL
+nan,City
 Suzhou,City
 Sydney,City
 Gold Coast,City
@@ -17,14 +18,19 @@ Zhongxian,City
 Yorkshire,City
 Rovaniemi,City
 Foshan,City
+Rennes,City
 Montreux-Chateau,City
 Thise,City
 Strasbourg,City
 Reims,City
 Crépy en Valois,City
 Compiègne,City
+Château-Thierry,City
 Paris,City
 Pontoise,City
+Garches,City
+Longjumeau,City
+Levallois-Perret,City
 Rouen,City
 Nantes,City
 Contamines,City
@@ -90,6 +96,7 @@ Chicago,City
 Boston,City
 Kirkland,City
 Seattle,City
+Dane county,City
 Hanoi,City
 Cardiff,City
 Kunming,City
