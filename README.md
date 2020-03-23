@@ -34,10 +34,10 @@ Once Jupyter Lab launches, navigate to the notebooks folder and run the followin
 
 |Notebook|Description|
 |:-------|:----------|
-|[1a-Strains](../notebooks/1-Strains.ipynb)| Downloads the latest SARS-CoV-2 strain data and creates node and relationship files in the data directory|
+|[1a-Strains](notebooks/1a-Strains.ipynb)| Downloads the latest SARS-CoV-2 strain data and creates node and relationship files in the data directory|
 |1b-...|Future notebooks that add new node and relationship files|
-|[2-CreateGraph](../notebooks/2-CreateGraph.ipynb)|Creates a Neo4j Knowledge Graph by batch-uploading the node and relationship files|
-|[3-ExampleQueries](../notebooks/3-ExampleQueries.ipynb)| Runs [Cypher](https://neo4j.com/developer/cypher-query-language/) queries on the Knowledge Graph|
+|[2-CreateGraph](notebooks/2-CreateGraph.ipynb)|Creates a Neo4j Knowledge Graph by batch-uploading the node and relationship files|
+|[3-ExampleQueries](notebooks/3-ExampleQueries.ipynb)| Runs [Cypher](https://neo4j.com/developer/cypher-query-language/) queries on the Knowledge Graph|
 
 
 ## A prototype Subgraph that represents relationships for Virus Strains
@@ -61,7 +61,7 @@ We use the Node and Relationship names for the data files, for example, the rela
 
 **(:City)-[:EXPLORE_IN]-(:Dashboard)**
 
-are stored in three Node files: [Outbreak.csv](../reference_data/nodes/Outbreak.csv), [Dashboard.csv](../reference_data/nodes/Dashboard.csv), [City.csv](../data/nodes/City.csv) and two Relationship files: [Outbreak-EXPLORE_IN-Dashboard.csv](../reference_data/relationships/Outbreak-EXPLORE_IN-Dashboard.csv), [City-EXPLORE_IN-Dashboard.csv](../reference_data/relationships/City-EXPLORE_IN-Dashboard.csv).
+are stored in three Node files: [Outbreak.csv](reference_data/nodes/Outbreak.csv), [Dashboard.csv](reference_data/nodes/Dashboard.csv), [City.csv](data/nodes/City.csv) and two Relationship files: [Outbreak-EXPLORE_IN-Dashboard.csv](reference_data/relationships/Outbreak-EXPLORE_IN-Dashboard.csv), [City-EXPLORE_IN-Dashboard.csv](reference_data/relationships/City-EXPLORE_IN-Dashboard.csv).
 
 The graph database is created from the following files:
 
@@ -73,11 +73,11 @@ The graph database is created from the following files:
 
 **2. Batch-up of Node and Relationship files**
 
-The [2-CreateGraph.ipynb](../notebooks/2-CreateGraph.ipynb) notebook [batch-uploades the .csv files](https://neo4j.com/docs/operations-manual/current/tools/import/) into an empty Neo4j database.
+The [2-CreateGraph.ipynb](notebooks/2-CreateGraph.ipynb) notebook [batch-uploades the .csv files](https://neo4j.com/docs/operations-manual/current/tools/import/) into an empty Neo4j database.
 
 ## How to run this project locally
 
-1. Fork this project
+**1. Fork this project**
 
 A [fork](https://help.github.com/en/articles/fork-a-repo) is a copy of a repository in your GitHub account. Forking a repository allows you to freely experiment with changes without affecting the original project.
 
@@ -90,7 +90,7 @@ git clone https://github.com/your-user-name/covid-19-community.git
 cd covid-19-community
 ```
 
-2. Create a conda environment
+**2. Create a conda environment**
 
 The file `environment.yml` specifies the Python version and all packages required by the tutorial. 
 ```
@@ -102,26 +102,26 @@ Activate the conda environment
 conda activate covid-19-community
 ```
 
-3. Install Neo4j Desktop
+**3. Install Neo4j Desktop**
 
 [Download Neo4j](https://neo4j.com/download/)
 
 Then, launch the Neo4j Browser, create an empty database, and set the password to "neo4jbinder"
 
-4. Set Environment Variable
+**4. Set Environment Variable**
 
 Set a NEO4J_HOME environment variable with the path to the database installation.
 
 (Example path from Mac OS: /Users/username/Library/Application Support/Neo4j Desktop/Application/neo4jDatabases/database-993db298-6374-4f0a-9a9a-d0783480877a/installation-3.5.14)
 
-5. Launch Jupyter Lab
+**5. Launch Jupyter Lab**
 Run the Jupyter Notebooks in order to download the latest data, create a new graph database, and then query then query the graph database.
 
 ```
 jupyter lab
 ```
 
-6. Browse KG in Neo4j Browser
+**6. Browse KG in Neo4j Browser**
 
 After you create the graph database by running the Jupyter Notebooks, start the database in Neo4j Browser to interactively explore the KG.
 
