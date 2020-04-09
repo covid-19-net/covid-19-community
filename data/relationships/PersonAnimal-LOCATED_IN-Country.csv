@@ -130,26 +130,6 @@ China/Shanghai/SH0038,Mainland China,LOCATED_IN
 China/Shanghai/SH0039,Mainland China,LOCATED_IN
 China/Shanghai/SH0040,Mainland China,LOCATED_IN
 China/Shanghai/SH0041,Mainland China,LOCATED_IN
-China/Shanghai/SH0042,Mainland China,LOCATED_IN
-China/Shanghai/SH0043,Mainland China,LOCATED_IN
-China/Shanghai/SH0044,Mainland China,LOCATED_IN
-China/Shanghai/SH0045,Mainland China,LOCATED_IN
-China/Shanghai/SH0047,Mainland China,LOCATED_IN
-China/Shanghai/SH0048,Mainland China,LOCATED_IN
-China/Shanghai/SH0049,Mainland China,LOCATED_IN
-China/Shanghai/SH0050,Mainland China,LOCATED_IN
-China/Shanghai/SH0051,Mainland China,LOCATED_IN
-China/Shanghai/SH0052,Mainland China,LOCATED_IN
-China/Shanghai/SH0053,Mainland China,LOCATED_IN
-China/Shanghai/SH0054,Mainland China,LOCATED_IN
-China/Shanghai/SH0055,Mainland China,LOCATED_IN
-China/Shanghai/SH0056,Mainland China,LOCATED_IN
-China/Shanghai/SH0058,Mainland China,LOCATED_IN
-China/Shanghai/SH0059,Mainland China,LOCATED_IN
-China/Shanghai/SH0060,Mainland China,LOCATED_IN
-China/Shanghai/SH0065,Mainland China,LOCATED_IN
-China/Shanghai/SH0066,Mainland China,LOCATED_IN
-China/Shanghai/SH0067,Mainland China,LOCATED_IN
 China/Shanghai/SH0068,Mainland China,LOCATED_IN
 China/Shanghai/SH0069,Mainland China,LOCATED_IN
 China/Shanghai/SH0070,Mainland China,LOCATED_IN
@@ -482,6 +462,8 @@ Japan/Hu_DP_Kng_19-027/2020,Japan,LOCATED_IN
 Japan/KY-V-029/2020,Japan,LOCATED_IN
 Japan/NA-20-05-1/2020,Japan,LOCATED_IN
 Japan/OS-20-07-1/2020,Japan,LOCATED_IN
+Japan/SMU-0311S2/2020,Japan,LOCATED_IN
+Japan/SMU-0311S3/2020,Japan,LOCATED_IN
 Japan/TK/20-31-3/2020,Japan,LOCATED_IN
 Japan/TKYE6182/2020,Japan,LOCATED_IN
 Japan/TY-WK-012/2020,Japan,LOCATED_IN
@@ -685,6 +667,7 @@ NetherlandsL/Houten_1363498/2020,Netherlands,LOCATED_IN
 NewZealand/01/2020,New Zealand,LOCATED_IN
 NewZealand/20VR0189/2020,New Zealand,LOCATED_IN
 NewZealand/20VR019/2020,New Zealand,LOCATED_IN
+NewZealand/20VR0206/2020,New Zealand,LOCATED_IN
 Nigeria/Lagos01/2020,Nigeria,LOCATED_IN
 Nonthaburi/61/2020,Thailand,LOCATED_IN
 Nonthaburi/74/2020,Thailand,LOCATED_IN
@@ -726,6 +709,26 @@ Shandong/LY006/2020,Mainland China,LOCATED_IN
 Shandong/LY007/2020,Mainland China,LOCATED_IN
 Shandong/LY008/2020,Mainland China,LOCATED_IN
 Shanghai/IVDC-SH-001/2020,Mainland China,LOCATED_IN
+Shanghai/SH0042/2020,Mainland China,LOCATED_IN
+Shanghai/SH0043/2020,Mainland China,LOCATED_IN
+Shanghai/SH0044/2020,Mainland China,LOCATED_IN
+Shanghai/SH0045/2020,Mainland China,LOCATED_IN
+Shanghai/SH0047/2020,Mainland China,LOCATED_IN
+Shanghai/SH0048/2020,Mainland China,LOCATED_IN
+Shanghai/SH0049/2020,Mainland China,LOCATED_IN
+Shanghai/SH0050/2020,Mainland China,LOCATED_IN
+Shanghai/SH0051/2020,Mainland China,LOCATED_IN
+Shanghai/SH0052/2020,Mainland China,LOCATED_IN
+Shanghai/SH0053/2020,Mainland China,LOCATED_IN
+Shanghai/SH0054/2020,Mainland China,LOCATED_IN
+Shanghai/SH0055/2020,Mainland China,LOCATED_IN
+Shanghai/SH0056/2020,Mainland China,LOCATED_IN
+Shanghai/SH0058/2020,Mainland China,LOCATED_IN
+Shanghai/SH0059/2020,Mainland China,LOCATED_IN
+Shanghai/SH0060/2020,Mainland China,LOCATED_IN
+Shanghai/SH0065/2020,Mainland China,LOCATED_IN
+Shanghai/SH0066/2020,Mainland China,LOCATED_IN
+Shanghai/SH0067/2020,Mainland China,LOCATED_IN
 Shanghai/SH01/2020,Mainland China,LOCATED_IN
 Shenzhen/HKU-SZ-002/2020,Mainland China,LOCATED_IN
 Shenzhen/HKU-SZ-005/2020,Mainland China,LOCATED_IN
