@@ -6,12 +6,9 @@ channels:
 
 dependencies:
   - python>=3.7
-  - jupyter
-  - jupyterlab
   - openjdk=11.0.1
   - pandas
   - matplotlib
-  - plotly
   - biopython
   - pip
   - pip:
