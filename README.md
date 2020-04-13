@@ -34,11 +34,15 @@ Once Jupyter Lab launches, navigate to the notebooks folder and run the followin
 
 |Notebook|Description|
 |:-------|:----------|
-|[1a-Strains](notebooks/1a-Strains.ipynb)| Downloads the latest SARS-CoV-2 strain data and creates node and relationship files in the data directory|
+|[01a-NCBIStrain](notebooks/01a-NCBIStrain.ipynb)| Downloads the latest SARS-CoV-2 strain data from NCBI|
+|[01b-Nextstrain](notebooks/01b-Nextstrain.ipynb)| Downloads the latest SARS-CoV-2 strain data from Nextstrain|
+|[01c-NCBIRefSeq](notebooks/01c-NCBIRefSeq.ipynb)| Downloads the SARS-CoV-2 reference genome, genes, and protein products from NCBI|
+|[01d-PMC-Accession](notebooks/01d-PMC-Accession.ipynb)| Downloads PubMed Central articles that mention NCBI and GISAID strains|
 |1b-...|Future notebooks that add new node and relationship files|
-|[2-CreateGraph](notebooks/2-CreateGraph.ipynb)|Creates a Neo4j Knowledge Graph by batch-uploading the node and relationship files|
+|[2-CreateKnowledgeGraph](notebooks/2-CreateKnowledgeGraph.ipynb)|Creates a Neo4j Knowledge Graph by running the Cypher scripts in the cypher directory|
 |[3-ExampleQueries](notebooks/3-ExampleQueries.ipynb)| Runs [Cypher](https://neo4j.com/developer/cypher-query-language/) queries on the Knowledge Graph|
 
+##Sections below need to be updated
 
 ## A prototype Subgraph that represents relationships for Virus Strains
 

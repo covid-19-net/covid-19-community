@@ -1,2 +1,0 @@
-py2neo
-pandas
