@@ -15,7 +15,7 @@ tar -xvf $VERSION-unix.tar.gz
 mv $VERSION ${CONDA_DIR}/
 rm $VERSION-unix.tar.gz
 
-echo "dbms.connectors.default_listen_address=0.0.0.0" >> ${CONDA_DIR}/$VERSION/conf/neo4j.conf
+#echo "dbms.connectors.default_listen_address=0.0.0.0" >> ${CONDA_DIR}/$VERSION/conf/neo4j.conf
 echo "dbms.memory.heap.initial_size=2g" >> ${CONDA_DIR}/$VERSION/conf/neo4j.conf" >> ${CONDA_DIR}/$VERSION/conf/neo4j.conf
 echo "dbms.memory.heap.max_size=2g" >> ${CONDA_DIR}/$VERSION/conf/neo4j.conf" >> ${CONDA_DIR}/neo4j-community-3.5.8/conf/neo4j.conf
 
