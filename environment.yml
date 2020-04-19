@@ -13,6 +13,4 @@ dependencies:
   - matplotlib
   - plotly
   - biopython
-  - pip
-  - pip:
-    - py2neo==4.3.0
+  - py2neo
