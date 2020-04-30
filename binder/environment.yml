@@ -1,15 +1,15 @@
 name: covid-19-community 
 
 channels:
-  - anaconda
   - conda-forge
+  - anaconda
 
 dependencies:
-  - python>=3.7
+  - python>=3.8
   - openjdk=11.0.1
+  - jupyterlab=2.1.1
   - pandas
+  - xlrd
   - matplotlib
   - biopython
-  - pip
-  - pip:
-    - py2neo==4.3.0
+  - py2neo
