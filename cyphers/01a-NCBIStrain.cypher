@@ -12,7 +12,7 @@ FROM 'FILE:///01a-NCBIStrain.csv' AS row
 WITH row WHERE NOT row.taxonomy_id IS null
 MATCH (o:Organism{id: row.taxonomy_id})
 MATCH (s:Strain{id: row.id})
-CREATE(o)-[h:HAS]->(s)
+MERGE (o)-[h:HAS]->(s)
 RETURN count(h) as HAS
 ;
 LOAD CSV WITH HEADERS 
@@ -20,7 +20,7 @@ FROM 'FILE:///01a-NCBIStrain.csv' AS row
 WITH row WHERE NOT row.host_taxonomy_id IS null
 MATCH (o:Organism{id: row.host_taxonomy_id})
 MATCH (s:Strain{id: row.id})
-CREATE(o)-[h:CARRIES]->(s)
+MERGE (o)-[h:CARRIES]->(s)
 RETURN count(h) as CARRIES
 ;
                 
