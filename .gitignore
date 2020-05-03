@@ -102,3 +102,4 @@ spark-warehouse
 
 # Neo4j
 import.report
+logs/
