@@ -42,4 +42,5 @@ run_cypher 01a-NCBIStrain.cypher
 run_cypher 01b-Nextstrain.cypher
 run_cypher 01c-NCBIRefSeq.cypher
 run_cypher 01d-PMC-Accession.cypher
+run_cypher 02a-JHUCases.cypher
 
