@@ -34,15 +34,22 @@ Once Jupyter Lab launches, navigate to the notebooks folder and run the followin
 
 |Notebook|Description|
 |:-------|:----------|
+|[00e-GeoNamesCountry](notebooks/00e-GeoNamesCountry.ipynb)| Downloads country information from GeoNames.org|
+|[00f-GeoNamesAdmin1](notebooks/00f-GeoNamesAdmin1.ipynb)| Downloads first administrative divisions (State, Province, Municipality) information from GeoNames.org|
+|[00g-GeoNamesAdmin2](notebooks/00g-GeoNamesAdmin2.ipynb)| Downloads second administrative divisions (Counties in the US) information from GeoNames.org|
+|[00h-GeoNamesCity](notebooks/00h-GeoNamesCity.ipynb)| Downloads city information (cities > 1000 citizens) from GeoNames.org|
+|[00i-USCensusRegionDivisionState2017](notebooks/00i-USCensusRegionDivisionState2017.ipynb)| Downloads US regions, divisions, and assigns state FIPS codes from the US Census Bureau|
+|[00j-USCensusCountyCity2017](notebooks/00i-USCensusCountyCity2017.ipynb)| Downloads US County FIPS codes from the US Census Bureau|
 |[01a-NCBIStrain](notebooks/01a-NCBIStrain.ipynb)| Downloads the latest SARS-CoV-2 strain data from NCBI|
 |[01b-Nextstrain](notebooks/01b-Nextstrain.ipynb)| Downloads the latest SARS-CoV-2 strain data from Nextstrain|
 |[01c-NCBIRefSeq](notebooks/01c-NCBIRefSeq.ipynb)| Downloads the SARS-CoV-2 reference genome, genes, and protein products from NCBI|
 |[01d-PMC-Accession](notebooks/01d-PMC-Accession.ipynb)| Downloads PubMed Central articles that mention NCBI and GISAID strains|
-|1b-...|Future notebooks that add new node and relationship files|
-|[2-CreateKnowledgeGraph](notebooks/2-CreateKnowledgeGraph.ipynb)|Creates a Neo4j Knowledge Graph by running the Cypher scripts in the cypher directory|
+|[02a-JHUCases](notebooks/02a-JHUCases.ipynb)| Downloads cummulative confimed cases and deaths from the COVID-19 Data Repository by Johns Hopkins University|
+|1b-...|Future notebooks that add new data to the knowledge graph|
+|[2-CreateKnowledgeGraph](notebooks/2-CreateKnowledgeGraph.ipynb)|Creates a Neo4j Knowledge Graph by running the Cypher scripts in the cypher directory (currently does not work on Binder!|
 |[3-ExampleQueries](notebooks/3-ExampleQueries.ipynb)| Runs [Cypher](https://neo4j.com/developer/cypher-query-language/) queries on the Knowledge Graph|
 
-##Sections below need to be updated
+# Sections below need to be updated
 
 ## A prototype Subgraph that represents relationships for Virus Strains
 
