@@ -1,5 +1,5 @@
 LOAD CSV WITH HEADERS 
-FROM 'FILE:///01a-NCBIstrain.csv' AS row 
+FROM 'FILE:///01a-NCBIStrain.csv' AS row 
 WITH row WHERE NOT row.id IS null
 MERGE (s:Genome:Strain{id: row.id})
 SET s.name = row.name, s.taxonomy = row.taxonomy_id, s.collectionDate = row.collection_date,
