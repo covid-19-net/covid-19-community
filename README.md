@@ -26,6 +26,28 @@ What kind of data can you contribute? Here are some of our ideas.
 
 The left side of of the schema encodes the geolocation hierarchy from the world to the city level (> 1000 citizens). Geolocations are linked by COVID-19 case counts to information about host organisms, virus strains, genomes, genes, and proteins, and publications that mention the virus strains.
 
+## Browsing the Knowledge Graph with the Neo4j Browser
+
+You can browse the KG shown above with the Neo4j Browser
+
+1. [Launch Browser](http://132.249.238.185:7474/)
+2. Enter username: reader, password: demo
+3. Click on the database icon on the top left and select database "dsc" from the menu
+4. Click on any of the node labels to start exploring the KG
+5. Run a [Cypher query](https://neo4j.com/docs/cypher-manual/current/introduction/)
+
+#### Example Cypher query (aggregate cummulative COVID-19 case numbers at the US state (Admin1) level
+```
+MATCH (o:Outbreak{id: "COVID-19"})<-[:RELATED_TO]-(c:Cases{date: date("2020-05-04")})-[:REPORTED_IN]->(a:Admin2)-[:IN]->(a1:Admin1)
+RETURN a1.name as state, sum(c.cummulativeConfirmed) as confirmed, sum(c.cummulativeDeaths) as deaths
+ORDER BY deaths;
+```
+
+Note, due to data inconsistency issues in the data files from the COVID-19 Data Repository by Johns Hopkins University, not all cases can be mapped to a geolocation.
+
+[more documentations will come soon]
+
+
 ## How to use this project?
 This project uses Jupyter Notebooks to download and curate the latest data files, create a Neo4j graph database, and run Cypher queries on the graph database. The results of the queries can then be used in the Jupyter Notebooks for further analysis and visualizations.
 
