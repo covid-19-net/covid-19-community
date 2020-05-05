@@ -7,7 +7,7 @@ CREATE CONSTRAINT location ON (n:Location) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT unregion ON (n:UNRegion) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT unsubregion ON (n:UNSubRegion) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT unintermediateregion ON (n:UNIntermediateRegion) ASSERT n.id IS UNIQUE;
-CREATE CONSTRAINT country ON (n:Contry) ASSERT n.id IS UNIQUE;
+CREATE CONSTRAINT country ON (n:Country) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT admin1 ON (n:Admin1) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT usregion ON (n:USRegion) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT usdivision ON (n:USDivision) ASSERT n.id IS UNIQUE;
