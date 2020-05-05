@@ -53,7 +53,7 @@ Once Jupyter Lab launches, navigate to the notebooks folder and run the followin
 
 ## Preliminary Knowledge Graph Schema
 
-![](docs/KG-schema.png)
+![](docs/KG-Schema.png)
 
 The left side of of the schema encodes the geolocation hierarchy from the world level to the city level (> 1000 citizens). Geolocations are linked by COVID-19 cases to information about host organisms, virus strains, genomes, genes, and proteins, and publications that mention the virus strains.
 
