@@ -39,52 +39,23 @@ Once Jupyter Lab launches, navigate to the notebooks folder and run the followin
 |[00g-GeoNamesAdmin2](notebooks/00g-GeoNamesAdmin2.ipynb)| Downloads second administrative divisions (Counties in the US) information from GeoNames.org|
 |[00h-GeoNamesCity](notebooks/00h-GeoNamesCity.ipynb)| Downloads city information (cities > 1000 citizens) from GeoNames.org|
 |[00i-USCensusRegionDivisionState2017](notebooks/00i-USCensusRegionDivisionState2017.ipynb)| Downloads US regions, divisions, and assigns state FIPS codes from the US Census Bureau|
-|[00j-USCensusCountyCity2017](notebooks/00i-USCensusCountyCity2017.ipynb)| Downloads US County FIPS codes from the US Census Bureau|
-|[01a-NCBIStrain](notebooks/01a-NCBIStrain.ipynb)| Downloads the latest SARS-CoV-2 strain data from NCBI|
+|[00j-USCensusCountyCity2017](notebooks/00j-USCensusCountyCity2017.ipynb)| Downloads US County FIPS codes from the US Census Bureau|
+|[00k-UNRegion](notebooks/00k-UNRegion.ipynb)| Downloads UN geographic regions, subregions, and intermediate region information from United Nations|
+|[01a-NCBIStrain](notebooks/01a-NCBIStrain.ipynb)| Downloads the latest SARS-CoV-2 strain data from NCBI (slow!)|
 |[01b-Nextstrain](notebooks/01b-Nextstrain.ipynb)| Downloads the latest SARS-CoV-2 strain data from Nextstrain|
 |[01c-NCBIRefSeq](notebooks/01c-NCBIRefSeq.ipynb)| Downloads the SARS-CoV-2 reference genome, genes, and protein products from NCBI|
 |[01d-PMC-Accession](notebooks/01d-PMC-Accession.ipynb)| Downloads PubMed Central articles that mention NCBI and GISAID strains|
 |[02a-JHUCases](notebooks/02a-JHUCases.ipynb)| Downloads cummulative confimed cases and deaths from the COVID-19 Data Repository by Johns Hopkins University|
 |1b-...|Future notebooks that add new data to the knowledge graph|
-|[2-CreateKnowledgeGraph](notebooks/2-CreateKnowledgeGraph.ipynb)|Creates a Neo4j Knowledge Graph by running the Cypher scripts in the cypher directory (currently does not work on Binder!|
-|[3-ExampleQueries](notebooks/3-ExampleQueries.ipynb)| Runs [Cypher](https://neo4j.com/developer/cypher-query-language/) queries on the Knowledge Graph|
+|[2-CreateKnowledgeGraph](notebooks/2-CreateKnowledgeGraph.ipynb)|Creates a Neo4j Knowledge Graph by running the Cypher scripts in the cypher directory (does not work on Binder!)|
+|[3-ExampleQueries](notebooks/3-ExampleQueries.ipynb)| Runs [Cypher](https://neo4j.com/developer/cypher-query-language/) queries on the Knowledge Graph (does not work on Binder!)|
 
-# Sections below need to be updated
 
-## A prototype Subgraph that represents relationships for Virus Strains
+## Preliminary Knowledge Graph Schema
 
-![](docs/strains.png)
+![](docs/KG-schema.png)
 
-This subgraph maps the relationships between the Pathogen (SARS-CoV-2) that causes the COVID-19 disease Outbreak, the strains of the virus, the host (human or animal), and the locations where they were found.
-
-## Data Creation and Organization
-We have separated data download and curation from the graph database creation. 
-
-**1. Data Download and Curation**
-
-Jupyter Notebooks are used to download the latest raw data files, curate and harmonize the data, and then save Nodes and Relationships as .csv files in the /data directory.
-
-The Nodes, Relationships, and their Properties are named according to these [conventions](https://neo4j.com/docs/cypher-manual/current/syntax/naming/). The headers of the Node and Relationship .csv files must be formated according to the Neo4j [formatting rules](https://neo4j.com/docs/operations-manual/current/tools/import/file-header-format/) for batch upload.
-
-We use the Node and Relationship names for the data files, for example, the relationships
-
-**(:Outbreak)-[:EXPLORE_IN]->(:Dashboard)**
-
-**(:City)-[:EXPLORE_IN]-(:Dashboard)**
-
-are stored in three Node files: [Outbreak.csv](reference_data/nodes/Outbreak.csv), [Dashboard.csv](reference_data/nodes/Dashboard.csv), [City.csv](data/nodes/City.csv) and two Relationship files: [Outbreak-EXPLORE_IN-Dashboard.csv](reference_data/relationships/Outbreak-EXPLORE_IN-Dashboard.csv), [City-EXPLORE_IN-Dashboard.csv](reference_data/relationships/City-EXPLORE_IN-Dashboard.csv).
-
-The graph database is created from the following files:
-
-|Directory|Description|
-|---------|-----------|
-|cached_data|Raw data files downloaded from resources that do not provide download URLs. These files are manually downloaded and updated as needed.|
-|reference_data|Node and Relationship .csv files that are manually created and updated|
-|data|Node and Relationship .csv files created automatically by running the Jupyter Notebooks. These files are overwritten. Do not edit these files.|
-
-**2. Batch-up of Node and Relationship files**
-
-The [2-CreateGraph.ipynb](notebooks/2-CreateGraph.ipynb) notebook [batch-uploades the .csv files](https://neo4j.com/docs/operations-manual/current/tools/import/) into an empty Neo4j database.
+The left side of of the schema encodes the geolocation hierarchy from the world level to the city level (> 1000 citizens). Geolocations are linked by COVID-19 cases to information about host organisms, virus strains, genomes, genes, and proteins, and publications that mention the virus strains.
 
 ## How to run this project locally
 
