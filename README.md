@@ -20,6 +20,11 @@ What kind of data can you contribute? Here are some of our ideas.
 * Help improve the data model
 * Report bugs or issues
 
+## Preliminary Knowledge Graph Schema
+
+![](docs/KG-Schema.png)
+
+The left side of of the schema encodes the geolocation hierarchy from the world to the city level (> 1000 citizens). Geolocations are linked by COVID-19 case counts to information about host organisms, virus strains, genomes, genes, and proteins, and publications that mention the virus strains.
 
 ## How to use this project?
 This project uses Jupyter Notebooks to download and curate the latest data files, create a Neo4j graph database, and run Cypher queries on the graph database. The results of the queries can then be used in the Jupyter Notebooks for further analysis and visualizations.
@@ -49,13 +54,6 @@ Once Jupyter Lab launches, navigate to the notebooks folder and run the followin
 |1b-...|Future notebooks that add new data to the knowledge graph|
 |[2-CreateKnowledgeGraph](notebooks/2-CreateKnowledgeGraph.ipynb)|Creates a Neo4j Knowledge Graph by running the Cypher scripts in the cypher directory (does not work on Binder!)|
 |[3-ExampleQueries](notebooks/3-ExampleQueries.ipynb)| Runs [Cypher](https://neo4j.com/developer/cypher-query-language/) queries on the Knowledge Graph (does not work on Binder!)|
-
-
-## Preliminary Knowledge Graph Schema
-
-![](docs/KG-Schema.png)
-
-The left side of of the schema encodes the geolocation hierarchy from the world level to the city level (> 1000 citizens). Geolocations are linked by COVID-19 cases to information about host organisms, virus strains, genomes, genes, and proteins, and publications that mention the virus strains.
 
 ## How to run this project locally
 
