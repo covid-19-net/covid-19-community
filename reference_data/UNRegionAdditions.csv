@@ -1,0 +1,10 @@
+UNRegion,UNRegionCode,UNSubRegion,UNSubRegionCode,UNIntermediateRegion,UNIntermediateRegionCode,iso3
+Antarctica,m49:Antarctica,,,,,ATA
+Americas,m49:19,Latin America and the Caribbean,m49:419,,,BES
+Americas,m49:19,Latin America and the Caribbean,m49:419,,,ANT
+Asia,m49:142,Eastern Asia,m49:30,,,HKG
+Asia,m49:142,Eastern Asia,m49:30,,,MAC
+Asia,m49:142,Eastern Asia,m49:30,,,TWN
+Europe,m49:150,Southern Europe,m49:39,,,XKX
+Europe,m49:150,Southern Europe,m49:39,,,CSG
+

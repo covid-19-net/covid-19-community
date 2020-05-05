@@ -1,7 +1,7 @@
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///Outbreak.csv' AS row 
 MERGE (o:Outbreak{id: row.id})
-SET o.startDate = row.startDate, o.pathogen = row.pathogen
+SET o.name = row.id, o.startDate = row.startDate, o.pathogen = row.pathogen
 RETURN count(o) as Outbreak
 ;
 LOAD CSV WITH HEADERS 
