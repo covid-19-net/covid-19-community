@@ -28,7 +28,11 @@ The left side of the schema shows the geolocation hierarchy from the world to th
 
 ## Browsing the Knowledge Graph with the Neo4j Browser
 
-You can browse the KG shown above with the Neo4j Browser
+![](docs/Browser.png)
+
+View of Neo4j Browser showing the result of a query about publications on the origin of the SARS-CoV-2 virus.
+
+You can browse the KG with the Neo4j Browser here:
 
 1. [Launch Browser](http://132.249.238.185:7474/)
 2. Enter username: reader, password: demo
