@@ -20,11 +20,39 @@ What kind of data can you contribute? Here are some of our ideas.
 * Help improve the data model
 * Report bugs or issues
 
+## Preliminary Knowledge Graph Schema
+
+![](docs/KG-Schema.png)
+
+The left side of the schema shows the geolocation hierarchy from the world to the city level (> 1000 citizens). Geolocations are linked by COVID-19 case counts to information about host organisms, virus strains, genomes, genes, and proteins, and publications that mention the virus strains.
+
+## Browsing the Knowledge Graph with the Neo4j Browser
+
+![](docs/Browser.png)
+
+View of Neo4j Browser showing the result of a query about publications on the origin of the SARS-CoV-2 virus.
+
+You can browse the KG with the Neo4j Browser here:
+
+1. [Launch Browser](http://132.249.238.185:7474/)
+2. Enter username: reader, password: demo
+3. Click on the database icon on the top left, then click on any node label to start exploring the KG
+4. Run a [Cypher query](https://neo4j.com/docs/cypher-manual/current/introduction/)
+
+#### Example Cypher query: aggregate cummulative COVID-19 case numbers at the US state (Admin1) level
+```
+MATCH (o:Outbreak{id: "COVID-19"})<-[:RELATED_TO]-(c:Cases{date: date("2020-05-04")})-[:REPORTED_IN]->(a:Admin2)-[:IN]->(a1:Admin1)
+RETURN a1.name as state, sum(c.cummulativeConfirmed) as confirmed, sum(c.cummulativeDeaths) as deaths
+ORDER BY deaths;
+```
+
+Note, due to data inconsistency issues in the data files from the COVID-19 Data Repository by Johns Hopkins University, not all cases can be mapped to a geolocation. Case numbers are not automatically updated, yet. Last update: 2020-05-04).
+
+[more documentations will come soon]
+
 
 ## How to use this project?
 This project uses Jupyter Notebooks to download and curate the latest data files, create a Neo4j graph database, and run Cypher queries on the graph database. The results of the queries can then be used in the Jupyter Notebooks for further analysis and visualizations.
-
-(Currently, we don't have graph visualization working in Jupyter Lab. We are looking for community members to [help](https://github.com/covid-19-net/covid-19-community/issues/1).)
 
 You can run the Jupyter Notebooks in this repo in your web browser:
 
@@ -39,52 +67,16 @@ Once Jupyter Lab launches, navigate to the notebooks folder and run the followin
 |[00g-GeoNamesAdmin2](notebooks/00g-GeoNamesAdmin2.ipynb)| Downloads second administrative divisions (Counties in the US) information from GeoNames.org|
 |[00h-GeoNamesCity](notebooks/00h-GeoNamesCity.ipynb)| Downloads city information (cities > 1000 citizens) from GeoNames.org|
 |[00i-USCensusRegionDivisionState2017](notebooks/00i-USCensusRegionDivisionState2017.ipynb)| Downloads US regions, divisions, and assigns state FIPS codes from the US Census Bureau|
-|[00j-USCensusCountyCity2017](notebooks/00i-USCensusCountyCity2017.ipynb)| Downloads US County FIPS codes from the US Census Bureau|
-|[01a-NCBIStrain](notebooks/01a-NCBIStrain.ipynb)| Downloads the latest SARS-CoV-2 strain data from NCBI|
+|[00j-USCensusCountyCity2017](notebooks/00j-USCensusCountyCity2017.ipynb)| Downloads US County FIPS codes from the US Census Bureau|
+|[00k-UNRegion](notebooks/00k-UNRegion.ipynb)| Downloads UN geographic regions, subregions, and intermediate region information from United Nations|
+|[01a-NCBIStrain](notebooks/01a-NCBIStrain.ipynb)| Downloads the latest SARS-CoV-2 strain data from NCBI (slow!)|
 |[01b-Nextstrain](notebooks/01b-Nextstrain.ipynb)| Downloads the latest SARS-CoV-2 strain data from Nextstrain|
 |[01c-NCBIRefSeq](notebooks/01c-NCBIRefSeq.ipynb)| Downloads the SARS-CoV-2 reference genome, genes, and protein products from NCBI|
 |[01d-PMC-Accession](notebooks/01d-PMC-Accession.ipynb)| Downloads PubMed Central articles that mention NCBI and GISAID strains|
 |[02a-JHUCases](notebooks/02a-JHUCases.ipynb)| Downloads cummulative confimed cases and deaths from the COVID-19 Data Repository by Johns Hopkins University|
-|1b-...|Future notebooks that add new data to the knowledge graph|
-|[2-CreateKnowledgeGraph](notebooks/2-CreateKnowledgeGraph.ipynb)|Creates a Neo4j Knowledge Graph by running the Cypher scripts in the cypher directory (currently does not work on Binder!|
-|[3-ExampleQueries](notebooks/3-ExampleQueries.ipynb)| Runs [Cypher](https://neo4j.com/developer/cypher-query-language/) queries on the Knowledge Graph|
-
-# Sections below need to be updated
-
-## A prototype Subgraph that represents relationships for Virus Strains
-
-![](docs/strains.png)
-
-This subgraph maps the relationships between the Pathogen (SARS-CoV-2) that causes the COVID-19 disease Outbreak, the strains of the virus, the host (human or animal), and the locations where they were found.
-
-## Data Creation and Organization
-We have separated data download and curation from the graph database creation. 
-
-**1. Data Download and Curation**
-
-Jupyter Notebooks are used to download the latest raw data files, curate and harmonize the data, and then save Nodes and Relationships as .csv files in the /data directory.
-
-The Nodes, Relationships, and their Properties are named according to these [conventions](https://neo4j.com/docs/cypher-manual/current/syntax/naming/). The headers of the Node and Relationship .csv files must be formated according to the Neo4j [formatting rules](https://neo4j.com/docs/operations-manual/current/tools/import/file-header-format/) for batch upload.
-
-We use the Node and Relationship names for the data files, for example, the relationships
-
-**(:Outbreak)-[:EXPLORE_IN]->(:Dashboard)**
-
-**(:City)-[:EXPLORE_IN]-(:Dashboard)**
-
-are stored in three Node files: [Outbreak.csv](reference_data/nodes/Outbreak.csv), [Dashboard.csv](reference_data/nodes/Dashboard.csv), [City.csv](data/nodes/City.csv) and two Relationship files: [Outbreak-EXPLORE_IN-Dashboard.csv](reference_data/relationships/Outbreak-EXPLORE_IN-Dashboard.csv), [City-EXPLORE_IN-Dashboard.csv](reference_data/relationships/City-EXPLORE_IN-Dashboard.csv).
-
-The graph database is created from the following files:
-
-|Directory|Description|
-|---------|-----------|
-|cached_data|Raw data files downloaded from resources that do not provide download URLs. These files are manually downloaded and updated as needed.|
-|reference_data|Node and Relationship .csv files that are manually created and updated|
-|data|Node and Relationship .csv files created automatically by running the Jupyter Notebooks. These files are overwritten. Do not edit these files.|
-
-**2. Batch-up of Node and Relationship files**
-
-The [2-CreateGraph.ipynb](notebooks/2-CreateGraph.ipynb) notebook [batch-uploades the .csv files](https://neo4j.com/docs/operations-manual/current/tools/import/) into an empty Neo4j database.
+|...|Future notebooks that add new data to the knowledge graph|
+|[2-CreateKnowledgeGraph](notebooks/2-CreateKnowledgeGraph.ipynb)|Creates a Neo4j Knowledge Graph by running the Cypher scripts in the cypher directory (does not work on Binder!)|
+|[3-ExampleQueriesRemote](notebooks/3-ExampleQueriesRemote.ipynb)| Runs [Cypher](https://neo4j.com/developer/cypher-query-language/) queries on the Knowledge Graph server|
 
 ## How to run this project locally
 
@@ -120,6 +112,8 @@ conda activate covid-19-community
 Then, launch the Neo4j Browser, create an empty database, and set the password to "neo4jbinder"
 
 **4. Set Environment Variable**
+
+*TODO* add more documentation here ...
 
 Set a NEO4J_HOME environment variable with the path to the database installation.
 

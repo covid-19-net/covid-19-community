@@ -13,3 +13,4 @@ dependencies:
   - matplotlib
   - biopython
   - py2neo
+  - papermill=2.1.0
