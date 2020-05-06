@@ -32,9 +32,8 @@ You can browse the KG shown above with the Neo4j Browser
 
 1. [Launch Browser](http://132.249.238.185:7474/)
 2. Enter username: reader, password: demo
-3. Click on the database icon on the top left and select database "dsc" from the menu
-4. Click on any of the node labels to start exploring the KG
-5. Run a [Cypher query](https://neo4j.com/docs/cypher-manual/current/introduction/)
+3. Click on the database icon on the top left, then click on any node label to start exploring the KG
+4. Run a [Cypher query](https://neo4j.com/docs/cypher-manual/current/introduction/)
 
 #### Example Cypher query: aggregate cummulative COVID-19 case numbers at the US state (Admin1) level
 ```
@@ -50,8 +49,6 @@ Note, due to data inconsistency issues in the data files from the COVID-19 Data 
 
 ## How to use this project?
 This project uses Jupyter Notebooks to download and curate the latest data files, create a Neo4j graph database, and run Cypher queries on the graph database. The results of the queries can then be used in the Jupyter Notebooks for further analysis and visualizations.
-
-(Currently, we don't have graph visualization working in Jupyter Lab. We are looking for community members to [help](https://github.com/covid-19-net/covid-19-community/issues/1).)
 
 You can run the Jupyter Notebooks in this repo in your web browser:
 
@@ -73,9 +70,9 @@ Once Jupyter Lab launches, navigate to the notebooks folder and run the followin
 |[01c-NCBIRefSeq](notebooks/01c-NCBIRefSeq.ipynb)| Downloads the SARS-CoV-2 reference genome, genes, and protein products from NCBI|
 |[01d-PMC-Accession](notebooks/01d-PMC-Accession.ipynb)| Downloads PubMed Central articles that mention NCBI and GISAID strains|
 |[02a-JHUCases](notebooks/02a-JHUCases.ipynb)| Downloads cummulative confimed cases and deaths from the COVID-19 Data Repository by Johns Hopkins University|
-|1b-...|Future notebooks that add new data to the knowledge graph|
+|...|Future notebooks that add new data to the knowledge graph|
 |[2-CreateKnowledgeGraph](notebooks/2-CreateKnowledgeGraph.ipynb)|Creates a Neo4j Knowledge Graph by running the Cypher scripts in the cypher directory (does not work on Binder!)|
-|[3-ExampleQueries](notebooks/3-ExampleQueries.ipynb)| Runs [Cypher](https://neo4j.com/developer/cypher-query-language/) queries on the Knowledge Graph (does not work on Binder!)|
+|[3-ExampleQueriesRemote](notebooks/3-ExampleQueriesRemote.ipynb)| Runs [Cypher](https://neo4j.com/developer/cypher-query-language/) queries on the Knowledge Graph server|
 
 ## How to run this project locally
 
@@ -111,6 +108,8 @@ conda activate covid-19-community
 Then, launch the Neo4j Browser, create an empty database, and set the password to "neo4jbinder"
 
 **4. Set Environment Variable**
+
+*TODO* add more documentation here ...
 
 Set a NEO4J_HOME environment variable with the path to the database installation.
 
