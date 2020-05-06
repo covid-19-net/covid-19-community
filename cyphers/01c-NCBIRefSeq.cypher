@@ -6,7 +6,7 @@ RETURN count(g) as Gene
 ;
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///01c-NCBIRefSeq.csv' AS row 
-MATCH (gn:Genome{id: row.genbank_id})
+MATCH (gn:Genome:Strain{id: row.genbank_id})
 MATCH (g:Gene{id: row.ncbigene_id})
 MERGE(gn)-[h:HAS]->(g)
 RETURN count(h) as Has
