@@ -37,9 +37,10 @@ run_cypher 00h-GeoNamesCity.cypher
 run_cypher 00i-USCensusRegionDivisionState2017.cypher
 run_cypher 00j-USCensusCountyCity2017.cypher
 run_cypher 00k-UNRegion.cypher
-run_cypher 01a-NCBIStrain.cypher
+# run_cypher 01a-NCBIStrain.cypher # 01e-CNCBStrain contains NCBI data
 run_cypher 01b-Nextstrain.cypher
 run_cypher 01c-NCBIRefSeq.cypher
-run_cypher 01d-PMC-Accession.cypher
+run_cypher 01e-CNCBStrain.cypher
+run_cypher 01h-PMC-Accession.cypher
 run_cypher 02a-JHUCases.cypher
 
