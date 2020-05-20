@@ -4,6 +4,7 @@ DEFAULT_ENDPOINT=bolt://localhost:7687
 ENDPOINT=${NEO4J_URI:-$DEFAULT_ENDPOINT}
 USERNAME=${NEO4J_USERNAME:-neo4j}
 PASSWORD=${NEO4J_PASSWORD:-neo4jbinder}
+CYPHER=${NEO4J_BIN:-$NEO4J_HOME/bin}
 CYPHERS="../cyphers"
 REFDATA="../reference_data"
 
@@ -11,7 +12,7 @@ echo "Endpoint: "$ENDPOINT
 echo "Username: "$USERNAME
 echo "Password: "$PASSWORD
 
-export cypher_shell="$NEO4J_HOME/bin/cypher-shell"
+export cypher_shell="$CYPHER/cypher-shell"
 
 function run_cypher {
     echo " "
@@ -39,8 +40,8 @@ run_cypher 00j-USCensusCountyCity2017.cypher
 run_cypher 00k-UNRegion.cypher
 # run_cypher 01a-NCBIStrain.cypher # 01e-CNCBStrain contains NCBI data
 run_cypher 01b-Nextstrain.cypher
-run_cypher 01c-NCBIRefSeq.cypher
-run_cypher 01e-CNCBStrain.cypher
+run_cypher 01c-CNCBStrain.cypher
+run_cypher 01d-NCBIRefSeq.cypher
 run_cypher 01h-PMC-Accession.cypher
 run_cypher 02a-JHUCases.cypher
 
