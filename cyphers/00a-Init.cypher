@@ -4,6 +4,7 @@ CALL apoc.schema.assert({},{});
 
 // create constraints
 CREATE CONSTRAINT location ON (n:Location) ASSERT n.id IS UNIQUE;
+CREATE INDEX location_n FOR (n:Location) ON (n.name);
 CREATE CONSTRAINT unregion ON (n:UNRegion) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT unsubregion ON (n:UNSubRegion) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT unintermediateregion ON (n:UNIntermediateRegion) ASSERT n.id IS UNIQUE;
@@ -20,6 +21,8 @@ CREATE CONSTRAINT outbreak ON (n:Outbreak) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT publication ON (n:Publication) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT genome ON (n:Genome) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT strain ON (n:Strain) ASSERT n.id IS UNIQUE;
+CREATE INDEX strain_n FOR (n:Strain) ON (n.name);
+CREATE CONSTRAINT variation ON (n:Variation) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT gene ON (n:Gene) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT protein ON (n:Protein) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT cases ON (n:Cases) ASSERT n.id IS UNIQUE;
