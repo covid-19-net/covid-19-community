@@ -14,7 +14,7 @@ RETURN count(h) as Has
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///01d-NCBIRefSeq.csv' AS row 
 MERGE (p:Protein{id: row.ncbiproteinId})
-SET p.name = row.product
+SET p.name = row.name
 RETURN count(p) as Protein
 ;
 LOAD CSV WITH HEADERS 
