@@ -22,7 +22,7 @@ CREATE CONSTRAINT publication ON (n:Publication) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT genome ON (n:Genome) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT strain ON (n:Strain) ASSERT n.id IS UNIQUE;
 CREATE INDEX strain_n FOR (n:Strain) ON (n.name);
-CREATE CONSTRAINT variation ON (n:Variation) ASSERT n.id IS UNIQUE;
+CREATE CONSTRAINT variant ON (n:Variant) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT gene ON (n:Gene) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT protein ON (n:Protein) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT cases ON (n:Cases) ASSERT n.id IS UNIQUE;
