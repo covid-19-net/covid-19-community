@@ -39,6 +39,14 @@ You can browse the KG with the Neo4j Browser here:
 3. Click on the database icon on the top left, then click on any node label to start exploring the KG
 4. Run a [Cypher query](https://neo4j.com/docs/cypher-manual/current/introduction/)
 
+#### Example Cypher query: find viral strains collected in Los Angeles
+```
+MATCH (s:Strain)-[:FOUND_IN]->(l:Location{name: 'Los Angeles'}) RETURN s, l
+```
+![](docs/LA_strains.png)
+
+This subgraph shows two viral strains (green) of the [SARS-CoV-2 virus](https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=2697049) carried by a [human](https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=9606) host in LA (organisms in yellow). The strains have several variants (red) in common. One variant is selected and the details are shown at the bottom. This variant is a [missence mutation](https://en.wikipedia.org/wiki/Missense_mutation): the "G" ([Guanine](https://en.wikipedia.org/wiki/guanine)) from the [Wuhan-HU-1 reference genome](https://www.ncbi.nlm.nih.gov/nuccore/MN908947.3) was mutated to a "C" ([Cytosine](https://en.wikipedia.org/wiki/cytosine)) at position 28007 in this strain, resulting in the encoded ORF8 protein ([QHD43422.1](https://www.ncbi.nlm.nih.gov/protein/1791269096) to be changed from a "V" ([Valine](https://en.wikipedia.org/wiki/Valine) to an "L" ([Leucine](https://en.wikipedia.org/wiki/Leucine) at position 62. Two publications: [PMC7166309](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7166309/) and [PMC7106203](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7106203/) (blue) mention this strain.
+
 #### Example Cypher query: aggregate cummulative COVID-19 case numbers at the US state (Admin1) level
 ```
 MATCH (o:Outbreak{id: "COVID-19"})<-[:RELATED_TO]-(c:Cases{date: date("2020-05-04")})-[:REPORTED_IN]->(a:Admin2)-[:IN]->(a1:Admin1)
@@ -46,7 +54,7 @@ RETURN a1.name as state, sum(c.cummulativeConfirmed) as confirmed, sum(c.cummula
 ORDER BY deaths;
 ```
 
-Note, due to data inconsistency issues in the data files from the COVID-19 Data Repository by Johns Hopkins University, not all cases can be mapped to a geolocation. Case numbers are not automatically updated, yet. Last update: 2020-05-04).
+Note, due to data inconsistency issues in the data files from the COVID-19 Data Repository by Johns Hopkins University, not all cases can be mapped to a geolocation.
 
 [more documentations will come soon]
 
@@ -72,7 +80,7 @@ Once Jupyter Lab launches, navigate to the notebooks folder and run the followin
 |[01a-NCBIStrain](notebooks/01a-NCBIStrain.ipynb)| Downloads the latest SARS-CoV-2 strain data from NCBI (currently not used, replaced with 01d-CNCBStrain)|
 |[01b-Nextstrain](notebooks/01b-Nextstrain.ipynb)| Downloads the SARS-CoV-2 strain metadata from Nextstrain|
 |[01c-NCBIRefSeq](notebooks/01c-NCBIRefSeq.ipynb)| Downloads the SARS-CoV-2 reference genome, genes, and protein products from NCBI|
-|[01d-CNCBStrain](notebooks/01d-CNCBStrain.ipynb)| Downloads SARS-CoV-2 viral strains and variation data from CNCB ( China National Center for Bioinformation)|
+|[01d-CNCBStrain](notebooks/01d-CNCBStrain.ipynb)| Downloads SARS-CoV-2 viral strains and variation data from CNCB (China National Center for Bioinformation)|
 |[01h-PMC-Accession](notebooks/01h-PMC-Accession.ipynb)| Downloads PubMed Central articles that mention NCBI and GISAID strains|
 |[02a-JHUCases](notebooks/02a-JHUCases.ipynb)| Downloads cummulative confimed cases and deaths from the COVID-19 Data Repository by Johns Hopkins University|
 |...|Future notebooks that add new data to the knowledge graph|
