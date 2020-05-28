@@ -26,6 +26,8 @@ function run_cypher {
 # Copy reference files to the Neo4j import directory
 cp $REFDATA/Organism.csv "$NEO4J_HOME"/import
 cp $REFDATA/Outbreak.csv "$NEO4J_HOME"/import
+cp $REFDATA/intact_data.txt "$NEO4J_HOME"/import
+cp $REFDATA/2020-04-krogan-sarscov2-sequences-uniprot-mapping.xlsx "$NEO4J_HOME"/import
 
 # Set up the database
 run_cypher 00a-Init.cypher
@@ -42,6 +44,6 @@ run_cypher 00k-UNRegion.cypher
 run_cypher 01b-Nextstrain.cypher
 run_cypher 01c-NCBIRefSeq.cypher
 run_cypher 01d-CNCBStrain.cypher
+run_cypher 01e-ProteinProteinInteractions.cypher
 run_cypher 01h-PMC-Accession.cypher
 run_cypher 02a-JHUCases.cypher
-
