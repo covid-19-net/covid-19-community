@@ -1,8 +1,7 @@
 #!/bin/bash
 
-# This script updated the covid-19-community knowledge graph
+# This script updates the covid-19-community knowledge graph
 
-# execute all notebooks to create input files for Neo4j database
 cd $COVID19/notebooks
  
 LOGDIR="$NEO4J_HOME"/import/logs/`date +%Y-%m-%d`
