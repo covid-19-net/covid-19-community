@@ -26,6 +26,7 @@ function run_cypher {
 # Copy reference files to the Neo4j import directory
 cp $REFDATA/Organism.csv "$NEO4J_HOME"/import
 cp $REFDATA/Outbreak.csv "$NEO4J_HOME"/import
+cp $REFDATA/NodeMetadata.csv "$NEO4J_HOME"/import
 
 # Set up the database
 run_cypher 00a-Init.cypher
@@ -38,10 +39,10 @@ run_cypher 00h-GeoNamesCity.cypher
 run_cypher 00i-USCensusRegionDivisionState2017.cypher
 run_cypher 00j-USCensusCountyCity2017.cypher
 run_cypher 00k-UNRegion.cypher
-# run_cypher 01a-NCBIStrain.cypher # 01e-CNCBStrain contains NCBI data
+run_cypher 01a-NCBIStrain.cypher
 run_cypher 01b-Nextstrain.cypher
 run_cypher 01c-NCBIRefSeq.cypher
 run_cypher 01d-CNCBStrain.cypher
+run_cypher 01e-ProteinProteinInteraction.cypher
 run_cypher 01h-PMC-Accession.cypher
 run_cypher 02a-JHUCases.cypher
-

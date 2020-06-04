@@ -28,6 +28,8 @@ The left side of the schema shows the geolocation hierarchy from the world to th
 
 ## Browsing the Knowledge Graph with the Neo4j Browser
 
+**The Knowledge Graph is updated daily at 07:00 UTC.**
+
 ![](docs/Browser.png)
 
 View of Neo4j Browser showing the result of a query about publications on the origin of the SARS-CoV-2 virus.
@@ -77,12 +79,15 @@ Once Jupyter Lab launches, navigate to the notebooks folder and run the followin
 |[00i-USCensusRegionDivisionState2017](notebooks/00i-USCensusRegionDivisionState2017.ipynb)| Downloads US regions, divisions, and assigns state FIPS codes from the US Census Bureau|
 |[00j-USCensusCountyCity2017](notebooks/00j-USCensusCountyCity2017.ipynb)| Downloads US County FIPS codes from the US Census Bureau|
 |[00k-UNRegion](notebooks/00k-UNRegion.ipynb)| Downloads UN geographic regions, subregions, and intermediate region information from United Nations|
-|[01a-NCBIStrain](notebooks/01a-NCBIStrain.ipynb)| Downloads the latest SARS-CoV-2 strain data from NCBI [currently not used, replaced by 01d-CNCBStrain]|
+|[01a-NCBIStrain](notebooks/01a-NCBIStrain.ipynb)| Downloads the SARS-CoV-2 strain data from NCBI |
 |[01b-Nextstrain](notebooks/01b-Nextstrain.ipynb)| Downloads the SARS-CoV-2 strain metadata from Nextstrain|
 |[01c-NCBIRefSeq](notebooks/01c-NCBIRefSeq.ipynb)| Downloads the SARS-CoV-2 reference genome, genes, and protein products from NCBI|
 |[01d-CNCBStrain](notebooks/01d-CNCBStrain.ipynb)| Downloads SARS-CoV-2 viral strains and variation data from CNCB (China National Center for Bioinformation) [takes about 12 hours to run the first time, results are cached]|
+|[01d-CNCBStrainLocations](notebooks/01d-CNCBStrainLocations.ipynb)| Standardizes locations for variation data from CNCB (China National Center for Bioinformation) |
+|[01e-ProteinProteinInteraction](notebooks/01e-ProteinProteinInteraction.ipynb)| Downloads SARS-CoV-2 - human protein interaction data from IntAct|
 |[01h-PMC-Accession](notebooks/01h-PMC-Accession.ipynb)| Downloads PubMed Central articles that mention NCBI and GISAID strains|
 |[02a-JHUCases](notebooks/02a-JHUCases.ipynb)| Downloads cummulative confimed cases and deaths from the COVID-19 Data Repository by Johns Hopkins University|
+|[02a-JHUCasesLocation](notebooks/02a-JHUCasesLocation.ipynb)| Standardizes location data for the COVID-19 Data Repository by Johns Hopkins University|
 |...|Future notebooks that add new data to the knowledge graph|
 |[2-CreateKnowledgeGraph](notebooks/2-CreateKnowledgeGraph.ipynb)|Creates a Neo4j Knowledge Graph by running the Cypher scripts in the cypher directory [does not work on Binder!]|
 |[3-ExampleQueriesRemote](notebooks/3-ExampleQueriesRemote.ipynb)| Runs [Cypher](https://neo4j.com/developer/cypher-query-language/) queries on the Knowledge Graph server|
