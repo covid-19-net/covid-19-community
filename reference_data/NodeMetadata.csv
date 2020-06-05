@@ -1,4 +1,4 @@
-name,shortDescription,description,example,dataSource
+name,shortDescription,description,example,details
 Location,Geographic location,A geograpic location,"World, ..., Country, State, Country, City, Cruise ship",
 World, The World, Top level location,,
 UNRegion, Continental regions, Continental regions according to the M49 standard defined by the Statistics Division of the United Nations Secretariat,Americas,https://unstats.un.org/unsd/methodology/m49/

@@ -85,7 +85,7 @@ Once Jupyter Lab launches, navigate to the notebooks folder and run the followin
 |[01d-CNCBStrain](notebooks/01d-CNCBStrain.ipynb)| Downloads SARS-CoV-2 viral strains and variation data from CNCB (China National Center for Bioinformation) [takes about 12 hours to run the first time, results are cached]|
 |[01d-CNCBStrainLocations](notebooks/01d-CNCBStrainLocations.ipynb)| Standardizes locations for variation data from CNCB (China National Center for Bioinformation) |
 |[01e-ProteinProteinInteraction](notebooks/01e-ProteinProteinInteraction.ipynb)| Downloads SARS-CoV-2 - human protein interaction data from IntAct|
-|[01h-PMC-Accession](notebooks/01h-PMC-Accession.ipynb)| Downloads PubMed Central articles that mention NCBI and GISAID strains|
+|[01h-PMCAccession](notebooks/01h-PMCAccession.ipynb)| Downloads PubMed Central articles that mention NCBI and GISAID strains|
 |[02a-JHUCases](notebooks/02a-JHUCases.ipynb)| Downloads cummulative confimed cases and deaths from the COVID-19 Data Repository by Johns Hopkins University|
 |[02a-JHUCasesLocation](notebooks/02a-JHUCasesLocation.ipynb)| Standardizes location data for the COVID-19 Data Repository by Johns Hopkins University|
 |...|Future notebooks that add new data to the knowledge graph|

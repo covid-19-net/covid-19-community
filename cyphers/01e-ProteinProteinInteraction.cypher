@@ -24,4 +24,3 @@ RETURN count(i) as INTERACT
 ;
 
 
-
