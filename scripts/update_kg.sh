@@ -26,4 +26,4 @@ do
 done
 
 # run Cypher scripts to upload the data into the knowledge graph
-./run_cyphers.sh 
+$COVID19/scripts/run_cyphers.sh 
