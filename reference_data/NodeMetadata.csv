@@ -8,6 +8,7 @@ Country,Countries and dependent Territories, Countries and dependent Territories
 Admin1,"State, Province, Municipality","First administrative divisions, e.g, State, Province, Municipality",California,http://www.geonames.org/
 Admin2, County,Second administrative divisions: County in the US,San Diego County,http://www.geonames.org/
 City,City,City,San Diego,http://www.geonames.org/
+CruiseShip,"Cruise ship","Cruise ship","Diamond Princess",http://www.productontology.org/doc/Cruise_ship
 USRegion,Regions of the US,Regions defined by the US Census Bureau,West Region,https://www.census.gov/geographies/reference-files/2017/demo/popest/2017-fips.html
 USDivision,Subregions of US,Divisions defined by the US Census Burea,Pacific Division,https://www.census.gov/geographies/reference-files/2017/demo/popest/2017-fips.html
 Cases,Case counts,Number of case for outbreaks or diseases at specific dates and locations,COVID-19-YYYYMMDD,
@@ -16,6 +17,6 @@ Organism,Living system,"Individual living system, such as animal, plant, bacteri
 Strain,Genetic variant of an organism,A population of organisms that is geneticaly different from others of the same species and possessing a set of defined characteristics,COVID-19 strain,https://semanticscience.org/resource/SIO_010055.rdf
 Clade,Group of organisms based on common ancestors,An identifier that denotes a group of organisms or groups of organisms based on common ancestors,SARS-CoV-2 A,http://purl.obolibrary.org/obo/APOLLO_SV_00000232
 Genome,Genetic material,A genome is the sum of genetic material within a cell or virion,SARS-CoV-2 genome,http://purl.obolibrary.org/obo/SO_0001026
-Gene,SARS-CoV-2 S gene,Sequence of nucleotides,"Sequence of nucleotides in DNA or RNA that encodes the synthesis of a gene product, either RNA or protein",,http://purl.obolibrary.org/obo/SO_0000704
+Gene,Sequence of nucleotides,"Sequence of nucleotides in DNA or RNA that encodes the synthesis of a gene product, either RNA or protein",SARS-CoV-2 S gene,http://purl.obolibrary.org/obo/SO_0000704
 Protein,Sequence of amino acids,Proteins are large biomolecules consisting of chains of amino acid residues,Spike protein,http://purl.obolibrary.org/obo/SO_0000104
 Publication,Published document,A document that has been accepted by a publisher,,http://www.ontobee.org/ontology/IAO?iri=http://purl.obolibrary.org/obo/IAO_0000311
