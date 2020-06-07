@@ -1,14 +1,14 @@
-id,name,scientificName
-taxonomy:2697049,SARS-CoV-2,Severe acute respiratory syndrome coronavirus 2
-taxonomy:1335626,MERS-CoV,Middle East respiratory syndrome-related coronavirus
-taxonomy:694009,SARS-CoV,Severe acute respiratory syndrome-related coronavirus
-taxonomy:9606,human,Homo sapiens
-taxonomy:59477,intermediate horseshoe bat,Rhinolophus affinis 
-taxonomy:608659,Malayan horseshoe bat,Rhinolophus malayanus
-taxonomy:49442,horseshoe bat,Rhinolophus
-taxonomy:9974,Malayan pangolin,Manis javanica
-taxonomy:71116,palm civet,Paradoxurus
-taxonomy:9608,carnivores,Canidae
-taxonomy:9685,cat,Felis catus
-taxonomy:9666,European mink,Mustela lutreola
-taxonomy:419130,Malayan tiger,Panthera tigris jacksoni
+id,name,scientificNam,type
+taxonomy:2697049,SARS-CoV-2,Severe acute respiratory syndrome coronavirus 2,pathogen
+taxonomy:1335626,MERS-CoV,Middle East respiratory syndrome-related coronavirus,pathogen
+taxonomy:694009,SARS-CoV,Severe acute respiratory syndrome-related coronavirus,pathogen
+taxonomy:9606,human,Homo sapiens,host
+taxonomy:59477,intermediate horseshoe bat,Rhinolophus affinis,host
+taxonomy:608659,Malayan horseshoe bat,Rhinolophus malayanus,host
+taxonomy:49442,horseshoe bat,Rhinolophus,host
+taxonomy:9974,Malayan pangolin,Manis javanica,host
+taxonomy:71116,palm civet,Paradoxurus,host
+taxonomy:9608,carnivores,Canidae,host
+taxonomy:9685,cat,Felis catus,host
+taxonomy:9666,European mink,Mustela lutreola,host
+taxonomy:419130,Malayan tiger,Panthera tigris jacksoni,host

@@ -13,14 +13,14 @@ RETURN count(p) as ProteinName
 LOAD CSV WITH HEADERS FROM "FILE:///01e-ProteinProteinInteractionProtein.csv" AS row
 MATCH (p:Protein{id: row.id})
 MATCH (pn:ProteinName{id: row.id})
-MERGE (p)-[n:NAMED]->(pn)
-RETURN count(n) as NAMED
+MERGE (p)-[n:NAMED_AS]->(pn)
+RETURN count(n) as NAMED_AS
 ;                     
 LOAD CSV WITH HEADERS FROM "FILE:///01e-ProteinProteinInteraction.csv" AS row
 MATCH (pa:Protein{id: row.id_a})
 MATCH (pb:Protein{id: row.id_b})
-MERGE (pa)-[i:INTERACT]->(pb)
-RETURN count(i) as INTERACT
+MERGE (pa)-[i:INTERACTS_WITH]->(pb)
+RETURN count(i) as INTERACTS_WITH
 ;
 
 

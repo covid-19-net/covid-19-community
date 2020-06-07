@@ -6,7 +6,7 @@ RETURN count(g) as Gene
 ;
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///01c-NCBIRefSeq.csv' AS row 
-MATCH (gn:Genome:Strain{id: row.strainId})
+MATCH (gn:Strain{id: row.strainId})
 MATCH (g:Gene{id: row.geneAccession + row.geneStart + row.geneEnd})
 MERGE(gn)-[h:HAS]->(g)
 RETURN count(h) as Has
@@ -26,8 +26,8 @@ RETURN count(p) as ProteinName
 LOAD CSV WITH HEADERS FROM "FILE:///01c-NCBIRefSeq.csv" AS row
 MATCH (p:Protein{id: row.id})
 MATCH (pn:ProteinName{id: row.id})
-MERGE (p)-[n:NAMED]->(pn)
-RETURN count(n) as NAMED
+MERGE (p)-[n:NAMED_AS]->(pn)
+RETURN count(n) as NAMED_AS
 ;
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///01c-NCBIRefSeq.csv' AS row 

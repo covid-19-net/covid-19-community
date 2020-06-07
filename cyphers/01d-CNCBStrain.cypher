@@ -1,17 +1,25 @@
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///01d-CNCBStrain.csv' AS row 
-MERGE (s:Genome:Strain{id: row.id}) 
+MERGE (s:Strain{id: row.id}) 
 SET s.name = row.name, s.alias = row.alias, s.taxonomyId = row.taxonomyId, s.collectionDate = row.collectionDate, s.hostTaxonomyId = row.hostTaxonomyId, s.location = row.location
 RETURN count(s) as Strain
 ;
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///01d-CNCBStrain.csv' AS row
-MATCH (o:Organism{id: row.taxonomyId})
+MATCH (p:Pathogen{id: row.taxonomyId})
 MATCH (s:Strain{id: row.id})
-MERGE (o)-[h:HAS]->(s)
+MERGE (p)-[h:HAS_STRAIN]->(s)
 RETURN count(h) as HAS_STRAIN
+;
+USING PERIODIC COMMIT
+LOAD CSV WITH HEADERS 
+FROM 'FILE:///01d-CNCBStrain.csv' AS row
+MATCH (h:Host{id: row.hostTaxonomyId})
+MATCH (s:Strain{id: row.id})
+MERGE (h)-[c:CARRIES]->(s)
+RETURN count(c) as CARRIES
 ;
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS
@@ -19,8 +27,8 @@ FROM 'FILE:///01d-CNCBStrain.csv' AS row
 WITH row WHERE row.locationLevels='0'
 MATCH (c:Country{name: row.country})
 MATCH (s:Strain{id: row.id})
-MERGE (s)-[h:FOUND_IN]->(c)
-RETURN count(h) as FOUND_IN_COUNTRY
+MERGE (s)-[f:FOUND_IN]->(c)
+RETURN count(f) as FOUND_IN_COUNTRY
 ;
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS
