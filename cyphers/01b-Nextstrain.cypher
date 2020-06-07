@@ -3,8 +3,8 @@ LOAD CSV WITH HEADERS
 FROM 'FILE:///01b-Nextstrain.csv' AS row 
 WITH row WHERE NOT row.id IS null
 MERGE (s:Strain{id: row.id}) 
-SET s.name = row.name, s.taxonomyId = row.taxonomyId, s.collectionDate = row.collectionDate,
-    s.hostTaxonomyId = row.hostTaxonomyId, s.sex = row.sex, s.age = row.age, s.clade = row.clade,
+SET s.name = row.name, s.taxonomyId = row.taxonomyId, s.collectionDate = date(row.collectionDate),
+    s.hostTaxonomyId = row.hostTaxonomyId, s.sex = row.sex, s.age = toInteger(row.age), s.clade = row.clade,
     s.exposureCountry = row.exposureCountry, s.exposureAdmin1 = row.exposureAdmin1
 RETURN count(s) as Strain
 ;
