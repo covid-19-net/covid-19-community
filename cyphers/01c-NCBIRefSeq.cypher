@@ -1,13 +1,13 @@
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///01c-NCBIRefSeq.csv' AS row 
-MERGE (g:Gene{id: row.geneAccession + row.geneStart + row.geneEnd})
-SET g.name = row.geneName, g.start = row.geneStart, g.end = row.geneEnd
+MERGE (g:Gene{id: row.geneAccession + '-' + row.geneStart + '-' + row.geneEnd})
+SET g.name = row.geneName, g.start = toInteger(row.geneStart), g.end = toInteger(row.geneEnd)
 RETURN count(g) as Gene
 ;
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///01c-NCBIRefSeq.csv' AS row 
 MATCH (gn:Strain{id: row.strainId})
-MATCH (g:Gene{id: row.geneAccession + row.geneStart + row.geneEnd})
+MATCH (g:Gene{id: row.geneAccession + '-' + row.geneStart + '-' + row.geneEnd})
 MERGE(gn)-[h:HAS]->(g)
 RETURN count(h) as Has
 ;
@@ -31,7 +31,7 @@ RETURN count(n) as NAMED_AS
 ;
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///01c-NCBIRefSeq.csv' AS row 
-MATCH (g:Gene{id: row.geneAccession + row.geneStart + row.geneEnd})
+MATCH (g:Gene{id: row.geneAccession + '-' + row.geneStart + '-' + row.geneEnd})
 MATCH (p:Protein{id: row.id})
 MERGE(g)-[e:ENCODES]->(p)
 RETURN count(e) as ENCODES

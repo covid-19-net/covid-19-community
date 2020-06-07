@@ -1,7 +1,7 @@
 LOAD CSV WITH HEADERS FROM "FILE:///01e-ProteinProteinInteractionProtein.csv" AS row
 MERGE (p:Protein{id: row.id})
 SET p.name = row.name, p.accession = row.accession, p.pro_id = row.pro_id, 
-    p.sequence = row.sequence, p.start = row.start, p.end = row.end, p.fullLength = row.fullLength, 
+    p.sequence = row.sequence, p.start = toInteger(row.start), p.end = toInteger(row.end), p.fullLength = row.fullLength, 
     p.taxonomyId = row.taxonomyId
 RETURN count(p) as Protein
 ;

@@ -2,7 +2,7 @@ USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///01d-CNCBStrain.csv' AS row 
 MERGE (s:Strain{id: row.id}) 
-SET s.name = row.name, s.alias = row.alias, s.taxonomyId = row.taxonomyId, s.collectionDate = row.collectionDate, s.hostTaxonomyId = row.hostTaxonomyId, s.location = row.location
+SET s.name = row.name, s.alias = row.alias, s.taxonomyId = row.taxonomyId, s.collectionDate = date(row.collectionDate), s.hostTaxonomyId = row.hostTaxonomyId, s.location = row.location
 RETURN count(s) as Strain
 ;
 USING PERIODIC COMMIT
@@ -61,7 +61,7 @@ LOAD CSV WITH HEADERS
 FROM 'FILE:///01d-CNCBVariant.csv' AS row
 MERGE (v:Variant{id: row.referenceGenome + ':' + row.start + '-' + row.end + '-' + row.ref + '-' + row.alt})
 SET v.name = row.geneVariant, v.geneVariant = row.geneVariant, v.proteinVariant = row.proteinVariant, v.variantType = row.variantType, v.variantConsequence = row.variantConsequence, 
-v.start = row.start, v.end = row.end, v.ref = row.ref, v.alt = row.alt, 
+v.start = toInteger(row.start), v.end = toInteger(row.end), v.ref = row.ref, v.alt = row.alt, 
 v.taxonomyId = row.taxonomyId, v.referenceGenome = row.referenceGenome
 RETURN count(v) as Variant
 ;
@@ -74,10 +74,11 @@ RETURN count(h) as HAS_VARIANT
 ;
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///01d-CNCBVariant.csv' AS row
-MATCH (g:Gene) WHERE row.start >= g.start AND row.end <= g.end
+MATCH (g:Gene) WHERE toInteger(row.start) >= g.start AND toInteger(row.end) <= g.end
 MATCH (v:Variant{id: row.referenceGenome + ':' + row.start + '-' + row.end + '-' + row.ref + '-' + row.alt})
 MERGE (g)-[h:HAS_VARIANT]->(v)
 RETURN count(h) as HAS_VARIANT
 ;
+
                     
 
