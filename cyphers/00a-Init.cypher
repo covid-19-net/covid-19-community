@@ -1,8 +1,10 @@
-// delete all nodes and drop indices
+// delete all nodes
 MATCH (n) DETACH DELETE n;
+
+// delete all constraints and indices
 CALL apoc.schema.assert({},{});
 
-// create constraints
+// create constraints and indices
 CREATE CONSTRAINT location ON (n:Location) ASSERT n.id IS UNIQUE;
 CREATE INDEX location_n FOR (n:Location) ON (n.name);
 CREATE CONSTRAINT world ON (n:World) ASSERT n.id IS UNIQUE;
@@ -23,18 +25,20 @@ CREATE CONSTRAINT cruiseship ON (n:CruiseShip) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT organism ON (n:Organism) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT outbreak ON (n:Outbreak) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT publication ON (n:Publication) ASSERT n.id IS UNIQUE;
-CREATE CONSTRAINT genome ON (n:Genome) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT strain ON (n:Strain) ASSERT n.id IS UNIQUE;
 CREATE INDEX strain_n FOR (n:Strain) ON (n.name);
 CREATE CONSTRAINT variant ON (n:Variant) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT gene ON (n:Gene) ASSERT n.id IS UNIQUE;
+CREATE INDEX gene_s FOR (n:Gene) ON (n.start);
+CREATE INDEX gene_e FOR (n:Gene) ON (n.end);
 CREATE CONSTRAINT protein ON (n:Protein) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT proteinname ON (n:ProteinName) ASSERT n.id IS UNIQUE;
 CREATE INDEX proteinname_n FOR (n:ProteinName) ON (n.name);
+CREATE INDEX proteinname_a FOR (n:ProteinName) ON (n.accession);
 CREATE CONSTRAINT cases ON (n:Cases) ASSERT n.id IS UNIQUE;
 CREATE INDEX cases_d FOR (n:Cases) ON (n.date);
 
-// list constraints
+// list constraints and indices
 CALL db.constraints();
 CALL db.indexes();
 
