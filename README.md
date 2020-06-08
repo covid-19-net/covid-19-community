@@ -1,4 +1,4 @@
-# Covid-19-Community
+B# Covid-19-Community
 
 This project is a community effort to build a Neo4j Knowledge Graph (KG) that links heterogenous data about COVID-19 to help fight this outbreak! It serves as a sandbox and incubator project and the best ideas will be incorporated into the Covid-19-Net KG.
 
@@ -24,7 +24,7 @@ What kind of data can you contribute? Here are some of our ideas.
 
 ![](docs/KG-Schema.png)
 
-The left side of the schema shows the geolocation hierarchy from the world to the city level (> 1000 citizens). Geolocations are linked by COVID-19 case counts to information about host organisms, virus strains, genomes, genes, and proteins, and publications that mention the virus strains.
+The left side of the schema shows the geolocation hierarchy from the world to the city level (> 1000 citizens). Geolocations are linked by COVID-19 case counts to information about host organisms, virus strains, genes, proteins, protein-protein interactions, and publications.
 
 ## Browsing the Knowledge Graph with the Neo4j Browser
 
@@ -32,7 +32,7 @@ The left side of the schema shows the geolocation hierarchy from the world to th
 
 ![](docs/Browser.png)
 
-View of Neo4j Browser showing the result of a query about publications on the origin of the SARS-CoV-2 virus.
+View of Neo4j Browser showing the result of a query about interactions of the Spike glycoprotein with human host proteins and related publications in PubMedCentral.
 
 You can browse the KG here:
 
@@ -54,10 +54,10 @@ This subgraph shows two viral strains (green) of the [SARS-CoV-2 virus](https://
 ```
 MATCH (o:Outbreak{id: "COVID-19"})<-[:RELATED_TO]-(c:Cases{date: date("2020-05-04")})-[:REPORTED_IN]->(a:Admin2)-[:IN]->(a1:Admin1)
 RETURN a1.name as state, sum(c.cummulativeConfirmed) as confirmed, sum(c.cummulativeDeaths) as deaths
-ORDER BY deaths;
+ORDER BY deaths DESC;
 ```
 
-Note, some cases in the COVID-19 Data Repository by Johns Hopkins University cannot be mapped to a county or state location (e.g., cruise ships, correctional facilities, missing location data). Therefore, the results of this query will underreport the actual number of cases.
+Note, some cases in the COVID-19 Data Repository by Johns Hopkins University cannot be mapped to a county or state location (e.g., correctional facilities, missing location data). Therefore, the results of this query will underreport the actual number of cases.
 
 [more documentations will come soon]
 
