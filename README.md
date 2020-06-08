@@ -24,7 +24,7 @@ What kind of data can you contribute? Here are some of our ideas.
 
 ![](docs/KG-Schema.png)
 
-The left side of the schema shows the geolocation hierarchy from the world to the city level (> 1000 citizens). Geolocations are linked by COVID-19 case counts to information about host organisms, virus strains, genes, proteins, protein-protein interactions, and publications.
+The left side of the schema shows the geolocation hierarchy from the world to the city level (> 1000 citizens). The right side shows COVID-19 case counts and information about the host organisms, virus strains, genes, proteins, protein-protein interactions, and publications. Cases and Strains are linked to geolocations. The node NodeMetadata describes nodes in the Knowledge Graph and links to relevant ontologies (e.g., Infectious Disease Ontology).
 
 ## Browsing the Knowledge Graph with the Neo4j Browser
 
@@ -145,6 +145,12 @@ jupyter lab
 
 After you create the graph database by running the Jupyter Notebooks, start the database in Neo4j Browser to interactively explore the KG.
 
+## Funding
+Development of this prototype is in part supported by the National Science Foundation under Award Numbers:
+
+[1937136](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1937136): **Convergence Accelerator Phase I (RAISE): Knowledge Open Network Queries for Research (KONQUER)**
+
+[2028411](https://www.nsf.gov/awardsearch/showAward?AWD_ID=2028411): **RAPID: COVID-19-Net: Integrating Health, Pathogen and Environmental Data into a Knowledge Graph for Case Tracking, Analysis, and Forecasting**.
 
 
 
