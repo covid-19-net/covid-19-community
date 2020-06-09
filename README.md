@@ -1,23 +1,19 @@
-B# Covid-19-Community
+# Covid-19-Community
 
 This project is a community effort to build a Neo4j Knowledge Graph (KG) that links heterogenous data about COVID-19 to help fight this outbreak! It serves as a sandbox and incubator project and the best ideas will be incorporated into the Covid-19-Net KG.
 
 Join **"GraphHackers, Let’s Unite to Help Save the World — [Graphs4Good 2020](https://medium.com/neo4j/graphhackers-lets-unite-to-help-save-the-world-graphs4good-2020-fed53562b41f)"**.
 
-What kind of data can you contribute? Here are some of our ideas.
+What kind of data can you contribute? Here are some ideas:
 
 ![](docs/datatypes.png)
 
 ## How can you contribute?
 
 * File an [issue](https://github.com/covid-19-net/covid-19-community/issues/new) to discuss your idea so we can coordinate efforts
-
 * Help with [specific issues](https://github.com/covid-19-net/covid-19-community/labels/help%20wanted)
 * Suggest publically accessible data sets
-* Suggest graph queries to gain new insights from the KG
-* Add Jupyter Notebooks with data analyses
-* Add data and map visualizations
-* Help improve the data model
+* Add Jupyter Notebooks with data analyses, maps, and visualizations
 * Report bugs or issues
 
 ## Preliminary Knowledge Graph Schema
@@ -26,7 +22,7 @@ What kind of data can you contribute? Here are some of our ideas.
 
 The left side of the schema shows the geolocation hierarchy from the world to the city level (> 1000 citizens). The right side shows COVID-19 case counts and information about the host organisms, virus strains, genes, proteins, protein-protein interactions, and publications. Cases and Strains are linked to geolocations. The node NodeMetadata describes nodes in the Knowledge Graph and links to relevant ontologies (e.g., Infectious Disease Ontology).
 
-## Browsing the Knowledge Graph with the Neo4j Browser
+## Browse the Knowledge Graph with the Neo4j Browser
 
 **The Knowledge Graph is updated daily at 07:00 UTC.**
 
@@ -34,13 +30,13 @@ The left side of the schema shows the geolocation hierarchy from the world to th
 
 View of Neo4j Browser showing the result of a query about interactions of the Spike glycoprotein with human host proteins and related publications in PubMedCentral.
 
-You can browse the KG here:
+You can browse the Knowledge Graph here:
 
 [![Neo4j Browser](https://img.shields.io/badge/Launch-Neo4j%20Browser-bluegreen)](http://132.249.238.185:7474/)
 
 1. Enter *username:* reader, *password:* demo
 2. Click on the database icon on the top left, then click on any node label to start exploring the KG
-3. Run a [Cypher query](https://neo4j.com/docs/cypher-manual/current/introduction/)
+3. Try to run a Cypher query (see [introduction to Cypher](https://neo4j.com/docs/cypher-manual/current/introduction/)
 
 #### Example Cypher query: find viral strains collected in Los Angeles
 ```
@@ -59,39 +55,42 @@ ORDER BY deaths DESC;
 
 Note, some cases in the COVID-19 Data Repository by Johns Hopkins University cannot be mapped to a county or state location (e.g., correctional facilities, missing location data). Therefore, the results of this query will underreport the actual number of cases.
 
-[more documentations will come soon]
+## Query the Knowledge Graph in Jupyter Notebook
+Cypher queries can be run in Jupyter Notebooks to enable reproducible data analyses and visualizations.
 
-
-## How to use this project?
-This project uses Jupyter Notebooks to download and curate the latest data files, create a Neo4j graph database, and run Cypher queries on the graph database. The results of the queries can then be used in the Jupyter Notebooks for further analysis and visualizations.
-
-You can run the Jupyter Notebooks in this repo in your web browser:
+You can run the following Jupyter Notebooks in your web browser:
 
 [![Binder](https://aws-uswest2-binder.pangeo.io/badge_logo.svg)](https://aws-uswest2-binder.pangeo.io/v2/gh/covid-19-net/covid-19-community/master?urlpath=lab)
 
-Once Jupyter Lab launches, navigate to the notebooks folder and run the following notebooks:
+Once Jupyter Lab launches, navigate to the `notebooks/queries` directory and run the following notebooks:
 
 |Notebook|Description|
 |:-------|:----------|
-|[00e-GeoNamesCountry](notebooks/00e-GeoNamesCountry.ipynb)| Downloads country information from GeoNames.org|
-|[00f-GeoNamesAdmin1](notebooks/00f-GeoNamesAdmin1.ipynb)| Downloads first administrative divisions (State, Province, Municipality) information from GeoNames.org|
-|[00g-GeoNamesAdmin2](notebooks/00g-GeoNamesAdmin2.ipynb)| Downloads second administrative divisions (Counties in the US) information from GeoNames.org|
-|[00h-GeoNamesCity](notebooks/00h-GeoNamesCity.ipynb)| Downloads city information (cities > 1000 citizens) from GeoNames.org|
-|[00i-USCensusRegionDivisionState2017](notebooks/00i-USCensusRegionDivisionState2017.ipynb)| Downloads US regions, divisions, and assigns state FIPS codes from the US Census Bureau|
-|[00j-USCensusCountyCity2017](notebooks/00j-USCensusCountyCity2017.ipynb)| Downloads US County FIPS codes from the US Census Bureau|
-|[00k-UNRegion](notebooks/00k-UNRegion.ipynb)| Downloads UN geographic regions, subregions, and intermediate region information from United Nations|
-|[01a-NCBIStrain](notebooks/01a-NCBIStrain.ipynb)| Downloads the SARS-CoV-2 strain data from NCBI |
-|[01b-Nextstrain](notebooks/01b-Nextstrain.ipynb)| Downloads the SARS-CoV-2 strain metadata from Nextstrain|
-|[01c-NCBIRefSeq](notebooks/01c-NCBIRefSeq.ipynb)| Downloads the SARS-CoV-2 reference genome, genes, and protein products from NCBI|
-|[01d-CNCBStrain](notebooks/01d-CNCBStrain.ipynb)| Downloads SARS-CoV-2 viral strains and variation data from CNCB (China National Center for Bioinformation) [takes about 12 hours to run the first time, results are cached]|
-|[01d-CNCBStrainLocations](notebooks/01d-CNCBStrainLocations.ipynb)| Standardizes locations for variation data from CNCB (China National Center for Bioinformation) |
-|[01e-ProteinProteinInteraction](notebooks/01e-ProteinProteinInteraction.ipynb)| Downloads SARS-CoV-2 - human protein interaction data from IntAct|
-|[01h-PMCAccession](notebooks/01h-PMCAccession.ipynb)| Downloads PubMed Central articles that mention NCBI and GISAID strains|
-|[02a-JHUCases](notebooks/02a-JHUCases.ipynb)| Downloads cummulative confimed cases and deaths from the COVID-19 Data Repository by Johns Hopkins University|
-|[02a-JHUCasesLocation](notebooks/02a-JHUCasesLocation.ipynb)| Standardizes location data for the COVID-19 Data Repository by Johns Hopkins University|
+|[3-ExampleQueriesBioentities](notebooks/queries/3-ExampleQueriesBioentities.ipynb)| Runs example queries on the Knowledge Graph|
+|...|add examples here ...|
+
+## Data Download and Preparation
+The following notebooks download, clean, and standardize data in the form of .csv files for ingestion into the Knowledge Graph. The prepared data files are saved in the `NEO4J_HOME/import` directory and cached intermediate files are saved in the `NEO4J_HOME/import/cache` directory. The Knowledge Graph is updated daily at 07:00 UTC by running the [update script](scripts/update_kg.sh).
+
+|Notebook|Description|
+|:-------|:----------|
+|[00e-GeoNamesCountry](notebooks/dataprep/00e-GeoNamesCountry.ipynb)| Downloads country information from GeoNames.org|
+|[00f-GeoNamesAdmin1](notebooks/dataprep/00f-GeoNamesAdmin1.ipynb)| Downloads first administrative divisions (State, Province, Municipality) information from GeoNames.org|
+|[00g-GeoNamesAdmin2](notebooks/dataprep/00g-GeoNamesAdmin2.ipynb)| Downloads second administrative divisions (Counties in the US) information from GeoNames.org|
+|[00h-GeoNamesCity](notebooks/dataprep/00h-GeoNamesCity.ipynb)| Downloads city information (cities > 1000 citizens) from GeoNames.org|
+|[00i-USCensusRegionDivisionState2017](notebooks/dataprep/00i-USCensusRegionDivisionState2017.ipynb)| Downloads US regions, divisions, and assigns state FIPS codes from the US Census Bureau|
+|[00j-USCensusCountyCity2017](notebooks/dataprep/00j-USCensusCountyCity2017.ipynb)| Downloads US County FIPS codes from the US Census Bureau|
+|[00k-UNRegion](notebooks/dataprep/00k-UNRegion.ipynb)| Downloads UN geographic regions, subregions, and intermediate region information from United Nations|
+|[01a-NCBIStrain](notebooks/dataprep/01a-NCBIStrain.ipynb)| Downloads the SARS-CoV-2 strain data from NCBI |
+|[01b-Nextstrain](notebooks/dataprep/01b-Nextstrain.ipynb)| Downloads the SARS-CoV-2 strain metadata from Nextstrain|
+|[01c-NCBIRefSeq](notebooks/dataprep/01c-NCBIRefSeq.ipynb)| Downloads the SARS-CoV-2 reference genome, genes, and protein products from NCBI|
+|[01d-CNCBStrain](notebooks/dataprep/01d-CNCBStrain.ipynb)| Downloads SARS-CoV-2 viral strains and variation data from CNCB (China National Center for Bioinformation) [takes about 12 hours to run the first time, results are cached]|
+|[01d-CNCBStrainLocations](notebooks/dataprep/01d-CNCBStrainLocations.ipynb)| Standardizes locations for variation data from CNCB (China National Center for Bioinformation) |
+|[01e-ProteinProteinInteraction](notebooks/dataprep/01e-ProteinProteinInteraction.ipynb)| Downloads SARS-CoV-2 - human protein interaction data from IntAct|
+|[01h-PMCAccession](notebooks/dataprep/01h-PMCAccession.ipynb)| Downloads PubMed Central articles that mention NCBI and GISAID strains|
+|[02a-JHUCases](notebooks/dataprep/02a-JHUCases.ipynb)| Downloads cummulative confimed cases and deaths from the COVID-19 Data Repository by Johns Hopkins University|
+|[02a-JHUCasesLocation](notebooks/dataprep/02a-JHUCasesLocation.ipynb)| Standardizes location data for the COVID-19 Data Repository by Johns Hopkins University|
 |...|Future notebooks that add new data to the knowledge graph|
-|[2-CreateKnowledgeGraph](notebooks/2-CreateKnowledgeGraph.ipynb)|Creates a Neo4j Knowledge Graph by running the Cypher scripts in the cypher directory [does not work on Binder!]|
-|[3-ExampleQueriesRemote](notebooks/3-ExampleQueriesRemote.ipynb)| Runs [Cypher](https://neo4j.com/developer/cypher-query-language/) queries on the Knowledge Graph server|
 
 ## How to run this project locally
 
@@ -135,7 +134,7 @@ Set a NEO4J_HOME environment variable with the path to the database installation
 (Example path from Mac OS: /Users/username/Library/Application Support/Neo4j Desktop/Application/neo4jDatabases/database-993db298-6374-4f0a-9a9a-d0783480877a/installation-3.5.14)
 
 **5. Launch Jupyter Lab**
-Run the Jupyter Notebooks in order to download the latest data, create a new graph database, and then query then query the graph database.
+Run the Jupyter Notebooks in order to download the latest data (`notebooks/dataprep/`, create a new graph database (`notebooks/local/2-CreateKGLocal.ipynb`, and then query the graph database (`notebooks/queries`).
 
 ```
 jupyter lab

@@ -6,7 +6,6 @@ channels:
 
 dependencies:
   - python>=3.8
-  - openjdk=11.0.1
   - jupyterlab=2.1.1
   - pandas
   - xlrd
