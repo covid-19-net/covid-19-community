@@ -20,4 +20,4 @@ Strain,Genetic variant of an organism,A population of organisms that is genetica
 Clade,Group of organisms based on common ancestors,An identifier that denotes a group of organisms or groups of organisms based on common ancestors,SARS-CoV-2 A,http://purl.obolibrary.org/obo/APOLLO_SV_00000232
 Gene,Sequence of nucleotides,"Sequence of nucleotides in DNA or RNA that encodes the synthesis of a gene product, either RNA or protein",SARS-CoV-2 S gene,http://purl.obolibrary.org/obo/SO_0000704
 Protein,Sequence of amino acids,Proteins are large biomolecules consisting of chains of amino acid residues,Spike protein,http://purl.obolibrary.org/obo/SO_0000104
-Publication,Published document,A document that has been accepted by a publisher,,http://www.ontobee.org/ontology/IAO?iri=http://purl.obolibrary.org/obo/IAO_0000311
+Publication,Published document,A document that has been accepted by a publisher,,http://purl.obolibrary.org/obo/IAO_0000311
