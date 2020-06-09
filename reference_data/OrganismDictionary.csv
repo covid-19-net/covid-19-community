@@ -1,0 +1,16 @@
+# This file is used look up NCBI taxonomy ids for organism names
+#
+organism,taxonomyId
+human,taxonomy:9606
+homo sapiens,taxonomy:9606
+mus musculus,taxonomy:10090
+rhinolophus affinis,taxonomy:59477 
+rhinolophus malayanus,taxonomy:608659
+mustela lutreola,taxonomy:9666
+panthera tigris jacksoni,taxonomy:419130
+rhinolophus sp. (bat),taxonomy:49442
+bat,taxonomy:49442
+manis javanica,taxonomy:9974
+palm civet,taxonomy:71116
+canine,taxonomy:9608
+felis catus,taxonomy:9685
