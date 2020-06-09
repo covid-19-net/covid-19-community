@@ -14,7 +14,7 @@ USDivision,Subregions of US,Divisions defined by the US Census Burea,Pacific Div
 Cases,Case counts,Number of case for outbreaks or diseases at specific dates and locations,COVID-19-YYYYMMDD,
 Outbreak,Increase in disease occurance,"Statistically significant increase in disease occurance in a community, population, or region",COVID-19,http://purl.obolibrary.org/obo/IDO_0000502
 Organism,Living system,"Individual living system, such as animal, plant, bacteria or virus, that is capable of replicating or reproducing, growth and maintenance in the right environment",Homo sapiens,http://purl.obolibrary.org/obo/OBI_0100026
-Host,Host organism for a virus,"A host organism provides an environment supportive for the survival, growth, maturation, or reproduction of a virus",human,http://www.ontobee.org/ontology/IDO?iri=http://purl.obolibrary.org/obo/IDO_0000408
+Host,Host organism for a virus,"A host organism provides an environment supportive for the survival, growth, maturation, or reproduction of a virus",Homo sapiens,http://purl.obolibrary.org/obo/IDO_0000531
 Pathogen,Diseae causing organism,"A bacterium, virus, or other microorganism that can cause disease",SARS-CoV-2,http://purl.obolibrary.org/obo/IDO_0000528
 Strain,Genetic variant of an organism,A population of organisms that is geneticaly different from others of the same species and possessing a set of defined characteristics,COVID-19 strain,https://semanticscience.org/resource/SIO_010055.rdf
 Clade,Group of organisms based on common ancestors,An identifier that denotes a group of organisms or groups of organisms based on common ancestors,SARS-CoV-2 A,http://purl.obolibrary.org/obo/APOLLO_SV_00000232
