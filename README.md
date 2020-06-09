@@ -20,7 +20,7 @@ What kind of data can you contribute? Here are some ideas:
 
 ![](docs/KG-Schema.png)
 
-The left side of the schema shows the geolocation hierarchy from the world to the city level (> 1000 citizens). The right side shows COVID-19 case counts and information about the host organisms, virus strains, genes, proteins, protein-protein interactions, and publications. Cases and Strains are linked to geolocations. The node NodeMetadata describes nodes in the Knowledge Graph and links to relevant ontologies (e.g., Infectious Disease Ontology).
+The node [NodeMetadata](reference_data/NodeMetadata.csv) describes nodes in the Knowledge Graph and links to relevant ontologies (e.g., Infectious Disease Ontology). The left side of the schema shows the geolocation hierarchy from the world to the city level (> 1000 citizens). The right side shows COVID-19 case counts and information about the host organisms, virus strains, genes, proteins, protein-protein interactions, and publications. Cases and Strains are linked to geolocations. 
 
 ## Browse the Knowledge Graph with the Neo4j Browser
 
