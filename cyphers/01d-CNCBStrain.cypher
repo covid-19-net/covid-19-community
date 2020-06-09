@@ -62,7 +62,7 @@ FROM 'FILE:///01d-CNCBVariant.csv' AS row
 MERGE (v:Variant{id: row.referenceGenome + ':' + row.start + '-' + row.end + '-' + row.ref + '-' + row.alt})
 SET v.name = row.geneVariant, v.geneVariant = row.geneVariant, v.proteinVariant = row.proteinVariant, v.variantType = row.variantType, v.variantConsequence = row.variantConsequence, 
 v.start = toInteger(row.start), v.end = toInteger(row.end), v.ref = row.ref, v.alt = row.alt, 
-v.taxonomyId = row.taxonomyId, v.referenceGenome = row.referenceGenome
+v.taxonomyId = row.taxonomyId, v.referenceGenome = row.referenceGenome, v.proteinPosition = row.proteinPosition
 RETURN count(v) as Variant
 ;
 LOAD CSV WITH HEADERS 
