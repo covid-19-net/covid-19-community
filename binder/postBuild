@@ -1,4 +1,4 @@
 #!/bin/bash
 VERSION="neo4j-community-4.0.3"
 export NEO4J_HOME=${CONDA_DIR}/$VERSION
-mkdir $NEO4J_HOME/import
+mkdir -p $NEO4J_HOME/import
