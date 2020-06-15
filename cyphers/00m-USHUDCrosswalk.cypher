@@ -1,6 +1,6 @@
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
-FROM 'FILE:///00m-USHUDCrosswalkCountyToZip2020Q1.csv' AS row
+FROM 'FILE:///00m-USHUDCrosswalkZipToCounty2020Q1.csv' AS row
 // adding zip to avoid conflicts with other location ids
 MERGE (p:PostalCode:Location{id: 'zip' + row.zip})
 SET p.name = row.zip
