@@ -24,5 +24,8 @@ do
   papermill $f "$LOGDIR"/$f
 done
 
+# deactivate conda environment
+conda deactivate &>> $LOGDIR/update.log
+
 # run Cypher scripts to upload the data into the knowledge graph
 $COVID19/scripts/run_cyphers.sh 
