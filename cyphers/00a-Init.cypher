@@ -9,7 +9,7 @@ CALL apoc.schema.assert({},{});
 
 // create full text search indices
 CALL db.index.fulltext.createNodeIndex('locations',['World', 'UNRegion', 'UNSubRegion', 'UNIntermediateRegion', 'Country', 'Admin1', 'Admin2', 'USRegion', 'USDivision', 'City', 'CruiseShip', 'PostalCode','Tract'],['name', 'iso', 'iso3', 'fips', 'geoId']);
-CALL db.index.fulltext.createNodeIndex('bioentities',['ProteinName', 'Protein', 'Gene', 'Strain', 'Organism', 'Outbreak'],['name', 'scientificName', 'taxonomyId', 'proteinVariant', 'variantType', 'variantConsequence']);
+CALL db.index.fulltext.createNodeIndex('bioentities',['ProteinName', 'Protein', 'Gene', 'Strain', 'Variant', 'Organism', 'Outbreak'],['name', 'scientificName', 'taxonomyId', 'proteinVariant', 'variantType', 'variantConsequence']);
                                                                                             
 // create constraints and indices
 CREATE CONSTRAINT location ON (n:Location) ASSERT n.id IS UNIQUE;
