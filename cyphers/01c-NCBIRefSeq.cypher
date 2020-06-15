@@ -19,13 +19,13 @@ RETURN count(p) as Protein
 ;
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///01c-NCBIRefSeq.csv' AS row 
-MERGE (p:ProteinName{id: row.id})
+MERGE (p:ProteinName{id: row.proteinName + row.proteinAccession})
 SET p.name = row.proteinName, p.accession = row.proteinAccession
 RETURN count(p) as ProteinName
 ;
 LOAD CSV WITH HEADERS FROM "FILE:///01c-NCBIRefSeq.csv" AS row
 MATCH (p:Protein{id: row.id})
-MATCH (pn:ProteinName{id: row.id})
+MATCH (pn:ProteinName{id: row.proteinName + row.proteinAccession})
 MERGE (p)-[n:NAMED_AS]->(pn)
 RETURN count(n) as NAMED_AS
 ;
