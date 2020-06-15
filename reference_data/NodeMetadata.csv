@@ -8,6 +8,7 @@ Country,Countries and dependent Territories, Countries and dependent Territories
 Admin1,"State, Province, Municipality","First administrative divisions, e.g, State, Province, Municipality",California,http://www.geonames.org/
 Admin2, County,Second administrative divisions: County in the US,San Diego County,http://www.geonames.org/
 City,City,City,San Diego,http://www.geonames.org/
+PostalCode,Postal Code,E.g., a ZIP Code is a postal code used by the United States Postal Service (USPS). The term ZIP is an acronym for Zone Improvement Plan,http://purl.obolibrary.org/obo/OPMI_0000120
 CruiseShip,"Cruise ship","Cruise ship","Diamond Princess",http://www.productontology.org/doc/Cruise_ship
 USRegion,Regions of the US,Regions defined by the US Census Bureau,West Region,https://www.census.gov/geographies/reference-files/2017/demo/popest/2017-fips.html
 USDivision,Subregions of US,Divisions defined by the US Census Burea,Pacific Division,https://www.census.gov/geographies/reference-files/2017/demo/popest/2017-fips.html
