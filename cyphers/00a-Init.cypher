@@ -4,12 +4,7 @@ MATCH (n) DETACH DELETE n;
 // delete all constraints and indices
 CALL db.index.fulltext.drop('locations');
 CALL db.index.fulltext.drop('bioentities');
-CALL apoc.schema.assert({},{});
-
-
-// create full text search indices
-CALL db.index.fulltext.createNodeIndex('locations',['World', 'UNRegion', 'UNSubRegion', 'UNIntermediateRegion', 'Country', 'Admin1', 'Admin2', 'USRegion', 'USDivision', 'City', 'CruiseShip', 'PostalCode','Tract'],['name', 'iso', 'iso3', 'fips', 'geoId']);
-CALL db.index.fulltext.createNodeIndex('bioentities',['ProteinName', 'Protein', 'Gene', 'Strain', 'Variant', 'Organism', 'Outbreak'],['name', 'scientificName', 'taxonomyId', 'accession', 'genomeAccession', 'proteinVariant', 'variantType', 'variantConsequence']);
+CALL apoc.schema.assert({},{}, true);
                                                                                             
 // create constraints and indices
 CREATE CONSTRAINT location ON (n:Location) ASSERT n.id IS UNIQUE;
@@ -28,10 +23,12 @@ CREATE INDEX admin1_p FOR (n:Admin1) ON (n.parentId);
 CREATE CONSTRAINT usregion ON (n:USRegion) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT usdivision ON (n:USDivision) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT admin2 ON (n:Admin2) ASSERT n.id IS UNIQUE;
+CREATE INDEX admin2_f FOR (n:Admin2) ON (n.fips);
 CREATE INDEX admin2_g FOR (n:Admin2) ON (n.geoId);
 CREATE INDEX admin2_n FOR (n:Admin2) ON (n.name);
 CREATE CONSTRAINT city ON (n:City) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT postalcode ON (n:PostalCode) ASSERT n.id IS UNIQUE;
+CREATE INDEX postalcode_n FOR (n:PostalCode) ON (n.name);
 CREATE CONSTRAINT tract ON (n:Tract) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT cruiseship ON (n:CruiseShip) ASSERT n.id IS UNIQUE;
                                    
@@ -57,5 +54,7 @@ CREATE INDEX cases_d FOR (n:Cases) ON (n.date);
 CALL db.constraints();
 CALL db.indexes();
 
-
+// create full text search indices
+CALL db.index.fulltext.createNodeIndex('locations',['World', 'UNRegion', 'UNSubRegion', 'UNIntermediateRegion', 'Country', 'Admin1', 'Admin2', 'USRegion', 'USDivision', 'City', 'CruiseShip', 'PostalCode','Tract'],['name', 'iso', 'iso3', 'fips', 'geoId']);
+CALL db.index.fulltext.createNodeIndex('bioentities',['ProteinName', 'Protein', 'Gene', 'Strain', 'Variant', 'Organism', 'Outbreak'],['name', 'scientificName', 'taxonomyId', 'accession', 'genomeAccession', 'proteinVariant', 'variantType', 'variantConsequence']);
 
