@@ -9,7 +9,7 @@ CALL apoc.schema.assert({},{});
 
 // create full text search indices
 CALL db.index.fulltext.createNodeIndex('locations',['World', 'UNRegion', 'UNSubRegion', 'UNIntermediateRegion', 'Country', 'Admin1', 'Admin2', 'USRegion', 'USDivision', 'City', 'CruiseShip', 'PostalCode','Tract'],['name', 'iso', 'iso3', 'fips', 'geoId']);
-CALL db.index.fulltext.createNodeIndex('bioentities',['ProteinName', 'Protein', 'Gene', 'Strain', 'Variant', 'Organism', 'Outbreak'],['name', 'scientificName', 'taxonomyId', 'proteinVariant', 'variantType', 'variantConsequence']);
+CALL db.index.fulltext.createNodeIndex('bioentities',['ProteinName', 'Protein', 'Gene', 'Strain', 'Variant', 'Organism', 'Outbreak'],['name', 'scientificName', 'taxonomyId', 'accession', 'genomeAccession', 'proteinVariant', 'variantType', 'variantConsequence']);
                                                                                             
 // create constraints and indices
 CREATE CONSTRAINT location ON (n:Location) ASSERT n.id IS UNIQUE;
@@ -42,6 +42,7 @@ CREATE CONSTRAINT strain ON (n:Strain) ASSERT n.id IS UNIQUE;
 CREATE INDEX strain_n FOR (n:Strain) ON (n.name);
 CREATE CONSTRAINT variant ON (n:Variant) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT gene ON (n:Gene) ASSERT n.id IS UNIQUE;
+CREATE INDEX gene_a FOR (n:Gene) ON (n.genomeAccession);
 CREATE INDEX gene_s FOR (n:Gene) ON (n.start);
 CREATE INDEX gene_e FOR (n:Gene) ON (n.end);
 CREATE CONSTRAINT protein ON (n:Protein) ASSERT n.id IS UNIQUE;
