@@ -43,7 +43,7 @@ USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS
 FROM 'FILE:///01d-CNCBStrain.csv' AS row
 WITH row WHERE row.locationLevels='2'
-MATCH (c:Country{name: row.country})<-[:IN*1..2]-(l1:Location{name: row.admin1})<-[:IN*]-(l2:Location{name: row.admin2})
+MATCH (c:Country{name: row.country})<-[:IN*1..2]-(l1:Location{name: row.admin1})<-[:IN*1..2]-(l2:Location{name: row.admin2})
 MATCH (s:Strain{id: row.id})
 MERGE (s)-[h:FOUND_IN]->(l2)
 RETURN count(h) as FOUND_IN_2
@@ -52,9 +52,9 @@ USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS
 FROM 'FILE:///01d-CNCBStrain.csv' AS row
 WITH row WHERE row.locationLevels='3'
-MATCH (c:Country{name: row.country})<-[:IN]-(l1:Location{name: row.admin1})<-[:IN]-(l2:Location{name: row.admin2})<-[:IN]-(l3:Location{name: row.city})
+MATCH (:Country{name: row.country})<-[:IN]-(:Admin1{name: row.admin1})<-[:IN]-(:Admin2{name: row.admin2})<-[:IN]-(c:City{name: row.city})
 MATCH (s:Strain{id: row.id})
-MERGE (s)-[h:FOUND_IN]->(l3)
+MERGE (s)-[h:FOUND_IN]->(c)
 RETURN count(h) as FOUND_IN_3
 ;
 USING PERIODIC COMMIT
