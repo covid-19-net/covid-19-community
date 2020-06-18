@@ -1,6 +1,6 @@
 # Covid-19-Community
 
-This project is a community effort to build a Neo4j Knowledge Graph (KG) that links heterogenous data about COVID-19 to help fight this outbreak! It serves as a sandbox and incubator project and the best ideas will be incorporated into the Covid-19-Net KG.
+This project is a community effort to build a Neo4j Knowledge Graph (KG) that links [heterogenous data](../reference_data/DataProviders.csv) about COVID-1. It serves as a sandbox and incubator project and the best ideas will be incorporated into the COVID-19-Net KG.
 
 Join **"GraphHackers, Let’s Unite to Help Save the World — [Graphs4Good 2020](https://medium.com/neo4j/graphhackers-lets-unite-to-help-save-the-world-graphs4good-2020-fed53562b41f)"**.
 
@@ -16,15 +16,17 @@ What kind of data can you contribute? Here are some ideas:
 * Add Jupyter Notebooks with data analyses, maps, and visualizations
 * Report bugs or issues
 
-## Preliminary Knowledge Graph Schema
+## Knowledge Graph Schema
 
 ![](docs/KG-Schema.png)
 
 The node [NodeMetadata](reference_data/NodeMetadata.csv) describes nodes in the Knowledge Graph and links to relevant ontologies (e.g., Infectious Disease Ontology). The left side of the schema shows the geolocation hierarchy from the world to the city level (> 1000 citizens), as well as PostalCode (US Zip) and US Census Tract. The right side shows COVID-19 case counts and information about the host organisms, virus strains, genes, proteins, protein-protein interactions, and publications. Cases and Strains are linked to geolocations. 
 
+Note, this KG is work in progress and may change frequently.
+
 ## Browse the Knowledge Graph with the Neo4j Browser
 
-**The Knowledge Graph is updated daily at 07:00 UTC.**
+**The Knowledge Graph is updated daily between 07:00 and 08:00 UTC.**
 
 ![](docs/Browser.png)
 
@@ -36,17 +38,53 @@ You can browse the Knowledge Graph here:
 
 1. Enter *username:* reader, *password:* demo
 2. Click on the database icon on the top left, then click on any node label to start exploring the KG
-3. Try to run a Cypher query (see [introduction to Cypher](https://neo4j.com/docs/cypher-manual/current/introduction/)
+3. Run a query by pasting an example query (see below) or our own query into the search box.
+
+### Full-text Query
+The Knowledge Graph can be searched by `locations` (geographic locations and cruise ship names) and `bioentities` (proteins, genes, strains, organisms) using a full-text search. The results contain exact and approximate matches.
+
+#### Example full-text query: find spike proteins
+***Query:***
+```
+CALL db.index.fulltext.queryNodes("bioentities", "spike") YIELD node
+```
+
+***Result:***
+
+![](docs/Spike-Query-Node.png)
+
+#### Example full-text query: find spike proteins - tabular results
+The following query returns the names of the matched bioentities and the labels of the nodes (e.g., Protein, ProteinName) sorted by the match score in descending order.
+
+***Query:***
+```
+CALL db.index.fulltext.queryNodes("bioentities", "spike") YIELD node, score
+RETURN node.name, labels(node), score
+```
+
+***Result:***
+
+![](docs/Spike-Query-Text.png)
+
+### Cypher Query
+
+Specific Nodes and Relationships in the KG can be searched using the [Cypher query language](https://neo4j.com/docs/cypher-manual/current/introduction/).
 
 #### Example Cypher query: find viral strains collected in Los Angeles
+
+***Query:***
 ```
 MATCH (s:Strain)-[:FOUND_IN]->(l:Location{name: 'Los Angeles'}) RETURN s, l
 ```
+
+***Result:***
 ![](docs/LA_strains.png)
 
 This subgraph shows two viral strains (green) of the [SARS-CoV-2 virus](https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=2697049) carried by a [human](https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=9606) host in Los Angeles (organisms in yellow). The strains have several variants (e.g., mutations)(red) in common. Details of the high-lighted variant is shown at the bottom. This variant is a [missense mutation](https://en.wikipedia.org/wiki/Missense_mutation): the base "G" ([Guanine](https://en.wikipedia.org/wiki/guanine)) found in the [Wuhan-HU-1 reference genome](https://www.ncbi.nlm.nih.gov/nuccore/MN908947.3) was mutated to a "C" ([Cytosine](https://en.wikipedia.org/wiki/cytosine)) at position 28077 in this strain (ORF8:c.184Gtg>Ctg), resulting in the encoded ORF8 protein ([QHD43422.1](https://www.ncbi.nlm.nih.gov/protein/1791269096)) to be changed from a "V" ([Valine](https://en.wikipedia.org/wiki/Valine)) to an "L" ([Leucine](https://en.wikipedia.org/wiki/Leucine)) amino acid at position 62 (QHD43422.1:p.62V>L). Two publications: [PMC7166309](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7166309/) and [PMC7106203](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7106203/) (blue) mention this strain.
 
 #### Example Cypher query: aggregate cummulative COVID-19 case numbers at the US state (Admin1) level
+
+***Query:***
 ```
 MATCH (o:Outbreak{id: "COVID-19"})<-[:RELATED_TO]-(c:Cases{date: date("2020-05-04")})-[:REPORTED_IN]->(a:Admin2)-[:IN]->(a1:Admin1)
 RETURN a1.name as state, sum(c.cummulativeConfirmed) as confirmed, sum(c.cummulativeDeaths) as deaths
@@ -70,8 +108,8 @@ Once Jupyter Lab launches, navigate to the `notebooks/queries` directory and run
 |[AnalyzeVariantsSpikeGlycoprotein](notebooks/queries/AnalyzeVariantsSpikeGlycoprotein.ipynb)| Analyze SARS-CoV-2 Spike Glycoprotein Variants|
 |...|add examples here ...|
 
-## Data Download and Preparation
-The following notebooks download, clean, and standardize data in the form of .csv files for ingestion into the Knowledge Graph. The prepared data files are saved in the `NEO4J_HOME/import` directory and cached intermediate files are saved in the `NEO4J_HOME/import/cache` directory. The Knowledge Graph is updated daily at 07:00 UTC by running the [update script](scripts/update_kg.sh).
+## Data Download, Preparation, and Integration
+The following notebooks download, clean, standardize, and integrate data in the form of .csv files for ingestion into the Knowledge Graph. The prepared data files are saved in the `NEO4J_HOME/import` directory and cached intermediate files are saved in the `NEO4J_HOME/import/cache` directory. These notebooks are run daily at 07:00 UTC using the [update script](scripts/update_kg.sh) to download the latest data and update the Knowlege Graph.
 
 |Notebook|Description|
 |:-------|:----------|
@@ -93,7 +131,7 @@ The following notebooks download, clean, and standardize data in the form of .cs
 |[02a-JHUCasesLocation](notebooks/dataprep/02a-JHUCasesLocation.ipynb)| Standardizes location data for the COVID-19 Data Repository by Johns Hopkins University|
 |...|Future notebooks that add new data to the knowledge graph|
 
-## How to run this project locally
+## How to run Jupyter Notebook Examples locally
 
 **1. Fork this project**
 
@@ -120,30 +158,58 @@ Activate the conda environment
 conda activate covid-19-community
 ```
 
-**3. Install Neo4j Desktop**
-
-[Download Neo4j](https://neo4j.com/download/)
-
-Then, launch the Neo4j Browser, create an empty database, and set the password to "neo4jbinder"
-
-**4. Set Environment Variable**
-
-*TODO* add more documentation here ...
-
-Set a NEO4J_HOME environment variable with the path to the database installation.
-
-(Example path from Mac OS: /Users/username/Library/Application Support/Neo4j Desktop/Application/neo4jDatabases/database-993db298-6374-4f0a-9a9a-d0783480877a/installation-3.5.14)
-
-**5. Launch Jupyter Lab**
-Run the Jupyter Notebooks in order to download the latest data (`notebooks/dataprep/`, create a new graph database (`notebooks/local/2-CreateKGLocal.ipynb`, and then query the graph database (`notebooks/queries`).
-
+**3. Launch Jupyter Lab**
 ```
 jupyter lab
 ```
 
-**6. Browse KG in Neo4j Browser**
+Navigate to the [`notebooks/queries`](notebooks/queries/) directory to run the example Jupyter Notebooks.
 
-After you create the graph database by running the Jupyter Notebooks, start the database in Neo4j Browser to interactively explore the KG.
+## How to run the Data Download and Preparation steps locally
+
+Note, the following steps have been implemented for MacOS and Linux only. 
+
+Some steps will take a very long time, e.g., notebook [01d-CNCBStrain](notebooks/dataprep/01d-CNCBStrain.ipynb) may take more than 12 hours to run the first time.
+
+Follow steps 1. - 3. from above.
+
+**4. Install Neo4j Desktop**
+
+[Download Neo4j](https://neo4j.com/download/)
+
+Then, launch the Neo4j Browser, create an empty database, set the password to "neo4jbinder", and close the database.
+
+**5. Set Environment Variable**
+
+Add the environment variable `NEO4J_HOME` with the path to the Neo4j database installation to your .bash_profile file, e.g.
+
+`export NEO4J_HOME="/Users/username/Library/Application Support/Neo4j Desktop/Application/neo4jDatabases/database-.../installation-4.0.3"`
+
+**6. Run Data Download Notebooks**
+
+Start Jupyter Lab.
+```
+jupyter lab
+```
+Navigate to the (`notebooks/dataprep/`) directory and run all notebooks in alphabetical order to download, clean, standardize and save the data in the `NEO4J_HOME/import` directory for ingestion into the Neo4j database.
+
+**7. Upload Data into a Local Neo4j Database**
+
+Afer all data files have been created in step 6, run (`notebooks/local/2-CreateKGLocal.ipynb` to import the data into your local Neo4j database. Make sure the Neo4j Browser is closed before running the database import!
+
+**8. Browse local KG in Neo4j Browser**
+
+After step 7 has completed, start the database in the Neo4j Browser to interactively explore the KG or run local queries.
+
+## Citation
+Peter W. Rose, Ilya Zaslavsky, COVID-19-Net. Available online: https://github.com/covid-19-net/covid-19-community (2020).
+
+Please also cite the [data providers](reference_data/DataProviders.csv).
+
+## Data Providers
+The schema below shows how data sources are integrated into the nodes of the Knowledge Graph.
+
+![](docs/DataProviders.png)
 
 ## Funding
 Development of this prototype is in part supported by the National Science Foundation under Award Numbers:

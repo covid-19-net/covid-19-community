@@ -1,0 +1,13 @@
+id,name,url,license
+GeoNames,GeoNames geographical database,http://www.geonames.org/,https://creativecommons.org/licenses/by/4.0/
+USCensus,U.S. Census Bureau,https://www.census.gov/en.html,https://www.census.gov/about/policies.html
+HUD,U.S. Department of Housing and Urban Development,https://www.hud.gov/,https://www.huduser.gov/portal/datasets/pdrdatas.html
+UNSD,Statistics Division of the United Nations Secretariat,https://unstats.un.org/home/,https://www.un.org/en/sections/about-website/terms-use/index.html
+JHU,"COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University",https://github.com/CSSEGISandData/COVID-19,"https://github.com/CSSEGISandData/COVID-19#covid-19-data-repository-by-the-center-for-systems-science-and-engineering-csse-at-johns-hopkins-university"
+NCBI,National Center for Biotechnology Information,https://www.ncbi.nlm.nih.gov/,https://www.ncbi.nlm.nih.gov/home/about/policies/
+CNCB,China National Center for Bioinformation,https://bigd.big.ac.cn/ncov/release_genome?lang=en,https://creativecommons.org/licenses/by/3.0/
+UniProt,Universal Protein Resource,https://www.uniprot.org/,https://creativecommons.org/licenses/by/4.0/
+Nextstrain,Nextstrain,https://nextstrain.org/,
+IntAct,IntAct Molecular Interaction Database,https://www.ebi.ac.uk/intact/,https://www.ebi.ac.uk/about/terms-of-use/
+EuropePMC,Europe PMC,https://europepmc.org/,https://www.ebi.ac.uk/about/terms-of-use/
+DO,Disease Ontology,https://disease-ontology.org/,

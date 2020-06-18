@@ -1,24 +1,25 @@
-name,shortDescription,description,example,details
-Location,Geographic location,A geograpic location,"World, ..., Country, State, Country, City, Cruise ship",
+name,shortDescription,description,example,definitionSource,dataProviders
+Location,Geographic location,A geographic location,"World, ..., Country, State, Country, City, Cruise ship",,GeoNames;UNSD;USCensus;HUD;JHU
 World, The World, Top level location,,
-UNRegion, Continental regions, Continental regions according to the M49 standard defined by the Statistics Division of the United Nations Secretariat,Americas,https://unstats.un.org/unsd/methodology/m49/
-UNSubRegion, Subcontinental regions,Subcontinental regions according to the M49 standard defined by the Statistics Division of the United Nations Secretariat,Latin America and the Caribbean,https://unstats.un.org/unsd/methodology/m49/
-UNIntermediateRegion,Subdivisions of subcontinental regions,Subdivisions of subcontinental regions according to the M49 standard defined by the Statistics Division of the United Nations Secretariat,Caribbean,https://unstats.un.org/unsd/methodology/m49/
-Country,Countries and dependent Territories, Countries and dependent Territories defined by ISO,United States,http://www.geonames.org/
-Admin1,"State, Province, Municipality","First administrative divisions, e.g, State, Province, Municipality",California,http://www.geonames.org/
-Admin2, County,Second administrative divisions: County in the US,San Diego County,http://www.geonames.org/
-City,City,City,San Diego,http://www.geonames.org/
-PostalCode,Postal Code,E.g., a ZIP Code is a postal code used by the United States Postal Service (USPS). The term ZIP is an acronym for Zone Improvement Plan,http://purl.obolibrary.org/obo/OPMI_0000120
-CruiseShip,"Cruise ship","Cruise ship","Diamond Princess",http://www.productontology.org/doc/Cruise_ship
-USRegion,Regions of the US,Regions defined by the US Census Bureau,West Region,https://www.census.gov/geographies/reference-files/2017/demo/popest/2017-fips.html
-USDivision,Subregions of US,Divisions defined by the US Census Burea,Pacific Division,https://www.census.gov/geographies/reference-files/2017/demo/popest/2017-fips.html
-Cases,Case counts,Number of case for outbreaks or diseases at specific dates and locations,COVID-19-YYYYMMDD,
-Outbreak,Increase in disease occurance,"Statistically significant increase in disease occurance in a community, population, or region",COVID-19,http://purl.obolibrary.org/obo/IDO_0000502
-Organism,Living system,"Individual living system, such as animal, plant, bacteria or virus, that is capable of replicating or reproducing, growth and maintenance in the right environment",Homo sapiens,http://purl.obolibrary.org/obo/OBI_0100026
-Host,Host organism for a virus,"A host organism provides an environment supportive for the survival, growth, maturation, or reproduction of a virus",Homo sapiens,http://purl.obolibrary.org/obo/IDO_0000531
-Pathogen,Diseae causing organism,"A bacterium, virus, or other microorganism that can cause disease",SARS-CoV-2,http://purl.obolibrary.org/obo/IDO_0000528
-Strain,Genetic variant of an organism,A population of organisms that is geneticaly different from others of the same species and possessing a set of defined characteristics,COVID-19 strain,https://semanticscience.org/resource/SIO_010055.rdf
-Clade,Group of organisms based on common ancestors,An identifier that denotes a group of organisms or groups of organisms based on common ancestors,SARS-CoV-2 A,http://purl.obolibrary.org/obo/APOLLO_SV_00000232
-Gene,Sequence of nucleotides,"Sequence of nucleotides in DNA or RNA that encodes the synthesis of a gene product, either RNA or protein",SARS-CoV-2 S gene,http://purl.obolibrary.org/obo/SO_0000704
-Protein,Sequence of amino acids,Proteins are large biomolecules consisting of chains of amino acid residues,Spike protein,http://purl.obolibrary.org/obo/SO_0000104
-Publication,Published document,A document that has been accepted by a publisher,,http://purl.obolibrary.org/obo/IAO_0000311
+UNRegion, Continental regions, Continental regions according to the M49 standard defined by the Statistics Division of the United Nations Secretariat,Americas,https://unstats.un.org/unsd/methodology/m49/,UNSD
+UNSubRegion, Subcontinental regions,Subcontinental regions according to the M49 standard defined by the Statistics Division of the United Nations Secretariat,Latin America and the Caribbean,https://unstats.un.org/unsd/methodology/m49/,UNSD
+UNIntermediateRegion,Subdivisions of subcontinental regions,Subdivisions of subcontinental regions according to the M49 standard defined by the Statistics Division of the United Nations Secretariat,Caribbean,https://unstats.un.org/unsd/methodology/m49/,UNSD
+Country,Countries and dependent Territories, Countries and dependent Territories defined by ISO,United States,http://www.geonames.org/,GeoNames
+Admin1,"State, Province, Municipality","First administrative divisions, e.g, State, Province, Municipality",California,http://www.geonames.org/,GeoNames;USCensus
+Admin2, County,Second administrative divisions: County in the US,San Diego County,http://www.geonames.org/,GeoNames;USCensus
+City,City,City,San Diego,http://www.geonames.org/,GeoNames;USCensus
+PostalCode,Postal Code,"E.g., a ZIP Code is a postal code used by the United States Postal Service (USPS)",92121,http://purl.obolibrary.org/obo/OPMI_0000120,HUD
+Tract,Census tract,"Census tracts are small, relatively permanent statistical subdivisions of a county",06073008346,https://www2.census.gov/geo/pdfs/education/CensusTracts.pdf,HUD
+CruiseShip,"Cruise ship","Cruise ship","Diamond Princess",http://www.productontology.org/doc/Cruise_ship,JHU
+USRegion,Regions of the US,Regions defined by the US Census Bureau,West Region,https://www.census.gov/geographies/reference-files/2017/demo/popest/2017-fips.html,USCensus
+USDivision,Subregions of US,Divisions defined by the US Census Burea,Pacific Division,https://www.census.gov/geographies/reference-files/2017/demo/popest/2017-fips.html,USCensus
+Cases,Case counts,Number of case for outbreaks or diseases at specific dates and locations,COVID-19-YYYYMMDD,,JHU
+Outbreak,Increase in disease occurance,"Statistically significant increase in disease occurance in a community, population, or region",COVID-19,http://purl.obolibrary.org/obo/IDO_0000502,DO;JHU
+Organism,Living system,"Individual living system, such as animal, plant, bacteria or virus, that is capable of replicating or reproducing, growth and maintenance in the right environment",Homo sapiens,http://purl.obolibrary.org/obo/OBI_0100026,NCBI
+Host,Host organism for a virus,"A host organism provides an environment supportive for the survival, growth, maturation, or reproduction of a virus",Homo sapiens,http://purl.obolibrary.org/obo/IDO_0000531,NCBI;CNCB;Nextstrain
+Pathogen,Diseae causing organism,"A bacterium, virus, or other microorganism that can cause disease",SARS-CoV-2,http://purl.obolibrary.org/obo/IDO_0000528,NCBI;CNCB;Nextstrain
+Strain,Genetic variant of an organism,A population of organisms that is geneticaly different from others of the same species and possessing a set of defined characteristics,COVID-19 strain,https://semanticscience.org/resource/SIO_010055.rdf,NCBI;CNCB;Nextstrain
+Clade,Group of organisms based on common ancestors,An identifier that denotes a group of organisms or groups of organisms based on common ancestors,SARS-CoV-2 A,http://purl.obolibrary.org/obo/APOLLO_SV_00000232,Nextstrain
+Gene,Sequence of nucleotides,"Sequence of nucleotides in DNA or RNA that encodes the synthesis of a gene product, either RNA or protein",SARS-CoV-2 S gene,http://purl.obolibrary.org/obo/SO_0000704,NCBI
+Protein,Sequence of amino acids,Proteins are large biomolecules consisting of chains of amino acid residues,Spike protein,http://purl.obolibrary.org/obo/SO_0000104,NCBI;UniProt;IntAct
+Publication,Published document,A document that has been accepted by a publisher,,http://purl.obolibrary.org/obo/IAO_0000311,EuropePMC

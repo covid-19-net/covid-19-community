@@ -27,6 +27,7 @@ function run_cypher {
 cp $REFDATA/Organism.csv "$NEO4J_HOME"/import
 cp $REFDATA/Outbreak.csv "$NEO4J_HOME"/import
 cp $REFDATA/NodeMetadata.csv "$NEO4J_HOME"/import
+cp $REFDATA/DataProvider.csv "$NEO4J_HOME"/import
 
 # Set up the database
 run_cypher 00a-Init.cypher
@@ -41,6 +42,7 @@ run_cypher 00j-USCensusCountyCity2017.cypher
 run_cypher 00k-UNRegion.cypher
 run_cypher 00m-USHUDCrosswalk.cypher
 run_cypher 00x-NodeMetadata.cypher
+run_cypher 00y-DataProvider.cypher
 run_cypher 01a-NCBIStrain.cypher
 run_cypher 01b-Nextstrain.cypher
 run_cypher 01c-NCBIRefSeq.cypher
