@@ -13,7 +13,7 @@ Tract,Census tract,"Census tracts are small, relatively permanent statistical su
 CruiseShip,"Cruise ship","Cruise ship","Diamond Princess",http://www.productontology.org/doc/Cruise_ship,JHU
 USRegion,Regions of the US,Regions defined by the US Census Bureau,West Region,https://www.census.gov/geographies/reference-files/2017/demo/popest/2017-fips.html,USCensus
 USDivision,Subregions of US,Divisions defined by the US Census Burea,Pacific Division,https://www.census.gov/geographies/reference-files/2017/demo/popest/2017-fips.html,USCensus
-Cases,Case counts,Number of case for outbreaks or diseases at specific dates and locations,COVID-19-YYYYMMDD,,JHU
+Cases,Case counts,Number of case for outbreaks or diseases at specific dates and locations,,,JHU;SDHHSA
 Outbreak,Increase in disease occurance,"Statistically significant increase in disease occurance in a community, population, or region",COVID-19,http://purl.obolibrary.org/obo/IDO_0000502,DO;JHU
 Organism,Living system,"Individual living system, such as animal, plant, bacteria or virus, that is capable of replicating or reproducing, growth and maintenance in the right environment",Homo sapiens,http://purl.obolibrary.org/obo/OBI_0100026,NCBI
 Host,Host organism for a virus,"A host organism provides an environment supportive for the survival, growth, maturation, or reproduction of a virus",Homo sapiens,http://purl.obolibrary.org/obo/IDO_0000531,NCBI;CNCB;Nextstrain
@@ -22,4 +22,4 @@ Strain,Genetic variant of an organism,A population of organisms that is genetica
 Clade,Group of organisms based on common ancestors,An identifier that denotes a group of organisms or groups of organisms based on common ancestors,SARS-CoV-2 A,http://purl.obolibrary.org/obo/APOLLO_SV_00000232,Nextstrain
 Gene,Sequence of nucleotides,"Sequence of nucleotides in DNA or RNA that encodes the synthesis of a gene product, either RNA or protein",SARS-CoV-2 S gene,http://purl.obolibrary.org/obo/SO_0000704,NCBI
 Protein,Sequence of amino acids,Proteins are large biomolecules consisting of chains of amino acid residues,Spike protein,http://purl.obolibrary.org/obo/SO_0000104,NCBI;UniProt;IntAct
-Publication,Published document,A document that has been accepted by a publisher,,http://purl.obolibrary.org/obo/IAO_0000311,EuropePMC
+Publication,Published document,A document that has been accepted by a publisher,,http://purl.obolibrary.org/obo/IAO_0000311,EuropePMC;UniProt;NCBI;NextStrain

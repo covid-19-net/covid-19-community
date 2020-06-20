@@ -54,6 +54,7 @@ CREATE INDEX proteinname_n FOR (n:ProteinName) ON (n.name);
 CREATE INDEX proteinname_a FOR (n:ProteinName) ON (n.accession);
 CREATE CONSTRAINT cases ON (n:Cases) ASSERT n.id IS UNIQUE;
 CREATE INDEX cases_d FOR (n:Cases) ON (n.date);
+CREATE INDEX cases_s FOR (n:Cases) ON (n.source);
                                        
 
 // list constraints and indices
@@ -61,6 +62,6 @@ CALL db.constraints();
 CALL db.indexes();
 
 // create full text search indices
-CALL db.index.fulltext.createNodeIndex('locations',['World', 'UNRegion', 'UNSubRegion', 'UNIntermediateRegion', 'Country', 'Admin1', 'Admin2', 'USRegion', 'USDivision', 'City', 'CruiseShip', 'PostalCode','Tract'],['name', 'iso', 'iso3', 'fips', 'geoId']);
+CALL db.index.fulltext.createNodeIndex('locations',['World', 'UNRegion', 'UNSubRegion', 'UNIntermediateRegion', 'Country', 'Admin1', 'Admin2', 'USRegion', 'USDivision', 'City', 'CruiseShip', 'PostalCode','Tract'],['name', 'iso', 'iso3', 'fips', 'geoId', 'code']);
 CALL db.index.fulltext.createNodeIndex('bioentities',['ProteinName', 'Protein', 'Gene', 'Strain', 'Variant', 'Organism', 'Outbreak'],['name', 'scientificName', 'taxonomyId', 'accession', 'genomeAccession', 'proteinVariant', 'variantType', 'variantConsequence']);
 
