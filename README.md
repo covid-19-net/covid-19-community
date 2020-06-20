@@ -1,6 +1,6 @@
 # Covid-19-Community
 
-This project is a community effort to build a Neo4j Knowledge Graph (KG) that links [heterogenous data](../reference_data/DataProviders.csv) about COVID-1. It serves as a sandbox and incubator project and the best ideas will be incorporated into the COVID-19-Net KG.
+This project is a community effort to build a Neo4j Knowledge Graph (KG) that links [heterogenous data](reference_data/DataProvider.csv) about COVID-1. It serves as a sandbox and incubator project and the best ideas will be incorporated into the COVID-19-Net KG.
 
 Join **"GraphHackers, Let’s Unite to Help Save the World — [Graphs4Good 2020](https://medium.com/neo4j/graphhackers-lets-unite-to-help-save-the-world-graphs4good-2020-fed53562b41f)"**.
 
@@ -20,7 +20,7 @@ What kind of data can you contribute? Here are some ideas:
 
 ![](docs/KG-Schema.png)
 
-The node [NodeMetadata](reference_data/NodeMetadata.csv) describes nodes in the Knowledge Graph and links to relevant ontologies (e.g., Infectious Disease Ontology). The left side of the schema shows the geolocation hierarchy from the world to the city level (> 1000 citizens), as well as PostalCode (US Zip) and US Census Tract. The right side shows COVID-19 case counts and information about the host organisms, virus strains, genes, proteins, protein-protein interactions, and publications. Cases and Strains are linked to geolocations. 
+The node [NodeMetadata](reference_data/NodeMetadata.csv) describes nodes in the Knowledge Graph and links to relevant ontologies (e.g., Infectious Disease Ontology). The left side of the schema shows the geolocation hierarchy from the world to the city level (> 1000 citizens), as well as PostalCode (US Zip) and US Census Tract. The right side shows COVID-19 case counts and information about the host organisms, pathogen, virus strains, genes, proteins, protein-protein interactions, and publications. Cases and strains are linked to geolocations. 
 
 Note, this KG is work in progress and may change frequently.
 
@@ -116,10 +116,11 @@ The following notebooks download, clean, standardize, and integrate data in the 
 |[00e-GeoNamesCountry](notebooks/dataprep/00e-GeoNamesCountry.ipynb)| Downloads country information from GeoNames.org|
 |[00f-GeoNamesAdmin1](notebooks/dataprep/00f-GeoNamesAdmin1.ipynb)| Downloads first administrative divisions (State, Province, Municipality) information from GeoNames.org|
 |[00g-GeoNamesAdmin2](notebooks/dataprep/00g-GeoNamesAdmin2.ipynb)| Downloads second administrative divisions (Counties in the US) information from GeoNames.org|
-|[00h-GeoNamesCity](notebooks/dataprep/00h-GeoNamesCity.ipynb)| Downloads city information (cities > 1000 citizens) from GeoNames.org|
+|[00h-GeoNamesCity](notebooks/dataprep/00h-GeoNamesCity.ipynb)| Downloads city information (population > 1000) from GeoNames.org|
 |[00i-USCensusRegionDivisionState2017](notebooks/dataprep/00i-USCensusRegionDivisionState2017.ipynb)| Downloads US regions, divisions, and assigns state FIPS codes from the US Census Bureau|
 |[00j-USCensusCountyCity2017](notebooks/dataprep/00j-USCensusCountyCity2017.ipynb)| Downloads US County FIPS codes from the US Census Bureau|
 |[00k-UNRegion](notebooks/dataprep/00k-UNRegion.ipynb)| Downloads UN geographic regions, subregions, and intermediate region information from United Nations|
+|[00n-Geolocation](notebooks/dataprep/00n-Geolocation.ipynb)| Downloads longitude, latitude, elevation, and population data from GeoName.org|
 |[01a-NCBIStrain](notebooks/dataprep/01a-NCBIStrain.ipynb)| Downloads the SARS-CoV-2 strain data from NCBI |
 |[01b-Nextstrain](notebooks/dataprep/01b-Nextstrain.ipynb)| Downloads the SARS-CoV-2 strain metadata from Nextstrain|
 |[01c-NCBIRefSeq](notebooks/dataprep/01c-NCBIRefSeq.ipynb)| Downloads the SARS-CoV-2 reference genome, genes, and protein products from NCBI|
@@ -204,7 +205,7 @@ After step 7 has completed, start the database in the Neo4j Browser to interacti
 ## Citation
 Peter W. Rose, Ilya Zaslavsky, COVID-19-Net. Available online: https://github.com/covid-19-net/covid-19-community (2020).
 
-Please also cite the [data providers](reference_data/DataProviders.csv).
+Please also cite the [data providers](reference_data/DataProvider.csv).
 
 ## Data Providers
 The schema below shows how data sources are integrated into the nodes of the Knowledge Graph.
