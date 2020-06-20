@@ -104,7 +104,9 @@ Once Jupyter Lab launches, navigate to the `notebooks/queries` directory and run
 
 |Notebook|Description|
 |:-------|:----------|
-|[ExampleQueriesBioentities](notebooks/queries/ExampleQueriesBioentities.ipynb)| Runs example queries on the Knowledge Graph|
+|[CaseCounts](notebooks/queries/CaseCounts.ipynb)| Runs example queries for case counts on the Knowledge Graph|
+|[Locations](notebooks/queries/Locations.ipynb)| Runs example queries for locations on the Knowledge Graph|
+|[Bioentities](notebooks/queries/Bioentities.ipynb)| Runs example queries for bioentities on the Knowledge Graph|
 |[AnalyzeVariantsSpikeGlycoprotein](notebooks/queries/AnalyzeVariantsSpikeGlycoprotein.ipynb)| Analyze SARS-CoV-2 Spike Glycoprotein Variants|
 |...|add examples here ...|
 
