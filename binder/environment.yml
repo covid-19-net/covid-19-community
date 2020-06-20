@@ -3,9 +3,11 @@ name: covid-19-community
 channels:
   - conda-forge
   - anaconda
+  - esri
 
 dependencies:
   - python>=3.8
+  - openjdk=11.0.1
   - jupyterlab=2.1.1
   - pandas
   - xlrd
@@ -15,3 +17,4 @@ dependencies:
   - papermill=2.1.0
   - widgetsnbextension
   - ipywidgets
+  - arcgis=1.8.1
