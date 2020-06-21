@@ -39,6 +39,7 @@ MERGE (t)-[i:IN]->(p)
 // SET i.resRatio = toFloat(row.resRatio), i.busRatio = toFloat(row.busRatio), i.othRatio = toFloat(row.othRatio), i.totRatio = toFloat(row.totRatio)
 RETURN count(i) as IN_TRACT
 ;
+
                          
 
 
