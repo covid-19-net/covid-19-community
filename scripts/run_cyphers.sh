@@ -41,6 +41,7 @@ run_cypher 00i-USCensusRegionDivisionState2017.cypher
 run_cypher 00j-USCensusCountyCity2017.cypher
 run_cypher 00k-UNRegion.cypher
 run_cypher 00m-USHUDCrosswalk.cypher
+run_cypher 00o-GeoNamesPostalCode.cypher
 run_cypher 00x-NodeMetadata.cypher
 run_cypher 00y-DataProvider.cypher
 run_cypher 01a-NCBIStrain.cypher

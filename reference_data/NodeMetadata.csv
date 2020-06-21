@@ -8,7 +8,7 @@ Country,Countries and dependent Territories, Countries and dependent Territories
 Admin1,"State, Province, Municipality","First administrative divisions, e.g, State, Province, Municipality",California,http://www.geonames.org/,GeoNames;USCensus
 Admin2, County,Second administrative divisions: County in the US,San Diego County,http://www.geonames.org/,GeoNames;USCensus
 City,City,City,San Diego,http://www.geonames.org/,GeoNames;USCensus
-PostalCode,Postal Code,"E.g., a ZIP Code is a postal code used by the United States Postal Service (USPS)",92121,http://purl.obolibrary.org/obo/OPMI_0000120,HUD
+PostalCode,Postal Code,"E.g., a ZIP Code is a postal code used by the United States Postal Service (USPS)",92121,http://purl.obolibrary.org/obo/OPMI_0000120,GeoNames;HUD
 Tract,Census tract,"Census tracts are small, relatively permanent statistical subdivisions of a county",06073008346,https://www2.census.gov/geo/pdfs/education/CensusTracts.pdf,HUD
 CruiseShip,"Cruise ship","Cruise ship","Diamond Princess",http://www.productontology.org/doc/Cruise_ship,JHU
 USRegion,Regions of the US,Regions defined by the US Census Bureau,West Region,https://www.census.gov/geographies/reference-files/2017/demo/popest/2017-fips.html,USCensus

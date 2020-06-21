@@ -35,6 +35,8 @@ CREATE INDEX city_n FOR (n:City) ON (n.name);
 CREATE INDEX city_l FOR (n:City) ON (n.location);
 CREATE CONSTRAINT postalcode ON (n:PostalCode) ASSERT n.id IS UNIQUE;
 CREATE INDEX postalcode_n FOR (n:PostalCode) ON (n.name);
+CREATE INDEX postalcode_p FOR (n:PostalCode) ON (n.placeName);
+CREATE INDEX postalcode_l FOR (n:PostalCode) ON (n.location);
 CREATE CONSTRAINT tract ON (n:Tract) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT cruiseship ON (n:CruiseShip) ASSERT n.id IS UNIQUE;
                                    
@@ -62,6 +64,6 @@ CALL db.constraints();
 CALL db.indexes();
 
 // create full text search indices
-CALL db.index.fulltext.createNodeIndex('locations',['World', 'UNRegion', 'UNSubRegion', 'UNIntermediateRegion', 'Country', 'Admin1', 'Admin2', 'USRegion', 'USDivision', 'City', 'CruiseShip', 'PostalCode','Tract'],['name', 'iso', 'iso3', 'fips', 'geoId', 'code']);
+CALL db.index.fulltext.createNodeIndex('locations',['World', 'UNRegion', 'UNSubRegion', 'UNIntermediateRegion', 'Country', 'Admin1', 'Admin2', 'USRegion', 'USDivision', 'City', 'CruiseShip', 'PostalCode','Tract'],['name', 'placeName', 'iso', 'iso3', 'fips', 'geoId', 'code']);
 CALL db.index.fulltext.createNodeIndex('bioentities',['ProteinName', 'Protein', 'Gene', 'Strain', 'Variant', 'Organism', 'Outbreak'],['name', 'scientificName', 'taxonomyId', 'accession', 'genomeAccession', 'proteinVariant', 'variantType', 'variantConsequence']);
 
