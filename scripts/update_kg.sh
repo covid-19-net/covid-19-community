@@ -27,5 +27,10 @@ done
 # deactivate conda environment
 conda deactivate &>> $LOGDIR/update.log
 
+# backup csv files
+BACKUPDIR="$NEO4J_HOME"/import/backup/`date +%Y-%m-%d`
+mkdir -p "$BACKUPDIR"
+cp "$NEO4J_HOME"/import/*.csv "$BACKUPDIR"
+
 # run Cypher scripts to upload the data into the knowledge graph
 $COVID19/scripts/run_cyphers.sh 
