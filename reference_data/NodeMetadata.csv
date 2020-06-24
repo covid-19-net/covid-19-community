@@ -1,6 +1,6 @@
 name,shortDescription,description,example,definitionSource,dataProviders
 Location,Geographic location,A geographic location,"World, ..., Country, State, Country, City, Cruise ship",,GeoNames;UNSD;USCensus;HUD;JHU
-World, The World, Top level location,,
+World, The World, Top level location,,,
 UNRegion, Continental regions, Continental regions according to the M49 standard defined by the Statistics Division of the United Nations Secretariat,Americas,https://unstats.un.org/unsd/methodology/m49/,UNSD
 UNSubRegion, Subcontinental regions,Subcontinental regions according to the M49 standard defined by the Statistics Division of the United Nations Secretariat,Latin America and the Caribbean,https://unstats.un.org/unsd/methodology/m49/,UNSD
 UNIntermediateRegion,Subdivisions of subcontinental regions,Subdivisions of subcontinental regions according to the M49 standard defined by the Statistics Division of the United Nations Secretariat,Caribbean,https://unstats.un.org/unsd/methodology/m49/,UNSD
