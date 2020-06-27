@@ -8,9 +8,9 @@ This project is a community effort to build a Neo4j Knowledge Graph (KG) that in
 
 ![](docs/KG-Schema.png)
 
-The node [NodeMetadata](reference_data/NodeMetadata.csv) describes nodes in the Knowledge Graph and links to relevant ontologies (e.g., Infectious Disease Ontology). The left side of the schema shows the geolocation hierarchy from the world to the city level (> 1000 citizens), as well as PostalCode (US Zip) and US Census Tract. The right side shows COVID-19 case counts and information about the host organisms, pathogen, virus strains, genes, proteins, protein-protein interactions, and publications. Cases and strains are linked to geolocations. 
+This schema shows the Nodes (circles) and their Relationships (arrows) in the COVID-19-Net KG. The node [NodeMetadata](reference_data/NodeMetadata.csv)(top left) describes nodes and refer to relevant ontologies (e.g., Infectious Disease Ontology). The left side of the schema shows the geographic hierarchy from the world to the city level (> 1000 citizens), as well as PostalCode (US Zip) and US Census Tract. The right side shows COVID-19 case counts and information about the host organisms, pathogen, virus strains, genes, proteins, protein-protein interactions, and publications. Cases and strains are linked to geolocations. 
 
-Note, this KG is work in progress and may change frequently.
+Note, this KG is work in progress and changes frequently.
 
 ## Browse the Knowledge Graph with the Neo4j Browser
 
@@ -29,7 +29,7 @@ You can browse the Knowledge Graph here:
 3. Run a query by pasting an example query (see below) or our own query into the search box.
 
 ### Full-text Query
-The Knowledge Graph can be searched by `locations` (geographic locations and cruise ship names) and `bioentities` (proteins, genes, strains, organisms) using a full-text search. The results contain exact and approximate matches.
+The KG can be searched by `locations` (geographic locations and cruise ship names) and `bioentities` (proteins, genes, strains, organisms) using a full-text search. The results contain exact and approximate matches.
 
 #### Example full-text query: find spike proteins
 ***Query:***
@@ -62,13 +62,13 @@ Specific Nodes and Relationships in the KG can be searched using the [Cypher que
 
 ***Query:***
 ```
-MATCH (s:Strain)-[:FOUND_IN]->(l:Location{name: 'Los Angeles'}) RETURN s, l
+MATCH (s:Strain)-[:FOUND_IN]->(l:Location{name: 'Houston'}) RETURN s, l
 ```
 
 ***Result:***
-![](docs/LA_strains.png)
+![](docs/Houston_strains.png)
 
-This subgraph shows two viral strains (green) of the [SARS-CoV-2 virus](https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=2697049) carried by a [human](https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=9606) host in Los Angeles (organisms in yellow). The strains have several variants (e.g., mutations)(red) in common. Details of the high-lighted variant is shown at the bottom. This variant is a [missense mutation](https://en.wikipedia.org/wiki/Missense_mutation): the base "G" ([Guanine](https://en.wikipedia.org/wiki/guanine)) found in the [Wuhan-HU-1 reference genome](https://www.ncbi.nlm.nih.gov/nuccore/MN908947.3) was mutated to a "C" ([Cytosine](https://en.wikipedia.org/wiki/cytosine)) at position 28077 in this strain (ORF8:c.184Gtg>Ctg), resulting in the encoded ORF8 protein ([QHD43422.1](https://www.ncbi.nlm.nih.gov/protein/1791269096)) to be changed from a "V" ([Valine](https://en.wikipedia.org/wiki/Valine)) to an "L" ([Leucine](https://en.wikipedia.org/wiki/Leucine)) amino acid at position 62 (QHD43422.1:p.62V>L). Two publications: [PMC7166309](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7166309/) and [PMC7106203](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7106203/) (blue) mention this strain.
+This subgraph shows viral strains (green) of the [SARS-CoV-2 virus](https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=2697049) carried by [human](https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=9606) hosts in Houston (organisms in gray). The strains have several variants (e.g., mutations)(red) in common. Details of the high-lighted variant is shown at the bottom. This variant is a [missense mutation](https://en.wikipedia.org/wiki/Missense_mutation) in the S gene (S:c.1841gAt>gGt): the base "A" ([Adenosine](https://en.wikipedia.org/wiki/adenosine)) found in the Wuhan-Hu-1 reference genome [NC_45512](https://www.ncbi.nlm.nih.gov/nuccore/NC_045512) was mutated to a "G" ([Guanine](https://en.wikipedia.org/wiki/guanine)) at position 23403, resulting in the encoded Spike glycoprotein ([QHD43416](https://www.ncbi.nlm.nih.gov/protein/QHD43416.1)) to be changed from a "D" ([Aspartic acid](https://en.wikipedia.org/wiki/Aspartic_acid)) to an "G" ([Glycine](https://en.wikipedia.org/wiki/Glycine)) amino acid at position 614 (QHD43416.1:p.614D>G).
 
 #### Example Cypher query: aggregate cummulative COVID-19 case numbers at the US state (Admin1) level
 
@@ -114,7 +114,7 @@ COVID-19-Net Knowledge Graph is created from publically available resources, inc
 |[00i-USCensusRegionDivisionState2017](notebooks/dataprep/00i-USCensusRegionDivisionState2017.ipynb)| Downloads US regions, divisions, and assigns state FIPS codes from the US Census Bureau|
 |[00j-USCensusCountyCity2017](notebooks/dataprep/00j-USCensusCountyCity2017.ipynb)| Downloads US County FIPS codes from the US Census Bureau|
 |[00k-UNRegion](notebooks/dataprep/00k-UNRegion.ipynb)| Downloads UN geographic regions, subregions, and intermediate region information from United Nations|
-|[00n-Geolocation](notebooks/dataprep/00n-Geolocation.ipynb)| Downloads longitude, latitude, elevation, and population data from GeoName.org|
+|[00n-Geolocation](notebooks/dataprep/00n-Geolocation.ipynb)| Downloads longitude, latitude, elevation, and population data from GeoNames.org|
 |[01a-NCBIStrain](notebooks/dataprep/01a-NCBIStrain.ipynb)| Downloads the SARS-CoV-2 strain data from NCBI |
 |[01b-Nextstrain](notebooks/dataprep/01b-Nextstrain.ipynb)| Downloads the SARS-CoV-2 strain metadata from Nextstrain|
 |[01c-NCBIRefSeq](notebooks/dataprep/01c-NCBIRefSeq.ipynb)| Downloads the SARS-CoV-2 reference genome, genes, and protein products from NCBI|
@@ -206,7 +206,7 @@ After step 7 has completed, start the database in the Neo4j Browser to interacti
 * Report bugs or issues
 
 ## Citation
-Peter W. Rose, Ilya Zaslavsky, COVID-19-Net. Available online: https://github.com/covid-19-net/covid-19-community (2020).
+Peter W. Rose, David Valentine, Ilya Zaslavsky, COVID-19-Net: Integrating Health, Pathogen and Environmental Data into a Knowledge Graph for Case Tracking, Analysis, and Forecasting. Available online: https://github.com/covid-19-net/covid-19-community (2020).
 
 Please also cite the [data providers](reference_data/DataProvider.csv).
 
@@ -216,14 +216,21 @@ The schema below shows how data sources are integrated into the nodes of the Kno
 ![](docs/DataProviders.png)
 
 ## Acknowledgements
-**"GraphHackers, Let’s Unite to Help Save the World — [Graphs4Good 2020](https://medium.com/neo4j/graphhackers-lets-unite-to-help-save-the-world-graphs4good-2020-fed53562b41f)"**.
+Neo4j provided technical support and organized the community development: "GraphHackers, Let’s Unite to Help Save the World — [Graphs4Good 2020](https://medium.com/neo4j/graphhackers-lets-unite-to-help-save-the-world-graphs4good-2020-fed53562b41f)".
+
+Students of the UCSD Spatial Data Science course [DSC-198](https://sites.google.com/view/dsc198spring20/syllabus): EXPLORING COVID-19 PANDEMIC WITH DATA SCIENCE
+
+Contributors:
+Kaushik Ganapathy, Braden Riggs, Eric Yu
+
+Project KONQUER team members at US San Diego and UTHealth at Houston.
 
 ## Funding
 Development of this prototype is in part supported by the National Science Foundation under Award Numbers:
 
-[1937136](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1937136): **Convergence Accelerator Phase I (RAISE): Knowledge Open Network Queries for Research (KONQUER)**
+**NSF Convergence Accelerator Phase I (RAISE):** Knowledge Open Network Queries for Research (KONQUER) ([1937136](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1937136))
 
-[2028411](https://www.nsf.gov/awardsearch/showAward?AWD_ID=2028411): **RAPID: COVID-19-Net: Integrating Health, Pathogen and Environmental Data into a Knowledge Graph for Case Tracking, Analysis, and Forecasting**.
+**NSF RAPID:** COVID-19-Net: Integrating Health, Pathogen and Environmental Data into a Knowledge Graph for Case Tracking, Analysis, and Forecasting ([2028411](https://www.nsf.gov/awardsearch/showAward?AWD_ID=2028411))
 
 
 
