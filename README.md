@@ -8,7 +8,9 @@ This project is a community effort to build a Neo4j Knowledge Graph (KG) that in
 
 ![](docs/KG-Schema.png)
 
-This schema shows the Nodes (circles) and their Relationships (arrows) in the COVID-19-Net KG. The node [NodeMetadata](reference_data/NodeMetadata.csv)(top left) describes nodes and refer to relevant ontologies (e.g., Infectious Disease Ontology). The left side of the schema shows the geographic hierarchy from the world to the city level (> 1000 citizens), as well as PostalCode (US Zip) and US Census Tract. The right side shows COVID-19 case counts and information about the host organisms, pathogen, virus strains, genes, proteins, protein-protein interactions, and publications. Cases and strains are linked to geolocations. 
+This schema shows the Nodes (circles) and their Relationships (arrows) in the COVID-19-Net KG. 
+
+The node [NodeMetadata](reference_data/NodeMetadata.csv)(top left) describes nodes and refers to relevant ontologies (e.g., Infectious Disease Ontology). The left side of the schema shows the geographic hierarchy from the world to the city level (> 1000 citizens), as well as PostalCode (US Zip) and US Census Tract. The right side shows COVID-19 case counts and information about the host organisms, pathogen, virus strains, genes, proteins, protein-protein interactions, and publications. Cases and strains are linked to geolocations. 
 
 Note, this KG is work in progress and changes frequently.
 
@@ -58,7 +60,7 @@ RETURN node.name, labels(node), score
 
 Specific Nodes and Relationships in the KG can be searched using the [Cypher query language](https://neo4j.com/docs/cypher-manual/current/introduction/).
 
-#### Example Cypher query: find viral strains collected in Los Angeles
+#### Example Cypher query: find viral strains collected in Houston
 
 ***Query:***
 ```
