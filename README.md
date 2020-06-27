@@ -1,20 +1,8 @@
 # Covid-19-Community
 
-This project is a community effort to build a Neo4j Knowledge Graph (KG) that links [heterogenous data](reference_data/DataProvider.csv) about COVID-1. It serves as a sandbox and incubator project and the best ideas will be incorporated into the COVID-19-Net KG.
-
-Join **"GraphHackers, Let’s Unite to Help Save the World — [Graphs4Good 2020](https://medium.com/neo4j/graphhackers-lets-unite-to-help-save-the-world-graphs4good-2020-fed53562b41f)"**.
-
-What kind of data can you contribute? Here are some ideas:
+This project is a community effort to build a Neo4j Knowledge Graph (KG) that integrates heterogeneous biomedical and environmental [datasets](reference_data/DataProvider.csv) to help researchers analyze the interplay between host, pathogen, the environment, and COVID-19.
 
 ![](docs/datatypes.png)
-
-## How can you contribute?
-
-* File an [issue](https://github.com/covid-19-net/covid-19-community/issues/new) to discuss your idea so we can coordinate efforts
-* Help with [specific issues](https://github.com/covid-19-net/covid-19-community/labels/help%20wanted)
-* Suggest publically accessible data sets
-* Add Jupyter Notebooks with data analyses, maps, and visualizations
-* Report bugs or issues
 
 ## Knowledge Graph Schema
 
@@ -111,7 +99,11 @@ Once Jupyter Lab launches, navigate to the `notebooks/queries` directory and run
 |...|add examples here ...|
 
 ## Data Download, Preparation, and Integration
-The following notebooks download, clean, standardize, and integrate data in the form of .csv files for ingestion into the Knowledge Graph. The prepared data files are saved in the `NEO4J_HOME/import` directory and cached intermediate files are saved in the `NEO4J_HOME/import/cache` directory. These notebooks are run daily at 07:00 UTC using the [update script](scripts/update_kg.sh) to download the latest data and update the Knowlege Graph.
+![](docs/Workflow.png)
+
+COVID-19-Net Knowledge Graph is created from publically available resources, including databases, files, and web services. A reproducible workflow, defined in this repository, is used to run a daily update of the knowledge graph. The Jupyter notebooks listed in the table below download, clean, standardize, and integrate data in the form of .csv files for ingestion into the Knowledge Graph. The prepared data files are saved in the `NEO4J_HOME/import` directory and cached intermediate files are saved in the `NEO4J_HOME/import/cache` directory. These notebooks are run daily at 07:00 UTC in batch using [Papermill](https://netflixtechblog.com/scheduling-notebooks-348e6c14cfd6#:~:text=What%20Papermill%20does%20is%20rather,to%20an%20isolated%20output%20notebook.&text=Papermill%20enables%20a%20paradigm%20change%20in%20how%20you%20work%20with%20notebook%20documents) with the [update script](scripts/update_kg.sh) to download the latest data and update the Knowlege Graph.
+
+
 
 |Notebook|Description|
 |:-------|:----------|
@@ -132,6 +124,7 @@ The following notebooks download, clean, standardize, and integrate data in the 
 |[01h-PMCAccession](notebooks/dataprep/01h-PMCAccession.ipynb)| Downloads PubMed Central articles that mention NCBI and GISAID strains|
 |[02a-JHUCases](notebooks/dataprep/02a-JHUCases.ipynb)| Downloads cummulative confimed cases and deaths from the COVID-19 Data Repository by Johns Hopkins University|
 |[02a-JHUCasesLocation](notebooks/dataprep/02a-JHUCasesLocation.ipynb)| Standardizes location data for the COVID-19 Data Repository by Johns Hopkins University|
+|[02c-SDHHSACases](notebooks/dataprep/02c-SDHHSACases.ipynb)| Downloads cummulative confirmed COVID-19 cases from the County of San Diego, Health and Human Services Agency|
 |...|Future notebooks that add new data to the knowledge graph|
 
 ## How to run Jupyter Notebook Examples locally
@@ -204,6 +197,14 @@ Afer all data files have been created in step 6, run (`notebooks/local/2-CreateK
 
 After step 7 has completed, start the database in the Neo4j Browser to interactively explore the KG or run local queries.
 
+## How can you contribute?
+
+* File an [issue](https://github.com/covid-19-net/covid-19-community/issues/new) to discuss your idea so we can coordinate efforts
+* Help with [specific issues](https://github.com/covid-19-net/covid-19-community/labels/help%20wanted)
+* Suggest publically accessible data sets
+* Add Jupyter Notebooks with data analyses, maps, and visualizations
+* Report bugs or issues
+
 ## Citation
 Peter W. Rose, Ilya Zaslavsky, COVID-19-Net. Available online: https://github.com/covid-19-net/covid-19-community (2020).
 
@@ -213,6 +214,9 @@ Please also cite the [data providers](reference_data/DataProvider.csv).
 The schema below shows how data sources are integrated into the nodes of the Knowledge Graph.
 
 ![](docs/DataProviders.png)
+
+## Acknowledgements
+**"GraphHackers, Let’s Unite to Help Save the World — [Graphs4Good 2020](https://medium.com/neo4j/graphhackers-lets-unite-to-help-save-the-world-graphs4good-2020-fed53562b41f)"**.
 
 ## Funding
 Development of this prototype is in part supported by the National Science Foundation under Award Numbers:
