@@ -225,7 +225,7 @@ Students of the UCSD Spatial Data Science course [DSC-198](https://sites.google.
 Contributors:
 Kaushik Ganapathy, Braden Riggs, Eric Yu
 
-Project KONQUER team members at US San Diego and UTHealth at Houston.
+Project KONQUER team members at UC San Diego and UTHealth at Houston.
 
 ## Funding
 Development of this prototype is in part supported by the National Science Foundation under Award Numbers:
