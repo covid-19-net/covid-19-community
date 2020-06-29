@@ -22,15 +22,13 @@ Note, this KG is work in progress and changes frequently.
 
 View of Neo4j Browser showing the result of a query about interactions of the Spike glycoprotein with human host proteins and related publications in PubMedCentral.
 
-You can browse the Knowledge Graph here:
+You can browse the Knowledge Graph here (click the launch button and follow the instructions below)
 
 [![Neo4j Browser](https://img.shields.io/badge/Launch-Neo4j%20Browser-bluegreen)](http://132.249.238.185:7474/)
 
-1. Enter *username:* reader, *password:* demo
-2. Click on the database icon on the top left, then click on any node label to start exploring the KG
-3. Run a query by pasting an example query (see below) or our own query into the search box.
+![](docs/ConnectNeo4j.png)
 
-### Full-text Query
+### Run a Full-text Query
 The KG can be searched by `locations` (geographic locations and cruise ship names) and `bioentities` (proteins, genes, strains, organisms) using a full-text search. The results contain exact and approximate matches.
 
 #### Example full-text query: find spike proteins
@@ -56,7 +54,7 @@ RETURN node.name, labels(node), score
 
 ![](docs/Spike-Query-Text.png)
 
-### Cypher Query
+### Run a Cypher Query
 
 Specific Nodes and Relationships in the KG can be searched using the [Cypher query language](https://neo4j.com/docs/cypher-manual/current/introduction/).
 
