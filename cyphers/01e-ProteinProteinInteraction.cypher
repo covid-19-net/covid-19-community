@@ -11,6 +11,13 @@ SET p.name = row.name, p.accession = row.accession, p.pro_id = row.pro_id
 RETURN count(p) as ProteinName
 ;
 LOAD CSV WITH HEADERS FROM "FILE:///01e-ProteinProteinInteractionProtein.csv" AS row
+MATCH (p1:Protein)
+MATCH (p2:Protein{id: row.id})
+WHERE p1.accession = row.accession AND p1.fullLength = 'True' AND p2.fullLength = 'False'
+MERGE (p1)-[c:CLEAVED_TO]->(p2)
+RETURN count(c) as CLEAVED_TO
+;
+LOAD CSV WITH HEADERS FROM "FILE:///01e-ProteinProteinInteractionProtein.csv" AS row
 MATCH (p:Protein{id: row.id})
 MATCH (pn:ProteinName{id: coalesce(row.proteinName, '') +  coalesce(row.accession, '') + coalesce(row.pro_id, '')})
 MERGE (p)-[n:NAMED_AS]->(pn)
