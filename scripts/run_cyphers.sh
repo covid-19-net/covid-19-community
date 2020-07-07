@@ -28,6 +28,7 @@ cp $REFDATA/Organism.csv "$NEO4J_HOME"/import
 cp $REFDATA/Outbreak.csv "$NEO4J_HOME"/import
 cp $REFDATA/NodeMetadata.csv "$NEO4J_HOME"/import
 cp $REFDATA/DataProvider.csv "$NEO4J_HOME"/import
+cp $REFDATA/risks_by_tract_san_doegp.csv "$NEO4J_HOME"/import
 
 # Set up the database
 run_cypher 00a-Init.cypher
@@ -52,3 +53,4 @@ run_cypher 01e-ProteinProteinInteraction.cypher
 run_cypher 01h-PMC-Accession.cypher
 run_cypher 02a-JHUCases.cypher
 run_cypher 02c-SDHHSACases.cypher
+run_cypher 03a-SDHealthRisk.cypher
