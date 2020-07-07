@@ -2,7 +2,7 @@ LOAD CSV WITH HEADERS
 FROM 'FILE:///01a-NCBIStrain.csv' AS row 
 WITH row WHERE NOT row.id IS null
 MERGE (s:Strain{id: row.id})
-SET s.name = row.name, s.taxonomy = row.taxonomy_id, s.collectionDate = date(row.collection_date),
+SET s.name = row.name, s.taxonomyId = row.taxonomy_id, s.collectionDate = date(row.collection_date),
     s.hostTaxonomyId = row.host_taxonomy_id, s.sex = row.sex, s.age = toInteger(row.age), 
     s.isolationSource = row.isolation_source
 RETURN count(s) as Strain

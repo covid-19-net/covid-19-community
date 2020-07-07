@@ -62,7 +62,7 @@ CREATE CONSTRAINT cases ON (n:Cases) ASSERT n.id IS UNIQUE;
 CREATE INDEX cases_d FOR (n:Cases) ON (n.date);
 CREATE INDEX cases_s FOR (n:Cases) ON (n.source);
                                        
-CREATE CONSTRAINT cases ON (n:HealthRisk) ASSERT n.id IS UNIQUE;
+CREATE CONSTRAINT healthrisk ON (n:HealthRisk) ASSERT n.id IS UNIQUE;
                                        
 
 // list constraints and indices
@@ -70,6 +70,6 @@ CALL db.constraints();
 CALL db.indexes();
 
 // create full text search indices
-CALL db.index.fulltext.createNodeIndex('locations',['World', 'UNRegion', 'UNSubRegion', 'UNIntermediateRegion', 'Country', 'Admin1', 'Admin2', 'USRegion', 'USDivision', 'City', 'CruiseShip', 'PostalCode','Tract'],['name', 'placeName', 'iso', 'iso3', 'fips', 'geoId', 'code']);
-CALL db.index.fulltext.createNodeIndex('bioentities',['ProteinName', 'Protein', 'Gene', 'Strain', 'Variant', 'Organism', 'Outbreak'],['name', 'scientificName', 'taxonomyId', 'accession', 'genomeAccession', 'proteinVariant', 'variantType', 'variantConsequence']);
+CALL db.index.fulltext.createNodeIndex('locations',['World', 'UNRegion', 'UNSubRegion', 'UNIntermediateRegion', 'Country', 'Admin1', 'Admin2', 'USRegion', 'USDivision', 'City', 'CruiseShip', 'PostalCode','Tract'],['name', 'placeName', 'iso', 'iso3', 'fips', 'geoId', 'geonameId', 'code']);
+CALL db.index.fulltext.createNodeIndex('bioentities',['ProteinName', 'Protein', 'Gene', 'Strain', 'Variant', 'Organism', 'Outbreak'],['name', 'scientificName', 'taxonomyId', 'accession', 'proId', 'genomeAccession', 'geneVariant', 'proteinVariant', 'variantType', 'variantConsequence']);
 CALL db.index.fulltext.createNodeIndex('geoids',['UNRegion', 'UNSubRegion', 'UNIntermediateRegion', 'Country', 'Admin1', 'Admin2', 'USRegion', 'USDivision', 'City', 'PostalCode','Tract'],['id','iso', 'iso3', 'fips', 'geoId', 'geonameId','code','name'], {analyzer: 'keyword'});         

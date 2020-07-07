@@ -41,6 +41,8 @@ CALL db.index.fulltext.queryNodes("bioentities", "spike") YIELD node
 
 ![](docs/Spike-Query-Node.png)
 
+This subgraph shows the results of the full-text search. Five proteins contain the word `Spike`. Each protein is associated with one or more protein names (synonymes) (only one name is shown here). The Spike glycoprotein in the center is the full-length gene product encoded by the SARS-CoV-2 S gene. The other four proteins are cleavage products (fragments) of the full-length protein.
+
 #### Example full-text query: find spike proteins - tabular results
 The following query returns the names of the matched bioentities and the labels of the nodes (e.g., Protein, ProteinName) sorted by the match score in descending order.
 
