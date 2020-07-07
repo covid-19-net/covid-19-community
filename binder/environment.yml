@@ -18,3 +18,6 @@ dependencies:
   - widgetsnbextension
   - ipywidgets
   - arcgis=1.8.1
+  - pip
+  - pip:
+    - rcsbsearch==0.2.1
