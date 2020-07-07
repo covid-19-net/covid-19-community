@@ -70,16 +70,19 @@ MATCH (s:Strain)-[:FOUND_IN]->(l:Location{name: 'Houston'}) RETURN s, l
 ***Result:***
 ![](docs/Houston_strains.png)
 
-This subgraph shows viral strains (green) of the [SARS-CoV-2 virus](https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=2697049) carried by [human](https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=9606) hosts in Houston (organisms in gray). The strains have several variants (e.g., mutations)(red) in common. Details of the high-lighted variant is shown at the bottom. This variant is a [missense mutation](https://en.wikipedia.org/wiki/Missense_mutation) in the S gene (S:c.1841gAt>gGt): the base "A" ([Adenosine](https://en.wikipedia.org/wiki/adenosine)) found in the Wuhan-Hu-1 reference genome [NC_45512](https://www.ncbi.nlm.nih.gov/nuccore/NC_045512) was mutated to a "G" ([Guanine](https://en.wikipedia.org/wiki/guanine)) at position 23403, resulting in the encoded Spike glycoprotein ([QHD43416](https://www.ncbi.nlm.nih.gov/protein/QHD43416.1)) to be changed from a "D" ([Aspartic acid](https://en.wikipedia.org/wiki/Aspartic_acid)) to an "G" ([Glycine](https://en.wikipedia.org/wiki/Glycine)) amino acid at position 614 (QHD43416.1:p.614D>G).
+This subgraph shows viral strains (green) of the [SARS-CoV-2 virus](https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=2697049) carried by [human](https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=9606) hosts in Houston (organisms in gray). The strains have several variants (e.g., mutations)(red) in common. Details of the high-lighted variant is shown at the bottom. This variant is a [missense mutation](https://en.wikipedia.org/wiki/Missense_mutation) in the S gene (S:c.1841gAt>gGt): the base "A" ([Adenosine](https://en.wikipedia.org/wiki/adenosine)) found in the Wuhan-Hu-1 reference genome [NC_45512](https://www.ncbi.nlm.nih.gov/nuccore/NC_045512) was mutated to a "G" ([Guanine](https://en.wikipedia.org/wiki/guanine)) at position 23403, resulting in the encoded Spike glycoprotein ([QHD43416](https://www.ncbi.nlm.nih.gov/protein/QHD43416.1)) to be changed from a "D" ([Aspartic acid](https://en.wikipedia.org/wiki/Aspartic_acid)) to a "G" ([Glycine](https://en.wikipedia.org/wiki/Glycine)) amino acid at position 614 (QHD43416.1:p.614D>G).
 
 #### Example Cypher query: aggregate cummulative COVID-19 case numbers at the US state (Admin1) level
 
 ***Query:***
 ```
-MATCH (o:Outbreak{id: "COVID-19"})<-[:RELATED_TO]-(c:Cases{date: date("2020-05-04")})-[:REPORTED_IN]->(a:Admin2)-[:IN]->(a1:Admin1)
-RETURN a1.name as state, sum(c.cummulativeConfirmed) as confirmed, sum(c.cummulativeDeaths) as deaths
-ORDER BY deaths DESC;
+MATCH (o:Outbreak{id: "COVID-19"})<-[:RELATED_TO]-(c:Cases{date: date("2020-07-06")})-[:REPORTED_IN]->(a:Admin2)-[:IN]->(a1:Admin1)
+RETURN a1.name as state, sum(c.cummulativeConfirmed) as confirmedCases, sum(c.cummulativeDeaths) as deaths
+ORDER BY confirmedCases DESC;
 ```
+
+***Result:***
+![](docs/Outbreak.png)
 
 Note, some cases in the COVID-19 Data Repository by Johns Hopkins University cannot be mapped to a county or state location (e.g., correctional facilities, missing location data). Therefore, the results of this query will underreport the actual number of cases.
 
