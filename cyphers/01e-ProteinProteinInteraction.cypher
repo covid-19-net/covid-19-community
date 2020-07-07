@@ -1,13 +1,13 @@
 LOAD CSV WITH HEADERS FROM "FILE:///01e-ProteinProteinInteractionProtein.csv" AS row
 MERGE (p:Protein{id: row.id})
-SET p.name = row.name, p.accession = row.accession, p.pro_id = row.pro_id, 
+SET p.name = row.name, p.accession = row.accession, p.proId = row.proId, 
     p.sequence = row.sequence, p.start = toInteger(row.start), p.end = toInteger(row.end), p.fullLength = row.fullLength, 
     p.taxonomyId = row.taxonomyId
 RETURN count(p) as Protein
 ;
 LOAD CSV WITH HEADERS FROM "FILE:///01e-ProteinProteinInteractionProtein.csv" AS row
-MERGE (p:ProteinName{id: coalesce(row.proteinName, '') +  coalesce(row.accession, '') + coalesce(row.pro_id, '')})
-SET p.name = row.name, p.accession = row.accession, p.pro_id = row.pro_id
+MERGE (p:ProteinName{id: coalesce(row.proteinName, '') +  coalesce(row.accession, '') + coalesce(row.proId, '')})
+SET p.name = row.name, p.accession = row.accession, p.proId = row.proId
 RETURN count(p) as ProteinName
 ;
 LOAD CSV WITH HEADERS FROM "FILE:///01e-ProteinProteinInteractionProtein.csv" AS row
@@ -19,7 +19,7 @@ RETURN count(c) as CLEAVED_TO
 ;
 LOAD CSV WITH HEADERS FROM "FILE:///01e-ProteinProteinInteractionProtein.csv" AS row
 MATCH (p:Protein{id: row.id})
-MATCH (pn:ProteinName{id: coalesce(row.proteinName, '') +  coalesce(row.accession, '') + coalesce(row.pro_id, '')})
+MATCH (pn:ProteinName{id: coalesce(row.proteinName, '') +  coalesce(row.accession, '') + coalesce(row.proId, '')})
 MERGE (p)-[n:NAMED_AS]->(pn)
 RETURN count(n) as NAMED_AS
 ;                     
