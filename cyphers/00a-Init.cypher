@@ -62,6 +62,8 @@ CREATE CONSTRAINT cases ON (n:Cases) ASSERT n.id IS UNIQUE;
 CREATE INDEX cases_d FOR (n:Cases) ON (n.date);
 CREATE INDEX cases_s FOR (n:Cases) ON (n.source);
                                        
+CREATE CONSTRAINT cases ON (n:HealthRisk) ASSERT n.id IS UNIQUE;
+                                       
 
 // list constraints and indices
 CALL db.constraints();
