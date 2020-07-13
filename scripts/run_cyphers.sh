@@ -5,8 +5,8 @@ ENDPOINT=${NEO4J_URI:-$DEFAULT_ENDPOINT}
 USERNAME=${NEO4J_USERNAME:-neo4j}
 PASSWORD=${NEO4J_PASSWORD:-neo4jbinder}
 CYPHER=${NEO4J_BIN:-$NEO4J_HOME/bin}
-CYPHERS="../../cyphers"
-REFDATA="../../reference_data"
+CYPHERS=$COVID19/cyphers
+REFDATA=$COVID19/reference_data
 
 echo "Endpoint: "$ENDPOINT
 echo "Username: "$USERNAME
