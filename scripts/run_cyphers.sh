@@ -24,11 +24,10 @@ function run_cypher {
 }
 
 # Copy reference files to the Neo4j import directory
-cp $REFDATA/Organism.csv "$NEO4J_HOME"/import
-cp $REFDATA/Outbreak.csv "$NEO4J_HOME"/import
-cp $REFDATA/NodeMetadata.csv "$NEO4J_HOME"/import
-cp $REFDATA/DataProvider.csv "$NEO4J_HOME"/import
-cp $REFDATA/risks_by_tract_san_doegp.csv "$NEO4J_HOME"/import
+cp $REFDATA/Organism.csv "$NEO4J_IMPORT"
+cp $REFDATA/Outbreak.csv "$NEO4J_IMPORT"
+cp $REFDATA/NodeMetadata.csv "$NEO4J_IMPORT"
+cp $REFDATA/DataProvider.csv "$NEO4J_IMPORT"
 
 # Set up the database
 run_cypher 00a-Init.cypher

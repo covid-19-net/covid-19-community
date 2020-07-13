@@ -13,7 +13,6 @@ dependencies:
   - xlrd
   - matplotlib
   - biopython
-  - py2neo
   - papermill=2.1.0
   - widgetsnbextension
   - ipywidgets
@@ -21,3 +20,5 @@ dependencies:
   - pip
   - pip:
     - rcsbsearch==0.2.1
+    - --pre
+    - py2neo
