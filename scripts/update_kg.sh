@@ -36,4 +36,4 @@ mkdir -p "$BACKUPDIR"
 cp "$NEO4J_IMPORT"/*.csv "$BACKUPDIR"
 
 # run Cypher scripts to upload the data into the knowledge graph
-$COVID19/scripts/run_cyphers.sh 
+$COVID19/scripts/run_cyphers.sh "$1"
