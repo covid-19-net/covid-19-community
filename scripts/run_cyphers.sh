@@ -30,7 +30,10 @@ cp $REFDATA/NodeMetadata.csv "$NEO4J_IMPORT"
 cp $REFDATA/DataProvider.csv "$NEO4J_IMPORT"
 
 # Set up the database
-run_cypher 00a-Init.cypher
+if [ "$1" = "-init" ]; then
+  run_cypher 00a-Init.cypher
+fi
+
 run_cypher 00b-Organism.cypher
 run_cypher 00c-Outbreak.cypher
 run_cypher 00e-GeoNamesCountry.cypher
