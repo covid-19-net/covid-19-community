@@ -21,5 +21,6 @@ dependencies:
   - pip:
     - rcsbsearch==0.2.1
 # use prerelease version of py2neo (required to select database by name)
-    - --pre
+# --pre seems to cause error on binder: list index out of range
+#    - --pre
     - py2neo
