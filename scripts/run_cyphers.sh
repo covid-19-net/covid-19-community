@@ -55,4 +55,3 @@ run_cypher 01e-ProteinProteinInteraction.cypher
 run_cypher 01h-PMC-Accession.cypher
 run_cypher 02a-JHUCases.cypher
 run_cypher 02c-SDHHSACases.cypher
-run_cypher 03a-SDHealthRisk.cypher
