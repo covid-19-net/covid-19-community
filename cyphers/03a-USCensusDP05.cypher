@@ -19,6 +19,16 @@ SET d.name = d.id, d.totalPopulation = toInteger(row.totalPopulation),
     d.source = row.source, d.aggregationLevel = row.aggregationLevel
 RETURN count(d) as Demographics
 ;
+// Special case for Puerto Rico: Counties become Admin1 divisions
+USING PERIODIC COMMIT
+LOAD CSV WITH HEADERS 
+FROM 'FILE:///03a-USCensusDP05Admin2.csv' AS row
+WITH row WHERE row.stateFips = '72'
+MATCH (a:Admin1{code: row.countyFips, country: 'PR'})
+MATCH (d:Demographics{id: 'ACS5-' + row.stateFips + '-' + row.countyFips})
+MERGE (a)-[h:HAS_DEMOGRAPHICS]->(d)
+RETURN count(h) as HAS_DEMOGRAPHICS
+;
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///03a-USCensusDP05Admin2.csv' AS row
