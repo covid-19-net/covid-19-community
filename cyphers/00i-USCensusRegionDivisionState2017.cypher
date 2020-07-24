@@ -12,7 +12,7 @@ RETURN count(d) as Division
 ;
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///00i-USCensus2017State.csv' AS row 
-MATCH (a:Admin1:Location{name: row.name, country: 'US'})
+MATCH (a:Admin1{name: row.name, country: 'US'})
 SET a.fips = row.fips, a.division = row.division
 RETURN count(a) as FIPS
 ;
