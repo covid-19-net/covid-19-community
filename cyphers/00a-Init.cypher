@@ -29,7 +29,7 @@ CREATE CONSTRAINT usregion ON (n:USRegion) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT usdivision ON (n:USDivision) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT admin2 ON (n:Admin2) ASSERT n.id IS UNIQUE;
 CREATE INDEX admin2_f FOR (n:Admin2) ON (n.fips);
-CREATE INDEX admin2_gi FOR (n:Admin2) ON (n.geoId);
+CREATE INDEX admin2_s FOR (n:Admin2) ON (n.stateFips);
 CREATE INDEX admin2_g FOR (n:Admin2) ON (n.geonameId);
 CREATE INDEX admin2_n FOR (n:Admin2) ON (n.name);
 CREATE INDEX admin2_l FOR (n:Admin2) ON (n.location);
@@ -67,9 +67,9 @@ CREATE CONSTRAINT demographics ON (n:Demographics) ASSERT n.id IS UNIQUE;
 
 
 // create full text search indices
-CALL db.index.fulltext.createNodeIndex('locations',['World', 'UNRegion', 'UNSubRegion', 'UNIntermediateRegion', 'Country', 'Admin1', 'Admin2', 'USRegion', 'USDivision', 'City', 'CruiseShip', 'PostalCode','Tract'],['name', 'placeName', 'iso', 'iso3', 'fips', 'geoId', 'geonameId', 'code']);
+CALL db.index.fulltext.createNodeIndex('locations',['World', 'UNRegion', 'UNSubRegion', 'UNIntermediateRegion', 'Country', 'Admin1', 'Admin2', 'USRegion', 'USDivision', 'City', 'CruiseShip', 'PostalCode','Tract'],['name', 'placeName', 'iso', 'iso3', 'fips', 'geonameId', 'code']);
 CALL db.index.fulltext.createNodeIndex('bioentities',['ProteinName', 'Protein', 'Gene', 'Strain', 'Variant', 'Organism', 'Outbreak'],['name', 'scientificName', 'taxonomyId', 'accession', 'proId', 'genomeAccession', 'geneVariant', 'proteinVariant', 'variantType', 'variantConsequence']);
-CALL db.index.fulltext.createNodeIndex('geoids',['UNRegion', 'UNSubRegion', 'UNIntermediateRegion', 'Country', 'Admin1', 'Admin2', 'USRegion', 'USDivision', 'City', 'PostalCode','Tract'],['id','iso', 'iso3', 'fips', 'geoId', 'geonameId','code','name'], {analyzer: 'keyword'});         
+CALL db.index.fulltext.createNodeIndex('geoids',['UNRegion', 'UNSubRegion', 'UNIntermediateRegion', 'Country', 'Admin1', 'Admin2', 'USRegion', 'USDivision', 'City', 'PostalCode','Tract'],['id','iso', 'iso3', 'fips', 'geonameId','code','name'], {analyzer: 'keyword'});         
 
 
 
