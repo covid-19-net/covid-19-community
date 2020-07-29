@@ -97,9 +97,10 @@ Once Jupyter Lab launches, navigate to the `notebooks/queries` directory and run
 
 |Notebook|Description|
 |:-------|:----------|
-|[CaseCounts](notebooks/queries/CaseCounts.ipynb)| Runs example queries for case counts on the Knowledge Graph|
-|[Locations](notebooks/queries/Locations.ipynb)| Runs example queries for locations on the Knowledge Graph|
-|[Bioentities](notebooks/queries/Bioentities.ipynb)| Runs example queries for bioentities on the Knowledge Graph|
+|[CaseCounts](notebooks/queries/CaseCounts.ipynb)| Runs example queries for case counts|
+|[Locations](notebooks/queries/Locations.ipynb)| Runs example queries for locations|
+|[Demographics](notebooks/queries/Demographics.ipynb)| Runs example queries demographics data from the American Community Survey|
+|[Bioentities](notebooks/queries/Bioentities.ipynb)| Runs example queries for bioentities|
 |[AnalyzeVariantsSpikeGlycoprotein](notebooks/queries/AnalyzeVariantsSpikeGlycoprotein.ipynb)| Analyze SARS-CoV-2 Spike Glycoprotein Variants|
 |...|add examples here ...|
 
@@ -130,6 +131,7 @@ COVID-19-Net Knowledge Graph is created from publically available resources, inc
 |[02a-JHUCases](notebooks/dataprep/02a-JHUCases.ipynb)| Downloads cummulative confimed cases and deaths from the COVID-19 Data Repository by Johns Hopkins University|
 |[02a-JHUCasesLocation](notebooks/dataprep/02a-JHUCasesLocation.ipynb)| Standardizes location data for the COVID-19 Data Repository by Johns Hopkins University|
 |[02c-SDHHSACases](notebooks/dataprep/02c-SDHHSACases.ipynb)| Downloads cummulative confirmed COVID-19 cases from the County of San Diego, Health and Human Services Agency|
+|[03a-USCensusDP05](notebooks/dataprep/03a-USCensusDP05.ipynb)| Downloads demographic data estimates (DP05) from the American Community Survey 5-Year Data (2009-2018)|
 |...|Future notebooks that add new data to the knowledge graph|
 
 ## How to run Jupyter Notebook Examples locally

@@ -10,6 +10,7 @@ Admin2, County,Second administrative divisions: County in the US,San Diego Count
 City,City,City,San Diego,http://www.geonames.org/,GeoNames;USCensus
 PostalCode,Postal Code,"E.g., a ZIP Code is a postal code used by the United States Postal Service (USPS)",92121,http://purl.obolibrary.org/obo/OPMI_0000120,GeoNames;HUD
 Tract,Census tract,"Census tracts are small, relatively permanent statistical subdivisions of a county",06073008346,https://www2.census.gov/geo/pdfs/education/CensusTracts.pdf,HUD
+Demographics,Statistical characterization of human populations,"The statistical characterization of human populations or segments of human populations (e.g., characterization by age, sex, race, or income)",Age groups, http://purl.obolibrary.org/obo/NCIT_C16495,USCensus
 CruiseShip,"Cruise ship","Cruise ship","Diamond Princess",http://www.productontology.org/doc/Cruise_ship,JHU
 USRegion,Regions of the US,Regions defined by the US Census Bureau,West Region,https://www.census.gov/geographies/reference-files/2017/demo/popest/2017-fips.html,USCensus
 USDivision,Subregions of US,Divisions defined by the US Census Burea,Pacific Division,https://www.census.gov/geographies/reference-files/2017/demo/popest/2017-fips.html,USCensus
