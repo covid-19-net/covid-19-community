@@ -61,9 +61,14 @@ CREATE INDEX proteinname_a FOR (n:ProteinName) ON (n.accession);
 CREATE CONSTRAINT cases ON (n:Cases) ASSERT n.id IS UNIQUE;
 CREATE INDEX cases_d FOR (n:Cases) ON (n.date);
 CREATE INDEX cases_s FOR (n:Cases) ON (n.source);
-                                       
+
+CREATE CONSTRAINT economics ON (n:Economics) ASSERT n.id IS UNIQUE;
+CREATE CONSTRAINT employmentstatus ON (n:EmploymentStatus) ASSERT n.id IS UNIQUE;
+CREATE CONSTRAINT income ON (n:Income) ASSERT n.id IS UNIQUE;
+CREATE CONSTRAINT commuting ON (n:Commuting) ASSERT n.id IS UNIQUE;
+CREATE CONSTRAINT occupation ON (n:Occupation) ASSERT n.id IS UNIQUE;
+CREATE CONSTRAINT housing ON (n:Housing) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT demographics ON (n:Demographics) ASSERT n.id IS UNIQUE;
-                                       
 
 
 // create full text search indices
