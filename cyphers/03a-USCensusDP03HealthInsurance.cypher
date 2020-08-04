@@ -1,8 +1,9 @@
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///03a-USCensusDP03HealthInsuranceAdmin2.csv' AS row 
-MERGE (h:HealthInsurance{id: 'ACS5-' + row.stateFips + '-' + row.countyFips})
-SET h.civilianNoninstitutionalizedPopulation = toInteger(row.civilianNoninstitutionalizedPopulation),
+MERGE (h:HealthInsurance{id: 'ACSDP5Y2018.DP03-' + row.stateFips + '-' + row.countyFips})
+SET h.name = 'HealthInsurance-' + row.stateFips + '-' + row.countyFips,
+    h.civilianNoninstitutionalizedPopulation = toInteger(row.civilianNoninstitutionalizedPopulation),
     h.withHealthInsuranceCoverage = toInteger(row.withHealthInsuranceCoverage),
     h.withHealthInsuranceCoveragePct = toFloat(row.withHealthInsuranceCoveragePct),
     h.withPrivateHealthInsurance = toInteger(row.withPrivateHealthInsurance),
@@ -18,16 +19,17 @@ RETURN count(h) as HealthInsurance
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///03a-USCensusDP03HealthInsuranceAdmin2.csv' AS row
-MATCH (e:Economics{id: 'ACS5-' + row.stateFips + '-' + row.countyFips})
-MATCH (h:HealthInsurance{id: 'ACS5-' + row.stateFips + '-' + row.countyFips})
+MATCH (e:Economics{id: 'ACSDP5Y2018.DP03-' + row.stateFips + '-' + row.countyFips})
+MATCH (h:HealthInsurance{id: 'ACSDP5Y2018.DP03-' + row.stateFips + '-' + row.countyFips})
 MERGE (e)-[hh:HAS_HEALTH_INSURANCE]->(h)
 RETURN count(hh) as HAS_HEALTH_INSURANCE
 ;
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///03a-USCensusDP03HealthInsuranceZip.csv' AS row 
-MERGE (h:HealthInsurance{id: 'ACS5-' + row.postalCode})
-SET h.civilianNoninstitutionalizedPopulation = toInteger(row.civilianNoninstitutionalizedPopulation),
+MERGE (h:HealthInsurance{id: 'ACSDP5Y2018.DP03-' + row.postalCode})
+SET h.name = 'HealthInsurance-' + row.postalCode,
+    h.civilianNoninstitutionalizedPopulation = toInteger(row.civilianNoninstitutionalizedPopulation),
     h.withHealthInsuranceCoverage = toInteger(row.withHealthInsuranceCoverage),
     h.withHealthInsuranceCoveragePct = toFloat(row.withHealthInsuranceCoveragePct),
     h.withPrivateHealthInsurance = toInteger(row.withPrivateHealthInsurance),
@@ -43,16 +45,17 @@ RETURN count(h) as HealthInsurance
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///03a-USCensusDP03HealthInsuranceZip.csv' AS row
-MATCH (e:Economics{id: 'ACS5-' + row.postalCode})
-MATCH (h:HealthInsurance{id: 'ACS5-' + row.postalCode})
+MATCH (e:Economics{id: 'ACSDP5Y2018.DP03-' + row.postalCode})
+MATCH (h:HealthInsurance{id: 'ACSDP5Y2018.DP03-' + row.postalCode})
 MERGE (e)-[hh:HAS_HEALTH_INSURANCE]->(h)
 RETURN count(hh) as HAS_HEALTH_INSURANCE
 ;
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///03a-USCensusDP03HealthInsuranceTract.csv' AS row 
-MERGE (h:HealthInsurance{id: 'ACS5-' + row.tract})
-SET h.civilianNoninstitutionalizedPopulation = toInteger(row.civilianNoninstitutionalizedPopulation),
+MERGE (h:HealthInsurance{id: 'ACSDP5Y2018.DP03-' + row.tract})
+SET h.name = 'HealthInsurance-' + row.tract,
+    h.civilianNoninstitutionalizedPopulation = toInteger(row.civilianNoninstitutionalizedPopulation),
     h.withHealthInsuranceCoverage = toInteger(row.withHealthInsuranceCoverage),
     h.withHealthInsuranceCoveragePct = toFloat(row.withHealthInsuranceCoveragePct),
     h.withPrivateHealthInsurance = toInteger(row.withPrivateHealthInsurance),
@@ -68,8 +71,8 @@ RETURN count(h) as HealthInsurance
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///03a-USCensusDP03HealthInsuranceTract.csv' AS row
-MATCH (e:Economics{id: 'ACS5-' + row.tract})
-MATCH (h:HealthInsurance{id: 'ACS5-' + row.tract})
+MATCH (e:Economics{id: 'ACSDP5Y2018.DP03-' + row.tract})
+MATCH (h:HealthInsurance{id: 'ACSDP5Y2018.DP03-' + row.tract})
 MERGE (e)-[hh:HAS_HEALTH_INSURANCE]->(i)
 RETURN count(hh) as HAS_HEALTH_INSURANCE
 ;
