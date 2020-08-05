@@ -90,7 +90,7 @@ USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///03a-USCensusDP02EducationZip.csv' AS row
 MATCH (p:PostalCode{id: 'zip' + row.postalCode})
-MATCH (s:SocialCharacterictics{id: 'ACSDP5Y2018.DP02-' + row.postalCode})
+MATCH (s:SocialCharacteristics{id: 'ACSDP5Y2018.DP02-' + row.postalCode})
 MERGE (p)-[h:HAS_SOCIAL_CHARACTERISTICS]->(s)
 RETURN count(h) as HAS_SOCIAL_CHARACTERISTICS
 ;
