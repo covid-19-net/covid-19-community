@@ -1,8 +1,9 @@
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///03a-USCensusDP03IncomeAdmin2.csv' AS row 
-MERGE (i:Income{id: 'ACS5-' + row.stateFips + '-' + row.countyFips})
-SET i.totalHouseholds = toInteger(row.totalHouseholds),
+MERGE (i:Income{id: 'ACSDP5Y2018.DP03-' + row.stateFips + '-' + row.countyFips})
+SET i.name = 'Income-' + row.stateFips + '-' + row.countyFips,
+    i.totalHouseholds = toInteger(row.totalHouseholds),
     i.householdIncomeLessThan10000USD = toInteger(row.householdIncomeLessThan10000USD),
     i.householdIncomeLessThan10000USDPct = toFloat(row.householdIncomeLessThan10000USDPct),
     i.householdIncome10000To14999USD = toInteger(row.householdIncome10000To14999USD),
@@ -32,16 +33,17 @@ RETURN count(i) as Income
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///03a-USCensusDP03IncomeAdmin2.csv' AS row
-MATCH (e:Economics{id: 'ACS5-' + row.stateFips + '-' + row.countyFips})
-MATCH (i:Income{id: 'ACS5-' + row.stateFips + '-' + row.countyFips})
+MATCH (e:Economics{id: 'ACSDP5Y2018.DP03-' + row.stateFips + '-' + row.countyFips})
+MATCH (i:Income{id: 'ACSDP5Y2018.DP03-' + row.stateFips + '-' + row.countyFips})
 MERGE (e)-[h:HAS_INCOME]->(i)
 RETURN count(h) as HAS_INCOME
 ;
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///03a-USCensusDP03IncomeZip.csv' AS row 
-MERGE (i:Income{id: 'ACS5-' + row.postalCode})
-SET i.totalHouseholds = toInteger(row.totalHouseholds),
+MERGE (i:Income{id: 'ACSDP5Y2018.DP03-' + row.postalCode})
+SET i.name = 'Income-' + row.postalCode,
+    i.totalHouseholds = toInteger(row.totalHouseholds),
     i.householdIncomeLessThan10000USD = toInteger(row.householdIncomeLessThan10000USD),
     i.householdIncomeLessThan10000USDPct = toFloat(row.householdIncomeLessThan10000USDPct),
     i.householdIncome10000To14999USD = toInteger(row.householdIncome10000To14999USD),
@@ -70,16 +72,17 @@ RETURN count(i) as Income
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///03a-USCensusDP03IncomeZip.csv' AS row
-MATCH (e:Economics{id: 'ACS5-' + row.postalCode})
-MATCH (i:Income{id: 'ACS5-' + row.postalCode})
+MATCH (e:Economics{id: 'ACSDP5Y2018.DP03-' + row.postalCode})
+MATCH (i:Income{id: 'ACSDP5Y2018.DP03-' + row.postalCode})
 MERGE (e)-[h:HAS_INCOME]->(i)
 RETURN count(h) as HAS_INCOME
 ;
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///03a-USCensusDP03IncomeTract.csv' AS row 
-MERGE (i:Income{id: 'ACS5-' + row.tract})
-SET i.totalHouseholds = toInteger(row.totalHouseholds),
+MERGE (i:Income{id: 'ACSDP5Y2018.DP03-' + row.tract})
+SET i.name = 'Income-' + row.tract,
+    i.totalHouseholds = toInteger(row.totalHouseholds),
     i.householdIncomeLessThan10000USD = toInteger(row.householdIncomeLessThan10000USD),
     i.householdIncomeLessThan10000USDPct = toFloat(row.householdIncomeLessThan10000USDPct),
     i.householdIncome10000To14999USD = toInteger(row.householdIncome10000To14999USD),
@@ -108,8 +111,8 @@ RETURN count(i) as Income
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///03a-USCensusDP03IncomeTract.csv' AS row
-MATCH (e:Economics{id: 'ACS5-' + row.tract})
-MATCH (i:Income{id: 'ACS5-' + row.tract})
+MATCH (e:Economics{id: 'ACSDP5Y2018.DP03-' + row.tract})
+MATCH (i:Income{id: 'ACSDP5Y2018.DP03-' + row.tract})
 MERGE (e)-[h:HAS_INCOME]->(i)
 RETURN count(h) as HAS_INCOME
 ;

@@ -62,8 +62,10 @@ CREATE CONSTRAINT cases ON (n:Cases) ASSERT n.id IS UNIQUE;
 CREATE INDEX cases_d FOR (n:Cases) ON (n.date);
 CREATE INDEX cases_s FOR (n:Cases) ON (n.source);
 
+CREATE CONSTRAINT socialcharacteristics ON (n:SocialCharacteristics) ASSERT n.id IS UNIQUE;
+CREATE CONSTRAINT education ON (n:Education) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT economics ON (n:Economics) ASSERT n.id IS UNIQUE;
-CREATE CONSTRAINT employmentstatus ON (n:EmploymentStatus) ASSERT n.id IS UNIQUE;
+CREATE CONSTRAINT employment ON (n:Employment) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT income ON (n:Income) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT commuting ON (n:Commuting) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT occupation ON (n:Occupation) ASSERT n.id IS UNIQUE;

@@ -1,8 +1,9 @@
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///03a-USCensusDP05Admin2.csv' AS row 
-MERGE (d:Demographics{id: 'ACS5-' + row.stateFips + '-' + row.countyFips})
-SET d.name = d.id, d.totalPopulation = toInteger(row.totalPopulation), 
+MERGE (d:Demographics{id: 'ACSDP5Y2018.DP05-' + row.stateFips + '-' + row.countyFips})
+SET d.name = 'Demographics-' + row.stateFips + '-' + row.countyFips,
+    d.totalPopulation = toInteger(row.totalPopulation), 
     d.male = toInteger(row.male), d.female = toInteger(row.female),
     d.age0_4 = toInteger(row.age0_4), d.age5_9 = toInteger(row.age5_9), d.age10_14 = toInteger(row.age10_14),
     d.age15_19 = toInteger(row.age15_19), d.age20_24 = toInteger(row.age20_24), 
@@ -35,15 +36,16 @@ USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///03a-USCensusDP05Admin2.csv' AS row
 MATCH (a:Admin2{fips: row.countyFips, stateFips: row.stateFips})
-MATCH (d:Demographics{id: 'ACS5-' + row.stateFips + '-' + row.countyFips})
+MATCH (d:Demographics{id: 'ACSDP5Y2018.DP05-' + row.stateFips + '-' + row.countyFips})
 MERGE (a)-[h:HAS_DEMOGRAPHICS]->(d)
 RETURN count(h) as HAS_DEMOGRAPHICS
 ;
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///03a-USCensusDP05Zip.csv' AS row 
-MERGE (d:Demographics{id: 'ACS5-' + row.postalCode})
-SET d.name = d.id, d.totalPopulation = toInteger(row.totalPopulation), 
+MERGE (d:Demographics{id: 'ACSDP5Y2018.DP05-' + row.postalCode})
+SET d.name = 'Demographics-' + row.postalCode,
+    d.totalPopulation = toInteger(row.totalPopulation), 
     d.male = toInteger(row.male), d.female = toInteger(row.female),
     d.age0_4 = toInteger(row.age0_4), d.age5_9 = toInteger(row.age5_9), d.age10_14 = toInteger(row.age10_14),
     d.age15_19 = toInteger(row.age15_19), d.age20_24 = toInteger(row.age20_24), 
@@ -66,15 +68,16 @@ USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///03a-USCensusDP05Zip.csv' AS row
 MATCH (p:PostalCode{id: 'zip' + row.postalCode})
-MATCH (d:Demographics{id: 'ACS5-' + row.postalCode})
+MATCH (d:Demographics{id: 'ACSDP5Y2018.DP05-' + row.postalCode})
 MERGE (p)-[h:HAS_DEMOGRAPHICS]->(d)
 RETURN count(h) as HAS_DEMOGRAPHICS
 ;
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///03a-USCensusDP05Tract.csv' AS row 
-MERGE (d:Demographics{id: 'ACS5-' + row.tract})
-SET d.name = d.id, d.totalPopulation = toInteger(row.totalPopulation), 
+MERGE (d:Demographics{id: 'ACSDP5Y2018.DP05-' + row.tract})
+SET d.name = 'Demographics-' + row.tract, 
+    d.totalPopulation = toInteger(row.totalPopulation), 
     d.male = toInteger(row.male), d.female = toInteger(row.female),
     d.age0_4 = toInteger(row.age0_4), d.age5_9 = toInteger(row.age5_9), d.age10_14 = toInteger(row.age10_14),
     d.age15_19 = toInteger(row.age15_19), d.age20_24 = toInteger(row.age20_24), 
@@ -98,7 +101,7 @@ USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///03a-USCensusDP05Tract.csv' AS row
 MATCH (t:Tract{id: 'tract' + row.tract})
-MATCH (d:Demographics{id: 'ACS5-' + row.tract})
+MATCH (d:Demographics{id: 'ACSDP5Y2018.DP05-' + row.tract})
 MERGE (t)-[h:HAS_DEMOGRAPHICS]->(d)
 RETURN count(h) as HAS_DEMOGRAPHICS
 ;
