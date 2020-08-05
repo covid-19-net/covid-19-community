@@ -18,8 +18,8 @@ FROM 'FILE:///03a-USCensusDP02EducationAdmin2.csv' AS row
 MERGE (e:Education{id: 'ACSDP5Y2018.DP02-' + row.stateFips + '-' + row.countyFips})
 SET e.name = 'Education-' + row.stateFips + '-' + row.countyFips,
     e.population25YearsAndOver = toInteger(row.population25YearsAndOver),
-    e.LessThan9thGrade = toInteger(row.LessThan9thGrade),
-    e.LessThan9thGradePct = toFloat(row.LessThan9thGradePct),
+    e.lessThan9thGrade = toInteger(row.lessThan9thGrade),
+    e.lessThan9thGradePct = toFloat(row.lessThan9thGradePct),
     e.grade9thTo12thNoDiploma = toInteger(row.grade9thTo12thNoDiploma),
     e.grade9thTo12thNoDiplomaPct = toFloat(row.grade9thTo12thNoDiplomaPct),
     e.highSchoolGraduate = toInteger(row.highSchoolGraduate),
@@ -56,8 +56,8 @@ FROM 'FILE:///03a-USCensusDP02EducationZip.csv' AS row
 MERGE (e:Education{id: 'ACSDP5Y2018.DP02-' + row.postalCode})
 SET e.name = 'Education-' + row.postalCode,
     e.population25YearsAndOver = toInteger(row.population25YearsAndOver),
-    e.LessThan9thGrade = toInteger(row.LessThan9thGrade),
-    e.LessThan9thGradePct = toFloat(row.LessThan9thGradePct),
+    e.lessThan9thGrade = toInteger(row.lessThan9thGrade),
+    e.lessThan9thGradePct = toFloat(row.lessThan9thGradePct),
     e.grade9thTo12thNoDiploma = toInteger(row.grade9thTo12thNoDiploma),
     e.grade9thTo12thNoDiplomaPct = toFloat(row.grade9thTo12thNoDiplomaPct),
     e.highSchoolGraduate = toInteger(row.highSchoolGraduate),
@@ -90,7 +90,7 @@ USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///03a-USCensusDP02EducationZip.csv' AS row
 MATCH (p:PostalCode{id: 'zip' + row.postalCode})
-MATCH (s:SocialCharaterictics{id: 'ACSDP5Y2018.DP02-' + row.postalCode})
+MATCH (s:SocialCharacterictics{id: 'ACSDP5Y2018.DP02-' + row.postalCode})
 MERGE (p)-[h:HAS_SOCIAL_CHARACTERISTICS]->(s)
 RETURN count(h) as HAS_SOCIAL_CHARACTERISTICS
 ;
@@ -108,8 +108,8 @@ FROM 'FILE:///03a-USCensusDP02EducationTract.csv' AS row
 MERGE (e:Education{id: 'ACSDP5Y2018.DP02-' + row.tract})
 SET e.name = 'Education-' + row.tract,
     e.population25YearsAndOver = toInteger(row.population25YearsAndOver),
-    e.LessThan9thGrade = toInteger(row.LessThan9thGrade),
-    e.LessThan9thGradePct = toFloat(row.LessThan9thGradePct),
+    e.lessThan9thGrade = toInteger(row.lessThan9thGrade),
+    e.lessThan9thGradePct = toFloat(row.lessThan9thGradePct),
     e.grade9thTo12thNoDiploma = toInteger(row.grade9thTo12thNoDiploma),
     e.grade9thTo12thNoDiplomaPct = toFloat(row.grade9thTo12thNoDiplomaPct),
     e.highSchoolGraduate = toInteger(row.highSchoolGraduate),
@@ -133,7 +133,7 @@ RETURN count(e) as Education
 ;
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
-FROM 'FILE:///03a-USCensusDP02EductionTract.csv' AS row
+FROM 'FILE:///03a-USCensusDP02EducationTract.csv' AS row
 MERGE (s:SocialCharacteristics{id: 'ACSDP5Y2018.DP02-' + row.tract})
 SET s.name = 'SocialCharacteristics-' + row.tract
 RETURN count(s) as SocialCharacteristics
