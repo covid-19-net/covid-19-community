@@ -2,7 +2,7 @@ USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///03a-USCensusDP02EducationAdmin2.csv' AS row 
 MERGE (s:SocialCharacteristics{id: 'ACSDP5Y2018.DP02-' + row.stateFips + '-' + row.countyFips})
-SET s.name = 'SocialCharacteristics-' + row.stateFips + '-' + row.countyFips
+SET s.name = 'SocialCharacteristics-' + row.stateFips + '-' + row.countyFips,
     s.stateFips = row.stateFips, 
     s.countyFips = row.countyFips,
     s.source = row.source, 
@@ -87,7 +87,7 @@ USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///03a-USCensusDP02EducationZip.csv' AS row
 MERGE (s:SocialCharacteristics{id: 'ACSDP5Y2018.DP02-' + row.postalCode})
-SET s.name = 'SocialCharacteristics-' + row.postalCode
+SET s.name = 'SocialCharacteristics-' + row.postalCode,
     s.postalCode = row.postalCode,
     s.source = row.source, 
     s.aggregationLevel = row.aggregationLevel
@@ -142,7 +142,7 @@ USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///03a-USCensusDP02EducationTract.csv' AS row
 MERGE (s:SocialCharacteristics{id: 'ACSDP5Y2018.DP02-' + row.tract})
-SET s.name = 'SocialCharacteristics-' + row.tract
+SET s.name = 'SocialCharacteristics-' + row.tract,
     s.tract = row.tract,
     s.source = row.source,
     s.aggregationLevel = row.aggregationLevel
