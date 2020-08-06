@@ -65,6 +65,7 @@ SET i.name = 'Income-' + row.postalCode,
     i.householdIncomeMoreThan200000USD = toInteger(row.householdIncomeMoreThan200000USD),
     i.householdIncomeMoreThan200000USDPct = toFloat(row.householdIncomeMoreThan200000USDPct),
     i.medianHouseholdIncomeUSD = toInteger(row.medianHouseholdIncomeUSD),
+    i.meanHouseholdIncomeUSD = toInteger(row.meanHouseholdIncomeUSD),
     i.postalCode = row.postalCode,
     i.source = row.source, i.aggregationLevel = row.aggregationLevel
 RETURN count(i) as Income
@@ -104,6 +105,7 @@ SET i.name = 'Income-' + row.tract,
     i.householdIncomeMoreThan200000USD = toInteger(row.householdIncomeMoreThan200000USD),
     i.householdIncomeMoreThan200000USDPct = toFloat(row.householdIncomeMoreThan200000USDPct),
     i.medianHouseholdIncomeUSD = toInteger(row.medianHouseholdIncomeUSD),
+    i.meanHouseholdIncomeUSD = toInteger(row.meanHouseholdIncomeUSD),
     i.tract = row.tract,
     i.source = row.source, i.aggregationLevel = row.aggregationLevel
 RETURN count(i) as Income
