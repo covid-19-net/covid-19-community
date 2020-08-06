@@ -58,6 +58,7 @@ run_cypher 02c-SDHHSACases.cypher
 run_cypher 03a-USCensusDP02Education.cypher
 run_cypher 03a-USCensusDP03Employment.cypher
 run_cypher 03a-USCensusDP03Income.cypher
+run_cypher 03a-USCensusDP03HealthInsurance.cypher
 run_cypher 03a-USCensusDP03Commuting.cypher
 run_cypher 03a-USCensusDP03Occupation.cypher
 run_cypher 03a-USCensusDP04.cypher
