@@ -69,6 +69,7 @@ CREATE INDEX education_s FOR (n:Education) ON (n.stateFips);
 CREATE CONSTRAINT economics ON (n:Economics) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT employment ON (n:Employment) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT income ON (n:Income) ASSERT n.id IS UNIQUE;
+CREATE CONSTRAINT healthinsurance ON (n:HealthInsurance) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT commuting ON (n:Commuting) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT occupation ON (n:Occupation) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT housing ON (n:Housing) ASSERT n.id IS UNIQUE;
