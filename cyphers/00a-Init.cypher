@@ -64,6 +64,8 @@ CREATE INDEX cases_s FOR (n:Cases) ON (n.source);
 
 CREATE CONSTRAINT socialcharacteristics ON (n:SocialCharacteristics) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT education ON (n:Education) ASSERT n.id IS UNIQUE;
+CREATE INDEX education_c FOR (n:Education) ON (n.countyFips);
+CREATE INDEX education_s FOR (n:Education) ON (n.stateFips);
 CREATE CONSTRAINT economics ON (n:Economics) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT employment ON (n:Employment) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT income ON (n:Income) ASSERT n.id IS UNIQUE;

@@ -25,7 +25,7 @@ SET e.name = 'Employment-' + row.stateFips + '-' + row.countyFips,
     e.population16YearsAndOverInArmedForces = toInteger(row.population16YearsAndOverInArmedForces),
     e.population16YearsAndOverInArmedForcesPct = toFloat(row.population16YearsAndOverInArmedForcesPct),
     e.population16YearsAndOverNotInLaborForce = toInteger(row.population16YearsAndOverNotInLaborForce),
-    e.population16YearsAndOverNotInLaborForcPct = toFloat(row.population16YearsAndOverNotInLaborPct),                     e.stateFips = row.stateFips, e.countyFips = row.countyFips,
+    e.population16YearsAndOverNotInLaborForcePct = toInteger(row.population16YearsAndOverNotInLaborForcePct),                           e.stateFips = row.stateFips, e.countyFips = row.countyFips,
     e.source = row.source, e.aggregationLevel = row.aggregationLevel
 RETURN count(e) as Employment
 ;
@@ -50,7 +50,7 @@ SET e.name = 'Employment-' + row.postalCode,
     e.population16YearsAndOverInArmedForces = toInteger(row.population16YearsAndOverInArmedForces),
     e.population16YearsAndOverInArmedForcesPct = toFloat(row.population16YearsAndOverInArmedForcesPct),
     e.population16YearsAndOverNotInLaborForce = toInteger(row.population16YearsAndOverNotInLaborForce),
-    e.population16YearsAndOverNotInLaborForcPct = toFloat(row.population16YearsAndOverNotInLaborPct), 
+    e.population16YearsAndOverNotInLaborForcePct = toInteger(row.population16YearsAndOverNotInLaborForcePct),
     e.postalCode = row.postalCode,
     e.source = row.source, e.aggregationLevel = row.aggregationLevel
 RETURN count(e) as Employment
@@ -91,7 +91,7 @@ SET e.name = 'Employment-' + row.tract,
     e.population16YearsAndOverInArmedForces = toInteger(row.population16YearsAndOverInArmedForces),
     e.population16YearsAndOverInArmedForcesPct = toFloat(row.population16YearsAndOverInArmedForcesPct),
     e.population16YearsAndOverNotInLaborForce = toInteger(row.population16YearsAndOverNotInLaborForce),
-    e.population16YearsAndOverNotInLaborForcPct = toFloat(row.population16YearsAndOverNotInLaborPct), 
+    e.population16YearsAndOverNotInLaborForcePct = toInteger(row.population16YearsAndOverNotInLaborForcePct),
     e.tract = row.tract,
     e.source = row.source, e.aggregationLevel = row.aggregationLevel
 RETURN count(e) as Employment
