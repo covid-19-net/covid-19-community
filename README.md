@@ -99,9 +99,13 @@ Once Jupyter Lab launches, navigate to the `notebooks/queries` directory and run
 |:-------|:----------|
 |[CaseCounts](notebooks/queries/CaseCounts.ipynb)| Runs example queries for case counts|
 |[Locations](notebooks/queries/Locations.ipynb)| Runs example queries for locations|
-|[Demographics](notebooks/queries/Demographics.ipynb)| Runs example queries demographics data from the American Community Survey|
+|[Demographics](notebooks/queries/Demographics.ipynb)| Runs example queries for demographics data from the American Community Survey|
+|[SocialCharacteristics](notebooks/queries/SocialCharacteristics.ipynb)| Runs example queries for social characteristics from the American Community Survey|
+|[EconomicCharacteristics](notebooks/queries/EconomicCharacteristics.ipynb)| Runs example queries for economic characteristics from the American Community Survey|
+|[Housing](notebooks/queries/Housing.ipynb)| Runs example queries for housing characteristics from the American Community Survey|
 |[Bioentities](notebooks/queries/Bioentities.ipynb)| Runs example queries for bioentities|
-|[AnalyzeVariantsSpikeGlycoprotein](notebooks/queries/AnalyzeVariantsSpikeGlycoprotein.ipynb)| Analyze SARS-CoV-2 Spike Glycoprotein Variants|
+|[AnalyzeVariantsSpikeGlycoprotein](notebooks/analyses/AnalyzeVariantsSpikeGlycoprotein.ipynb)| Analyze SARS-CoV-2 Spike Glycoprotein Variants|
+|[RiskFactorsByStateCounty](notebooks/analyses/RiskFactorsByStateCounty.ipynb)| Explore Risk Factors for COVID-19 for Counties in US States|
 |...|add examples here ...|
 
 ## Data Download, Preparation, and Integration
