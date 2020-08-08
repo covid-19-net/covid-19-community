@@ -1,3 +1,13 @@
+<style>
+img
+{
+    display:block; 
+    float:none; 
+    margin-left:auto;
+    margin-right:auto;
+    width:60%;
+}
+</style> 
 # Covid-19-Community
 
 This project is a community effort to build a Neo4j Knowledge Graph (KG) that integrates heterogeneous biomedical and environmental [datasets](reference_data/DataProvider.csv) to help researchers analyze the interplay between host, pathogen, the environment, and COVID-19.
@@ -11,6 +21,17 @@ This project is a community effort to build a Neo4j Knowledge Graph (KG) that in
 This schema shows the Nodes (circles) and their Relationships (arrows) in the COVID-19-Net KG. 
 
 The node [NodeMetadata](reference_data/NodeMetadata.csv)(top left) describes nodes and refers to relevant ontologies (e.g., Infectious Disease Ontology). The left side of the schema shows the geographic hierarchy from the world to the city level (> 1000 citizens), as well as PostalCode (US Zip) and US Census Tract. The right side shows COVID-19 case counts and information about the host organisms, pathogen, virus strains, genes, proteins, protein-protein interactions, and publications. Cases and strains are linked to geolocations. 
+
+<p align="center">
+<img src="docs/LocationSubgraph.png", width="60%">
+</p>
+
+
+The location subgraph shows the geographic hierarchy from the world to the city level (> 1000 citizens), as well as PostalCode (US Zip) and US Census Tract. 
+
+![](docs/Population-KG.png)
+
+This schema show a subgraph of population characteristics incorporated from the American Community Survey 2018 5-year Estimates. Selected population characteristics that may be risk factors for COVID-19 infections have been included. These data are currently available at three geographic levels: US Counties (Admin2), US Zip Codes (PostalCode), and US Census Tract (Tract).
 
 Note, this KG is work in progress and changes frequently.
 
