@@ -1,0 +1,254 @@
+node {
+  diameter: 50px;
+  color: #A5ABB6;
+  border-color: #9AA1AC;
+  border-width: 2px;
+  text-color-internal: #FFFFFF;
+  font-size: 10px;
+}
+relationship {
+  color: #A5ABB6;
+  shaft-width: 1px;
+  font-size: 8px;
+  padding: 3px;
+  text-color-external: #000000;
+  text-color-internal: #FFFFFF;
+  caption: "<type>";
+}
+node.* {
+  color: #C990C0;
+  border-color: #b261a5;
+  text-color-internal: #FFFFFF;
+  defaultCaption: "<id>";
+}
+node.NodeMetadata {
+  caption: "{name}";
+  diameter: 80px;
+  color: #1C2833 ;
+  border-color: #17202A;
+  text-color-internal: #FFFFFF;
+}
+node.DataProvider {
+  caption: "{name}";
+  diameter: 80px;
+  color: #566573;
+  border-color: #273746;
+}
+node.World {
+  caption: "{name}";
+  color: #EAF2F8;
+  border-color: #D4E6F1;
+  text-color-internal: #604A0E;
+  diameter: 50px;
+}
+node.UNRegion {
+  caption: "{name}";
+  color: #D4E6F1;
+  border-color: #A9CCE3;
+  text-color-internal: #604A0E;
+  diameter: 50px;
+}
+node.UNSubRegion {
+  caption: "{name}";
+  diameter: 80px;
+  color: #A9CCE3;
+  border-color: #7FB3D5;
+  text-color-internal: #604A0E;
+  diameter: 80px;
+}
+node.UNIntermediateRegion {
+  caption: "{name}";
+  font-size: 7px;
+  color: #7FB3D5;
+  border-color: #5499C7;
+  text-color-internal: #604A0E;
+  diameter: 80px;
+}
+node.Country {
+  caption: "{name}";
+  color: #5499C7;
+  border-color: #2980B9;
+  text-color-internal: #FFFFFF;
+  diameter: 50px;
+}
+node.Admin1 {
+  caption: "{name}";
+  color: #2980B9;
+  border-color: #2471A3;
+  text-color-internal: #FFFFFF;
+  diameter: 50px;
+}
+node.Admin2 {
+  caption: "{name}";
+  color: #2471A3;
+  border-color: #1F618D;
+  text-color-internal: #FFFFFF;
+  diameter: 50px;
+}
+node.City {
+  caption: "{name}";
+  color: #1F618D;
+  border-color: #1A5276;
+  text-color-internal: #FFFFFF;
+  diameter: 50px;
+}
+node.PostalCode {
+  caption: "{name}";
+  color: #1A5276;
+  border-color: #154360;
+  text-color-internal: #FFFFFF;
+  diameter: 65px;
+}
+node.Tract {
+  caption: "{name}";
+  color: #154360;
+  border-color: #447666;
+  text-color-internal: #FFFFFF;
+  diameter: 65px;
+}
+node.USDivision {
+  caption: "{name}";
+  color: #3498DB;
+  border-color: #2E86C1;
+  text-color-internal: #FFFFFF;
+  diameter: 65px;
+}
+node.USRegion {
+  caption: "{name}";
+  color: #2E86C1;
+  border-color: #2E86C1;
+  text-color-internal: #FFFFFF;
+  diameter: 65px;
+}
+node.CruiseShip {
+  defaultCaption: "<id>";
+  caption: "{name}";
+  color: #85C1E9;
+  border-color: #5DADE2;
+  text-color-internal: #604A0E;
+  diameter: 65px;
+}
+node.Location {
+  caption: "{name}";
+}
+node.Case {
+  caption: "{name}";
+  color: #4C8EDA;
+  border-color: #2870c2;
+  text-color-internal: #FFFFFF;
+}
+node.Host {
+  color: #F79767;
+  border-color: #f36924;
+  text-color-internal: #FFFFFF;
+  defaultCaption: "<id>";
+  caption: "{name}";
+  diameter: 65px;
+}
+node.Organism {
+  color: #57C7E3;
+  border-color: #23b3d7;
+  text-color-internal: #FFFFFF;
+  defaultCaption: "<id>";
+  caption: "{name}";
+}
+node.Strain {
+  color: #F16667;
+  border-color: #eb2728;
+  text-color-internal: #FFFFFF;
+  caption: "{name}";
+}
+node.Gene {
+  color: #8DCC93;
+  border-color: #5db665;
+  text-color-internal: #604A0E;
+  caption: "{name}";
+}
+node.Clade {
+  color: #ECB5C9;
+  border-color: #da7298;
+  text-color-internal: #604A0E;
+  caption: "{name}";
+}
+node.Protein {
+  color: #4C8EDA;
+  border-color: #2870c2;
+  text-color-internal: #FFFFFF;
+  caption: "{name}";
+}
+node.Publication {
+  color: #FFC454;
+  border-color: #d7a013;
+  text-color-internal: #604A0E;
+  caption: "{id}";
+  diameter: 80px;
+}
+node.Outbreak {
+  color: #569480;
+  border-color: #447666;
+  text-color-internal: #FFFFFF;
+  caption: "{name}";
+}
+node.Cases {
+  caption: "{name}";
+  color: #DA7194;
+  border-color: #cc3c6c;
+  text-color-internal: #FFFFFF;
+}
+node.Variant {
+  caption: "{name}";
+  diameter: 50px;
+  color: #D9C8AE;
+  border-color: #c0a378;
+  text-color-internal: #604A0E;
+}
+node.ProteinName {
+  caption: "{name}";
+  diameter: 65px;
+}
+node.Pathogen {
+  caption: "{name}";
+}
+node.Organims {
+  caption: "{name}";
+}
+node.Demographics {
+  caption: "{name}";
+  diameter: 80px;
+}
+node.Housing {
+  caption: "{name}";
+}
+node.Economics {
+  caption: "{name}";
+  diameter: 65px;
+}
+node.EmploymentStatus {
+  caption: "{name}";
+}
+node.Income {
+  caption: "{name}";
+}
+node.Employment {
+  caption: "{name}";
+  diameter: 65px;
+}
+node.Commuting {
+  caption: "{name}";
+  diameter: 65px;
+}
+node.Occupation {
+  caption: "{name}";
+  diameter: 65px;
+}
+node.SocialCharacteristics {
+  caption: "{name}";
+  diameter: 80px;
+}
+node.Education {
+  caption: "{name}";
+}
+node.HealthInsurance {
+  caption: "{name}";
+  diameter: 80px;
+}

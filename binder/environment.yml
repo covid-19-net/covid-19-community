@@ -14,6 +14,7 @@ dependencies:
   - matplotlib
   - biopython
   - papermill=2.1.0
+  - nodejs>=10.0.0
   - widgetsnbextension
   - ipywidgets
   - arcgis=1.8.1

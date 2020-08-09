@@ -12,6 +12,17 @@ This schema shows the Nodes (circles) and their Relationships (arrows) in the CO
 
 The node [NodeMetadata](reference_data/NodeMetadata.csv)(top left) describes nodes and refers to relevant ontologies (e.g., Infectious Disease Ontology). The left side of the schema shows the geographic hierarchy from the world to the city level (> 1000 citizens), as well as PostalCode (US Zip) and US Census Tract. The right side shows COVID-19 case counts and information about the host organisms, pathogen, virus strains, genes, proteins, protein-protein interactions, and publications. Cases and strains are linked to geolocations. 
 
+<p align="center">
+<img src="docs/LocationSubgraph.png", width="60%">
+</p>
+
+
+The location subgraph shows the geographic hierarchy from the world to the city level (> 1000 citizens), as well as PostalCode (US Zip) and US Census Tract. 
+
+![](docs/Population-KG.png)
+
+This schema show a subgraph of population characteristics incorporated from the American Community Survey 2018 5-year Estimates. Selected population characteristics that may be risk factors for COVID-19 infections have been included. These data are currently available at three geographic levels: US Counties (Admin2), US Zip Codes (PostalCode), and US Census Tract (Tract).
+
 Note, this KG is work in progress and changes frequently.
 
 ## Browse the Knowledge Graph with the Neo4j Browser
@@ -163,6 +174,11 @@ conda env create -f environment.yml
 Activate the conda environment
 ```
 conda activate covid-19-community
+```
+
+Install Jupyter Lab extension
+```
+jupyter labextension install @jupyter-widgets/jupyterlab-manager
 ```
 
 **3. Launch Jupyter Lab**
