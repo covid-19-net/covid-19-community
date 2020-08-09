@@ -176,6 +176,11 @@ Activate the conda environment
 conda activate covid-19-community
 ```
 
+Install Jupyter Lab extension
+```
+jupyter labextension install @jupyter-widgets/jupyterlab-manager
+```
+
 **3. Launch Jupyter Lab**
 ```
 jupyter lab
