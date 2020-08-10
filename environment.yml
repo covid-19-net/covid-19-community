@@ -8,15 +8,14 @@ channels:
 dependencies:
   - python>=3.8
   - openjdk=11.0.1
-  - jupyterlab=2.1.1
+  - jupyterlab=2.1.5
   - pandas
   - xlrd
   - matplotlib
   - biopython
   - papermill=2.1.0
   - nodejs>=10.0.0
-  - widgetsnbextension
-  - ipywidgets
+  - ipywidgets=7.5.1
   - arcgis=1.8.1
   - pip
   - pip:
