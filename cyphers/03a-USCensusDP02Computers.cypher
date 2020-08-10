@@ -19,7 +19,7 @@ LOAD CSV WITH HEADERS
 FROM 'FILE:///03a-USCensusDP02ComputersAdmin2.csv' AS row
 MATCH (s:SocialCharacteristics{id: 'ACSDP5Y2018.DP02-' + row.stateFips + '-' + row.countyFips})
 MATCH (c:Computers{id: 'ACSDP5Y2018.DP02-' + row.stateFips + '-' + row.countyFips})
-MERGE (s)-[h:HAS_Computers]->(e)
+MERGE (s)-[h:HAS_COMPUTERS]->(e)
 RETURN count(h) as HAS_Computers
 ;
 USING PERIODIC COMMIT
@@ -42,7 +42,7 @@ LOAD CSV WITH HEADERS
 FROM 'FILE:///03a-USCensusDP02ComputersZip.csv' AS row
 MATCH (s:SocialCharacteristics{id: 'ACSDP5Y2018.DP02-' + row.postalCode})
 MATCH (c:Computers{id: 'ACSDP5Y2018.DP02-' + row.postalCode})
-MERGE (s)-[h:HAS_Computers]->(e)
+MERGE (s)-[h:HAS_COMPUTERS]->(e)
 RETURN count(h) as HAS_Computers
 ;
 USING PERIODIC COMMIT
@@ -65,6 +65,6 @@ LOAD CSV WITH HEADERS
 FROM 'FILE:///03a-USCensusDP02ComputersTract.csv' AS row
 MATCH (s:SocialCharacteristics{id: 'ACSDP5Y2018.DP02-' + row.tract})
 MATCH (c:Computers{id: 'ACSDP5Y2018.DP02-' + row.tract})
-MERGE (s)-[h:HAS_Computers]->(e)
+MERGE (s)-[h:HAS_COMPUTERS]->(e)
 RETURN count(h) as HAS_Computers
 ;
