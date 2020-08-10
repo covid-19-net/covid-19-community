@@ -56,6 +56,7 @@ run_cypher 01h-PMC-Accession.cypher
 run_cypher 02a-JHUCases.cypher
 run_cypher 02c-SDHHSACases.cypher
 run_cypher 03a-USCensusDP02Education.cypher
+run_cypher 03a-USCensusDP02Computers.cypher
 run_cypher 03a-USCensusDP03Employment.cypher
 run_cypher 03a-USCensusDP03Income.cypher
 run_cypher 03a-USCensusDP03HealthInsurance.cypher

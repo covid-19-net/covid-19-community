@@ -146,7 +146,15 @@ COVID-19-Net Knowledge Graph is created from publically available resources, inc
 |[02a-JHUCases](notebooks/dataprep/02a-JHUCases.ipynb)| Downloads cummulative confimed cases and deaths from the COVID-19 Data Repository by Johns Hopkins University|
 |[02a-JHUCasesLocation](notebooks/dataprep/02a-JHUCasesLocation.ipynb)| Standardizes location data for the COVID-19 Data Repository by Johns Hopkins University|
 |[02c-SDHHSACases](notebooks/dataprep/02c-SDHHSACases.ipynb)| Downloads cummulative confirmed COVID-19 cases from the County of San Diego, Health and Human Services Agency|
-|[03a-USCensusDP05](notebooks/dataprep/03a-USCensusDP05.ipynb)| Downloads demographic data estimates (DP05) from the American Community Survey 5-Year Data (2009-2018)|
+|[03a-USCensusDP02Education](notebooks/dataprep/03a-USCensusDP02Education.ipynb)| Downloads social characteristics (DP02) from the American Community Survey 5-Year Data 2018|
+|[03a-USCensusDP02Computers](notebooks/dataprep/03a-USCensusDP02Computers.ipynb)| Downloads social characteristics (DP02) from the American Community Survey 5-Year Data 2018|
+|[03a-USCensusDP03Commuting](notebooks/dataprep/03a-USCensusDP03Commuting.ipynb)| Downloads economic characteristics (DP03) from the American Community Survey 5-Year Data 2018|
+|[03a-USCensusDP03Employment](notebooks/dataprep/03a-USCensusDP03Employment.ipynb)| Downloads economic characteristics (DP03) from the American Community Survey 5-Year Data 2018|
+|[03a-USCensusDP03HealthInsurance](notebooks/dataprep/03a-USCensusDP03HealthInsurance.ipynb)| Downloads economic characteristics (DP03) from the American Community Survey 5-Year Data 2018|
+|[03a-USCensusDP03Income](notebooks/dataprep/03a-USCensusDP03Income.ipynb)| Downloads economic characteristics (DP03) from the American Community Survey 5-Year Data 2018|
+|[03a-USCensusDP03Occupation](notebooks/dataprep/03a-USCensusDP03Occupation.ipynb)| Downloads economic characteristics (DP03) from the American Community Survey 5-Year Data 2018|
+|[03a-USCensusDP04](notebooks/dataprep/03a-USCensusDP05.ipynb)| Downloads housing (DP04) from the American Community Survey 5-Year Data 2018|
+|[03a-USCensusDP05](notebooks/dataprep/03a-USCensusDP05.ipynb)| Downloads demographic data estimates (DP05) from the American Community Survey 5-Year Data 2018|
 |...|Future notebooks that add new data to the knowledge graph|
 
 ## How to run Jupyter Notebook Examples locally
@@ -207,6 +215,11 @@ Then, launch the Neo4j Browser, create an empty database, set the password to "n
 Add the environment variable `NEO4J_HOME` with the path to the Neo4j database installation to your .bash_profile file, e.g.
 
 `export NEO4J_HOME="/Users/username/Library/Application Support/Neo4j Desktop/Application/neo4jDatabases/database-.../installation-4.0.3"`
+
+Add the environment variable `NEO4J_IMPORT` with the path to the Neo4j database import directory to your .bash_profile file, e.g.
+
+
+`export NEO4J_IMPORT="/Users/username/Library/Application Support/Neo4j Desktop/Application/neo4jDatabases/database-.../installation-4.0.3/import"`
 
 **6. Run Data Download Notebooks**
 
