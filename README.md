@@ -10,18 +10,19 @@ This project is a community effort to build a Neo4j Knowledge Graph (KG) that in
 
 This schema shows the Nodes (circles) and their Relationships (arrows) in the COVID-19-Net KG. 
 
-The node [NodeMetadata](reference_data/NodeMetadata.csv)(top left) describes nodes and refers to relevant ontologies (e.g., Infectious Disease Ontology). The left side of the schema shows the geographic hierarchy from the world to the city level (> 1000 citizens), as well as PostalCode (US Zip) and US Census Tract. The right side shows COVID-19 case counts and information about the host organisms, pathogen, virus strains, genes, proteins, protein-protein interactions, and publications. Cases and strains are linked to geolocations. 
+The node [NodeMetadata](reference_data/NodeMetadata.csv)(top left) describes nodes and refers to relevant ontologies (e.g., Infectious Disease Ontology). The left side of the schema shows the geographic hierarchy from the world to the city level (> 1000 citizens), as well as PostalCode (US ZIP) and US Census Tract. The right side shows COVID-19 case counts and information about the host organisms, pathogen, virus strains, genes, proteins, protein-protein interactions, and publications. Cases and strains are linked to geolocations. 
 
 <p align="center">
-<img src="docs/LocationSubgraph.png", width="60%">
+<img src="docs/Location.png", width="60%">
 </p>
 
+The location subgraph shows the geographic hierarchy from the world to the city level (> 1000 citizens), as well as PostalCode (US ZIP) and US Census Tract level. Each geographic node has a **Location** label (not shown), to simplify finding locations without specifying a specific level in the geographic hierarchy.
 
-The location subgraph shows the geographic hierarchy from the world to the city level (> 1000 citizens), as well as PostalCode (US Zip) and US Census Tract. 
+<p align="center">
+<img src="docs/PopulationCharacteristics.png", width="60%">
+</p>
 
-![](docs/Population-KG.png)
-
-This schema show a subgraph of population characteristics incorporated from the American Community Survey 2018 5-year Estimates. Selected population characteristics that may be risk factors for COVID-19 infections have been included. These data are currently available at three geographic levels: US Counties (Admin2), US Zip Codes (PostalCode), and US Census Tract (Tract).
+The population characteristics subgraph represents estimates from the American Community Survey 2018 5-year. Selected population characteristics that may be risk factors for COVID-19 infections have been included. These data are currently available at three geographic levels: US Counties (Admin2), US ZIP Codes (PostalCode), and US Census Tract (Tract).
 
 Note, this KG is work in progress and changes frequently.
 

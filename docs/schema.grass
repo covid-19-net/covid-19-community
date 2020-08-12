@@ -58,11 +58,10 @@ node.UNSubRegion {
 }
 node.UNIntermediateRegion {
   caption: "{name}";
-  font-size: 7px;
   color: #7FB3D5;
   border-color: #5499C7;
   text-color-internal: #604A0E;
-  diameter: 80px;
+  diameter: 110px;
 }
 node.Country {
   caption: "{name}";
@@ -102,7 +101,7 @@ node.PostalCode {
 node.Tract {
   caption: "{name}";
   color: #154360;
-  border-color: #447666;
+  border-color: #273746;
   text-color-internal: #FFFFFF;
   diameter: 65px;
 }
@@ -214,41 +213,67 @@ node.Organims {
 }
 node.Demographics {
   caption: "{name}";
+  color: #F39C12;
+  border-color: #B9770E;
   diameter: 80px;
 }
 node.Housing {
   caption: "{name}";
+  color: #F1C40F;
+  border-color: #B7950B;
 }
 node.Economics {
   caption: "{name}";
+  color: #6E2C00;
+  border-color: #6E2C00;
   diameter: 65px;
 }
 node.EmploymentStatus {
   caption: "{name}";
+  color: #A04000;
+  border-color: #6E2C00;
+  diameter: 65px;
 }
 node.Income {
   caption: "{name}";
+  color: #DC7633;
+  border-color: #D35400;
+  diameter: 65px;
 }
 node.Employment {
   caption: "{name}";
+  color: #BA4A00;
+  border-color: #A04000;
   diameter: 65px;
 }
 node.Commuting {
   caption: "{name}";
+  color: #EDBB99;
+  border-color:#E59866 ;
   diameter: 65px;
 }
 node.Occupation {
   caption: "{name}";
+  color: #D35400;
+  border-color: #BA4A00;
+
   diameter: 65px;
-}
-node.SocialCharacteristics {
-  caption: "{name}";
-  diameter: 80px;
-}
-node.Education {
-  caption: "{name}";
 }
 node.HealthInsurance {
   caption: "{name}";
+  color: #E59866;
+  border-color: #DC7633;
   diameter: 80px;
 }
+node.SocialCharacteristics {
+  caption: "{name}";
+  color: #B7950B;
+  border-color: #7D6608;
+  diameter: 100px;
+}
+node.Education {
+  caption: "{name}";
+  color: #D4AC0D;
+  border-color: #B7950B;
+}
+
