@@ -31,7 +31,7 @@ This project is a community effort to build a Neo4j Knowledge Graph (KG) that in
 **Biology Subgraph:** This subgraph represents gene, variant, protein, pathogen-host protein-protein interactions, and links to publications.
 
 <p align="center">
-<img src="docs/PopulationCharacteristics.png", width="60%">
+<img src="docs/PopulationCharacteristics.png", width="100%">
 </p>
 
 **Population Characteristics Subgraph:** This subgraph represents data from the American Community Survey 2018 5-year estimates. Selected population characteristics that may be risk factors for COVID-19 infections have been included. These data are currently available at three geographic levels: US Counties (Admin2), US ZIP Codes (PostalCode), and US Census Tract (Tract).
