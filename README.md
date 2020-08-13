@@ -13,13 +13,13 @@ This schema shows the Nodes (circles) and their Relationships (arrows) in the CO
 The node [NodeMetadata](reference_data/NodeMetadata.csv)(top left) describes nodes and refers to relevant ontologies (e.g., Infectious Disease Ontology). The left side of the schema shows the geographic hierarchy. The right side shows COVID-19 case counts and information about the host organisms, pathogen, virus strains, genes, proteins, protein-protein interactions, and publications. Cases and strains are linked to geolocations. 
 
 <p align="center">
-<img src="docs/Location.png", width="80%">
+<img src="docs/Location.png", width="60%">
 </p>
 
 The location subgraph shows the geographic hierarchy from the world to the city level (> 1000 citizens), as well as PostalCode (US ZIP) and US Census Tract level. Each geographic node has a **Location** label (not shown), to simplify finding locations without specifying a specific level in the geographic hierarchy.
 
 <p align="center">
-<img src="docs/PopulationCharacteristics.png", width="80%">
+<img src="docs/PopulationCharacteristics.png", width="100%">
 </p>
 
 The population characteristics subgraph represents estimates from the American Community Survey 2018 5-year. Selected population characteristics that may be risk factors for COVID-19 infections have been included. These data are currently available at three geographic levels: US Counties (Admin2), US ZIP Codes (PostalCode), and US Census Tract (Tract).
