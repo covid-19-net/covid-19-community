@@ -120,7 +120,6 @@ node.USRegion {
   diameter: 65px;
 }
 node.CruiseShip {
-  defaultCaption: "<id>";
   caption: "{name}";
   color: #85C1E9;
   border-color: #5DADE2;
@@ -130,86 +129,81 @@ node.CruiseShip {
 node.Location {
   caption: "{name}";
 }
-node.Case {
+node.Strain {
   caption: "{name}";
-  color: #4C8EDA;
-  border-color: #2870c2;
+  color: #78281F;
+  border-color: #641E16;
   text-color-internal: #FFFFFF;
+}
+node.Pathogen {
+  caption: "{name}";
+  color: #B03A2E;
+  border-color: #78281F;
 }
 node.Host {
-  color: #F79767;
-  border-color: #f36924;
-  text-color-internal: #FFFFFF;
-  defaultCaption: "<id>";
   caption: "{name}";
-  diameter: 65px;
+  color: #CB4335;
+  border-color: #78281F;
+  text-color-internal: #FFFFFF;
 }
 node.Organism {
-  color: #57C7E3;
-  border-color: #23b3d7;
+  caption: "{name}";
+  color: #E74C3C;
+  border-color: #CB4335;
   text-color-internal: #FFFFFF;
-  defaultCaption: "<id>";
-  caption: "{name}";
-}
-node.Strain {
-  color: #F16667;
-  border-color: #eb2728;
-  text-color-internal: #FFFFFF;
-  caption: "{name}";
-}
-node.Gene {
-  color: #8DCC93;
-  border-color: #5db665;
-  text-color-internal: #604A0E;
-  caption: "{name}";
-}
-node.Clade {
-  color: #ECB5C9;
-  border-color: #da7298;
-  text-color-internal: #604A0E;
-  caption: "{name}";
-}
-node.Protein {
-  color: #4C8EDA;
-  border-color: #2870c2;
-  text-color-internal: #FFFFFF;
-  caption: "{name}";
-}
-node.Publication {
-  color: #FFC454;
-  border-color: #d7a013;
-  text-color-internal: #604A0E;
-  caption: "{id}";
-  diameter: 80px;
 }
 node.Outbreak {
-  color: #569480;
-  border-color: #447666;
-  text-color-internal: #FFFFFF;
   caption: "{name}";
+  color: #F1948A;
+  border-color: #E74C3C;
+  text-color-internal: #FFFFFF;
 }
 node.Cases {
   caption: "{name}";
-  color: #DA7194;
-  border-color: #cc3c6c;
+  color: #F5B7B1;
+  border-color: #F1948A;
+  text-color-internal: #FFFFFF;
+}
+node.Clade {
+  caption: "{name}";
+  color: #922B21;
+  border-color: #7B241C;
+  text-color-internal: #FFFFFF;
+}
+node.Gene {
+  caption: "{name}";
+  color: #196F3D;
+  border-color: #145A32;
   text-color-internal: #FFFFFF;
 }
 node.Variant {
   caption: "{name}";
-  diameter: 50px;
-  color: #D9C8AE;
-  border-color: #c0a378;
-  text-color-internal: #604A0E;
+  color: #229954;
+  border-color: #1E8449;
+  text-color-internal: #FFFFFF;
+}
+node.Protein {
+  caption: "{name}";
+  color: #27AE60;
+  border-color: #229954;
+  text-color-internal: #FFFFFF;
+}
+relationship.INTERACTS_WITH {
+  caption: "{name}";
+  lengths: 20px
 }
 node.ProteinName {
   caption: "{name}";
+  color: #52BE80;
+  border-color: #27AE60;
   diameter: 65px;
 }
-node.Pathogen {
+node.Publication {
   caption: "{name}";
-}
-node.Organims {
-  caption: "{name}";
+  color: #884EA0;
+  border-color: #76448A;
+  text-color-internal: #FFFFFF;
+  diameter: 65px;
 }
 node.Demographics {
   caption: "{name}";
