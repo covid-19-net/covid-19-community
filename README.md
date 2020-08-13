@@ -2,7 +2,9 @@
 
 This project is a community effort to build a Neo4j Knowledge Graph (KG) that integrates heterogeneous biomedical and environmental [datasets](reference_data/DataProvider.csv) to help researchers analyze the interplay between host, pathogen, the environment, and COVID-19.
 
-![](docs/datatypes.png)
+<p align="center">
+<img src="docs/datatypes.png", width="80%">
+</p>
 
 ## Knowledge Graph Schema
 
@@ -51,7 +53,9 @@ CALL db.index.fulltext.queryNodes("bioentities", "spike") YIELD node
 
 ***Result:***
 
-![](docs/Spike-Query-Node.png)
+<p align="center">
+<img src="docs/Spike-Query-Node.png", width="80%">
+</p>
 
 This subgraph shows the results of the full-text search. Five proteins contain the word `Spike`. Each protein is associated with one or more protein names (synonymes) (only one name is shown here). The Spike glycoprotein in the center is the full-length gene product encoded by the SARS-CoV-2 S gene. The other four proteins are cleavage products (fragments) of the full-length protein.
 
@@ -66,7 +70,10 @@ RETURN node.name, labels(node), score
 
 ***Result:***
 
-![](docs/Spike-Query-Text.png)
+<p align="center">
+<img src="docs/Spike-Query-Text.png", width="70%">
+</p>
+
 
 ### Run a Cypher Query
 
@@ -94,7 +101,10 @@ ORDER BY confirmedCases DESC;
 ```
 
 ***Result:***
-![](docs/Outbreak.png)
+
+<p align="center">
+<img src="docs/Outbreak.png", width="70%">
+</p>
 
 Note, some cases in the COVID-19 Data Repository by Johns Hopkins University cannot be mapped to a county or state location (e.g., correctional facilities, missing location data). Therefore, the results of this query will underreport the actual number of cases.
 
