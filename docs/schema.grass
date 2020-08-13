@@ -256,7 +256,6 @@ node.Occupation {
   caption: "{name}";
   color: #D35400;
   border-color: #BA4A00;
-
   diameter: 65px;
 }
 node.HealthInsurance {
@@ -264,6 +263,11 @@ node.HealthInsurance {
   color: #E59866;
   border-color: #DC7633;
   diameter: 80px;
+}
+node.Poverty {
+  caption: "{name}";
+  color: #873600;
+  border-color: #6E2C00;
 }
 node.SocialCharacteristics {
   caption: "{name}";
@@ -275,5 +279,11 @@ node.Education {
   caption: "{name}";
   color: #D4AC0D;
   border-color: #B7950B;
+}
+node.Computers {
+  caption: "{name}";
+  color: #F4D03F;
+  border-color: #F1C40F;
+  diameter: 70px;
 }
 

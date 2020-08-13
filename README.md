@@ -22,7 +22,7 @@ The location subgraph shows the geographic hierarchy from the world to the city 
 <img src="docs/PopulationCharacteristics.png", width="100%">
 </p>
 
-The population characteristics subgraph represents estimates from the American Community Survey 2018 5-year. Selected population characteristics that may be risk factors for COVID-19 infections have been included. These data are currently available at three geographic levels: US Counties (Admin2), US ZIP Codes (PostalCode), and US Census Tract (Tract).
+The population characteristics subgraph represents data from the American Community Survey 2018 5-year estimates. Selected population characteristics that may be risk factors for COVID-19 infections have been included. These data are currently available at three geographic levels: US Counties (Admin2), US ZIP Codes (PostalCode), and US Census Tract (Tract).
 
 Note, this KG is work in progress and changes frequently.
 
@@ -118,6 +118,7 @@ Once Jupyter Lab launches, navigate to the `notebooks/queries` directory and run
 |[Bioentities](notebooks/queries/Bioentities.ipynb)| Runs example queries for bioentities|
 |[AnalyzeVariantsSpikeGlycoprotein](notebooks/analyses/AnalyzeVariantsSpikeGlycoprotein.ipynb)| Analyze SARS-CoV-2 Spike Glycoprotein Variants|
 |[RiskFactorsByStateCounty](notebooks/analyses/RiskFactorsByStateCounty.ipynb)| Explore Risk Factors for COVID-19 for Counties in US States|
+|[RiskFactorsSanDiegoCounty](notebooks/analyses/RiskFactorsSanDiegoCounty.ipynb)| Explore Risk Factors for COVID-19 for San Diego County|
 |...|add examples here ...|
 
 ## Data Download, Preparation, and Integration
@@ -153,7 +154,9 @@ COVID-19-Net Knowledge Graph is created from publically available resources, inc
 |[03a-USCensusDP03Employment](notebooks/dataprep/03a-USCensusDP03Employment.ipynb)| Downloads economic characteristics (DP03) from the American Community Survey 5-Year Data 2018|
 |[03a-USCensusDP03HealthInsurance](notebooks/dataprep/03a-USCensusDP03HealthInsurance.ipynb)| Downloads economic characteristics (DP03) from the American Community Survey 5-Year Data 2018|
 |[03a-USCensusDP03Income](notebooks/dataprep/03a-USCensusDP03Income.ipynb)| Downloads economic characteristics (DP03) from the American Community Survey 5-Year Data 2018|
+|[03a-USCensusDP03Income](notebooks/dataprep/03a-USCensusDP03Income.ipynb)| Downloads economic characteristics (DP03) from the American Community Survey 5-Year Data 2018|
 |[03a-USCensusDP03Occupation](notebooks/dataprep/03a-USCensusDP03Occupation.ipynb)| Downloads economic characteristics (DP03) from the American Community Survey 5-Year Data 2018|
+|[03a-USCensusDP03Poverty](notebooks/dataprep/03a-USCensusDP03Poverty.ipynb)| Downloads economic characteristics (DP03) from the American Community Survey 5-Year Data 2018|
 |[03a-USCensusDP04](notebooks/dataprep/03a-USCensusDP05.ipynb)| Downloads housing (DP04) from the American Community Survey 5-Year Data 2018|
 |[03a-USCensusDP05](notebooks/dataprep/03a-USCensusDP05.ipynb)| Downloads demographic data estimates (DP05) from the American Community Survey 5-Year Data 2018|
 |...|Future notebooks that add new data to the knowledge graph|
