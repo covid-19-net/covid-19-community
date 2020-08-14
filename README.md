@@ -8,9 +8,9 @@ This project is a community effort to build a Neo4j Knowledge Graph (KG) that in
 
 ## Knowledge Graph Schema
 
-![](docs/KG-Schema.png)
+![](docs/COVID19KG.png)
 
-**COVID-19-Net Knowledge Graph :** [to be updated!] This schema shows the Nodes (circles) and their Relationships (arrows) in the COVID-19-Net KG. The node [NodeMetadata](reference_data/NodeMetadata.csv)(top left) describes nodes and refers to relevant ontologies (e.g., Infectious Disease Ontology). The left side of the schema shows the geographic hierarchy. The right side shows COVID-19 case counts and information about the host organisms, pathogen, virus strains, genes, proteins, protein-protein interactions, and publications. Cases and strains are linked to geolocations. 
+**COVID-19-Net Knowledge Graph :** This schema shows the Nodes (circles) and their Relationships (arrows) of the COVID-19-Net KG. The node [NodeMetadata](reference_data/NodeMetadata.csv) describes nodes and refers to relevant ontologies (e.g., Infectious Disease Ontology) and [DataProvider](reference_data/DataProvider.csv) refers to the origin of the data. The knowledge graph integrates the following types of data: 1. geographic locations (blue), 2. epidemiologic data (red), 3. biological data (green), 4. population characteristics (yellow and orange).
 
 <p align="center">
 <img src="docs/Location.png", width="60%">
