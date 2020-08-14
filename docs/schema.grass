@@ -24,15 +24,15 @@ node.* {
 node.NodeMetadata {
   caption: "{name}";
   diameter: 80px;
-  color: #1C2833 ;
-  border-color: #17202A;
+  color: #808B96;
+  border-color: #566573;
   text-color-internal: #FFFFFF;
 }
 node.DataProvider {
   caption: "{name}";
+  color: #273746;
+  border-color: #212F3D;
   diameter: 80px;
-  color: #566573;
-  border-color: #273746;
 }
 node.World {
   caption: "{name}";
