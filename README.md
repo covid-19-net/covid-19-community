@@ -288,6 +288,8 @@ Students of the UCSD Spatial Data Science course [DSC-198](https://sites.google.
 Contributors:
 Kaushik Ganapathy, Braden Riggs, Eric Yu
 
+Alexander Din, U.S. Department of Housing and Urban Development, for help with HUD Crosswalk Files.
+
 Project KONQUER team members at UC San Diego and UTHealth at Houston.
 
 ## Funding
