@@ -18,6 +18,11 @@ dependencies:
   - ipywidgets=7.5.1
   - scikit-learn=0.23.2
   - arcgis=1.8.1
+  - geocoder
+  - unidecode
+  - python-Levenshtein
+  - pycountry
+  - geopy
   - pip
   - pip:
     - rcsbsearch==0.2.1

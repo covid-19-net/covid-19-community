@@ -43,12 +43,14 @@ CREATE INDEX postalcode_p FOR (n:PostalCode) ON (n.placeName);
 CREATE INDEX postalcode_l FOR (n:PostalCode) ON (n.location);
 CREATE CONSTRAINT tract ON (n:Tract) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT cruiseship ON (n:CruiseShip) ASSERT n.id IS UNIQUE;
+CREATE INDEX cruiseship_o FOR (n:CruiseShip) ON (n.origLocation);
                                    
 CREATE CONSTRAINT organism ON (n:Organism) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT outbreak ON (n:Outbreak) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT publication ON (n:Publication) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT strain ON (n:Strain) ASSERT n.id IS UNIQUE;
 CREATE INDEX strain_n FOR (n:Strain) ON (n.name);
+CREATE INDEX strain_o FOR (n:Strain) ON (n.origLocation);
 CREATE CONSTRAINT variant ON (n:Variant) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT gene ON (n:Gene) ASSERT n.id IS UNIQUE;
 CREATE INDEX gene_a FOR (n:Gene) ON (n.genomeAccession);
@@ -61,6 +63,7 @@ CREATE INDEX proteinname_a FOR (n:ProteinName) ON (n.accession);
 CREATE CONSTRAINT cases ON (n:Cases) ASSERT n.id IS UNIQUE;
 CREATE INDEX cases_d FOR (n:Cases) ON (n.date);
 CREATE INDEX cases_s FOR (n:Cases) ON (n.source);
+CREATE INDEX cases_o FOR (n:Cases) ON (n.origLocation);
 
 CREATE CONSTRAINT socialcharacteristics ON (n:SocialCharacteristics) ASSERT n.id IS UNIQUE;
 CREATE INDEX socialcharacteristics_c FOR (n:SocialCharacteristics) ON (n.countyFips);
@@ -125,7 +128,7 @@ CREATE INDEX demographics_t FOR (n:Demographics) ON (n.tract);
 
 
 // create full text search indices
-CALL db.index.fulltext.createNodeIndex('locations',['World', 'UNRegion', 'UNSubRegion', 'UNIntermediateRegion', 'Country', 'Admin1', 'Admin2', 'USRegion', 'USDivision', 'City', 'CruiseShip', 'PostalCode','Tract'],['name', 'placeName', 'iso', 'iso3', 'fips', 'geonameId', 'code']);
+CALL db.index.fulltext.createNodeIndex('locations',['World', 'UNRegion', 'UNSubRegion', 'UNIntermediateRegion', 'Country', 'Admin1', 'Admin2', 'USRegion', 'USDivision', 'City', 'CruiseShip', 'PostalCode','Tract'],['name', 'placeName', 'iso', 'iso3', 'fips', 'geonameId', 'code', 'origLocation']);
 CALL db.index.fulltext.createNodeIndex('bioentities',['ProteinName', 'Protein', 'Gene', 'Strain', 'Variant', 'Organism', 'Outbreak'],['name', 'scientificName', 'taxonomyId', 'accession', 'proId', 'genomeAccession', 'geneVariant', 'proteinVariant', 'variantType', 'variantConsequence']);
 CALL db.index.fulltext.createNodeIndex('geoids',['UNRegion', 'UNSubRegion', 'UNIntermediateRegion', 'Country', 'Admin1', 'Admin2', 'USRegion', 'USDivision', 'City', 'PostalCode','Tract'],['id','iso', 'iso3', 'fips', 'geonameId','code','name'], {analyzer: 'keyword'});         
 

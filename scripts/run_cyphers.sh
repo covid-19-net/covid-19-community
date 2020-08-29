@@ -65,3 +65,4 @@ run_cypher 03a-USCensusDP03Occupation.cypher
 run_cypher 03a-USCensusDP03Poverty.cypher
 run_cypher 03a-USCensusDP04.cypher
 run_cypher 03a-USCensusDP05.cypher
+run_cypher 10a-GeoLink.cypher
