@@ -11,15 +11,14 @@ Holy See,Vatican,
 "Korea, South",South Korea,
 Puerto_Rico,Puerto Rico,
 "Sint Eustatius and Saba","Bonaire, Sint Eustatius and Saba",
-"US","United States,",
+"USA","United States",
+"US","United States",
 #
 # Standardize first order administrative divisions
 #
 "Australia,NSW","Australia,New South Wales",https://en.wikipedia.org/wiki/New_South_Wales
-"Belgium,Brussel","Belgium,Brussels Capital",
 "Belgium,Brussels","Belgium,Brussels Capital",
 "Belgium,Brussel Capital Capitals","Belgium,Brussels Capital",
-"Belgium,Brussels Capital Capitals","Belgium,Brussels Capital",
 "China,Ningxia","China,Ningxia Hui Autonomous Region",
 "Croatia,Varaždin County","Croatia,Varazdinska",https://en.wikipedia.org/wiki/Vara%C5%BEdin_County
 "Gambia,West Coast Region","Gambia,Western",https://en.wikipedia.org/wiki/Districts_of_the_Gambia
@@ -40,6 +39,7 @@ Puerto_Rico,Puerto Rico,
 "Israel,South District","Israel,Southern District",
 "Israel,South Coast District","Israel,Southern District",
 "Israel,North District","Israel,Northern District",
+"Italy,Lombardia","Italy,Lombardy",https://www.geonames.org/advanced-search.html?q=Italy%2CLombardia
 "Mexico,CDMX","Mexico,Mexico City",https://en.wikipedia.org/wiki/Mexico_City
 "Mexico,Estado de Mexico","Mexico,Mexico",https://en.wikipedia.org/wiki/State_of_Mexico
 "Netherlands,Zuid-Holland","Netherlands,South Holland",https://en.wikipedia.org/wiki/South_Holland
@@ -48,7 +48,16 @@ Puerto_Rico,Puerto Rico,
 "Netherlands,Noord-Holland","Netherlands,North Holland",https://en.wikipedia.org/wiki/North_Holland
 "Netherlands,Noord Holland","Netherlands,North Holland",https://en.wikipedia.org/wiki/North_Holland
 "Netherlands,Nootdorp","Netherlands,Gemeente Pijnacker-Nootdorp",https://en.wikipedia.org/wiki/Nootdorp
+"New Zealand,Combined Wellington","New Zealand,Wellington",
 "Pakistan,KPK","Pakistan,Khyber Pakhtunkhwa",https://en.wikipedia.org/wiki/Khyber_Pakhtunkhwa
+"Panama,Panama Center","Panama,Panama",https://en.wikipedia.org/wiki/Panama
+"Poland,Dolnoslakie","Poland,Lower Silesian",https://en.wikipedia.org/wiki/Lower_Silesian_Voivodeship
+"Poland,Lodzkie","Poland,Lodz Voivodeship",https://www.geonames.org/advanced-search.html?q=Poland%2CLodzkie&country=&featureClass=&continentCode=
+"Poland,Malopolska","Poland,Lesser Poland",https://www.geonames.org/advanced-search.html?q=Malopolska
+"Poland,Pomorskie","Poland,Pomerania",https://en.wikipedia.org/wiki/Pomeranian_Voivodeship
+"Poland,Mazowieckie","Poland,Mazovia",https://www.geonames.org/advanced-search.html?q=Mazowieckie&country=&featureClass=&continentCode=
+"Poland,Pomorze","Poland,Pomerania",https://en.wikipedia.org/wiki/Pomeranian_Voivodeship
+"Poland,Warminsko-Mazurskie","Poland,Warmia-Masuria",https://www.geonames.org/advanced-search.html?q=Warminsko-Mazurskie
 "Russia,Buryat Republic","Russia,Buryatiya Republic",
 "Russia,Republic of Bashkortostan","Russia,Bashkortostan Republic",
 "Russia,Chechen Republic","Russia,Chechnya",
@@ -64,31 +73,50 @@ Puerto_Rico,Puerto Rico,
 "South Africa,KZN","South Africa,KwaZulu-Natal",
 "South Africa,GP","South Africa,Gauteng",https://en.wikipedia.org/wiki/Gauteng
 "Spain,Balear_Islands","Spain,balearic islands",
+"Spain,Balear Islands","Spain,balearic islands",
 "Spain,BasqueCountry","Spain,Basque Country",
+"Spain,Basque_Country","Spain,Basque Country",
+"Spain,Castilla la Mancha","Spain,Castille-La Mancha",
+"Spain,Castilla La Mancha","Spain,Castille-La Mancha",
+"Spain,Castilla-La Mancha","Spain,Castille-La Mancha",
+"Spain,Catalunya","Spain,Catalonia",https://www.geonames.org/advanced-search.html?q=Spain%2CCatalunya%2C&country=&featureClass=&continentCode=
 "Spain,Comunitat_Valenciana","Spain,Valencia",
 "Spain,Comunitat Valenciana","Spain,Valencia",
+"Spain,Navarra","Spain,Navarre",
+"Spain,LaRioja","Spain,La Rioja",
+"South Africa,KZN","South Africa,KwaZulu-Natal",https://www.geonames.org/search.html?q=KZN&country=ZA
 "Switzerland,Basel Land","Switzerland,Basel-Landschaft",
+"Switzerland,Basel-Land","Switzerland,Basel-Landschaft",
 "Switzerland,St Gallen","Switzerland,Saint Gallen",
 "Switzerland,Zürich","Switzerland,Zurich",
 #
 # Standardize second order administrative divisions
 #
-"Poland,Lodzkie,Belchatow County","Poland,Lodz Voivodeship,Powiat belchatowski",https://en.wikipedia.org/wiki/Be%C5%82chat%C3%B3w_County
-"Poland,Lodzkie,Skierniewice County","Poland,Lodz Voivodeship,Powiat skierniewicki",https://en.wikipedia.org/wiki/Skierniewice_County
-"Poland,Lodzkie,Pajeczno County","Poland,Lodz Voivodeship,Powiat pajeczanski",https://en.wikipedia.org/wiki/Paj%C4%99czno_County
+"Poland,Lodz Voivodeship,Belchatow County","Poland,Lodz Voivodeship,Powiat belchatowski",https://en.wikipedia.org/wiki/Be%C5%82chat%C3%B3w_County
+"Poland,Lodz VoivodeshipSkierniewice County","Poland,Lodz Voivodeship,Powiat skierniewicki",https://en.wikipedia.org/wiki/Skierniewice_County
+"Poland,Lodz Voivodeship,Pajeczno County","Poland,Lodz Voivodeship,Powiat pajeczanski",https://en.wikipedia.org/wiki/Paj%C4%99czno_County
+"Poland,Wielkopolska,Kalisz","Poland,Greater Poland,Kalisz",https://www.geonames.org/advanced-search.html?q=Poland%2CKalisz&country=&featureClass=&continentCode=
 "Switzerland,Basel Stadt","Switzerland,Basel-City,Basel-Stadt",
 "Switzerland,Basel-Stadt","Switzerland,Basel-City,Basel-Stadt",
+"United States,California,Orange County CA","United States,California,Orange County",
+"United States,New York,Bronx","United States,New York,The Bronx",
 #
 # Disambiguate city names
 #
+
 "Germany,Frankfurt","Germany,Frankfurt am Main",
 "Argentina,Ciudad Autonoma de Buenos Aires","Argentina,Buenos Aires F.D."
 "Austria,St. Anton","Austria,Tyrol,Politischer Bezirk Landeck,St Anton am Arlberg",
+"United States,New York,Brooklyn","United States,New York,Kings County,Brooklyn",
+"United States,New York,Manhattan","United States,New York,New York County,Manhattan",
+"United States,New York,Queens","United States,New York,Queens County,Queens",
 #
 # Typos and inconsistencies
 #
 Bangaldesh,Bangladesh,
+"Belgium,LiÃ¨ge","Belgium,Liege",
 "Mexico,Tijuana,BajaCalifornia","Mexico,Baja California,Tijuana",
+"JERUnited StatesLEM","Israel,Jerusalem",
 Puerto_Rico,Puerto Rico,
 "Taiwan*",Taiwan,
 "United States,Alaska,Fairibanks","United States,Alaska,Fairbanks",
@@ -101,6 +129,9 @@ Puerto_Rico,Puerto Rico,
 "United States,South Carolina,Richalnd County","United States,South Carolina,Richland County",
 "United States,Mount Horeb,Wisconsin","United States,Wisconsin,Mount Horeb",
 "United States,Wisconsin,Whitehall County",United States,Wisconsin,Trempealeau County,Whitehall",https://en.wikipedia.org/wiki/Whitehall,_Wisconsin
+"United States,Columbia County WI","United States,Wisconsin,Columbia County",
+"United States,Jefferson County WI","United States,Wisconsin,Jefferson County",
+"United States,Dane County,Wisconsin","United States,Wisconsin,Dane County",
 #
 # US and Canadian State abbreviations
 #
@@ -175,6 +206,7 @@ Puerto_Rico,Puerto Rico,
 #
 "China,Hong Kong",Hong Kong,
 "China,Taiwan",Taiwan,
+"China,Macau",Macau,
 "India,Nepal",Nepal,
 West Bank and Gaza,Palestinian Territory,https://en.wikipedia.org/wiki/Palestinian_territories
 #
@@ -183,11 +215,15 @@ West Bank and Gaza,Palestinian Territory,https://en.wikipedia.org/wiki/Palestini
 "Denmark,Faroe Islands",Faroe Islands,
 "Denmark,Greenland",Greenland,
 "France,French Guiana",French Guiana,
+"France,Martinique",Martinique,
 "France,Mayotte",Mayotte,
 "France,New Caledonia",New Caledonia,
 "France,French Polynesia",French Polynesia,
+"France,Guadeloupe",Guadeloupe,
+"France,Reunion",Reunion,
 "France,Saint Pierre and Miquelon",Saint Pierre and Miquelon,
-"France,Saint Barthelemy",Saint Barthelemy,
+"France,Saint Barthelemy","Saint Barthelemy",
+"France,St Martin","Saint Martin",
 "United States,AS",American Samoa,
 "Netherlands,Aruba",Aruba,
 "Netherlands,Curacao",Curacao,
