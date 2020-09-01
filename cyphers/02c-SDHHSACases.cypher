@@ -2,7 +2,7 @@ USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///02c-SDHHSACases.csv' AS row 
 MERGE (c:Cases{id: 'COVID-19-SDHHSA' + row.date + '-' + row.zipCode})
-SET c.name = 'COVID-19-' + row.date, c.date = date(row.date), c.cummulativeConfirmed = toInteger(row.cummulativeConfirmed), c.source = 'SDHHSA'
+SET c.name = 'COVID-19-' + row.date, c.date = date(row.date), c.cases = toInteger(row.cases), c.source = 'SDHHSA'
 RETURN count(c) as CASES
 ;
 USING PERIODIC COMMIT

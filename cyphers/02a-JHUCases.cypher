@@ -2,7 +2,7 @@ USING PERIODIC COMMIT 1000
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///02a-JHUCases.csv' AS row 
 MERGE (c:Cases{id: 'COVID-19-JHU' + row.date + '-' + row.stateFips + row.countyFips})
-SET c.name = 'COVID-19-' + row.date, c.date = date(row.date), c.cummulativeConfirmed = toInteger(row.cummulativeConfirmed), c.cummulativeDeaths = toInteger(row.cummulativeDeaths), c.source = 'JHU'
+SET c.name = 'COVID-19-' + row.date, c.date = date(row.date), c.cases = toInteger(row.cases), c.deaths = toInteger(row.deaths), c.source = 'JHU'
 RETURN count(c) as CASES
 ;
 USING PERIODIC COMMIT 1000
@@ -25,7 +25,7 @@ USING PERIODIC COMMIT 1000
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///02a-JHUCasesGlobal.csv' AS row 
 MERGE (c:Cases{id: 'COVID-19-JHU' + row.date + '-' + row.origLocation})
-SET c.name = 'COVID-19-' + row.date, c.date = date(row.date), c.cummulativeConfirmed = toInteger(row.cummulativeConfirmed), c.cummulativeDeaths = toInteger(row.cummulativeDeaths), c.source = 'JHU',
+SET c.name = 'COVID-19-' + row.date, c.date = date(row.date), c.cases = toInteger(row.cases), c.deaths = toInteger(row.deaths), c.source = 'JHU',
 c.origLocation = row.origLocation
 RETURN count(c) as CASES
 ;
