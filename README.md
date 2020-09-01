@@ -106,15 +106,15 @@ This subgraph shows viral strains (green) of the [SARS-CoV-2 virus](https://www.
 
 ***Query:***
 ```
-MATCH (o:Outbreak{id: "COVID-19"})<-[:RELATED_TO]-(c:Cases{date: date("2020-07-06")})-[:REPORTED_IN]->(a:Admin2)-[:IN]->(a1:Admin1)
-RETURN a1.name as state, sum(c.cummulativeConfirmed) as confirmedCases, sum(c.cummulativeDeaths) as deaths
+MATCH (o:Outbreak{id: "COVID-19"})<-[:RELATED_TO]-(c:Cases{date: date("2020-08-31"), source: 'JHU'})-[:REPORTED_IN]->(a:Admin2)-[:IN]->(a1:Admin1)
+RETURN a1.name as state, sum(c.cases) as cases, sum(c.deaths) as deaths
 ORDER BY confirmedCases DESC;
 ```
 
 ***Result:***
 
 <p align="center">
-<img src="docs/Outbreak.png", width="70%">
+<img src="docs/Cases.png", width="70%">
 </p>
 
 Note, some cases in the COVID-19 Data Repository by Johns Hopkins University cannot be mapped to a county or state location (e.g., correctional facilities, missing location data). Therefore, the results of this query will underreport the actual number of cases.
