@@ -114,7 +114,7 @@ ORDER BY confirmedCases DESC;
 ***Result:***
 
 <p align="center">
-<img src="docs/Cases.png", width="70%">
+<img src="docs/Cases.png", width="85%">
 </p>
 
 Note, some cases in the COVID-19 Data Repository by Johns Hopkins University cannot be mapped to a county or state location (e.g., correctional facilities, missing location data). Therefore, the results of this query will underreport the actual number of cases.
