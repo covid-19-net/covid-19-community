@@ -3,16 +3,28 @@ origName,geoName,reference
 # Match country names with GeoName.org names
 #
 Burma,Myanmar,
+Cape Verde,Cabo Verde,
 Congo (Kinshasa),Democratic Republic of the Congo,Country,
 Congo (Brazzaville),Republic of the Congo,Country,
+Congo-Brazzaville,Republic of the Congo,Country,
 Cote d'Ivoire,Ivory Coast,
+Côte d'Ivoire,Ivory Coast,
 Czech Republic,Czechia,https://en.wikipedia.org/wiki/Czech_Republic
+East Timor,Timor Leste,
 Holy See,Vatican,
 "Korea, South",South Korea,
+Macau,Macao,
+Metropolitan France,France,
+Palestinian Territories,Palestinian Territory,
 Puerto_Rico,Puerto Rico,
+The Bahamas,Bahamas,
+The Gambia,Gambia,
+Sahrawi Arab Democratic Republic,Morocco,"not present in GeoNames.org, assigned to Morocco https://en.wikipedia.org/wiki/Sahrawi_Arab_Democratic_Republic"
 "Sint Eustatius and Saba","Bonaire, Sint Eustatius and Saba",
+United States Virgin Islands,U.S. Virgin Islands,
 "USA","United States",
 "US","United States",
+Vatican City,Vatican,
 #
 # Standardize first order administrative divisions
 #
@@ -101,6 +113,9 @@ Puerto_Rico,Puerto Rico,
 "Switzerland,Basel-Stadt","Switzerland,Basel-City,Basel-Stadt",
 "United States,California,Orange County CA","United States,California,Orange County",
 "United States,New York,Bronx","United States,New York,The Bronx",
+"United States,Washington D.C.","United States,District of Columbia",
+"United States,Washington DC","United States,District of Columbia",
+"United States,Washington, D.C.,District of Columbia","United States,District of Columbia",
 #
 # Disambiguate city names
 #
@@ -129,9 +144,9 @@ Puerto_Rico,Puerto Rico,
 "United States,Califonia","United States,California",
 "United States,South Carolina,Richalnd County","United States,South Carolina,Richland County",
 "United States,Mount Horeb,Wisconsin","United States,Wisconsin,Mount Horeb",
-"United States,Wisconsin,Whitehall County",United States,Wisconsin,Trempealeau County,Whitehall",https://en.wikipedia.org/wiki/Whitehall,_Wisconsin
-"United States,Columbia County WI","United States,Wisconsin,Columbia County",
-"United States,Jefferson County WI","United States,Wisconsin,Jefferson County",
+"United States,Wisconsin,Whitehall County","United States,Wisconsin,Trempealeau County,Whitehall",https://en.wikipedia.org/wiki/Whitehall,_Wisconsin
+"United States,Wisconsin,Columbia County WI","United States,Wisconsin,Columbia County",
+"United States,Wisconsin,Jefferson County WI","United States,Wisconsin,Jefferson County",
 "United States,Dane County,Wisconsin","United States,Wisconsin,Dane County",
 #
 # US and Canadian State abbreviations
@@ -207,7 +222,7 @@ Puerto_Rico,Puerto Rico,
 #
 "China,Hong Kong",Hong Kong,
 "China,Taiwan",Taiwan,
-"China,Macau",Macau,
+"China,Macao",Macao,
 "India,Nepal",Nepal,
 West Bank and Gaza,Palestinian Territory,https://en.wikipedia.org/wiki/Palestinian_territories
 #
@@ -230,6 +245,7 @@ West Bank and Gaza,Palestinian Territory,https://en.wikipedia.org/wiki/Palestini
 "Netherlands,Curacao",Curacao,
 "Netherlands,Sint Maarten",Sint Maarten,
 "Netherlands,Sint Eustatius and Saba","Netherlands,Bonaire, Saint Eustatius and Saba",
+"United States,American Samoa",American Samoa,
 "United States,PR",Puerto Rico,
 "United States,MP",Northern Mariana Islands,
 "United States,GU",Guam,
