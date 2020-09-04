@@ -114,8 +114,10 @@ Vatican City,Vatican,
 "United States,California,Orange County CA","United States,California,Orange County",
 "United States,New York,Bronx","United States,New York,The Bronx",
 "United States,Washington D.C.","United States,District of Columbia",
+"United States,Washington, D.C.","United States,District of Columbia",
 "United States,Washington DC","United States,District of Columbia",
 "United States,Washington, D.C.,District of Columbia","United States,District of Columbia",
+"United States,District of Columbia,Distrsict of Columbia county","United States,District of Columbia",
 #
 # Disambiguate city names
 #
