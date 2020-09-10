@@ -1,5 +1,8 @@
 // delete all nodes
-MATCH (n) DETACH DELETE n;
+//MATCH (n) DETACH DELETE n; # deleting all nodes at once leads to out of memory error
+// Delete in small batches
+call apoc.periodic.iterate("MATCH (n) return n", "DETACH DELETE n", {batchSize:1000}) yield batches, total 
+RETURN batches, total;
 
 // delete all constraints and indices
 CALL db.index.fulltext.drop('locations');
@@ -64,6 +67,10 @@ CREATE CONSTRAINT cases ON (n:Cases) ASSERT n.id IS UNIQUE;
 CREATE INDEX cases_d FOR (n:Cases) ON (n.date);
 CREATE INDEX cases_s FOR (n:Cases) ON (n.source);
 CREATE INDEX cases_o FOR (n:Cases) ON (n.origLocation);
+CREATE CONSTRAINT chain ON (n:Chain) ASSERT n.id IS UNIQUE;
+CREATE INDEX chain_n FOR (n:Chain) ON (n.name);
+CREATE CONSTRAINT structure ON (n:Structure) ASSERT n.id IS UNIQUE;
+CREATE INDEX structure_n FOR (n:Structure) ON (n.name);
 
 CREATE CONSTRAINT socialcharacteristics ON (n:SocialCharacteristics) ASSERT n.id IS UNIQUE;
 CREATE INDEX socialcharacteristics_c FOR (n:SocialCharacteristics) ON (n.countyFips);
@@ -129,7 +136,7 @@ CREATE INDEX demographics_t FOR (n:Demographics) ON (n.tract);
 
 // create full text search indices
 CALL db.index.fulltext.createNodeIndex('locations',['World', 'UNRegion', 'UNSubRegion', 'UNIntermediateRegion', 'Country', 'Admin1', 'Admin2', 'USRegion', 'USDivision', 'City', 'CruiseShip', 'PostalCode','Tract'],['name', 'placeName', 'iso', 'iso3', 'fips', 'geonameId', 'code', 'origLocation']);
-CALL db.index.fulltext.createNodeIndex('bioentities',['ProteinName', 'Protein', 'Gene', 'Strain', 'Variant', 'Organism', 'Outbreak'],['name', 'scientificName', 'taxonomyId', 'accession', 'proId', 'genomeAccession', 'geneVariant', 'proteinVariant', 'variantType', 'variantConsequence']);
+CALL db.index.fulltext.createNodeIndex('bioentities',['ProteinName', 'Protein', 'Gene', 'Strain', 'Variant', 'Organism', 'Outbreak','Chain','Structure'],['name', 'scientificName', 'taxonomyId', 'accession', 'proId', 'genomeAccession', 'geneVariant', 'proteinVariant', 'variantType', 'variantConsequence']);
 CALL db.index.fulltext.createNodeIndex('geoids',['UNRegion', 'UNSubRegion', 'UNIntermediateRegion', 'Country', 'Admin1', 'Admin2', 'USRegion', 'USDivision', 'City', 'PostalCode','Tract'],['id','iso', 'iso3', 'fips', 'geonameId','code','name'], {analyzer: 'keyword'});         
 
 
