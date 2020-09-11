@@ -1,17 +1,12 @@
-//LOAD CSV WITH HEADERS FROM "FILE:///01f-PDBStructures.csv" AS row
-//MERGE (c:Chain{id: row.pdbChainId})
-//SET c.name = row.pdbChainId, c.pdbId = row.pdbId, c.chainId = row.chainId, c.accession = row.accession, 
-//    c.uniprotBegin = row.uniprotBegin, c.uniprotEnd = row.uniprotEnd,
-//    c.pdbBegin = row.pdbBegin, c.pdbEnd = row.pdbEnd,
-//    c.residueBegin = row.residueBegin, c.residueEnd = row.residueEnd
-//RETURN count(c) as Chain
-//;
 LOAD CSV WITH HEADERS FROM "FILE:///01f-PDBStructures.csv" AS row
 MERGE (c:Chain{id: row.pdbChainId})
 SET c.name = row.pdbChainId, c.pdbId = row.pdbId, c.chainId = row.chainId, c.accession = row.accession, 
-    c.uniprotBegin = split(row.uniprotBegin, ';'), c.uniprotEnd = split(row.uniprotEnd, ';'),
-    c.pdbBegin = split(row.pdbBegin, ';'), c.pdbEnd = split(row.pdbEnd, ';'),
-    c.residueBegin = split(row.residueBegin, ';'), c.residueEnd = split(row.residueEnd, ';')
+    c.uniprotStart = apoc.convert.toIntList(split(row.uniprotStart, ';')), 
+    c.uniprotEnd = apoc.convert.toIntList(split(row.uniprotEnd, ';')),
+    // pdbStart and pdbEnd may contain characters (insertion codes), don't convert to integer list
+    c.pdbStart = split(row.pdbStart, ';'), c.pdbEnd = split(row.pdbEnd, ';'),
+    c.seqresStart = apoc.convert.toIntList(split(row.seqresStart, ';')), 
+    c.seqresEnd = apoc.convert.toIntList(split(row.seqresEnd, ';'))
 RETURN count(c) as Chain
 ;
 // Note, PDB assigns chains to the full-length UniProt protein
