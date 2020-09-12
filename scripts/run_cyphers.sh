@@ -52,7 +52,7 @@ run_cypher 01b-Nextstrain.cypher
 run_cypher 01c-NCBIRefSeq.cypher
 run_cypher 01d-CNCBStrain.cypher
 run_cypher 01e-ProteinProteinInteraction.cypher
-run_cypher 01f-PDBStructures.cypher
+run_cypher 01f-PDBStructure.cypher
 run_cypher 01h-PMC-Accession.cypher
 run_cypher 02a-JHUCases.cypher
 run_cypher 02b-CDSCases.cypher
