@@ -6,7 +6,8 @@ SET c.name = row.pdbChainId, c.pdbId = row.pdbId, c.chainId = row.chainId, c.acc
     // pdbStart and pdbEnd contain characters (insertion codes), don't convert to integer list
     c.pdbStart = split(row.pdbStart, ';'), c.pdbEnd = split(row.pdbEnd, ';'),
     c.seqresStart = apoc.convert.toIntList(split(row.seqresStart, ';')), 
-    c.seqresEnd = apoc.convert.toIntList(split(row.seqresEnd, ';'))
+    c.seqresEnd = apoc.convert.toIntList(split(row.seqresEnd, ';')),
+    c.residues = toInteger(row.residues)
 RETURN count(c) as Chain
 ;
 // Note, PDB assigns chains to the full-length UniProt protein
@@ -14,14 +15,27 @@ LOAD CSV WITH HEADERS FROM "FILE:///01f-PDBChain.csv" AS row
 MATCH (p:Protein{accession: row.accession, fullLength: 'True'})
 MATCH (c:Chain{id: row.pdbChainId})
 MERGE (p)-[h:HAS_TERTIARY_STRUCTURE]->(c)
+SET h.coverage = toFloat(c.residues)/toFloat(size(p.sequence))
 RETURN count(h) as HAS_TERTIARY_STRUCTURE
 ;
+//LOAD CSV WITH HEADERS FROM "FILE:///01f-PDBChain.csv" AS row
+//MATCH (p:Protein{accession: row.accession, fullLength: 'True'})
+//MERGE (c:Chain{id: row.pdbChainId})
+//SET c.coverage = toFloat(c.residues)/toFloat(size(p.sequence))
+//RETURN count(c) as COVERAGE
+//;
 // Link chains to cleaved proteins if first and last residue is within residue range
 MATCH (c:Chain)<-[:HAS_TERTIARY_STRUCTURE]-(p:Protein)-[:CLEAVED_TO]->(pc:Protein)
 WHERE head(c.uniprotStart) >= pc.start AND last(c.uniprotEnd) <= pc.end
 MERGE (pc)-[h:HAS_TERTIARY_STRUCTURE]->(c)
+SET h.coverage = toFloat(c.residues)/toFloat(size(pc.sequence))
 RETURN count(h) as HAS_TERTIARY_STRUCTURE
 ;
+//MATCH (c:Chain)<-[:HAS_TERTIARY_STRUCTURE]-(p:Protein)-[:CLEAVED_TO]->(pc:Protein)
+//WHERE head(c.uniprotStart) >= pc.start AND last(c.uniprotEnd) <= pc.end
+//SET c.coverage = toFloat(c.residues)/toFloat(size(pc.sequence))
+//RETURN count(c) as COVERAGE
+//;
 LOAD CSV WITH HEADERS FROM "FILE:///01f-PDBStructure.csv" AS row
 MERGE (s:Structure{id: row.pdbId})
 SET s.name = row.pdbId, s.title = row.title, s.description = row.description,
