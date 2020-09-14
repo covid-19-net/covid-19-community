@@ -12,6 +12,7 @@ dependencies:
   - pandas
   - xlrd
   - matplotlib
+  - seaborn=0.11.0
   - biopython
   - papermill=2.1.0
   - ipywidgets=7.5.1
