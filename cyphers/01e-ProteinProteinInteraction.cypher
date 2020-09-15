@@ -29,5 +29,24 @@ MATCH (pb:Protein{id: row.id_b})
 MERGE (pa)-[i:INTERACTS_WITH]->(pb)
 RETURN count(i) as INTERACTS_WITH
 ;
+// temporary solution to map variants to proteins
+USING PERIODIC COMMIT
+LOAD CSV WITH HEADERS 
+FROM 'FILE:///01d-CNCBVariant.csv' AS row
+MATCH (p:Protein)-[:NAMED_AS]->(:ProteinName{accession: row.proteinAccession})
+MATCH (v:Variant{id: row.referenceGenome + ':' + row.start + '-' + row.end + '-' + row.ref + '-' + row.alt})
+WHERE p.start <= v.proteinPosition <= p.end
+MERGE (p)-[h:HAS_VARIANT]->(v)
+RETURN count(h) as HAS_VARIANT_PROTEIN
+;
+USING PERIODIC COMMIT
+LOAD CSV WITH HEADERS 
+FROM 'FILE:///01d-CNCBVariant.csv' AS row
+MATCH (p:Protein)<-[:CLEAVED_TO]-(:Protein)-[:NAMED_AS]->(:ProteinName{accession: row.proteinAccession})
+MATCH (v:Variant{id: row.referenceGenome + ':' + row.start + '-' + row.end + '-' + row.ref + '-' + row.alt})
+WHERE p.start <= v.proteinPosition <= p.end
+MERGE (p)-[h:HAS_VARIANT]->(v)
+RETURN count(h) as HAS_VARIANT_PROTEIN
+;
 
 
