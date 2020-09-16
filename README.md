@@ -126,7 +126,7 @@ You can run the following Jupyter Notebooks in your web browser:
 
 [![Binder](https://aws-uswest2-binder.pangeo.io/badge_logo.svg)](https://aws-uswest2-binder.pangeo.io/v2/gh/covid-19-net/covid-19-community/master?urlpath=lab)
 
-Once Jupyter Lab launches, navigate to the `notebooks/queries` directory and run the following notebooks:
+Once Jupyter Lab launches, navigate to the `notebooks/queries` and `notebooks/analyses`directory and run the following notebooks:
 
 |Notebook|Description|
 |:-------|:----------|
@@ -138,6 +138,8 @@ Once Jupyter Lab launches, navigate to the `notebooks/queries` directory and run
 |[Housing](notebooks/queries/Housing.ipynb)| Runs example queries for housing characteristics from the American Community Survey|
 |[Bioentities](notebooks/queries/Bioentities.ipynb)| Runs example queries for bioentities|
 |[AnalyzeVariantsSpikeGlycoprotein](notebooks/analyses/AnalyzeVariantsSpikeGlycoprotein.ipynb)| Analyze SARS-CoV-2 Spike Glycoprotein Variants|
+|[SARS-CoV-2-3DStructures](notebooks/analyses/SARS-CoV-2-3DStructures.ipynb)| Analyze SARS-CoV-2 3D Structures|
+|[MapMutationsTo3D](notebooks/analyses/MapMutationsTo3D.ipynb)| Map mutations from SARS-CoV-2 strains to 3D Structures|
 |[RiskFactorsByStateCounty](notebooks/analyses/RiskFactorsByStateCounty.ipynb)| Explore Risk Factors for COVID-19 for Counties in US States|
 |[RiskFactorsSanDiegoCounty](notebooks/analyses/RiskFactorsSanDiegoCounty.ipynb)| Explore Risk Factors for COVID-19 for San Diego County|
 |[CovidRatesByStates](notebooks/analyses/CovidRatesByStates.ipynb)| Explore COVID-19 confirmed cases and death rates for states in a selected country|
@@ -168,6 +170,7 @@ COVID-19-Net Knowledge Graph is created from publically available resources, inc
 |[01d-CNCBStrain](notebooks/dataprep/01d-CNCBStrain.ipynb)| Downloads SARS-CoV-2 viral strains and variation data from CNCB (China National Center for Bioinformation) [takes about 12 hours to run the first time, results are cached]|
 |[01d-CNCBStrainLocations](notebooks/dataprep/01d-CNCBStrainLocations.ipynb)| Standardizes locations for variation data from CNCB (China National Center for Bioinformation) |
 |[01e-ProteinProteinInteraction](notebooks/dataprep/01e-ProteinProteinInteraction.ipynb)| Downloads SARS-CoV-2 - human protein interaction data from IntAct|
+|[01f-PDBStructures](notebooks/dataprep/01f-PDBStructures.ipynb)| Downloads SARS-CoV-2 3D protein structures from the Protein Data Bank|
 |[01h-PMCAccession](notebooks/dataprep/01h-PMCAccession.ipynb)| Downloads PubMed Central articles that mention NCBI and GISAID strains|
 |[02a-JHUCases](notebooks/dataprep/02a-JHUCases.ipynb)| Downloads cummulative confimed cases and deaths from the COVID-19 Data Repository by Johns Hopkins University|
 |[02a-JHUCasesLocation](notebooks/dataprep/02a-JHUCasesLocation.ipynb)| Standardizes location data for the COVID-19 Data Repository by Johns Hopkins University|
