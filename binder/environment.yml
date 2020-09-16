@@ -17,6 +17,7 @@ dependencies:
   - papermill=2.1.0
   - ipywidgets=7.5.1
   - arcgis=1.8.1
+  - py3Dmol=0.8.0
   - pip
   - pip:
     - rcsbsearch==0.2.1
