@@ -1,6 +1,5 @@
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///01c-NCBIRefSeq.csv' AS row 
-//MERGE (g:Gene{id: row.geneAccession + '-' + row.geneStart + '-' + row.geneEnd})
 MERGE (g:Gene{id: row.genomeAccession + '-' + row.geneStart + '-' + row.geneEnd})
 SET g.name = row.geneName, g.accession = row.geneAccession, g.start = toInteger(row.geneStart), g.end = toInteger(row.geneEnd), g.genomeAccession = row.genomeAccession
 RETURN count(g) as Gene
@@ -8,7 +7,6 @@ RETURN count(g) as Gene
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///01c-NCBIRefSeq.csv' AS row 
 MATCH (gn:Strain{id: row.genomeAccession})
-//MATCH (g:Gene{id: row.geneAccession + '-' + row.geneStart + '-' + row.geneEnd})
 MATCH (g:Gene{id: row.genomeAccession + '-' + row.geneStart + '-' + row.geneEnd})
 MERGE(gn)-[h:HAS]->(g)
 RETURN count(h) as Has
@@ -33,7 +31,6 @@ RETURN count(n) as NAMED_AS
 ;
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///01c-NCBIRefSeq.csv' AS row 
-//MATCH (g:Gene{id: row.geneAccession + '-' + row.geneStart + '-' + row.geneEnd})
 MATCH (g:Gene{id: row.genomeAccession + '-' + row.geneStart + '-' + row.geneEnd})
 MATCH (p:Protein{id: row.id})
 MERGE(g)-[e:ENCODES]->(p)

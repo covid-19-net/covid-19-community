@@ -2,7 +2,7 @@ USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///01d-CNCBStrain.csv' AS row 
 MERGE (s:Strain{id: row.id}) 
-SET s.name = row.name, s.alias = row.alias, s.taxonomyId = row.taxonomyId, s.collectionDate = date(row.collectionDate), s.hostTaxonomyId = row.hostTaxonomyId, s.origLocation = row.origLocation
+SET s.name = row.name, s.alias = apoc.convert.toStringList(split(row.alias, ';')), s.taxonomyId = row.taxonomyId, s.collectionDate = date(row.collectionDate), s.hostTaxonomyId = row.hostTaxonomyId, s.origLocation = row.origLocation
 RETURN count(s) as Strain
 ;
 USING PERIODIC COMMIT
@@ -33,7 +33,7 @@ RETURN count(v) as Variant
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///01d-CNCBVariant.csv' AS row
-MATCH (s:Strain{name: row.name})
+MATCH (s:Strain{id: row.id})
 MATCH (v:Variant{id: row.referenceGenome + ':' + row.start + '-' + row.end + '-' + row.ref + '-' + row.alt})
 MERGE (s)-[h:HAS_VARIANT]->(v)
 RETURN count(h) as HAS_VARIANT
