@@ -25,7 +25,7 @@ This project is a community effort to build a Neo4j Knowledge Graph (KG) that in
 **Epidemiology Subgraph:** This subgraph represents COVID-19 cases including information about viral strains, and the pathogen and host organism. Cases and Strains are linked to the locations where they were reported and found, respectively.
 
 <p align="center">
-<img src="docs/Biology.png", width="50%">
+<img src="docs/Biology.png", width="70%">
 </p>
 
 **Biology Subgraph:** This subgraph represents gene, variant, protein, pathogen-host protein-protein interactions, and links to publications.
@@ -167,11 +167,11 @@ COVID-19-Net Knowledge Graph is created from publically available resources, inc
 |[01a-NCBIStrain](notebooks/dataprep/01a-NCBIStrain.ipynb)| Downloads the SARS-CoV-2 strain data from NCBI |
 |[01b-Nextstrain](notebooks/dataprep/01b-Nextstrain.ipynb)| Downloads the SARS-CoV-2 strain metadata from Nextstrain|
 |[01c-NCBIRefSeq](notebooks/dataprep/01c-NCBIRefSeq.ipynb)| Downloads the SARS-CoV-2 reference genome, genes, and protein products from NCBI|
-|[01d-CNCBStrain](notebooks/dataprep/01d-CNCBStrain.ipynb)| Downloads SARS-CoV-2 viral strains and variation data from CNCB (China National Center for Bioinformation) [takes about 12 hours to run the first time, results are cached]|
-|[01d-CNCBStrainLocations](notebooks/dataprep/01d-CNCBStrainLocations.ipynb)| Standardizes locations for variation data from CNCB (China National Center for Bioinformation) |
+|[01d-CNCBStrain](notebooks/dataprep/01d-CNCBStrain.ipynb)| Downloads SARS-CoV-2 viral strain metadata from CNCB (China National Center for Bioinformation) [takes about 12 hours to run the first time, results are cached]|
+[01d-CNCBVariation](notebooks/dataprep/01d-CNCBStrainLocations.ipynb)| Downloads variation data from CNCB (China National Center for Bioinformation) |
 |[01e-ProteinProteinInteraction](notebooks/dataprep/01e-ProteinProteinInteraction.ipynb)| Downloads SARS-CoV-2 - human protein interaction data from IntAct|
 |[01f-PDBStructures](notebooks/dataprep/01f-PDBStructures.ipynb)| Downloads SARS-CoV-2 3D protein structures from the Protein Data Bank|
-|[01h-PMCAccession](notebooks/dataprep/01h-PMCAccession.ipynb)| Downloads PubMed Central articles that mention NCBI and GISAID strains|
+|[01h-PMCAccession](notebooks/dataprep/01h-PMCAccession.ipynb)| Downloads PubMed Central and Preprint data mentions from Europe PMC|
 |[02a-JHUCases](notebooks/dataprep/02a-JHUCases.ipynb)| Downloads cummulative confimed cases and deaths from the COVID-19 Data Repository by Johns Hopkins University|
 |[02a-JHUCasesLocation](notebooks/dataprep/02a-JHUCasesLocation.ipynb)| Standardizes location data for the COVID-19 Data Repository by Johns Hopkins University|
 |[02c-SDHHSACases](notebooks/dataprep/02c-SDHHSACases.ipynb)| Downloads cummulative confirmed COVID-19 cases from the County of San Diego, Health and Human Services Agency|
