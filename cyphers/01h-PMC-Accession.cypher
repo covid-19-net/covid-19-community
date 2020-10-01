@@ -16,10 +16,10 @@ RETURN count(m) as Publication_Strain
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///01h-PMC-Accession.csv' AS row
 WITH row WHERE NOT row.accession IS null
-MATCH (n:ProteinName{accession: row.accession})
+MATCH (n:Protein{fullLength: 'True'})-[:NAMED_AS]->(:ProteinName{accession: row.accession})
 MATCH (p:Publication{id: row.id})
 MERGE (p)-[m:MENTIONS]->(n)
-RETURN count(m) as Publication_ProteinName
+RETURN count(m) as Publication_Protein
 ;
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///01h-PMC-Accession.csv' AS row

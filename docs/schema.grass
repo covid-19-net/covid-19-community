@@ -188,9 +188,17 @@ node.Protein {
   border-color: #229954;
   text-color-internal: #FFFFFF;
 }
-relationship.INTERACTS_WITH {
+node.Chain {
   caption: "{name}";
-  lengths: 20px
+  color: #52BE80;
+  border-color: #229954;
+  text-color-internal: #FFFFFF;
+}
+node.Structure {
+  caption: "{name}";
+  color: #A9DFBF;
+  border-color: #52BE80;
+  text-color-internal: #FFFFFF;
 }
 node.ProteinName {
   caption: "{name}";
