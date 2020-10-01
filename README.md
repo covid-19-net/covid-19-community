@@ -28,7 +28,7 @@ This project is a community effort to build a Neo4j Knowledge Graph (KG) that in
 <img src="docs/Biology.png", width="70%">
 </p>
 
-**Biology Subgraph:** This subgraph represents gene, variant, protein, pathogen-host protein-protein interactions, and links to publications.
+**Biology Subgraph:** This subgraph represents gene, variant, protein, protein structure, pathogen-host protein-protein interactions, and links to publications.
 
 <p align="center">
 <img src="docs/PopulationCharacteristics.png", width="100%">
