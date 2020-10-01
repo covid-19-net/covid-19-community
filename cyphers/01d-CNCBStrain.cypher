@@ -44,7 +44,7 @@ FROM 'FILE:///01d-CNCBVariant.csv' AS row
 // Match GenBank sequences from first SARS-CoV-2 genome (NC_045512, MN908947)
 MATCH (g:Gene) WHERE toInteger(row.start) >= g.start AND 
                      toInteger(row.end) <= g.end AND 
-                     g.genomeAccession = 'ncbiprotein:NC_045512' 
+                     g.genomeAccession = 'refseq:NC_045512' 
 MATCH (v:Variant{id: row.referenceGenome + ':' + row.start + '-' + row.end + '-' + row.ref + '-' + row.alt})
 MERGE (g)-[h:HAS_VARIANT]->(v)
 RETURN count(h) as HAS_VARIANT_GENE
