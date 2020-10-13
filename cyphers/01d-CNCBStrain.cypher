@@ -8,11 +8,19 @@ RETURN count(s) as Strain
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///01d-CNCBStrain.csv' AS row
-MATCH (p:Pathogen{id: row.taxonomyId})
+MATCH (g:Genome{taxonomyId: row.taxonomyId})
 MATCH (s:Strain{id: row.id})
-MERGE (p)-[h:HAS_STRAIN]->(s)
-RETURN count(h) as HAS_STRAIN
+MERGE (g)-[c:HAS_STRAIN]->(s)
+RETURN count(c) as CARRIES
 ;
+//USING PERIODIC COMMIT
+//LOAD CSV WITH HEADERS 
+//FROM 'FILE:///01d-CNCBStrain.csv' AS row
+//MATCH (p:Pathogen{id: row.taxonomyId})
+//MATCH (s:Strain{id: row.id})
+//MERGE (p)-[h:HAS_STRAIN]->(s)
+//RETURN count(h) as HAS_STRAIN
+//;
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///01d-CNCBStrain.csv' AS row
