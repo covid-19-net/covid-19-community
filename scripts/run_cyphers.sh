@@ -49,7 +49,8 @@ run_cypher 00x-NodeMetadata.cypher
 run_cypher 00y-DataProvider.cypher
 run_cypher 01a-NCBIStrain.cypher
 run_cypher 01b-Nextstrain.cypher
-run_cypher 01c-NCBIRefSeq.cypher
+#run_cypher 01c-NCBIRefSeq.cypher
+run_cypher 01c-NCBIGenome.cypher
 run_cypher 01d-CNCBStrain.cypher
 run_cypher 01e-ProteinProteinInteraction.cypher
 run_cypher 01f-PDBStructure.cypher
