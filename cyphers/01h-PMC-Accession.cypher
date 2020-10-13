@@ -3,7 +3,16 @@ LOAD CSV WITH HEADERS
 FROM 'FILE:///01h-PMC-Accession.csv' AS row
 WITH row WHERE NOT row.accession IS null
 MERGE (p:Publication{id: row.id})
+SET p.name = row.id
 RETURN count(p) as Publication
+;
+LOAD CSV WITH HEADERS 
+FROM 'FILE:///01h-PMC-Accession.csv' AS row
+WITH row WHERE NOT row.accession IS null
+MATCH (g:Genome{id: row.accession})
+MATCH (p:Publication{id: row.id})
+MERGE (p)-[m:MENTIONS]->(g)
+RETURN count(m) as Publication_Genome
 ;
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///01h-PMC-Accession.csv' AS row
