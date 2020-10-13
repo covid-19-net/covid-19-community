@@ -1,16 +1,17 @@
-id,name,scientificName,type
-taxonomy:2697049,SARS-CoV-2,Severe acute respiratory syndrome coronavirus 2,Pathogen
-taxonomy:1335626,MERS-CoV,Middle East respiratory syndrome-related coronavirus,Pathogen
-taxonomy:694009,SARS-CoV,Severe acute respiratory syndrome-related coronavirus,Pathogen
-taxonomy:9606,human,Homo sapiens,Host
-taxonomy:10090,house mouse,Mus musculus,Host
-taxonomy:59477,intermediate horseshoe bat,Rhinolophus affinis,Host
-taxonomy:608659,Malayan horseshoe bat,Rhinolophus malayanus,Host
-taxonomy:49442,horseshoe bat,Rhinolophus,Host
-taxonomy:9974,Malayan pangolin,Manis javanica,Host
-taxonomy:71116,palm civet,Paradoxurus,Host
-taxonomy:9608,carnivores,Canidae,Host
-taxonomy:9685,cat,Felis catus,Host
-taxonomy:9666,European mink,Mustela lutreola,Host
-taxonomy:419130,Malayan tiger,Panthera tigris jacksoni,Host
-taxonomy:452646,American mink,Neovison vison,Host
+id,name,scientificName,type,genomeAccession,comment
+taxonomy:2697049,SARS-CoV-2,Severe acute respiratory syndrome coronavirus 2,Pathogen,NC_045512,
+taxonomy:2697049,SARS-CoV-2,Severe acute respiratory syndrome coronavirus 2,Pathogen,MN908947,identical to NC_045512 used by CNCB as reference
+taxonomy:1335626,MERS-CoV,Middle East respiratory syndrome-related coronavirus,Pathogen,NC_019843,
+taxonomy:227984,SARS-CoV,Severe acute respiratory syndrome-related coronavirus,Pathogen,NC_004718,
+taxonomy:9606,human,Homo sapiens,Host,,
+taxonomy:10090,house mouse,Mus musculus,Host,,
+taxonomy:59477,intermediate horseshoe bat,Rhinolophus affinis,Host,,
+taxonomy:608659,Malayan horseshoe bat,Rhinolophus malayanus,Host,,
+taxonomy:49442,horseshoe bat,Rhinolophus,Host,,
+taxonomy:9974,Malayan pangolin,Manis javanica,Host,,
+taxonomy:71116,palm civet,Paradoxurus,Host,,
+taxonomy:9608,carnivores,Canidae,Host,,
+taxonomy:9685,cat,Felis catus,Host,,
+taxonomy:9666,European mink,Mustela lutreola,Host,,
+taxonomy:419130,Malayan tiger,Panthera tigris jacksoni,Host,,
+taxonomy:452646,American mink,Neovison vison,Host,,
