@@ -5,7 +5,7 @@ MERGE (p:Protein{id: row.id})
 // some proteins have the same sequence, but different proIds, use only the first occurance to set properties
 ON CREATE SET p.name = row.name, p.synonymes = row.synomymes, p.accession = row.accession, p.proId = row.proId, 
     p.entryName = row.entryName, p.taxonomyId = row.taxonomyId, p.start = toInteger(row.start), 
-    p.end = toInteger(row.end), p.fullLength = row.fullLength
+    p.end = toInteger(row.end), p.fullLength = row.fullLength, p.sequence = row.sequence
 RETURN count(p) as Protein
 ;
 USING PERIODIC COMMIT
