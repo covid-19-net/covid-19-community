@@ -25,6 +25,7 @@ function run_cypher {
 
 # Copy reference files to the Neo4j import directory
 cp $REFDATA/Organism.csv "$NEO4J_IMPORT"
+cp $REFDATA/Genome.csv "$NEO4J_IMPORT"
 cp $REFDATA/Outbreak.csv "$NEO4J_IMPORT"
 cp $REFDATA/NodeMetadata.csv "$NEO4J_IMPORT"
 cp $REFDATA/DataProvider.csv "$NEO4J_IMPORT"
@@ -34,6 +35,7 @@ if [ "$1" = "-init" ]; then
   run_cypher 00a-Init.cypher
 fi
 
+run_cypher 00b-Genome.cypher
 run_cypher 00b-Organism.cypher
 run_cypher 00c-Outbreak.cypher
 run_cypher 00e-GeoNamesCountry.cypher
@@ -47,11 +49,11 @@ run_cypher 00m-USHUDCrosswalk.cypher
 run_cypher 00o-GeoNamesPostalCode.cypher
 run_cypher 00x-NodeMetadata.cypher
 run_cypher 00y-DataProvider.cypher
-run_cypher 01a-NCBIStrain.cypher
-run_cypher 01b-Nextstrain.cypher
-#run_cypher 01c-NCBIRefSeq.cypher
-run_cypher 01c-NCBIGenome.cypher
-run_cypher 01d-CNCBStrain.cypher
+run_cypher 01a-UniProtGene.cypher
+run_cypher 01a-UniProtProtein.cypher
+run_cypher 01b-NCBIGeneProtein.cypher
+run_cypher 01c-CNCBStrain.cypher
+run_cypher 01d-Nextstrain.cypher
 run_cypher 01e-ProteinProteinInteraction.cypher
 run_cypher 01f-PDBStructure.cypher
 run_cypher 01h-PMC-Accession.cypher

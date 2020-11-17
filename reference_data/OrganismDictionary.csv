@@ -1,4 +1,7 @@
-# This file is used look up NCBI taxonomy ids for organism names
+# This file is used look up NCBI taxonomy ids for organism names.
+#
+# NOTE, organism names must be lower case.
+# Included Environment as a special case.
 #
 organism,taxonomyId
 human,taxonomy:9606
@@ -11,7 +14,13 @@ panthera tigris jacksoni,taxonomy:419130
 rhinolophus sp. (bat),taxonomy:49442
 bat,taxonomy:49442
 manis javanica,taxonomy:9974
+manis pentadactyla,taxonomy:143292
 palm civet,taxonomy:71116
 canine,taxonomy:9608
 felis catus,taxonomy:9685
 neovison vison,taxonomy:452646
+mesocricetus auratus,taxonomy:10036
+panthera leo,taxonomy:9689
+panthera tigris,taxonomy:9694
+environment,Environment
+environmental,Environment

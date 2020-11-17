@@ -1,52 +1,37 @@
-LOAD CSV WITH HEADERS FROM "FILE:///01e-ProteinProteinInteractionProtein.csv" AS row
-MERGE (p:Protein{id: row.id})
-SET p.name = row.name, p.accession = row.accession, p.proId = row.proId, 
-    p.sequence = row.sequence, p.start = toInteger(row.start), p.end = toInteger(row.end), p.fullLength = row.fullLength, 
-    p.taxonomyId = row.taxonomyId
-RETURN count(p) as Protein
-;
-LOAD CSV WITH HEADERS FROM "FILE:///01e-ProteinProteinInteractionProtein.csv" AS row
-MERGE (p:ProteinName{id: coalesce(row.proteinName, '') +  coalesce(row.accession, '') + coalesce(row.proId, '')})
-SET p.name = row.name, p.accession = row.accession, p.proId = row.proId
-RETURN count(p) as ProteinName
-;
-LOAD CSV WITH HEADERS FROM "FILE:///01e-ProteinProteinInteractionProtein.csv" AS row
-MATCH (p1:Protein)
-MATCH (p2:Protein{id: row.id})
-WHERE p1.accession = row.accession AND p1.fullLength = 'True' AND p2.fullLength = 'False'
-MERGE (p1)-[c:CLEAVED_TO]->(p2)
-RETURN count(c) as CLEAVED_TO
-;
-LOAD CSV WITH HEADERS FROM "FILE:///01e-ProteinProteinInteractionProtein.csv" AS row
-MATCH (p:Protein{id: row.id})
-MATCH (pn:ProteinName{id: coalesce(row.proteinName, '') +  coalesce(row.accession, '') + coalesce(row.proId, '')})
-MERGE (p)-[n:NAMED_AS]->(pn)
-RETURN count(n) as NAMED_AS
-;                     
+USING PERIODIC COMMIT            
 LOAD CSV WITH HEADERS FROM "FILE:///01e-ProteinProteinInteraction.csv" AS row
-MATCH (pa:Protein{id: row.id_a})
-MATCH (pb:Protein{id: row.id_b})
+WITH row WHERE (NOT row.pro_id_a IS NULL) AND (NOT row.pro_id_b IS NULL)
+MATCH (pa:Protein{proId: row.pro_id_a})
+MATCH (pb:Protein{proId: row.pro_id_b})
 MERGE (pa)-[i:INTERACTS_WITH]->(pb)
 RETURN count(i) as INTERACTS_WITH
 ;
-// temporary solution to map variants to proteins
-USING PERIODIC COMMIT
-LOAD CSV WITH HEADERS 
-FROM 'FILE:///01d-CNCBVariant.csv' AS row
-MATCH (p:Protein)-[:NAMED_AS]->(:ProteinName{accession: row.proteinAccession})
-MATCH (v:Variant{id: row.referenceGenome + ':' + row.start + '-' + row.end + '-' + row.ref + '-' + row.alt})
-WHERE p.start <= v.proteinPosition <= p.end
-MERGE (p)-[h:HAS_VARIANT]->(v)
-RETURN count(h) as HAS_VARIANT_PROTEIN
+USING PERIODIC COMMIT            
+LOAD CSV WITH HEADERS FROM "FILE:///01e-ProteinProteinInteraction.csv" AS row
+WITH row WHERE (NOT row.pro_id_a IS NULL) AND row.pro_id_b IS NULL 
+MATCH (pa:Protein{proId: row.pro_id_a})
+MATCH (pb:Protein{accession: row.accession_b})
+WHERE pb.fullLength = 'True'
+MERGE (pa)-[i:INTERACTS_WITH]->(pb)
+RETURN count(i) as INTERACTS_WITH
 ;
-USING PERIODIC COMMIT
-LOAD CSV WITH HEADERS 
-FROM 'FILE:///01d-CNCBVariant.csv' AS row
-MATCH (p:Protein)<-[:CLEAVED_TO]-(:Protein)-[:NAMED_AS]->(:ProteinName{accession: row.proteinAccession})
-MATCH (v:Variant{id: row.referenceGenome + ':' + row.start + '-' + row.end + '-' + row.ref + '-' + row.alt})
-WHERE p.start <= v.proteinPosition <= p.end
-MERGE (p)-[h:HAS_VARIANT]->(v)
-RETURN count(h) as HAS_VARIANT_PROTEIN
+USING PERIODIC COMMIT            
+LOAD CSV WITH HEADERS FROM "FILE:///01e-ProteinProteinInteraction.csv" AS row
+WITH row WHERE row.pro_id_a IS NULL AND (NOT row.pro_id_b IS NULL)
+MATCH (pa:Protein{accession: row.accession_a})
+MATCH (pb:Protein{proId: row.pro_id_b})
+WHERE pa.fullLength = 'True'
+MERGE (pa)-[i:INTERACTS_WITH]->(pb)
+RETURN count(i) as INTERACTS_WITH
+;                 
+USING PERIODIC COMMIT            
+LOAD CSV WITH HEADERS FROM "FILE:///01e-ProteinProteinInteraction.csv" AS row
+WITH row WHERE row.pro_id_a IS NULL AND row.pro_id_b IS NULL
+MATCH (pa:Protein{accession: row.accession_a})
+MATCH (pb:Protein{accession: row.accession_b})
+WHERE pa.fullLength = 'True' AND pb.fullLength = 'True'
+MERGE (pa)-[i:INTERACTS_WITH]->(pb)
+RETURN count(i) as INTERACTS_WITH
 ;
 
 
