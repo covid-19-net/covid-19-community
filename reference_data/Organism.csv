@@ -1,17 +1,22 @@
-id,name,scientificName,type,genomeAccession,comment
-taxonomy:2697049,SARS-CoV-2,Severe acute respiratory syndrome coronavirus 2,Pathogen,NC_045512,
-taxonomy:2697049,SARS-CoV-2,Severe acute respiratory syndrome coronavirus 2,Pathogen,MN908947,identical to NC_045512 used by CNCB as reference
-taxonomy:1335626,MERS-CoV,Middle East respiratory syndrome-related coronavirus,Pathogen,NC_019843,
-taxonomy:227984,SARS-CoV,Severe acute respiratory syndrome-related coronavirus,Pathogen,NC_004718,
-taxonomy:9606,human,Homo sapiens,Host,,
-taxonomy:10090,house mouse,Mus musculus,Host,,
-taxonomy:59477,intermediate horseshoe bat,Rhinolophus affinis,Host,,
-taxonomy:608659,Malayan horseshoe bat,Rhinolophus malayanus,Host,,
-taxonomy:49442,horseshoe bat,Rhinolophus,Host,,
-taxonomy:9974,Malayan pangolin,Manis javanica,Host,,
-taxonomy:71116,palm civet,Paradoxurus,Host,,
-taxonomy:9608,carnivores,Canidae,Host,,
-taxonomy:9685,cat,Felis catus,Host,,
-taxonomy:9666,European mink,Mustela lutreola,Host,,
-taxonomy:419130,Malayan tiger,Panthera tigris jacksoni,Host,,
-taxonomy:452646,American mink,Neovison vison,Host,,
+id,name,scientificName,type
+taxonomy:2697049,SARS-CoV-2,Severe acute respiratory syndrome coronavirus 2,Pathogen
+taxonomy:1263720,MERS-CoV,Middle East respiratory syndrome-related coronavirus,Pathogen
+taxonomy:694009,SARS-CoV,Severe acute respiratory syndrome-related coronavirus,Pathogen
+taxonomy:11137,HCoV-229,Human coronavirus 229E,Pathogen
+taxonomy:9606,human,Homo sapiens,Host
+taxonomy:10090,house mouse,Mus musculus,Host
+taxonomy:59477,intermediate horseshoe bat,Rhinolophus affinis,Host
+taxonomy:608659,Malayan horseshoe bat,Rhinolophus malayanus,Host
+taxonomy:49442,horseshoe bat,Rhinolophus,Host
+taxonomy:9974,Malayan pangolin,Manis javanica,Host
+taxonomy:143292,Chinese pangolin,Manis pentadactyla,Host
+taxonomy:71116,palm civet,Paradoxurus,Host
+taxonomy:9608,carnivores,Canidae,Host
+taxonomy:9685,cat,Felis catus,Host
+taxonomy:9666,European mink,Mustela lutreola,Host
+taxonomy:419130,Malayan tiger,Panthera tigris jacksoni,Host
+taxonomy:452646,American mink,Neovison vison,Host
+taxonomy:10036,golden hamster,Mesocricetus auratus,Host
+taxonomy:9689,lion,Panthera leo,Host
+taxonomy:9694,tiger,Panthera tigris,Host
+Environment,Environment,Environment,Host

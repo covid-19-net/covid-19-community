@@ -1,0 +1,31 @@
+assemblyAccession,name,refSeq,genomeAccession,chromosome,taxonomyId
+GCF_009858895,Severe acute respiratory syndrome coronavirus 2,refseq:NC_045512,insdc:MN908947,Genome,taxonomy:2697049
+GCF_002816195,Middle East respiratory syndrome-related coronavirus,refseq:NC_038294,insdc:KC164505,Genome,taxonomy:1263720
+GCF_000864885,Severe acute respiratory syndrome-related coronavirus,refseq:NC_004718,insdc:AY274119,Genome,taxonomy:694009
+GCF_000853505,Human coronavirus 229E (HCoV-229E),refseq:NC_002645,insdc:AF304460,Genome,taxonomy:11137
+GCF_000001405,Homo sapiens GRCh38.p13,refseq:NC_000001,insdc:CM000663,Chromosome 1,taxonomy:9606
+GCF_000001405,Homo sapiens GRCh38.p13,refseq:NC_000002,insdc:CM000664,Chromosome 2,taxonomy:9606
+GCF_000001405,Homo sapiens GRCh38.p13,refseq:NC_000003,insdc:CM000665,Chromosome 3,taxonomy:9606
+GCF_000001405,Homo sapiens GRCh38.p13,refseq:NC_000004,insdc:CM000666,Chromosome 4,taxonomy:9606
+GCF_000001405,Homo sapiens GRCh38.p13,refseq:NC_000005,insdc:CM000667,Chromosome 5,taxonomy:9606
+GCF_000001405,Homo sapiens GRCh38.p13,refseq:NC_000006,insdc:CM000668,Chromosome 6,taxonomy:9606
+GCF_000001405,Homo sapiens GRCh38.p13,refseq:NC_000007,insdc:CM000669,Chromosome 7,taxonomy:9606
+GCF_000001405,Homo sapiens GRCh38.p13,refseq:NC_000008,insdc:CM000670,Chromosome 8,taxonomy:9606
+GCF_000001405,Homo sapiens GRCh38.p13,refseq:NC_000009,insdc:CM000671,Chromosome 9,taxonomy:9606
+GCF_000001405,Homo sapiens GRCh38.p13,refseq:NC_000010,insdc:CM000672,Chromosome 10,taxonomy:9606
+GCF_000001405,Homo sapiens GRCh38.p13,refseq:NC_000011,insdc:CM000673,Chromosome 11,taxonomy:9606
+GCF_000001405,Homo sapiens GRCh38.p13,refseq:NC_000012,insdc:CM000674,Chromosome 12,taxonomy:9606
+GCF_000001405,Homo sapiens GRCh38.p13,refseq:NC_000013,insdc:CM000675,Chromosome 13,taxonomy:9606
+GCF_000001405,Homo sapiens GRCh38.p13,refseq:NC_000014,insdc:CM000676,Chromosome 14,taxonomy:9606
+GCF_000001405,Homo sapiens GRCh38.p13,refseq:NC_000015,insdc:CM000677,Chromosome 15,taxonomy:9606
+GCF_000001405,Homo sapiens GRCh38.p13,refseq:NC_000016,insdc:CM000678,Chromosome 16,taxonomy:9606
+GCF_000001405,Homo sapiens GRCh38.p13,refseq:NC_000017,insdc:CM000679,Chromosome 17,taxonomy:9606
+GCF_000001405,Homo sapiens GRCh38.p13,refseq:NC_000018,insdc:CM000680,Chromosome 18,taxonomy:9606
+GCF_000001405,Homo sapiens GRCh38.p13,refseq:NC_000019,insdc:CM000681,Chromosome 19,taxonomy:9606
+GCF_000001405,Homo sapiens GRCh38.p13,refseq:NC_000020,insdc:CM000682,Chromosome 20,taxonomy:9606
+GCF_000001405,Homo sapiens GRCh38.p13,refseq:NC_000021,insdc:CM000683,Chromosome 21,taxonomy:9606
+GCF_000001405,Homo sapiens GRCh38.p13,refseq:NC_000022,insdc:CM000684,Chromosome 22,taxonomy:9606
+GCF_000001405,Homo sapiens GRCh38.p13,refseq:NC_000023,insdc:CM000685,Chromosome X,taxonomy:9606
+GCF_000001405,Homo sapiens GRCh38.p13,refseq:NC_000024,insdc:CM000686,Chromosome Y,taxonomy:9606
+GCF_000001405,Homo sapiens GRCh38.p13,refseq:NC_012920,insdc:J01415,Mitochondrion,taxonomy:9606
+GCF_000001405,Homo sapiens GRCh38.p13,GRCh38.p13 Unplaced,GRCh38.p13 Unplaced,Unplaced,taxonomy:9606

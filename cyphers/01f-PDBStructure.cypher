@@ -18,12 +18,6 @@ MERGE (p)-[h:HAS_TERTIARY_STRUCTURE]->(c)
 SET h.coverage = toFloat(c.residues)/toFloat(size(p.sequence))
 RETURN count(h) as HAS_TERTIARY_STRUCTURE
 ;
-//LOAD CSV WITH HEADERS FROM "FILE:///01f-PDBChain.csv" AS row
-//MATCH (p:Protein{accession: row.accession, fullLength: 'True'})
-//MERGE (c:Chain{id: row.pdbChainId})
-//SET c.coverage = toFloat(c.residues)/toFloat(size(p.sequence))
-//RETURN count(c) as COVERAGE
-//;
 // Link chains to cleaved proteins if first and last residue is within residue range
 MATCH (c:Chain)<-[:HAS_TERTIARY_STRUCTURE]-(p:Protein)-[:CLEAVED_TO]->(pc:Protein)
 WHERE head(c.uniprotStart) >= pc.start AND last(c.uniprotEnd) <= pc.end
@@ -31,11 +25,6 @@ MERGE (pc)-[h:HAS_TERTIARY_STRUCTURE]->(c)
 SET h.coverage = toFloat(c.residues)/toFloat(size(pc.sequence))
 RETURN count(h) as HAS_TERTIARY_STRUCTURE
 ;
-//MATCH (c:Chain)<-[:HAS_TERTIARY_STRUCTURE]-(p:Protein)-[:CLEAVED_TO]->(pc:Protein)
-//WHERE head(c.uniprotStart) >= pc.start AND last(c.uniprotEnd) <= pc.end
-//SET c.coverage = toFloat(c.residues)/toFloat(size(pc.sequence))
-//RETURN count(c) as COVERAGE
-//;
 LOAD CSV WITH HEADERS FROM "FILE:///01f-PDBStructure.csv" AS row
 MERGE (s:Structure{id: row.pdbId})
 SET s.name = row.pdbId, s.title = row.title, s.description = row.description,

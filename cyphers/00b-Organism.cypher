@@ -34,4 +34,11 @@ MATCH (o:Organism{id: row.id})
 MERGE (p)-[i:IS_A]->(o)
 RETURN count(i) as IS_A
 ;
+LOAD CSV WITH HEADERS 
+FROM 'FILE:///Organism.csv' AS row 
+MATCH (o:Organism{id: row.id})
+MATCH (g:Genome{taxonomyId: row.id})
+MERGE (o)-[h:HAS_GENOME]->(g)                
+RETURN count(h) as HAS_GENOME
+;
 
