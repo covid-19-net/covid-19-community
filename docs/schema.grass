@@ -170,6 +170,19 @@ node.Clade {
   border-color: #7B241C;
   text-color-internal: #FFFFFF;
 }
+node.Genome {
+  caption: "{name}";
+  color: #0B5345;
+  border-color: #145A32;
+  text-color-internal: #FFFFFF;
+}
+node.Chromosome {
+  caption: "{name}";
+  color: #145A32;
+  border-color: #196F3D;
+  text-color-internal: #FFFFFF;
+  diameter: 65px;
+}
 node.Gene {
   caption: "{name}";
   color: #196F3D;
