@@ -11,18 +11,17 @@ RETURN count(p) as Protein
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///01a-UniProtProtein.csv' AS row 
-MATCH (p:Protein{id: row.id})
-WITH p, row
 UNWIND split(row.synonymes, ';') AS name
-MERGE (n:ProteinName{id: row.id + '-' + row.accession + '-' + row.name})
-SET n.name = row.name, n.accession = row.accession
+MERGE (n:ProteinName{id: row.id + '-' + row.accession + '-' + name})
+SET n.name = name, n.accession = row.accession
 RETURN count(n) as ProteinName
 ;
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///01a-UniProtProtein.csv' AS row 
+UNWIND split(row.synonymes, ';') AS name
 MATCH (p:Protein{id: row.id})
-MATCH (n:ProteinName{id: row.id + '-' + row.accession + '-' + row.name}) 
+MATCH (n:ProteinName{id: row.id + '-' + row.accession + '-' + name})
 MERGE (p)-[m:NAMED_AS]->(n)
 RETURN count(m) as NAMED_AS
 ;
