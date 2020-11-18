@@ -23,6 +23,7 @@ MERGE (p:ProteinName{id: row.id + '-' + row.proteinAccession})
 SET p.name = row.proteinName, p.accession = row.proteinAccession
 RETURN count(p) as ProteinName
 ;
+// TODO only UniProt proteins are matched here. Any additional proteins, e.g., ORF10 for SARS-CoV-2 indexed by GeneBank will not be matched here
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///01b-NCBIGeneProtein.csv' AS row 
 MATCH (p:Protein{id: row.id})
