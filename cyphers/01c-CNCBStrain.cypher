@@ -64,15 +64,28 @@ RETURN count(h) as HAS_VARIANT_GENE
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///01c-CNCBVariant.csv' AS row
-MATCH (g:Gene)-[:ENCODES]-(p:Protein)
+MATCH (g:Gene)-[:ENCODES]->(p:Protein)
 MATCH (v:Variant{id: row.referenceGenome + ':' + row.start + '-' + row.end + '-' + row.ref + '-' + row.alt})
 WHERE g.taxonomyId = row.taxonomyId AND
       toInteger(row.start) >= g.start AND 
       toInteger(row.end) <= g.end AND 
       p.start <= v.proteinPosition <= p.end
 MERGE (p)-[h:HAS_VARIANT]->(v)
-RETURN count(h) as HAS_VARIANT_GENE
+RETURN count(h) as HAS_VARIANT_PROTEIN
 ;
+USING PERIODIC COMMIT
+LOAD CSV WITH HEADERS 
+FROM 'FILE:///01c-CNCBVariant.csv' AS row
+MATCH (g:Gene)-[:ENCODES]->(:Protein)-[:CLEAVED_TO]->(p:Protein)
+MATCH (v:Variant{id: row.referenceGenome + ':' + row.start + '-' + row.end + '-' + row.ref + '-' + row.alt})
+WHERE g.taxonomyId = row.taxonomyId AND
+      toInteger(row.start) >= g.start AND 
+      toInteger(row.end) <= g.end AND 
+      p.start <= v.proteinPosition <= p.end
+MERGE (p)-[h:HAS_VARIANT]->(v)
+RETURN count(h) as HAS_VARIANT_CLEAVED_PROTEIN
+;
+
 
                     
 
