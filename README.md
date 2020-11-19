@@ -159,15 +159,18 @@ COVID-19-Net Knowledge Graph is created from publically available resources, inc
 |[00i-USCensusRegionDivisionState2017](notebooks/dataprep/00i-USCensusRegionDivisionState2017.ipynb)| Downloads US regions, divisions, and assigns state FIPS codes from the US Census Bureau|
 |[00j-USCensusCountyCity2017](notebooks/dataprep/00j-USCensusCountyCity2017.ipynb)| Downloads US County FIPS codes from the US Census Bureau|
 |[00k-UNRegion](notebooks/dataprep/00k-UNRegion.ipynb)| Downloads UN geographic regions, subregions, and intermediate region information from United Nations|
-|[00n-Geolocation](notebooks/dataprep/00n-Geolocation.ipynb)| Downloads longitude, latitude, elevation, and population data from GeoNames.org|
-|[01a-NCBIStrain](notebooks/dataprep/01a-NCBIStrain.ipynb)| Downloads the SARS-CoV-2 strain data from NCBI |
-|[01b-Nextstrain](notebooks/dataprep/01b-Nextstrain.ipynb)| Downloads the SARS-CoV-2 strain metadata from Nextstrain|
-|[01c-NCBIRefSeq](notebooks/dataprep/01c-NCBIRefSeq.ipynb)| Downloads the SARS-CoV-2 reference genome, genes, and protein products from NCBI|
-|[01d-CNCBStrain](notebooks/dataprep/01d-CNCBStrain.ipynb)| Downloads SARS-CoV-2 viral strain metadata from CNCB (China National Center for Bioinformation) [takes about 12 hours to run the first time, results are cached]|
-[01d-CNCBVariation](notebooks/dataprep/01d-CNCBStrainLocations.ipynb)| Downloads variation data from CNCB (China National Center for Bioinformation) |
+|[00m-USHUDCrosswalk](notebooks/dataprep/00m-USHUDCrosswalk.ipynb)| Downloads mappings of US Census tracts to US Postal Service ZIP codes and US Counties|
+|[00n-GeoNamesData](notebooks/dataprep/00n-GeoNamesData.ipynb)| Downloads longitude, latitude, elevation, and population data from GeoNames.org|
+|[00o-GeoNamesPostalCode](notebooks/dataprep/00o-GeoNamesPostalCode.ipynb)| Downloads US zip code, place name, latitude, longitude data from GeoNames.org|
+|[01a-UniProtGene](notebooks/dataprep/01a-UniProtGene.ipynb)| Downloads chromosome and gene information from UniProt |
+|[01a-UniProtProtein](notebooks/dataprep/01a-UniProtProtein.ipynb)| Downloads protein information from UniProt |
+|[01b-NCBIGeneProtein](notebooks/dataprep/01b-NCBIGeneProtein.ipynb)| Downloads gene and protein information from NCBI |
+|[01c-CNCBStrain](notebooks/dataprep/01c-CNCBStrain.ipynb)| Downloads SARS-CoV-2 viral strain metadata from CNCB (China National Center for Bioinformation) |
+[01c-CNCBVariation](notebooks/dataprep/01c-CNCBVariant.ipynb)| Downloads variant data from CNCB (China National Center for Bioinformation) |
+|[01d-Nextstrain](notebooks/dataprep/01d-Nextstrain.ipynb)| Downloads the SARS-CoV-2 strain metadata from Nextstrain|
 |[01e-ProteinProteinInteraction](notebooks/dataprep/01e-ProteinProteinInteraction.ipynb)| Downloads SARS-CoV-2 - human protein interaction data from IntAct|
 |[01f-PDBStructures](notebooks/dataprep/01f-PDBStructures.ipynb)| Downloads SARS-CoV-2 3D protein structures from the Protein Data Bank|
-|[01h-PMCAccession](notebooks/dataprep/01h-PMCAccession.ipynb)| Downloads PubMed Central and Preprint data mentions from Europe PMC|
+|[01h-PMCMentions](notebooks/dataprep/01h-PMCMentions.ipynb)| Downloads PubMed Central and Preprint data mentions from Europe PMC|
 |[02a-JHUCases](notebooks/dataprep/02a-JHUCases.ipynb)| Downloads cummulative confimed cases and deaths from the COVID-19 Data Repository by Johns Hopkins University|
 |[02a-JHUCasesLocation](notebooks/dataprep/02a-JHUCasesLocation.ipynb)| Standardizes location data for the COVID-19 Data Repository by Johns Hopkins University|
 |[02c-SDHHSACases](notebooks/dataprep/02c-SDHHSACases.ipynb)| Downloads cummulative confirmed COVID-19 cases from the County of San Diego, Health and Human Services Agency|
