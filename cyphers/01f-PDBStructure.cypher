@@ -1,3 +1,4 @@
+USING PERIODIC COMMIT 
 LOAD CSV WITH HEADERS FROM "FILE:///01f-PDBChain.csv" AS row
 MERGE (c:Chain{id: row.pdbChainId})
 SET c.name = row.pdbChainId, c.pdbId = row.pdbId, c.chainId = row.chainId, c.accession = row.accession, 
@@ -11,6 +12,7 @@ SET c.name = row.pdbChainId, c.pdbId = row.pdbId, c.chainId = row.chainId, c.acc
 RETURN count(c) as Chain
 ;
 // Note, PDB assigns chains to the full-length UniProt protein
+USING PERIODIC COMMIT 
 LOAD CSV WITH HEADERS FROM "FILE:///01f-PDBChain.csv" AS row
 MATCH (p:Protein{accession: row.accession, fullLength: 'True'})
 MATCH (c:Chain{id: row.pdbChainId})
@@ -25,14 +27,16 @@ MERGE (pc)-[h:HAS_TERTIARY_STRUCTURE]->(c)
 SET h.coverage = toFloat(c.residues)/toFloat(size(pc.sequence))
 RETURN count(h) as HAS_TERTIARY_STRUCTURE
 ;
+USING PERIODIC COMMIT 
 LOAD CSV WITH HEADERS FROM "FILE:///01f-PDBStructure.csv" AS row
 MERGE (s:Structure{id: row.pdbId})
 SET s.name = row.pdbId, s.title = row.title, s.description = row.description,
-    s.depositDate = date(row.depositDate), s.releaseDate = date(row.releaseDate),
-    s.resolution = toFloat(row.resolution), s.rFactor = toFloat(row.rFactor),
-    s.rFree = toFloat(row.rFree), s.method = row.method
+    s.releaseDate = date(row.releaseDate),
+    s.resolution = toFloat(row.resolution), s.rFree = toFloat(row.rFree), 
+    s.methods = split(row.methods,";")
 RETURN count(s) as Structure
 ;
+USING PERIODIC COMMIT 
 LOAD CSV WITH HEADERS FROM "FILE:///01f-PDBChain.csv" AS row
 MATCH (c:Chain{id: row.pdbChainId})
 MATCH (s:Structure{id: row.pdbId})

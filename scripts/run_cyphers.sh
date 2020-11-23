@@ -57,6 +57,7 @@ run_cypher 01d-Nextstrain.cypher
 run_cypher 01e-ProteinProteinInteraction.cypher
 run_cypher 01f-PDBStructure.cypher
 run_cypher 01h-PMC-Accession.cypher
+run_cypher 01g-PfamDomain.cypher
 run_cypher 02a-JHUCases.cypher
 run_cypher 02b-CDSCases.cypher
 run_cypher 02c-SDHHSACases.cypher
