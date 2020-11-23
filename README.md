@@ -169,7 +169,8 @@ COVID-19-Net Knowledge Graph is created from publically available resources, inc
 [01c-CNCBVariation](notebooks/dataprep/01c-CNCBVariant.ipynb)| Downloads variant data from CNCB (China National Center for Bioinformation) |
 |[01d-Nextstrain](notebooks/dataprep/01d-Nextstrain.ipynb)| Downloads the SARS-CoV-2 strain metadata from Nextstrain|
 |[01e-ProteinProteinInteraction](notebooks/dataprep/01e-ProteinProteinInteraction.ipynb)| Downloads SARS-CoV-2 - human protein interaction data from IntAct|
-|[01f-PDBStructures](notebooks/dataprep/01f-PDBStructures.ipynb)| Downloads SARS-CoV-2 3D protein structures from the Protein Data Bank|
+|[01f-PDBStructures](notebooks/dataprep/01f-PDBStructures.ipynb)| Downloads 3D protein structures from the Protein Data Bank|
+|[01g-PfamDomain](notebooks/dataprep/01f-PfamDomain.ipynb)| Downloads mappings between PDB protein chains and Pfam domains|
 |[01h-PMCMentions](notebooks/dataprep/01h-PMCMentions.ipynb)| Downloads PubMed Central and Preprint data mentions from Europe PMC|
 |[02a-JHUCases](notebooks/dataprep/02a-JHUCases.ipynb)| Downloads cummulative confimed cases and deaths from the COVID-19 Data Repository by Johns Hopkins University|
 |[02a-JHUCasesLocation](notebooks/dataprep/02a-JHUCasesLocation.ipynb)| Standardizes location data for the COVID-19 Data Repository by Johns Hopkins University|
