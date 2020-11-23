@@ -81,6 +81,7 @@ CREATE INDEX cases_s FOR (n:Cases) ON (n.source);
 CREATE INDEX cases_o FOR (n:Cases) ON (n.origLocation);
 CREATE CONSTRAINT chain ON (n:Chain) ASSERT n.id IS UNIQUE;
 CREATE INDEX chain_n FOR (n:Chain) ON (n.name);
+CREATE CONSTRAINT domain ON (n:Domain) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT structure ON (n:Structure) ASSERT n.id IS UNIQUE;
 CREATE INDEX structure_n FOR (n:Structure) ON (n.name);
 
