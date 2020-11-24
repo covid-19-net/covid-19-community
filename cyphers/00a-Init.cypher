@@ -51,6 +51,8 @@ CREATE INDEX cruiseship_o FOR (n:CruiseShip) ON (n.origLocation);
 CREATE CONSTRAINT organism ON (n:Organism) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT outbreak ON (n:Outbreak) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT publication ON (n:Publication) ASSERT n.id IS UNIQUE;
+CREATE INDEX publication_p FOR (n:Publication) ON (n.pmcId);
+CREATE INDEX publication_d FOR (n:Publication) ON (n.doi);
 CREATE CONSTRAINT genome ON (n:Genome) ASSERT n.id IS UNIQUE;
 CREATE INDEX genome_t FOR (n:Genome) ON (n.taxonomyId);
 CREATE CONSTRAINT chromosome ON (n:Chromosome) ASSERT n.id IS UNIQUE;
