@@ -66,7 +66,7 @@ RETURN count(m) as Publication_PPR_Genome
 ;
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
-FROM 'FILE:///01h-PMC-PDBStructures.csv' AS row
+FROM 'FILE:///01h-PMC-PDBStructure.csv' AS row
 MATCH (p:Publication{pmcId: row.id})
 MATCH (s:Structure{id: row.accession})
 MERGE (p)-[m:MENTIONS]->(s)
@@ -74,7 +74,7 @@ RETURN count(m) as Publication_PMC_Structure
 ;
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
-FROM 'FILE:///01h-PMC-PDBStructures.csv' AS row
+FROM 'FILE:///01h-PMC-PDBStructure.csv' AS row
 MATCH (p:Publication{id: row.id})
 MATCH (s:Structure{id: row.accession})
 MERGE (p)-[m:MENTIONS]->(s)
@@ -83,14 +83,14 @@ RETURN count(m) as Publication_PPR_Structure
 // Handle PubMed publications (only available for PDB Structures)
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
-FROM 'FILE:///01h-PM-PDBStructures.csv' AS row
+FROM 'FILE:///01h-PM-PDBStructure.csv' AS row
 MERGE (p:Publication{id: row.id})
 ON CREATE SET p.name = row.id
 RETURN count(p) as Publication_PM   
 ;
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
-FROM 'FILE:///01h-PM-PDBStructures.csv' AS row
+FROM 'FILE:///01h-PM-PDBStructure.csv' AS row
 MATCH (p:Publication{id: row.id})
 MATCH (s:Structure{id: row.accession})
 MERGE (p)-[m:MENTIONS]->(s)
