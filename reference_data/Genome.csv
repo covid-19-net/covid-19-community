@@ -1,8 +1,11 @@
 assemblyAccession,name,refSeq,genomeAccession,chromosome,taxonomyId
-GCF_009858895,Severe acute respiratory syndrome coronavirus 2,refseq:NC_045512,insdc:MN908947,Genome,taxonomy:2697049
-GCF_002816195,Middle East respiratory syndrome-related coronavirus,refseq:NC_038294,insdc:KC164505,Genome,taxonomy:1263720
-GCF_000864885,Severe acute respiratory syndrome-related coronavirus,refseq:NC_004718,insdc:AY274119,Genome,taxonomy:694009
-GCF_000853505,Human coronavirus 229E (HCoV-229E),refseq:NC_002645,insdc:AF304460,Genome,taxonomy:11137
+GCF_009858895,Severe acute respiratory syndrome coronavirus 2,refseq:NC_045512,insdc:MN908947,Viral Chromosome,taxonomy:2697049
+GCF_002816195,Middle East respiratory syndrome-related coronavirus,refseq:NC_038294,insdc:KC164505,Viral Chromosome,taxonomy:1263720
+GCF_000864885,Severe acute respiratory syndrome-related coronavirus,refseq:NC_004718,insdc:AY274119,Viral Chromosome,taxonomy:694009
+GCF_000858765,Human coronavirus HKU1 (HCoV-HKU1),refSeq:NC_006577,insdc:AY597011,Viral Chromosome,taxonomy:443239
+GCF_003972325,Human coronavirus OC43 (HCoV-OC43),refseq:NC_006213,insdc:AY585228,Viral Chromosome,taxonomy:31631
+GCF_000853505,Human coronavirus 229E (HCoV-229E),refseq:NC_002645,insdc:AF304460,Viral Chromosome,taxonomy:11137
+GCF_000853855,Human coronavirus NL63 (HCoV-NL63),refseq:NC_005831,insdc:KT381875,Viral Chromosome,taxonomy:277944
 GCF_000001405,Homo sapiens GRCh38.p13,refseq:NC_000001,insdc:CM000663,Chromosome 1,taxonomy:9606
 GCF_000001405,Homo sapiens GRCh38.p13,refseq:NC_000002,insdc:CM000664,Chromosome 2,taxonomy:9606
 GCF_000001405,Homo sapiens GRCh38.p13,refseq:NC_000003,insdc:CM000665,Chromosome 3,taxonomy:9606
