@@ -12,8 +12,8 @@ USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///01a-UniProtProtein.csv' AS row 
 UNWIND split(row.synonymes, ';') AS name
-MERGE (n:ProteinName{id: row.id + '-' + row.accession + '-' + name})
-SET n.name = name, n.accession = row.accession
+MERGE (n:ProteinName{id: row.id + '-' + coalesce(row.proId, row.accession) + '-' + name})
+SET n.name = name, n.accession = row.accession, n.proId = row.proId
 RETURN count(n) as ProteinName
 ;
 USING PERIODIC COMMIT
@@ -21,7 +21,7 @@ LOAD CSV WITH HEADERS
 FROM 'FILE:///01a-UniProtProtein.csv' AS row 
 UNWIND split(row.synonymes, ';') AS name
 MATCH (p:Protein{id: row.id})
-MATCH (n:ProteinName{id: row.id + '-' + row.accession + '-' + name})
+MATCH (n:ProteinName{id: row.id + '-' + coalesce(row.proId, row.accession) + '-' + name})
 MERGE (p)-[m:NAMED_AS]->(n)
 RETURN count(m) as NAMED_AS
 ;
