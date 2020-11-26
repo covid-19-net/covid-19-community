@@ -16,7 +16,7 @@ USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///01b-NCBIGeneProtein.csv' AS row 
 MATCH (g:Gene{id: row.id})
-MATCH (n:GeneName{id: row.id + '-' + row.geneAccession)}) 
+MATCH (n:GeneName{id: row.id + '-' + row.geneAccession}) 
 MERGE (g)-[m:NAMED_AS]->(n)
 RETURN count(m) as NAMED_AS
 ;
