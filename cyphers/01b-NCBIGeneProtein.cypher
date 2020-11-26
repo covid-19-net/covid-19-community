@@ -1,18 +1,18 @@
-USING PERIODIC COMMI
+USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///01b-NCBIGeneProtein.csv' AS row
 MERGE (g:Gene{id: row.id})
 SET g.start = toInteger(row.geneStart), g.end = toInteger(row.geneEnd), g.accession = row.geneAccession
 RETURN count(g) as Gene
 ;
-USING PERIODIC COMMI
+USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///01b-NCBIGeneProtein.csv' AS row 
 MERGE (n:GeneName{id: row.id + '-' + row.geneAccession})
 SET n.name = row.geneName, n.accession = row.geneAccession
 RETURN count(n) as GeneName
 ;
-USING PERIODIC COMMI
+USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///01b-NCBIGeneProtein.csv' AS row 
 MATCH (g:Gene{id: row.id})
@@ -20,7 +20,7 @@ MATCH (n:GeneName{id: row.id + '-' + row.geneAccession)})
 MERGE (g)-[m:NAMED_AS]->(n)
 RETURN count(m) as NAMED_AS
 ;
-USING PERIODIC COMMI
+USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///01b-NCBIGeneProtein.csv' AS row 
 MERGE (p:ProteinName{id: row.id + '-' + row.proteinAccession})
