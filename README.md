@@ -126,6 +126,7 @@ Once Jupyter Lab launches, navigate to the `notebooks/queries` and `notebooks/an
 
 |Notebook|Description|
 |:-------|:----------|
+|[FulltextQuery](notebooks/queries/FulltextQuery.ipynb)| Runs example fulltext queries|
 |[CaseCounts](notebooks/queries/CaseCounts.ipynb)| Runs example queries for case counts|
 |[Locations](notebooks/queries/Locations.ipynb)| Runs example queries for locations|
 |[Demographics](notebooks/queries/Demographics.ipynb)| Runs example queries for demographics data from the American Community Survey|
@@ -169,8 +170,8 @@ COVID-19-Net Knowledge Graph is created from publically available resources, inc
 [01c-CNCBVariation](notebooks/dataprep/01c-CNCBVariant.ipynb)| Downloads variant data from CNCB (China National Center for Bioinformation) |
 |[01d-Nextstrain](notebooks/dataprep/01d-Nextstrain.ipynb)| Downloads the SARS-CoV-2 strain metadata from Nextstrain|
 |[01e-ProteinProteinInteraction](notebooks/dataprep/01e-ProteinProteinInteraction.ipynb)| Downloads SARS-CoV-2 - human protein interaction data from IntAct|
-|[01f-PDBStructures](notebooks/dataprep/01f-PDBStructures.ipynb)| Downloads 3D protein structures from the Protein Data Bank|
-|[01g-PfamDomain](notebooks/dataprep/01f-PfamDomain.ipynb)| Downloads mappings between PDB protein chains and Pfam domains|
+|[01f-PDBStructure](notebooks/dataprep/01f-PDBStructure.ipynb)| Downloads 3D protein structures from the Protein Data Bank|
+|[01g-PfamDomain](notebooks/dataprep/01g-PfamDomain.ipynb)| Downloads mappings between PDB protein chains and Pfam domains|
 |[01h-PublicationLink](notebooks/dataprep/01h-PublicationLink.ipynb)| Downloads mappings between datasets and publications indexed by PubMed Central (PMC) and Preprints (PPR) and PubMed (PM)|
 |[02a-JHUCases](notebooks/dataprep/02a-JHUCases.ipynb)| Downloads cummulative confimed cases and deaths from the COVID-19 Data Repository by Johns Hopkins University|
 |[02a-JHUCasesLocation](notebooks/dataprep/02a-JHUCasesLocation.ipynb)| Standardizes location data for the COVID-19 Data Repository by Johns Hopkins University|

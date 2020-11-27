@@ -27,14 +27,14 @@ MERGE (p:ProteinName{id: row.id + '-' + row.proteinAccession})
 SET p.name = row.proteinName, p.accession = row.proteinAccession
 RETURN count(p) as ProteinName
 ;
-USING PERIODIC COMMIT
-LOAD CSV WITH HEADERS 
-FROM 'FILE:///01b-NCBIGeneProtein.csv' AS row 
-MERGE (p:Protein{id: row.id})
+//USING PERIODIC COMMIT
+//LOAD CSV WITH HEADERS 
+//FROM 'FILE:///01b-NCBIGeneProtein.csv' AS row 
+//MERGE (p:Protein{id: row.id})
 // Only add proteins and properties if they don't exist yet (from UniProt)
-ON CREATE SET p.name = row.proteinName, p.accession = row.proteinAccession, p.taxonomyId = row.taxonomyId, p.fullLength = row.fullLength, p.sequence = row.sequence
-RETURN count(p) as Protein
-;
+//ON CREATE SET p.name = row.proteinName, p.accession = row.proteinAccession, p.taxonomyId = row.taxonomyId, p.fullLength = row.fullLength, p.sequence = row.sequence
+//RETURN count(p) as Protein
+//;
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///01b-NCBIGeneProtein.csv' AS row 

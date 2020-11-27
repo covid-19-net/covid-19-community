@@ -7,6 +7,7 @@ RETURN batches, total;
 // delete all constraints and indices
 CALL db.index.fulltext.drop('locations');
 CALL db.index.fulltext.drop('bioentities');
+CALL db.index.fulltext.drop('sequences');
 CALL db.index.fulltext.drop('geoids');
 CALL apoc.schema.assert({},{}, true);
                                                                                             
@@ -150,8 +151,12 @@ CREATE INDEX demographics_t FOR (n:Demographics) ON (n.tract);
 
 
 // create full text search indices
+//                                                     
+// NOTE: To add a new fulltext index, manually create the index using the Neo4j Browser, then run this script
+//                                                     
 CALL db.index.fulltext.createNodeIndex('locations',['World', 'UNRegion', 'UNSubRegion', 'UNIntermediateRegion', 'Country', 'Admin1', 'Admin2', 'USRegion', 'USDivision', 'City', 'CruiseShip', 'PostalCode','Tract'],['name', 'placeName', 'iso', 'iso3', 'fips', 'geonameId', 'code', 'origLocation']);
-CALL db.index.fulltext.createNodeIndex('bioentities',['ProteinName', 'Protein', 'Gene', 'Strain', 'Variant', 'Organism', 'Outbreak','Chain','Structure'],['id', 'name', 'scientificName', 'taxonomyId', 'accession', 'proId', 'genomeAccession', 'geneVariant', 'proteinVariant', 'variantType', 'variantConsequence']);
+CALL db.index.fulltext.createNodeIndex('bioentities',['Genome', 'Chromosome', 'ProteinName', 'Protein', 'Gene', 'Strain', 'Variant', 'Organism', 'Outbreak','Chain','Structure', 'Domain'],['name', 'description', 'synonymes', 'scientificName', 'taxonomyId', 'accession', 'proId', 'genomeAccession', 'geneVariant', 'proteinVariant', 'variantType', 'variantConsequence']);
+CALL db.index.fulltext.createNodeIndex('sequences',['Protein'],['sequence']);
 CALL db.index.fulltext.createNodeIndex('geoids',['UNRegion', 'UNSubRegion', 'UNIntermediateRegion', 'Country', 'Admin1', 'Admin2', 'USRegion', 'USDivision', 'City', 'PostalCode','Tract'],['id','iso', 'iso3', 'fips', 'geonameId','code','name'], {analyzer: 'keyword'});         
 
 
