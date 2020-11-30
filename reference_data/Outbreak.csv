@@ -2,7 +2,3 @@ id,startDate,pathogen
 COVID-19,2019,taxonomy:2697049
 MERS,2012,taxonomy:1263720
 SARS,2003,taxonomy:694009
-HCoV-HKU1,,taxonomy:443239
-HCoV-OC43,,taxonomy:31631
-HCoV-229E,,taxonomy:11137
-HCoV-NL63,,taxonomy:277944
