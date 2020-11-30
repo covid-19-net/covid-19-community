@@ -135,7 +135,7 @@ Once Jupyter Lab launches, navigate to the `notebooks/queries` and `notebooks/an
 |[Housing](notebooks/queries/Housing.ipynb)| Runs example queries for housing characteristics from the American Community Survey|
 |[Bioentities](notebooks/queries/Bioentities.ipynb)| Runs example queries for bioentities|
 |[AnalyzeVariantsSpikeGlycoprotein](notebooks/analyses/AnalyzeVariantsSpikeGlycoprotein.ipynb)| Analyze SARS-CoV-2 Spike Glycoprotein Variants|
-|[SARS-CoV-2-3DStructures](notebooks/analyses/SARS-CoV-2-3DStructures.ipynb)| Analyze SARS-CoV-2 3D Structures|
+|[Coronavirus3DStructures](notebooks/analyses/Coronavirus3DStructures.ipynb)| Inventory of coronavirus 3D protein structures|
 |[MapMutationsTo3D](notebooks/analyses/MapMutationsTo3D.ipynb)| Map mutations from SARS-CoV-2 strains to 3D Structures|
 |[RiskFactorsByStateCounty](notebooks/analyses/RiskFactorsByStateCounty.ipynb)| Explore Risk Factors for COVID-19 for Counties in US States|
 |[RiskFactorsSanDiegoCounty](notebooks/analyses/RiskFactorsSanDiegoCounty.ipynb)| Explore Risk Factors for COVID-19 for San Diego County|
