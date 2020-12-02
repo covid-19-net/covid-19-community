@@ -50,21 +50,44 @@ You can browse the Knowledge Graph here (click the launch button and follow the 
 ![](docs/ConnectNeo4j.png)
 
 ### Run a Full-text Query
-The KG can be searched by `locations` (geographic locations and cruise ship names) and `bioentities` (proteins, genes, strains, organisms) using a full-text search. The results contain exact and approximate matches.
+Full-text queries enable a wide range of search options including exact phrase queries, fuzzy and wildcard queries, range queries, regular expression queries, and use of boolean expressions (see tutorial on [FulltextQuery](../notebooks/queries/FulltextQuery.ipynb)).
 
-#### Example full-text query: find spike proteins
-***Query:***
+The KG can be searched by the following full-text indices:
+
+`bioentities` Organism, Genome, Chromosome, Gene, GeneName, Protein, ProteinName, ProteinDomain, ProteinFamily, Structure, Chain, Outbreak, Strain, Variant, Publication
+
+`bioids` keyword (exact) query for bioentity identifiers (e.g., id, taxonomyId, accession, proId, genomeAccession, doi, variantType, variantConsequence)
+
+`sequences` full-text and regular expression query for protein sequences
+
+`locations` UNRegion, UNSubRegion, UNIntermediateRegion, Country, Admin1, Admin2, USRegion, USDivision, City,  PostalCode, Tract, CruiseShip
+
+`geoids` keyword (exact) query for geographic identifiers (e.g., zip codes, fips codes, country iso codes)
+
+Full-text queries have the following format:
+
+```
+CALL db.index.fulltext.queryNodes('<type of entity>', '<text query>') YIELD node, score
+```
+
+The queries return the node and score for each match (higher scores indicate closer matches).
+
+#### Example full-text query for `bioentities` for proteins that contain the work *spike* in the name
+***Query:*** (copy and paste into Neo4j browser)
 ```
 CALL db.index.fulltext.queryNodes("bioentities", "spike") YIELD node
+WHERE 'Protein' IN labels(node) // only return nodes with the label Protein
+RETURN node
 ```
+
 
 ***Result:***
 
 <p align="center">
-<img src="docs/Spike-Query-Node.png", width="80%">
+<img src="docs/Spikeglycoprotein.png", width="80%">
 </p>
 
-This subgraph shows the results of the full-text search. Five proteins contain the word `Spike`. Each protein is associated with one or more protein names (synonymes) (only one name is shown here). The Spike glycoprotein in the center is the full-length gene product encoded by the SARS-CoV-2 S gene. The other four proteins are cleavage products (fragments) of the full-length protein.
+The full-text query matches several Spike proteins from several [coronaviruses](https://github.com/covid-19-net/covid-19-community/blob/master/reference_data/Organism.csv#L1-L8). The SARS-CoV-2 Spike glycoprotein ([uniprot:P0DTC2](https://www.uniprot.org/uniprot/P0DTC2)) is highlighted in the center with its four cleavage products: Spike glycoprotein without signal peptide ([uniprot.chain:PRO_0000449646](https://www.uniprot.org/uniprot/P0DTC2#PRO_0000449646)),  Spike protein S1 ([uniprot.chain:PRO_0000449647](https://www.uniprot.org/uniprot/P0DTC2#PRO_0000449647)), Spike protein S2 ([uniprot.chain:PRO_0000449648](https://www.uniprot.org/uniprot/P0DTC2#PRO_0000449648)), and Spike protein S2' ([uniprot.chain:PRO_0000449649](https://www.uniprot.org/uniprot/P0DTC2#PRO_0000449649)) linked by a `CLEAVED_BY` relationship.
 
 #### Example full-text query: find spike proteins - tabular results
 The following query returns the names of the matched bioentities and the labels of the nodes (e.g., Protein, ProteinName) sorted by the match score in descending order.
@@ -88,9 +111,9 @@ Specific Nodes and Relationships in the KG can be searched using the [Cypher que
 
 #### Example Cypher query: find viral strains collected in Houston
 
-***Query:***
+***Query:*** (limited to 10 hits)
 ```
-MATCH (s:Strain)-[:FOUND_IN]->(l:Location{name: 'Houston'}) RETURN s, l
+MATCH (s:Strain)-[:FOUND_IN]->(l:Location{name: 'Houston'}) RETURN s, l LIMIT 10
 ```
 
 ***Result:***
