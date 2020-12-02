@@ -84,7 +84,7 @@ RETURN node
 ***Result:***
 
 <p align="center">
-<img src="docs/Spikeglycoprotein.png", width="80%">
+<img src="docs/Spikeglycoproteins.png", width="100%">
 </p>
 
 The full-text query matches several Spike proteins from several [coronaviruses](https://github.com/covid-19-net/covid-19-community/blob/master/reference_data/Organism.csv#L1-L8). The SARS-CoV-2 Spike glycoprotein ([uniprot:P0DTC2](https://www.uniprot.org/uniprot/P0DTC2)) is highlighted in the center with its four cleavage products: Spike glycoprotein without signal peptide ([uniprot.chain:PRO_0000449646](https://www.uniprot.org/uniprot/P0DTC2#PRO_0000449646)),  Spike protein S1 ([uniprot.chain:PRO_0000449647](https://www.uniprot.org/uniprot/P0DTC2#PRO_0000449647)), Spike protein S2 ([uniprot.chain:PRO_0000449648](https://www.uniprot.org/uniprot/P0DTC2#PRO_0000449648)), and Spike protein S2' ([uniprot.chain:PRO_0000449649](https://www.uniprot.org/uniprot/P0DTC2#PRO_0000449649)) linked by a `CLEAVED_BY` relationship.
