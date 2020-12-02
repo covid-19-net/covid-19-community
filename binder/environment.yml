@@ -10,6 +10,7 @@ dependencies:
   - openjdk=11.0.1
   - jupyterlab=2.1.5
   - pandas
+  - dask
   - xlrd
   - matplotlib
   - seaborn=0.11.0
