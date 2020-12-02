@@ -75,6 +75,8 @@ CREATE CONSTRAINT protein ON (n:Protein) ASSERT n.id IS UNIQUE;
 CREATE INDEX protein_a FOR (n:Protein) ON (n.accession);
 CREATE INDEX protein_t FOR (n:Protein) ON (n.taxonomyId);                                           
 CREATE INDEX protein_p FOR (n:Protein) ON (n.proId);
+CREATE INDEX protein_s FOR (n:Protein) ON (n.start);
+CREATE INDEX protein_e FOR (n:Protein) ON (n.end);
 CREATE CONSTRAINT proteinname ON (n:ProteinName) ASSERT n.id IS UNIQUE;
 CREATE INDEX proteinname_n FOR (n:ProteinName) ON (n.name);
 CREATE INDEX proteinname_a FOR (n:ProteinName) ON (n.accession);
@@ -84,7 +86,8 @@ CREATE INDEX cases_s FOR (n:Cases) ON (n.source);
 CREATE INDEX cases_o FOR (n:Cases) ON (n.origLocation);
 CREATE CONSTRAINT chain ON (n:Chain) ASSERT n.id IS UNIQUE;
 CREATE INDEX chain_n FOR (n:Chain) ON (n.name);
-CREATE CONSTRAINT domain ON (n:Domain) ASSERT n.id IS UNIQUE;
+CREATE CONSTRAINT proteindomain ON (n:ProteinDomain) ASSERT n.id IS UNIQUE;
+CREATE CONSTRAINT proteinfamily ON (n:ProteinFamily) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT structure ON (n:Structure) ASSERT n.id IS UNIQUE;
 CREATE INDEX structure_n FOR (n:Structure) ON (n.name);
 
@@ -155,9 +158,14 @@ CREATE INDEX demographics_t FOR (n:Demographics) ON (n.tract);
 // NOTE: To add a new fulltext index, manually create the index using the Neo4j Browser, then run this script
 //                                                     
 CALL db.index.fulltext.createNodeIndex('locations',['World', 'UNRegion', 'UNSubRegion', 'UNIntermediateRegion', 'Country', 'Admin1', 'Admin2', 'USRegion', 'USDivision', 'City', 'CruiseShip', 'PostalCode','Tract'],['name', 'placeName', 'iso', 'iso3', 'fips', 'geonameId', 'code', 'origLocation']);
-CALL db.index.fulltext.createNodeIndex('bioentities',['Genome', 'Chromosome', 'ProteinName', 'Protein', 'Gene', 'Strain', 'Variant', 'Organism', 'Outbreak','Chain','Structure', 'Domain', 'Publication'],['name', 'description', 'synonymes', 'scientificName', 'taxonomyId', 'accession', 'proId', 'genomeAccession', 'geneVariant', 'proteinVariant', 'variantType', 'variantConsequence', 'journal']);
+
+CALL db.index.fulltext.createNodeIndex('bioentities',['Organism', 'Genome', 'Chromosome', 'Gene', 'GeneName', 'Protein', 'ProteinName', 'ProteinDomain', 'ProteinFamily', 'Structure', 'Chain', 'Outbreak', 'Strain', 'Variant', 'Publication'],['name', 'description', 'synonymes', 'scientificName', 'taxonomyId', 'accession', 'proId', 'genomeAccession', 'geneVariant', 'proteinVariant', 'variantType', 'variantConsequence', 'journal']);
+
 CALL db.index.fulltext.createNodeIndex('sequences',['Protein'],['sequence']);
-CALL db.index.fulltext.createNodeIndex('geoids',['UNRegion', 'UNSubRegion', 'UNIntermediateRegion', 'Country', 'Admin1', 'Admin2', 'USRegion', 'USDivision', 'City', 'PostalCode','Tract'],['id','iso', 'iso3', 'fips', 'geonameId','code','name'], {analyzer: 'keyword'});         
+                                                                
+CALL db.index.fulltext.createNodeIndex('bioids',['Organism', 'Genome', 'Chromosome', 'Gene', 'GeneName', 'Protein', 'ProteinName', 'ProteinDomain', 'ProteinFamily', 'Structure', 'Chain', 'Outbreak', 'Strain', 'Variant', 'Publication'],['id', 'taxonomyId', 'accession', 'proId', 'genomeAccession', 'doi', 'variantType', 'variantConsequence'], {analyzer: 'keyword'});
+
+CALL db.index.fulltext.createNodeIndex('geoids',['UNRegion', 'UNSubRegion', 'UNIntermediateRegion', 'Country', 'Admin1', 'Admin2', 'USRegion', 'USDivision', 'City', 'PostalCode','Tract', 'CruiseShip'],['id','iso', 'iso3', 'fips', 'geonameId','code','name'], {analyzer: 'keyword'});         
 
 
 
