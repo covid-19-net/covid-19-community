@@ -7,6 +7,7 @@ RETURN batches, total;
 // delete all constraints and indices
 CALL db.index.fulltext.drop('locations');
 CALL db.index.fulltext.drop('bioentities');
+CALL db.index.fulltext.drop('bioids');
 CALL db.index.fulltext.drop('sequences');
 CALL db.index.fulltext.drop('geoids');
 CALL apoc.schema.assert({},{}, true);
