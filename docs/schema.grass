@@ -189,6 +189,13 @@ node.Gene {
   border-color: #145A32;
   text-color-internal: #FFFFFF;
 }
+node.GeneName{
+  caption: "{name}";
+  color: #229954;
+  border-color: #196F3D;
+  text-color-internal: #FFFFFF;
+  diameter: 65px;
+}
 node.Variant {
   caption: "{name}";
   color: #229954;
@@ -217,6 +224,18 @@ node.ProteinName {
   caption: "{name}";
   color: #52BE80;
   border-color: #27AE60;
+  diameter: 65px;
+}
+node.ProteinDomain {
+  caption: "{name}";
+  color: #148F77;
+  border-color: #27AE60;
+  diameter: 75px;
+}
+node.ProteinFamily {
+  caption: "{name}";
+  color: #1ABC9C;
+  border-color: #148F77;
   diameter: 65px;
 }
 node.Publication {

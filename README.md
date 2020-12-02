@@ -21,10 +21,10 @@ This project is a community effort to build a Neo4j Knowledge Graph (KG) that in
 **Epidemiology Subgraph:** This subgraph represents COVID-19 cases including information about viral strains, and the pathogen and host organism. Cases and Strains are linked to the locations where they were reported and found, respectively.
 
 <p align="center">
-<img src="docs/Biology.png", width="70%">
+<img src="docs/Biology.png", width="90%">
 </p>
 
-**Biology Subgraph:** This subgraph represents organism, genome, chromosome, gene, variant, protein, protein structure, pathogen-host protein-protein interactions, and links to publications.
+**Biology Subgraph:** This subgraph represents organism, genome, chromosome, gene, variant, protein, protein structure, protein domain, protein family, pathogen-host protein-protein interactions, and links to publications.
 
 <p align="center">
 <img src="docs/PopulationCharacteristics.png", width="100%">
