@@ -4,6 +4,9 @@ WITH row WHERE (NOT row.pro_id_a IS NULL) AND (NOT row.pro_id_b IS NULL)
 MATCH (pa:Protein{proId: row.pro_id_a})
 MATCH (pb:Protein{proId: row.pro_id_b})
 MERGE (pa)-[i:INTERACTS_WITH]->(pb)
+SET i.id = row.interactionId, i.interactorA = row.interactorA, i.interactorB = row.interactorB,
+    i.interactionType = row.interactionType, i.detectionMethod = row.detectionMethod,
+    i.confidenceValue = toFloat(row.confidenceValue), i.pubmedId = row.pubmedId
 RETURN count(i) as INTERACTS_WITH
 ;
 USING PERIODIC COMMIT            
@@ -13,6 +16,9 @@ MATCH (pa:Protein{proId: row.pro_id_a})
 MATCH (pb:Protein{accession: row.accession_b})
 WHERE pb.fullLength = 'True'
 MERGE (pa)-[i:INTERACTS_WITH]->(pb)
+SET i.id = row.interactionId, i.interactorA = row.interactorA, i.interactorB = row.interactorB,
+    i.interactionType = row.interactionType, i.detectionMethod = row.detectionMethod,
+    i.confidenceValue = toFloat(row.confidenceValue), i.pubmedId = row.pubmedId
 RETURN count(i) as INTERACTS_WITH
 ;
 USING PERIODIC COMMIT            
@@ -22,6 +28,9 @@ MATCH (pa:Protein{accession: row.accession_a})
 MATCH (pb:Protein{proId: row.pro_id_b})
 WHERE pa.fullLength = 'True'
 MERGE (pa)-[i:INTERACTS_WITH]->(pb)
+SET i.id = row.interactionId, i.interactorA = row.interactorA, i.interactorB = row.interactorB,
+    i.interactionType = row.interactionType, i.detectionMethod = row.detectionMethod,
+    i.confidenceValue = toFloat(row.confidenceValue), i.pubmedId = row.pubmedId
 RETURN count(i) as INTERACTS_WITH
 ;                 
 USING PERIODIC COMMIT            
@@ -31,6 +40,9 @@ MATCH (pa:Protein{accession: row.accession_a})
 MATCH (pb:Protein{accession: row.accession_b})
 WHERE pa.fullLength = 'True' AND pb.fullLength = 'True'
 MERGE (pa)-[i:INTERACTS_WITH]->(pb)
+SET i.id = row.interactionId, i.interactorA = row.interactorA, i.interactorB = row.interactorB,
+    i.interactionType = row.interactionType, i.detectionMethod = row.detectionMethod,
+    i.confidenceValue = toFloat(row.confidenceValue), i.pubmedId = row.pubmedId
 RETURN count(i) as INTERACTS_WITH
 ;
 
