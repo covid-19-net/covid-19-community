@@ -160,11 +160,11 @@ CREATE INDEX demographics_t FOR (n:Demographics) ON (n.tract);
 //                                                     
 CALL db.index.fulltext.createNodeIndex('locations',['World', 'UNRegion', 'UNSubRegion', 'UNIntermediateRegion', 'Country', 'Admin1', 'Admin2', 'USRegion', 'USDivision', 'City', 'CruiseShip', 'PostalCode','Tract'],['name', 'placeName', 'iso', 'iso3', 'fips', 'geonameId', 'code', 'origLocation']);
 
-CALL db.index.fulltext.createNodeIndex('bioentities',['Organism', 'Genome', 'Chromosome', 'Gene', 'GeneName', 'Protein', 'ProteinName', 'ProteinDomain', 'ProteinFamily', 'Structure', 'Chain', 'Outbreak', 'Strain', 'Variant', 'Publication'],['name', 'description', 'synonymes', 'scientificName', 'taxonomyId', 'accession', 'proId', 'genomeAccession', 'geneVariant', 'proteinVariant', 'variantType', 'variantConsequence', 'journal']);
+CALL db.index.fulltext.createNodeIndex('bioentities',['Organism', 'Genome', 'Chromosome', 'Gene', 'GeneName', 'Protein', 'ProteinName', 'ProteinDomain', 'ProteinFamily', 'Structure', 'Chain', 'Outbreak', 'Strain', 'Variant', 'Publication'],['name', 'description', 'synonymes', 'scientificName', 'taxonomyId', 'accession', 'proId', 'doi', 'pmcId', 'genomeAccession', 'geneVariant', 'proteinVariant', 'variantType', 'variantConsequence', 'journal']);
 
 CALL db.index.fulltext.createNodeIndex('sequences',['Protein'],['sequence']);
                                                                 
-CALL db.index.fulltext.createNodeIndex('bioids',['Organism', 'Genome', 'Chromosome', 'Gene', 'GeneName', 'Protein', 'ProteinName', 'ProteinDomain', 'ProteinFamily', 'Structure', 'Chain', 'Outbreak', 'Strain', 'Variant', 'Publication'],['id', 'taxonomyId', 'accession', 'proId', 'genomeAccession', 'doi', 'variantType', 'variantConsequence'], {analyzer: 'keyword'});
+CALL db.index.fulltext.createNodeIndex('bioids',['Organism', 'Genome', 'Chromosome', 'Gene', 'GeneName', 'Protein', 'ProteinName', 'ProteinDomain', 'ProteinFamily', 'Structure', 'Chain', 'Outbreak', 'Strain', 'Variant', 'Publication'],['id', 'taxonomyId', 'accession', 'proId', 'genomeAccession', 'doi', 'pmcId', 'variantType', 'variantConsequence'], {analyzer: 'keyword'});
 
 CALL db.index.fulltext.createNodeIndex('geoids',['UNRegion', 'UNSubRegion', 'UNIntermediateRegion', 'Country', 'Admin1', 'Admin2', 'USRegion', 'USDivision', 'City', 'PostalCode','Tract', 'CruiseShip'],['id','iso', 'iso3', 'fips', 'geonameId','code','name'], {analyzer: 'keyword'});         
 
