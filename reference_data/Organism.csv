@@ -8,6 +8,10 @@ taxonomy:11137,HCoV-229,Human coronavirus 229E,Pathogen
 taxonomy:277944,HCoV-NL63,Human coronavirus NL63,Pathogen
 taxonomy:12131,HRV-14,Human rhinovirus 14,Pathogen
 taxonomy:12134,HRV-1A,Human rhinovirus 1A,Pathogen
+taxonomy:766791,MKCoV-WD1127,Mink coronavirus strain WD1127,Pathogen
+taxonomy:693998,RBCoV-HKU2,Rhinolophus bat coronavirus HKU2,Pathogen
+taxonomy:1487703,RACoV,Rhinolophus affinis coronavirus,Pathogen
+taxonomy:285949,CVCoV-civet020,SARS coronavirus civet020,Pathogen
 taxonomy:9606,human,Homo sapiens,Host
 taxonomy:10090,house mouse,Mus musculus,Host
 taxonomy:59477,intermediate horseshoe bat,Rhinolophus affinis,Host

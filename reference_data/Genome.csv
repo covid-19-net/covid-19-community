@@ -8,6 +8,10 @@ GCF_000853505,Human coronavirus 229E (HCoV-229E),refseq:NC_002645,insdc:AF304460
 GCF_000853855,Human coronavirus NL63 (HCoV-NL63),refseq:NC_005831,insdc:KT381875,Viral Chromosome,taxonomy:277944
 GCF_000861265,Human rhinovirus 14 (HRV-14),refseq:NC_001490,insdc:K02121,Viral Chromosome,taxonomy:12131
 GCF_002816835,Human rhinovirus 1A (HRV-1A),,insdc:FJ445111,Viral Chromosome,taxonomy:12134
+GCF_000919475,Mink coronavirus strain WD1127,refseq:NC_023760,insdc:HM245925,Viral Chromosome,taxonomy:766791
+GCF_000875645,Rhinolophus bat coronavirus HKU2,refseq:NC_009988,insdc:EF203064,Viral Chromosome,taxonomy:693998
+NA-KF569996,Rhinolophus affinis coronavirus,,insdc:KF569996,Viral Chromosome,taxonomy:1487703
+NA-AY572035,SARS coronavirus civet020,,insdc:AY572038,Viral Chromosome,taxonomy:285949
 GCF_000001405,Homo sapiens GRCh38.p13,refseq:NC_000001,insdc:CM000663,Chromosome 1,taxonomy:9606
 GCF_000001405,Homo sapiens GRCh38.p13,refseq:NC_000002,insdc:CM000664,Chromosome 2,taxonomy:9606
 GCF_000001405,Homo sapiens GRCh38.p13,refseq:NC_000003,insdc:CM000665,Chromosome 3,taxonomy:9606
