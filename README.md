@@ -50,7 +50,7 @@ You can browse the Knowledge Graph here (click the launch button and follow the 
 ![](docs/ConnectNeo4j.png)
 
 ### Run a Full-text Query
-Full-text queries enable a wide range of search options including exact phrase queries, fuzzy and wildcard queries, range queries, regular expression queries, and use of boolean expressions (see tutorial on [FulltextQuery](../notebooks/queries/FulltextQuery.ipynb)).
+Full-text queries enable a wide range of search options including exact phrase queries, fuzzy and wildcard queries, range queries, regular expression queries, and use of boolean expressions (see tutorial on [FulltextQuery](notebooks/queries/FulltextQuery.ipynb)).
 
 The KG can be searched by the following full-text indices:
 
