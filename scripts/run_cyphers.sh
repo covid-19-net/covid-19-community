@@ -36,6 +36,7 @@ if [ "$1" = "-init" ]; then
 fi
 
 run_cypher 00b-Genome.cypher
+run_cypher 00b-NCBITaxonomy.cypher
 run_cypher 00b-Organism.cypher
 run_cypher 00c-Outbreak.cypher
 run_cypher 00e-GeoNamesCountry.cypher
