@@ -6,6 +6,8 @@ GCF_000858765,Human coronavirus HKU1 (HCoV-HKU1),refseq:NC_006577,insdc:AY597011
 GCF_003972325,Human coronavirus OC43 (HCoV-OC43),refseq:NC_006213,insdc:AY585228,Viral Chromosome,taxonomy:31631
 GCF_000853505,Human coronavirus 229E (HCoV-229E),refseq:NC_002645,insdc:AF304460,Viral Chromosome,taxonomy:11137
 GCF_000853855,Human coronavirus NL63 (HCoV-NL63),refseq:NC_005831,insdc:KT381875,Viral Chromosome,taxonomy:277944
+NA-MN996532,Bat coronavirus RaTG13,,insdc:MN996532,Viral Chromosome,taxonomy:2709072
+NA-MT040335,Pangolin coronavirus,,insdc:MT040335,Viral Chromosome,taxonomy:2708335
 GCF_000861265,Human rhinovirus 14 (HRV-14),refseq:NC_001490,insdc:K02121,Viral Chromosome,taxonomy:12131
 GCF_002816835,Human rhinovirus 1A (HRV-1A),,insdc:FJ445111,Viral Chromosome,taxonomy:12134
 GCF_000919475,Mink coronavirus strain WD1127,refseq:NC_023760,insdc:HM245925,Viral Chromosome,taxonomy:766791
