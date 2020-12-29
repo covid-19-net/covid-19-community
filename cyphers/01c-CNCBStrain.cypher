@@ -4,8 +4,10 @@ FROM 'FILE:///01c-CNCBStrain.csv' AS row
 MERGE (s:Strain{id: row.id}) 
 SET s.name = row.name, s.accession = row.accession, s.accessions = apoc.convert.toStringList(split(row.accessions, ';')), 
     s.source = row.source, s.taxonomyId = row.taxonomyId, s.hostTaxonomyId = row.hostTaxonomyId, 
-    s.sequenceLength = toInteger(row.sequenceLength), s.sequenceQuality = row.sequenceQuality, 
-    s.qualityAssessment = row.qualityAssessment, s.collectionDate = date(row.collectionDate),  
+    s.lineage = row.lineage, s.sequenceLength = toInteger(row.sequenceLength), 
+    s.completeness = row.completeness, s.gender = row.gender, s.age = row.age,
+//    s.sequenceQuality = row.sequenceQuality, s.qualityAssessment = row.qualityAssessment,
+    s.collectionDate = date(row.collectionDate),  
     s.origLocation = row.origLocation, s.originatingLab = row.originatingLab
 RETURN count(s) as Strain
 ;
@@ -20,7 +22,7 @@ RETURN count(c) as CARRIES
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///01c-CNCBStrain.csv' AS row
-MATCH (p:Pathogen{id: row.taxonomyId})
+MATCH (p:Organism{id: row.taxonomyId})
 MATCH (s:Strain{id: row.id})
 MERGE (p)-[h:HAS_STRAIN]->(s)
 RETURN count(h) as HAS_STRAIN
@@ -28,10 +30,18 @@ RETURN count(h) as HAS_STRAIN
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///01c-CNCBStrain.csv' AS row
-MATCH (h:Host{id: row.hostTaxonomyId})
+MATCH (h:Organism{id: row.hostTaxonomyId})
 MATCH (s:Strain{id: row.id})
 MERGE (h)-[c:CARRIES]->(s)
 RETURN count(c) as CARRIES
+;
+USING PERIODIC COMMIT
+LOAD CSV WITH HEADERS 
+FROM 'FILE:///01c-CNCBStrain.csv' AS row
+MATCH (o1:Organism{id: row.taxonomyId})
+MATCH (o2:Organism{id: row.hostTaxonomyId})
+MERGE (o1)-[h:HAS_HOST]->(o2)
+RETURN count(h) as HAS_HOST
 ;
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
