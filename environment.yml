@@ -9,7 +9,7 @@ channels:
 dependencies:
   - python=3.7
   - openjdk=11.0.1
-  - jupyterlab=2.1.5
+  - jupyterlab
   - pandas
   - dask
   - aiohttp
@@ -20,7 +20,7 @@ dependencies:
   - biopython
   - papermill=2.1.0
   - nodejs>=10.0.0
-  - ipywidgets=7.5.1
+  - ipywidgets=7.6.2
   - scikit-learn=0.23.2
   - arcgis=1.8.1
   - bcbio-gff=0.6.6
@@ -30,8 +30,8 @@ dependencies:
   - python-Levenshtein
   - pycountry
   - geopy
+  - ipycytoscape
   - pip
   - pip:
-    - rcsbsearch==0.2.1
     - --pre
     - py2neo
