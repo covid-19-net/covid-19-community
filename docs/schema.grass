@@ -15,6 +15,42 @@ relationship {
   text-color-internal: #FFFFFF;
   caption: "<type>";
 }
+relationship.HAS_PARENT {
+  color: #A5ABB6;
+  shaft-width: 1px;
+  font-size: 8px;
+  padding: 0px;
+  text-color-external: #000000;
+  text-color-internal: #FFFFFF;
+  caption: "<type>";
+}
+relationship.HAS_HOST {
+  color: #A5ABB6;
+  shaft-width: 1px;
+  font-size: 8px;
+  padding: 3px;
+  text-color-external: #000000;
+  text-color-internal: #FFFFFF;
+  caption: "<type>";
+}
+relationship.INTERACTS_WITH {
+  color: #A5ABB6;
+  shaft-width: 1px;
+  font-size: 6px;
+  padding: 0px;
+  text-color-external: #000000;
+  text-color-internal: #FFFFFF;
+  caption: "<type>";
+}
+relationship.CLEAVED_TO {
+  color: #A5ABB6;
+  shaft-width: 1px;
+  font-size: 6px;
+  padding: 3px;
+  text-color-external: #000000;
+  text-color-internal: #FFFFFF;
+  caption: "<type>";
+}
 node.* {
   color: #C990C0;
   border-color: #b261a5;
