@@ -15,7 +15,7 @@ This project is a community effort to build a Neo4j Knowledge Graph (KG) that in
 **Location Subgraph:** This subgraph represents the geographic hierarchy from the world to the city level (population > 1000), as well as PostalCode (US ZIP) and US Census Tract level. Each geographic node has a **Location** label (not shown), to simplify finding locations without specifying a specific level in the geographic hierarchy.
 
 <p align="center">
-<img src="docs/Epidemiology.png", width="60%">
+<img src="docs/Epidemiology.png", width="80%">
 </p>
 
 **Epidemiology Subgraph:** This subgraph represents COVID-19 cases including information about viral strains, and the pathogen and host organism. Cases and Strains are linked to the locations where they were reported and found, respectively.
@@ -157,6 +157,7 @@ Once Jupyter Lab launches, navigate to the `notebooks/queries` and `notebooks/an
 |[EconomicCharacteristics](notebooks/queries/EconomicCharacteristics.ipynb)| Runs example queries for economic characteristics from the American Community Survey|
 |[Housing](notebooks/queries/Housing.ipynb)| Runs example queries for housing characteristics from the American Community Survey|
 |[Bioentities](notebooks/queries/Bioentities.ipynb)| Runs example queries for bioentities|
+|[StrainB.1.1.7](notebooks/analyses/StrainB.1.1.7.ipynb)| Analyze B.1.1.7 Strain|
 |[AnalyzeVariantsSpikeGlycoprotein](notebooks/analyses/AnalyzeVariantsSpikeGlycoprotein.ipynb)| Analyze SARS-CoV-2 Spike Glycoprotein Variants|
 |[Coronavirus3DStructures](notebooks/analyses/Coronavirus3DStructures.ipynb)| Inventory of coronavirus 3D protein structures|
 |[MapMutationsTo3D](notebooks/analyses/MapMutationsTo3D.ipynb)| Map mutations from SARS-CoV-2 strains to 3D Structures|
