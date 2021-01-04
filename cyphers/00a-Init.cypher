@@ -63,6 +63,7 @@ CREATE INDEX chromosome_n FOR (n:Chromosome) ON (n.name);
 CREATE CONSTRAINT strain ON (n:Strain) ASSERT n.id IS UNIQUE;
 CREATE INDEX strain_t FOR (n:Strain) ON (n.taxonomyId);
 CREATE INDEX strain_n FOR (n:Strain) ON (n.name);
+CREATE INDEX strain_l FOR (n:Strain) ON (n.lineage);
 CREATE INDEX strain_g FOR (n:Strain) ON (n.gisaidId);
 CREATE INDEX strain_o FOR (n:Strain) ON (n.origLocation);
 CREATE CONSTRAINT variant ON (n:Variant) ASSERT n.id IS UNIQUE;
@@ -164,7 +165,7 @@ CALL db.index.fulltext.createNodeIndex('bioentities',['Organism', 'Genome', 'Chr
 
 CALL db.index.fulltext.createNodeIndex('sequences',['Protein'],['sequence']);
                                                                 
-CALL db.index.fulltext.createNodeIndex('bioids',['Organism', 'Genome', 'Chromosome', 'Gene', 'GeneName', 'Protein', 'ProteinName', 'ProteinDomain', 'ProteinFamily', 'Structure', 'Chain', 'Outbreak', 'Strain', 'Variant', 'Publication'],['id', 'taxonomyId', 'accession', 'proId', 'genomeAccession', 'doi', 'pmcId', 'variantType', 'variantConsequence'], {analyzer: 'keyword'});
+CALL db.index.fulltext.createNodeIndex('bioids',['Organism', 'Genome', 'Chromosome', 'Gene', 'GeneName', 'Protein', 'ProteinName', 'ProteinDomain', 'ProteinFamily', 'Structure', 'Chain', 'Outbreak', 'Strain', 'Variant', 'Publication'],['id', 'taxonomyId', 'accession', 'proId', 'genomeAccession', 'doi', 'pmcId', 'variantType', 'variantConsequence', 'lineage'], {analyzer: 'keyword'});
 
 CALL db.index.fulltext.createNodeIndex('geoids',['UNRegion', 'UNSubRegion', 'UNIntermediateRegion', 'Country', 'Admin1', 'Admin2', 'USRegion', 'USDivision', 'City', 'PostalCode','Tract', 'CruiseShip'],['id','iso', 'iso3', 'fips', 'geonameId','code','name'], {analyzer: 'keyword'});         
 
