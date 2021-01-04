@@ -71,22 +71,32 @@ MATCH (v:Variant{id: row.id})
 MERGE (g)-[h:HAS_VARIANT]->(v)
 RETURN count(h) as HAS_VARIANT_GENE
 ;
-USING PERIODIC COMMIT
-LOAD CSV WITH HEADERS 
-FROM 'FILE:///01c-CNCBVariant.csv' AS row
-MATCH (v:Variant{id: row.id})<-[:HAS_VARIANT]-(g:Gene)-[:ENCODES]->(p:Protein)
+MATCH (v:Variant)<-[:HAS_VARIANT]-(g:Gene)-[:ENCODES]->(p:Protein)
 WHERE p.start <= v.proteinPosition <= p.end
 MERGE (p)-[h:HAS_VARIANT]->(v)
 RETURN count(h) as HAS_VARIANT_PROTEIN
 ;
-USING PERIODIC COMMIT
-LOAD CSV WITH HEADERS 
-FROM 'FILE:///01c-CNCBVariant.csv' AS row
-MATCH (v:Variant{id: row.id})<-[:HAS_VARIANT]-(g:Gene)-[:ENCODES]->(:Protein)-[:CLEAVED_TO]->(p:Protein)
+MATCH (v:Variant)<-[:HAS_VARIANT]-(g:Gene)-[:ENCODES]->(:Protein)-[:CLEAVED_TO]->(p:Protein)
 WHERE p.start <= v.proteinPosition <= p.end
 MERGE (p)-[h:HAS_VARIANT]->(v)
 RETURN count(h) as HAS_VARIANT_CLEAVED_PROTEIN
 ;
+//USING PERIODIC COMMIT
+//LOAD CSV WITH HEADERS 
+//FROM 'FILE:///01c-CNCBVariant.csv' AS row
+//MATCH (v:Variant{id: row.id})<-[:HAS_VARIANT]-(g:Gene)-[:ENCODES]->(p:Protein)
+//WHERE p.start <= v.proteinPosition <= p.end
+//MERGE (p)-[h:HAS_VARIANT]->(v)
+//RETURN count(h) as HAS_VARIANT_PROTEIN
+//;
+//USING PERIODIC COMMIT
+//LOAD CSV WITH HEADERS 
+//FROM 'FILE:///01c-CNCBVariant.csv' AS row
+//MATCH (v:Variant{id: row.id})<-[:HAS_VARIANT]-(g:Gene)-[:ENCODES]->(:Protein)-[:CLEAVED_TO]->(p:Protein)
+//WHERE p.start <= v.proteinPosition <= p.end
+////MERGE (p)-[h:HAS_VARIANT]->(v)
+//RETURN count(h) as HAS_VARIANT_CLEAVED_PROTEIN
+//;
 //USING PERIODIC COMMIT
 //LOAD CSV WITH HEADERS 
 //FROM 'FILE:///01c-CNCBVariant.csv' AS row
