@@ -60,11 +60,9 @@ MATCH (v:Variant{id: row.id})
 MERGE (s)-[h:HAS_VARIANT]->(v)
 RETURN count(h) as HAS_VARIANT
 ;
-MATCH (g:Gene) 
+MATCH (g:Gene{taxonomyId: 'taxonomy:2697049', reviewed: 'True'}) 
 MATCH (v:Variant)
-WHERE g.taxonomyId = v.taxonomyId AND
-      v.start >= g.start AND 
-      v.end <= g.end
+WHERE v.start >= g.start AND v.end <= g.end
 MERGE (g)-[h:HAS_VARIANT]->(v)
 RETURN count(h) as HAS_VARIANT_GENE
 ;
@@ -82,13 +80,22 @@ RETURN count(h) as HAS_VARIANT_GENE
 MATCH (v:Variant)<-[:HAS_VARIANT]-(g:Gene)-[:ENCODES]->(p:Protein)
 WHERE p.start <= v.proteinPosition <= p.end
 MERGE (p)-[h:HAS_VARIANT]->(v)
-RETURN count(h) as HAS_VARIANT_PROTEIN
+WITH p, v
+MATCH (p)-[:CLEAVED_TO]->(pc:Protein)
+WHERE pc.start <= v.proteinPosition <= pc.end
+MERGE (pc)-[hc:HAS_VARIANT]->(v)
+RETURN count(hc) as HAS_VARIANT_CLEAVED_PROTEIN
 ;
-MATCH (v:Variant)<-[:HAS_VARIANT]-(g:Gene)-[:ENCODES]->(:Protein)-[:CLEAVED_TO]->(p:Protein)
-WHERE p.start <= v.proteinPosition <= p.end
-MERGE (p)-[h:HAS_VARIANT]->(v)
-RETURN count(h) as HAS_VARIANT_CLEAVED_PROTEIN
-;
+// MATCH (v:Variant)<-[:HAS_VARIANT]-(g:Gene)-[:ENCODES]->(p:Protein)
+//WHERE p.start <= v.proteinPosition <= p.end
+//MERGE (p)-[h:HAS_VARI//ANT]->(v)
+//RETURN count(h) as HAS_VARIANT_PRO//TEIN
+//;
+//MATCH (v:Variant)<-[:HAS//_VARIANT]-(g:Gene)-[:ENCODES]->(:Protei//n)-[:CLEAVED_TO]->(p:Protein)
+//WHERE p.start <= v.proteinPosition <= p.end
+//MERGE (p)-[h:HAS_VARIANT]->(v)
+//ETURN count(h) as HAS_VARIANT_CLEAVED_PROTEIN
+//;
 //USING PERIODIC COMMIT
 //LOAD CSV WITH HEADERS 
 //FROM 'FILE:///01c-CNCBVariant.csv' AS row
