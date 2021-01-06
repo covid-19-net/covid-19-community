@@ -3,8 +3,10 @@ LOAD CSV WITH HEADERS FROM "FILE:///01f-PDBChain.csv" AS row
 MERGE (c:Chain{id: row.pdbChainId})
 SET c.name = row.pdbChainId, c.pdbId = row.pdbId, c.chainId = row.chainId,
     c.entityId = row.entityId, c.type = row.type,
-    c.description = row.description, c.sequence = row.sequence,
-    c.accession = row.accession, 
+    c.description = row.description, 
+    c.category = row.category,
+    c.accession = row.accession,
+    c.sequence = row.sequence,
     c.uniprotStart = apoc.convert.toIntList(split(row.uniprotStart, ';')), 
     c.uniprotEnd = apoc.convert.toIntList(split(row.uniprotEnd, ';')),
     // pdbStart and pdbEnd contain characters (insertion codes), don't convert to integer list
