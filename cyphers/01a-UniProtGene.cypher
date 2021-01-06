@@ -2,7 +2,7 @@ USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///01a-UniProtGene.csv' AS row 
 MERGE (g:Gene{id: row.id})
-SET g.name = row.name, g.synonymes = row.synomymes, g.taxonomyId = row.taxonomyId, g.chromosome = row.chromosome
+SET g.name = row.name, g.synonymes = row.synomymes, g.taxonomyId = row.taxonomyId, g.chromosome = row.chromosome, g.reviewed = row.reviewed
 RETURN count(g) as Gene
 ;
 USING PERIODIC COMMIT
