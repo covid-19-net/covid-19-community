@@ -10,7 +10,7 @@ LOAD CSV WITH HEADERS
 FROM 'FILE:///00b-NCBITaxonomy.csv' AS row 
 MATCH (o1:Organism{id: row.id})
 MATCH (o2:Organism{id: row.parentId}) 
-MERGE (o1)-[h:HAS_PARENT]->(o2)
-RETURN count(h) as HAS_PARENT
+MERGE (o1)-[h:IS_A]->(o2)
+RETURN count(h) as IS_A
 ;
 
