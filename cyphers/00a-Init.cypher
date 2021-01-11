@@ -13,6 +13,8 @@ CALL db.index.fulltext.drop('geoids');
 CALL apoc.schema.assert({},{}, true);
                                                                                             
 // create constraints and indices
+CREATE CONSTRAINT metanode ON (n:MetaNode) ASSERT n.id IS UNIQUE;
+CREATE CONSTRAINT datasource ON (n:DataSource) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT location ON (n:Location) ASSERT n.id IS UNIQUE;
 CREATE INDEX location_n FOR (n:Location) ON (n.name);
 CREATE INDEX location_l FOR (n:Location) ON (n.location);

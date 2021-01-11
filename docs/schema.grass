@@ -15,7 +15,7 @@ relationship {
   text-color-internal: #FFFFFF;
   caption: "<type>";
 }
-relationship.HAS_PARENT {
+relationship.IS_A {
   color: #A5ABB6;
   shaft-width: 1px;
   font-size: 8px;
@@ -57,14 +57,14 @@ node.* {
   text-color-internal: #FFFFFF;
   defaultCaption: "<id>";
 }
-node.NodeMetadata {
+node.MetaNode {
   caption: "{name}";
   diameter: 80px;
   color: #808B96;
   border-color: #566573;
   text-color-internal: #FFFFFF;
 }
-node.DataProvider {
+node.DataSource {
   caption: "{name}";
   color: #273746;
   border-color: #212F3D;
@@ -171,17 +171,6 @@ node.Strain {
   border-color: #641E16;
   text-color-internal: #FFFFFF;
 }
-node.Pathogen {
-  caption: "{name}";
-  color: #B03A2E;
-  border-color: #78281F;
-}
-node.Host {
-  caption: "{name}";
-  color: #CB4335;
-  border-color: #78281F;
-  text-color-internal: #FFFFFF;
-}
 node.Organism {
   caption: "{name}";
   color: #E74C3C;
@@ -198,12 +187,6 @@ node.Cases {
   caption: "{name}";
   color: #F5B7B1;
   border-color: #F1948A;
-  text-color-internal: #FFFFFF;
-}
-node.Clade {
-  caption: "{name}";
-  color: #922B21;
-  border-color: #7B241C;
   text-color-internal: #FFFFFF;
 }
 node.Genome {

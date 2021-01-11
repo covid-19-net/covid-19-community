@@ -1,4 +1,4 @@
-name,shortDescription,description,example,definitionSource,dataProviders
+name,shortDescription,description,example,definitionSource,dataSources
 Location,Geographic location,A geographic location,"World, ..., Country, State, Country, City, Cruise ship",,GeoNames;UNSD;USCensus;HUD;JHU
 World, The World, Top level location,,,
 UNRegion, Continental regions, Continental regions according to the M49 standard defined by the Statistics Division of the United Nations Secretariat,Americas,https://unstats.un.org/unsd/methodology/m49/,UNSD
@@ -17,12 +17,9 @@ USDivision,Subregions of US,Divisions defined by the US Census Burea,Pacific Div
 Cases,Case counts,Number of case for outbreaks or diseases at specific dates and locations,,,JHU;SDHHSA
 Outbreak,Increase in disease occurance,"Statistically significant increase in disease occurance in a community, population, or region",COVID-19,http://purl.obolibrary.org/obo/IDO_0000502,DO;JHU
 Organism,Living system,"Individual living system, such as animal, plant, bacteria or virus, that is capable of replicating or reproducing, growth and maintenance in the right environment",Homo sapiens,http://purl.obolibrary.org/obo/OBI_0100026,NCBI
-Host,Host organism for a virus,"A host organism provides an environment supportive for the survival, growth, maturation, or reproduction of a virus",Homo sapiens,http://purl.obolibrary.org/obo/IDO_0000531,NCBI;CNCB;Nextstrain
-Pathogen,Diseae causing organism,"A bacterium, virus, or other microorganism that can cause disease",SARS-CoV-2,http://purl.obolibrary.org/obo/IDO_0000528,NCBI;CNCB;Nextstrain
 Genome,Genetic material within a cell or virion,A genome is the sum of genetic material within a cell or virion,Homo sapiens GRCh38.p13,http://purl.obolibrary.org/obo/SO_0001026,UniProt;NCBI
 Chromosome,Part of a cell or virion that contains genetic information,Structural unit composed of a nucleic acid molecule which controls its own replication,Chromosome 1,http://purl.obolibrary.org/obo/SO_0000340,UniProt;NCBI
 Strain,Genetic variant of an organism,A population of organisms that is geneticaly different from others of the same species and possessing a set of defined characteristics,COVID-19 strain,https://semanticscience.org/resource/SIO_010055.rdf,NCBI;CNCB;Nextstrain
-Clade,Group of organisms based on common ancestors,An identifier that denotes a group of organisms or groups of organisms based on common ancestors,SARS-CoV-2 A,http://purl.obolibrary.org/obo/APOLLO_SV_00000232,Nextstrain
 Gene,Sequence of nucleotides,"Sequence of nucleotides in DNA or RNA that encodes the synthesis of a gene product, either RNA or protein",SARS-CoV-2 S gene,http://purl.obolibrary.org/obo/SO_0000704,NCBI
 GeneName,Name and accession number of a protein,Preferred name or synonym and associated accession number for a gene,ORF1ab,,UniProt;NCBI
 Variant,Natural sequence variation,"Natural sequence variants due to polymorphisms, disease-associated mutations, RNA editing and variations between strains, isolates or cultivars",ORF8:c.184Gtg>Ctg,http://purl.obolibrary.org/obo/SO_0001147,CNCB;NCBI;UniProt
@@ -45,4 +42,6 @@ Employment,Employment status,Employment status from the American Community Surve
 HealthInsurance,Health insurance coverage,Health insurance coverage from the American Community Survey 5-year 2018 estimates,No health insurance,https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2018_ACSSubjectDefinitions.pdf,USCensus
 Occupation,Type of occupation,Type of coccupation from the American Community Survey 5-year 2018 estimates,Service occupation,https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2018_ACSSubjectDefinitions.pdf,USCensus
 Housing,Housing characteristics,Housing characteristics from the American Community Survey 5-year 2018 estimates,Occupants per room,https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2018_ACSSubjectDefinitions.pdf,USCensus
+MetaNode,Node metadata,Description about a node in a graph,,,
+DataSource,Source of data,Authoritative body who provided the information,NCBI,http://purl.obolibrary.org/obo/NCIT_C16493,
 
