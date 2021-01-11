@@ -28,7 +28,7 @@ cp $REFDATA/Organism.csv "$NEO4J_IMPORT"
 cp $REFDATA/Genome.csv "$NEO4J_IMPORT"
 cp $REFDATA/Outbreak.csv "$NEO4J_IMPORT"
 cp $REFDATA/NodeMetadata.csv "$NEO4J_IMPORT"
-cp $REFDATA/DataProvider.csv "$NEO4J_IMPORT"
+cp $REFDATA/DataSource.csv "$NEO4J_IMPORT"
 
 # Set up the database
 if [ "$1" = "-init" ]; then
@@ -48,8 +48,6 @@ run_cypher 00j-USCensusCountyCity2017.cypher
 run_cypher 00k-UNRegion.cypher
 run_cypher 00m-USHUDCrosswalk.cypher
 run_cypher 00o-GeoNamesPostalCode.cypher
-run_cypher 00x-NodeMetadata.cypher
-run_cypher 00y-DataProvider.cypher
 run_cypher 01a-UniProtGene.cypher
 run_cypher 01a-UniProtProtein.cypher
 run_cypher 01b-NCBIGeneProtein.cypher
@@ -76,3 +74,5 @@ run_cypher 03a-USCensusDP03Poverty.cypher
 run_cypher 03a-USCensusDP04.cypher
 run_cypher 03a-USCensusDP05.cypher
 run_cypher 10a-GeoLink.cypher
+run_cypher 99a-MetaNode.cypher
+run_cypher 99b-DataSource.cypher
