@@ -37,7 +37,7 @@ Note, this KG is work in progress and changes frequently.
 
 ## Browse the Knowledge Graph with the Neo4j Browser
 
-**The Knowledge Graph is updated daily between 07:00 and 08:00 UTC.**
+**The Knowledge Graph is updated daily approximately between 07:00 and 09:00 UTC.**
 
 ![](docs/Browser.png)
 
@@ -160,6 +160,7 @@ Once Jupyter Lab launches, navigate to the `notebooks/queries` and `notebooks/an
 |[StrainB.1.1.7](notebooks/analyses/StrainB.1.1.7.ipynb)| Analyze B.1.1.7 Strain|
 |[AnalyzeVariantsSpikeGlycoprotein](notebooks/analyses/AnalyzeVariantsSpikeGlycoprotein.ipynb)| Analyze SARS-CoV-2 Spike Glycoprotein Variants|
 |[Coronavirus3DStructures](notebooks/analyses/Coronavirus3DStructures.ipynb)| Inventory of coronavirus 3D protein structures|
+|[GraphVisualization](notebooks/analyses/GraphVisualization.ipynb)| Demo of graph visualization with Cytoscape|
 |[MapMutationsTo3D](notebooks/analyses/MapMutationsTo3D.ipynb)| Map mutations from SARS-CoV-2 strains to 3D Structures|
 |[RiskFactorsByStateCounty](notebooks/analyses/RiskFactorsByStateCounty.ipynb)| Explore Risk Factors for COVID-19 for Counties in US States|
 |[RiskFactorsSanDiegoCounty](notebooks/analyses/RiskFactorsSanDiegoCounty.ipynb)| Explore Risk Factors for COVID-19 for San Diego County|
