@@ -15,11 +15,13 @@ taxonomy:693998,RBCoV-HKU2,Rhinolophus bat coronavirus HKU2,Pathogen
 taxonomy:1487703,RACoV,Rhinolophus affinis coronavirus,Pathogen
 taxonomy:285949,CVCoV-civet020,SARS coronavirus civet020,Pathogen
 taxonomy:9606,human,Homo sapiens,Host
+taxonomy:60711,green monkey,Chlorocebus sabaeus,Host
 taxonomy:10090,house mouse,Mus musculus,Host
 taxonomy:59479,greater horseshoe bat,Rhinolophus ferrumequinum,Host
 taxonomy:59477,intermediate horseshoe bat,Rhinolophus affinis,Host
 taxonomy:608659,Malayan horseshoe bat,Rhinolophus malayanus,Host
 taxonomy:49442,horseshoe bat,Rhinolophus,Host
+taxonomy:608708,Shamel's horseshoe bat,Rhinolophus shameli,Host
 taxonomy:9974,Malayan pangolin,Manis javanica,Host
 taxonomy:143292,Chinese pangolin,Manis pentadactyla,Host
 taxonomy:71116,palm civet,Paradoxurus,Host

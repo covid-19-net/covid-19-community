@@ -2,14 +2,18 @@
 #
 # NOTE, organism names must be lower case.
 # Included Environment as a special case.
+# Mink is ambigous, since the data are from Europe, mink has been assigned to mustela lutreola
 #
 organism,taxonomyId
 human,taxonomy:9606
 homo sapiens,taxonomy:9606
+chlorocebus sabaeus,taxonomy:60711
 mus musculus,taxonomy:10090
 rhinolophus affinis,taxonomy:59477 
 rhinolophus malayanus,taxonomy:608659
+rhinolophus shameli,taxonomy:608708
 mustela lutreola,taxonomy:9666
+mink,taxonomy:9666
 panthera tigris jacksoni,taxonomy:419130
 rhinolophus sp. (bat),taxonomy:49442
 bat,taxonomy:49442
