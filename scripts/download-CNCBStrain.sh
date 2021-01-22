@@ -19,7 +19,7 @@ wget $URL -O "$LDIR"/cncbstrain_tmp.json  >> "$LOGDIR"/download.log 2>&1
 FILESIZE=$(wc -c "$LDIR"/cncbstrain_tmp.json | awk '{print $1}')
 
 # check if file size is of expected size
-if [ $FILESIZE -gt 500000000]
+if [ $FILESIZE -gt 500000000 ]
 then
   mv "$LDIR"/cncbstrain_tmp.json "$LDIR"/cncbstrain.json
   echo "File download incomplete" $(date) >> "$LOGDIR"/download.log 2>&1
