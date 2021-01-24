@@ -244,7 +244,8 @@ conda activate covid-19-community
 
 Install Jupyter Lab extensions
 ```
-jupyter labextension install @jupyter-widgets/jupyterlab-manager jupyter-cytoscape@0.2.3 jupyterlab-plotly@4.14.3
+jupyter labextension install @jupyter-widgets/jupyterlab-manager 
+        jupyter-cytoscape@0.2.3 jupyterlab-plotly@4.14.3
 ```
 
 **3. Launch Jupyter Lab**
