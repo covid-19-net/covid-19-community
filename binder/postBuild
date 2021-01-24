@@ -1,2 +1,2 @@
 #!/bin/bash
-jupyter labextension install @jupyter-widgets/jupyterlab-manager jupyter-cytoscape@0.2.3
+jupyter labextension install @jupyter-widgets/jupyterlab-manager jupyter-cytoscape@0.2.3 jupyterlab-plotly@4.14.3

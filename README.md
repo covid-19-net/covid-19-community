@@ -143,7 +143,7 @@ Cypher queries can be run in Jupyter Notebooks to enable reproducible data analy
 
 You can run the following Jupyter Notebooks in your web browser:
 
-[![Binder](https://aws-uswest2-binder.pangeo.io/badge_logo.svg)](https://aws-uswest2-binder.pangeo.io/v2/gh/covid-19-net/covid-19-community/master?urlpath=lab)
+[![Binder](https://binder.pangeo.io/badge_logo.svg)](https://binder.pangeo.io/v2/gh/covid-19-net/covid-19-community/master?urlpath=lab)
 
 Once Jupyter Lab launches, navigate to the `notebooks/queries` and `notebooks/analyses`directory and run the following notebooks:
 
@@ -242,9 +242,9 @@ Activate the conda environment
 conda activate covid-19-community
 ```
 
-Install Jupyter Lab extension
+Install Jupyter Lab extensions
 ```
-jupyter labextension install @jupyter-widgets/jupyterlab-manager
+jupyter labextension install @jupyter-widgets/jupyterlab-manager jupyter-cytoscape@0.2.3 jupyterlab-plotly@4.14.3
 ```
 
 **3. Launch Jupyter Lab**
@@ -324,6 +324,8 @@ Kaushik Ganapathy, Braden Riggs, Eric Yu
 Alexander Din, U.S. Department of Housing and Urban Development, for help with HUD Crosswalk Files.
 
 Project KONQUER team members at UC San Diego and UTHealth at Houston.
+
+[Project Pangeo](https://binder.pangeo.io/) hosts a Binder instance used to launch Jupyter Notebooks on the web. Pangeo is supported, in part, by the National Science Foundation (NSF) and the National Aeronautics and Space Administration (NASA). Google provided compute credits on Google Compute Engine.
 
 ## Funding
 Development of this prototype is in part supported by the National Science Foundation under Award Numbers:
