@@ -39,4 +39,4 @@ dependencies:
   - pip:
     - --pre
     - py2neo
-    - git+https://github.com/sbl-sdsc/ipycytoscape.git 
+    - git+https://github.com/pwrose/ipycytoscape.git 
