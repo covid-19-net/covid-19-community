@@ -18,7 +18,7 @@ USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS FROM "FILE:///01g-ProtCIDInteraction.csv" AS row
 MATCH (p1:Protein{accession: row.proteinAccession1})<-[:IS_PART_OF_PROTEIN]-(:ProteinDomain{id: row.accession1})
 MATCH (p2:Protein{accession: row.proteinAccession2})<-[:IS_PART_OF_PROTEIN]-(:ProteinDomain{id: row.accession2})
-MERGE (p1)-[i:INTERACTS_WITH{id:row.id}]->(p2)
+MERGE (p1)-[i:INTERACTS_WITH{id:row.id + '_ProtCID'}]->(p2)
 SET i.source = 'ProtCID', i.domain1 = row.accession1, i.domain2 = row.accession2,
     i.interactionType = 'direct interaction'
 RETURN count(i) as INTERACTS_WITH
