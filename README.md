@@ -1,6 +1,6 @@
 # Covid-19-Community
 
-This project is a community effort to build a Neo4j Knowledge Graph (KG) that integrates heterogeneous biomedical and environmental [datasets](reference_data/DataProvider.csv) to help researchers analyze the interplay between host, pathogen, the environment, and COVID-19.
+This project is a community effort to build a Neo4j Knowledge Graph (KG) that integrates heterogeneous biomedical and environmental [datasets](reference_data/DataSource.csv) to help researchers analyze the interplay between host, pathogen, the environment, and COVID-19.
 
 <p align="center">
 <img src="docs/datatypes.png", width="80%">
@@ -72,7 +72,7 @@ CALL db.index.fulltext.queryNodes('<type of entity>', '<text query>') YIELD node
 
 The queries return the node and score for each match (higher scores indicate closer matches).
 
-#### Example full-text query for `bioentities` for proteins that contain the work *spike* in the name
+#### Example full-text query for `bioentities` for proteins that contain the word *spike* in the name
 ***Query:*** (copy and paste into Neo4j browser)
 ```
 CALL db.index.fulltext.queryNodes("bioentities", "spike") YIELD node
@@ -244,8 +244,7 @@ conda activate covid-19-community
 
 Install Jupyter Lab extensions
 ```
-jupyter labextension install @jupyter-widgets/jupyterlab-manager 
-        jupyter-cytoscape@0.2.3 jupyterlab-plotly@4.14.3
+jupyter labextension install @jupyter-widgets/jupyterlab-manager jupyterlab-plotly@4.14.3
 ```
 
 **3. Launch Jupyter Lab**
@@ -307,7 +306,7 @@ After step 7 has completed, start the database in the Neo4j Browser to interacti
 ## Citation
 Peter W. Rose, David Valentine, Ilya Zaslavsky, COVID-19-Net: Integrating Health, Pathogen and Environmental Data into a Knowledge Graph for Case Tracking, Analysis, and Forecasting. Available online: https://github.com/covid-19-net/covid-19-community (2020).
 
-Please also cite the [data providers](reference_data/DataProvider.csv).
+Please also cite the [data providers](reference_data/DataSource.csv).
 
 ## Data Providers
 The schema below shows how data sources are integrated into the nodes of the Knowledge Graph.
