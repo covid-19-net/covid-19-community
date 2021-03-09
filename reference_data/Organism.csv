@@ -15,6 +15,7 @@ taxonomy:693998,RBCoV-HKU2,Rhinolophus bat coronavirus HKU2,Pathogen
 taxonomy:1487703,RACoV,Rhinolophus affinis coronavirus,Pathogen
 taxonomy:285949,CVCoV-civet020,SARS coronavirus civet020,Pathogen
 taxonomy:9606,human,Homo sapiens,Host
+taxonomy:9595,western lowland gorilla,Gorilla gorilla gorilla,Host
 taxonomy:60711,green monkey,Chlorocebus sabaeus,Host
 taxonomy:10090,house mouse,Mus musculus,Host
 taxonomy:59479,greater horseshoe bat,Rhinolophus ferrumequinum,Host
@@ -29,6 +30,7 @@ taxonomy:9608,carnivores,Canidae,Host
 taxonomy:9615,dog,Canis lupus familiaris,Host
 taxonomy:9685,cat,Felis catus,Host
 taxonomy:9666,European mink,Mustela lutreola,Host
+taxonomy:9669,domestic ferret,Mustela putorius furo,Host
 taxonomy:419130,Malayan tiger,Panthera tigris jacksoni,Host
 taxonomy:452646,American mink,Neovison vison,Host
 taxonomy:10036,golden hamster,Mesocricetus auratus,Host
