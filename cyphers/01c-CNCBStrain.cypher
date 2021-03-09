@@ -5,8 +5,9 @@ MERGE (s:Strain{id: row.id})
 SET s.name = row.name, s.accession = row.accession, s.accessions = apoc.convert.toStringList(split(row.accessions, ';')), 
     s.source = row.source, s.taxonomyId = row.taxonomyId, s.hostTaxonomyId = row.hostTaxonomyId, 
     s.lineage = row.lineage, s.sequenceLength = toInteger(row.sequenceLength), 
-    s.completeness = row.completeness, s.gender = row.gender, s.age = row.age,
-//    s.sequenceQuality = row.sequenceQuality, s.qualityAssessment = row.qualityAssessment,
+    s.completeness = row.completeness, 
+//  s.gender = row.gender, s.age = row.age,
+    s.sequenceQuality = row.sequenceQuality, s.qualityAssessment = row.qualityAssessment,
     s.collectionDate = date(row.collectionDate),  
     s.origLocation = row.origLocation, s.originatingLab = row.originatingLab
 RETURN count(s) as Strain
@@ -43,6 +44,52 @@ MATCH (o2:Organism{id: row.hostTaxonomyId})
 MERGE (o1)-[h:HAS_HOST]->(o2)
 RETURN count(h) as HAS_HOST
 ;
+LOAD CSV WITH HEADERS 
+FROM 'FILE:///01c-CNCBLineage.csv' AS row
+MERGE (l:Lineage{id: row.lineage})
+SET l.name = row.lineage, l.count = row.count, l.source = row.source, l.software = row.software
+RETURN count(l) as Lineage
+;
+USING PERIODIC COMMIT
+LOAD CSV WITH HEADERS 
+FROM 'FILE:///01c-CNCBStrain.csv' AS row
+MATCH (s:Strain{id: row.id})
+MATCH (l:Lineage{id: row.lineage})
+MERGE (s)-[h:HAS_LINEAGE]->(l)
+RETURN count(h) as HAS_LINEAGE
+;
+LOAD CSV WITH HEADERS 
+FROM 'FILE:///01c-CNCBLineage.csv' AS row
+WITH row WHERE toInteger(row.levels) >= 2
+MERGE (l1:Lineage{id: row.l1})
+MERGE (l0:Lineage{id: row.l0})
+MERGE (l1)-[i:IS_A]->(l0)
+RETURN count(i) as IS_A
+;
+LOAD CSV WITH HEADERS 
+FROM 'FILE:///01c-CNCBLineage.csv' AS row
+WITH row WHERE toInteger(row.levels) >= 3
+MERGE (l2:Lineage{id: row.l2})
+MERGE (l1:Lineage{id: row.l1})
+MERGE (l2)-[i:IS_A]->(l1)
+RETURN count(i) as IS_A
+;
+LOAD CSV WITH HEADERS 
+FROM 'FILE:///01c-CNCBLineage.csv' AS row
+WITH row WHERE toInteger(row.levels) >= 4
+MERGE (l3:Lineage{id: row.l3})
+MERGE (l2:Lineage{id: row.l2})
+MERGE (l3)-[i:IS_A]->(l2)
+RETURN count(i) as IS_A
+; 
+LOAD CSV WITH HEADERS 
+FROM 'FILE:///01c-CNCBLineage.csv' AS row
+WITH row WHERE toInteger(row.levels) >= 5
+MERGE (l4:Lineage{id: row.l4})
+MERGE (l3:Lineage{id: row.l3})
+MERGE (l4)-[i:IS_A]->(l3)
+RETURN count(i) as IS_A
+; 
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///01c-CNCBVariant.csv' AS row
@@ -66,17 +113,6 @@ WHERE v.start >= g.start AND v.end <= g.end
 MERGE (g)-[h:HAS_VARIANT]->(v)
 RETURN count(h) as HAS_VARIANT_GENE
 ;
-//USING PERIODIC COMMIT
-//LOAD CSV WITH HEADERS 
-//FROM 'FILE:///01c-CNCBVariant.csv' AS row
-//MATCH (g:Gene) 
-//WHERE g.taxonomyId = row.taxonomyId AND
-//      toInteger(row.start) >= g.start AND 
-//      toInteger(row.end) <= g.end
-//MATCH (v:Variant{id: row.id})
-//MERGE (g)-[h:HAS_VARIANT]->(v)
-//RETURN count(h) as HAS_VARIANT_GENE
-//;
 MATCH (v:Variant)<-[:HAS_VARIANT]-(g:Gene)-[:ENCODES]->(p:Protein)
 WHERE p.start <= v.proteinPosition <= p.end
 MERGE (p)-[h:HAS_VARIANT]->(v)
@@ -86,56 +122,7 @@ WHERE pc.start <= v.proteinPosition <= pc.end
 MERGE (pc)-[hc:HAS_VARIANT]->(v)
 RETURN count(hc) as HAS_VARIANT_CLEAVED_PROTEIN
 ;
-// MATCH (v:Variant)<-[:HAS_VARIANT]-(g:Gene)-[:ENCODES]->(p:Protein)
-//WHERE p.start <= v.proteinPosition <= p.end
-//MERGE (p)-[h:HAS_VARI//ANT]->(v)
-//RETURN count(h) as HAS_VARIANT_PRO//TEIN
-//;
-//MATCH (v:Variant)<-[:HAS//_VARIANT]-(g:Gene)-[:ENCODES]->(:Protei//n)-[:CLEAVED_TO]->(p:Protein)
-//WHERE p.start <= v.proteinPosition <= p.end
-//MERGE (p)-[h:HAS_VARIANT]->(v)
-//ETURN count(h) as HAS_VARIANT_CLEAVED_PROTEIN
-//;
-//USING PERIODIC COMMIT
-//LOAD CSV WITH HEADERS 
-//FROM 'FILE:///01c-CNCBVariant.csv' AS row
-//MATCH (v:Variant{id: row.id})<-[:HAS_VARIANT]-(g:Gene)-[:ENCODES]->(p:Protein)
-//WHERE p.start <= v.proteinPosition <= p.end
-//MERGE (p)-[h:HAS_VARIANT]->(v)
-//RETURN count(h) as HAS_VARIANT_PROTEIN
-//;
-//USING PERIODIC COMMIT
-//LOAD CSV WITH HEADERS 
-//FROM 'FILE:///01c-CNCBVariant.csv' AS row
-//MATCH (v:Variant{id: row.id})<-[:HAS_VARIANT]-(g:Gene)-[:ENCODES]->(:Protein)-[:CLEAVED_TO]->(p:Protein)
-//WHERE p.start <= v.proteinPosition <= p.end
-////MERGE (p)-[h:HAS_VARIANT]->(v)
-//RETURN count(h) as HAS_VARIANT_CLEAVED_PROTEIN
-//;
-//USING PERIODIC COMMIT
-//LOAD CSV WITH HEADERS 
-//FROM 'FILE:///01c-CNCBVariant.csv' AS row
-//MATCH (g:Gene)-[:ENCODES]->(p:Protein)
-//MATCH (v:Variant{id: row.referenceGenome + ':' + row.start + '-' + row.end + '-' + row.ref + '-' + row.alt})
-//WHERE g.taxonomyId = row.taxonomyId AND
-//      toInteger(row.start) >= g.start AND 
-//      toInteger(row.end) <= g.end AND 
-//      p.start <= v.proteinPosition <= p.end
-//MERGE (p)-[h:HAS_VARIANT]->(v)
-////RETURN count(h) as HAS_VARIANT_PROTEIN
-//;
-//USING PERIODIC COMMIT
-//LOAD CSV WITH HEADERS 
-//FROM 'FILE:///01c-CNCBVariant.csv' AS row
-//MATCH (g:Gene)-[:ENCODES]->(:Protein)-[:CLEAVED_TO]->(p:Protein)
-//MATCH (v:Variant{id: row.referenceGenome + ':' + row.start + '-' + row.end + '-' + row.ref + '-' + row.alt})
-//WHERE g.taxonomyId = row.taxonomyId AND
-//      toInteger(row.start) >= g.start AND 
-//      toInteger(row.end) <= g.end AND 
-//      p.start <= v.proteinPosition <= p.end
-//MERGE (p)-[h:HAS_VARIANT]->(v)
-////RETURN count(h) as HAS_VARIANT_CLEAVED_PROTEIN
-//;
+
 
 
                     
