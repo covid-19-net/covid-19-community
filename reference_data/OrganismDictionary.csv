@@ -7,15 +7,18 @@
 organism,taxonomyId
 human,taxonomy:9606
 homo sapiens,taxonomy:9606
+gorilla gorilla gorilla,taxonomy:9595
 chlorocebus sabaeus,taxonomy:60711
 mus musculus,taxonomy:10090
 rhinolophus affinis,taxonomy:59477 
 rhinolophus malayanus,taxonomy:608659
 rhinolophus shameli,taxonomy:608708
 mustela lutreola,taxonomy:9666
+mustela putorius furo,taxonomy:9669
 mink,taxonomy:9666
 panthera tigris jacksoni,taxonomy:419130
 rhinolophus sp. (bat),taxonomy:49442
+rhinolophus bat,taxonomy:49442
 bat,taxonomy:49442
 manis javanica,taxonomy:9974
 manis pentadactyla,taxonomy:143292
