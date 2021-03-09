@@ -68,6 +68,8 @@ CREATE INDEX strain_n FOR (n:Strain) ON (n.name);
 CREATE INDEX strain_l FOR (n:Strain) ON (n.lineage);
 CREATE INDEX strain_g FOR (n:Strain) ON (n.gisaidId);
 CREATE INDEX strain_o FOR (n:Strain) ON (n.origLocation);
+CREATE CONSTRAINT lineage ON (n:Lineage) ASSERT n.id IS UNIQUE;
+CREATE INDEX lineage_n FOR (n:Lineage) ON (n.name);
 CREATE CONSTRAINT variant ON (n:Variant) ASSERT n.id IS UNIQUE;
 CREATE INDEX variant_t FOR (n:Variant) ON (n.taxonomyId); 
 CREATE INDEX variant_r FOR (n:Variant) ON (n.ref);
@@ -169,11 +171,11 @@ CREATE INDEX demographics_t FOR (n:Demographics) ON (n.tract);
 //                                                     
 CALL db.index.fulltext.createNodeIndex('locations',['World', 'UNRegion', 'UNSubRegion', 'UNIntermediateRegion', 'Country', 'Admin1', 'Admin2', 'USRegion', 'USDivision', 'City', 'CruiseShip', 'PostalCode','Tract'],['name', 'placeName', 'iso', 'iso3', 'fips', 'geonameId', 'code', 'origLocation']);
 
-CALL db.index.fulltext.createNodeIndex('bioentities',['Organism', 'Genome', 'Chromosome', 'Gene', 'GeneName', 'Protein', 'ProteinName', 'ProteinDomain', 'ProteinFamily', 'Structure', 'Chain', 'Outbreak', 'Strain', 'Variant', 'Publication'],['name', 'description', 'synonymes', 'scientificName', 'taxonomyId', 'accession', 'proId', 'doi', 'pmcId', 'genomeAccession', 'geneVariant', 'proteinVariant', 'variantType', 'variantConsequence', 'journal']);
+CALL db.index.fulltext.createNodeIndex('bioentities',['Organism', 'Genome', 'Chromosome', 'Gene', 'GeneName', 'Protein', 'ProteinName', 'ProteinDomain', 'ProteinFamily', 'Structure', 'Chain', 'Outbreak', 'Strain', 'Lineage', 'Variant', 'Publication'],['name', 'description', 'synonymes', 'scientificName', 'taxonomyId', 'accession', 'proId', 'doi', 'pmcId', 'genomeAccession', 'geneVariant', 'proteinVariant', 'variantType', 'variantConsequence', 'journal']);
 
 CALL db.index.fulltext.createNodeIndex('sequences',['Protein'],['sequence']);
                                                                 
-CALL db.index.fulltext.createNodeIndex('bioids',['Organism', 'Genome', 'Chromosome', 'Gene', 'GeneName', 'Protein', 'ProteinName', 'ProteinDomain', 'ProteinFamily', 'Structure', 'Chain', 'Outbreak', 'Strain', 'Variant', 'Publication'],['id', 'taxonomyId', 'accession', 'proId', 'genomeAccession', 'doi', 'pmcId', 'variantType', 'variantConsequence', 'lineage'], {analyzer: 'keyword'});
+CALL db.index.fulltext.createNodeIndex('bioids',['Organism', 'Genome', 'Chromosome', 'Gene', 'GeneName', 'Protein', 'ProteinName', 'ProteinDomain', 'ProteinFamily', 'Structure', 'Chain', 'Outbreak', 'Strain', 'Lineage', 'Variant', 'Publication'],['id', 'taxonomyId', 'accession', 'proId', 'genomeAccession', 'doi', 'pmcId', 'variantType', 'variantConsequence', 'lineage'], {analyzer: 'keyword'});
 
 CALL db.index.fulltext.createNodeIndex('geoids',['UNRegion', 'UNSubRegion', 'UNIntermediateRegion', 'Country', 'Admin1', 'Admin2', 'USRegion', 'USDivision', 'City', 'PostalCode','Tract', 'CruiseShip'],['id','iso', 'iso3', 'fips', 'geonameId','code','name'], {analyzer: 'keyword'});         
 
