@@ -47,7 +47,7 @@ RETURN count(h) as HAS_HOST
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///01c-CNCBLineage.csv' AS row
 MERGE (l:Lineage{id: row.lineage})
-SET l.name = row.lineage, l.count = row.count, l.source = row.source, l.software = row.software
+SET l.name = row.lineage, l.count = toInteger(row.count), l.source = row.source, l.software = row.software
 RETURN count(l) as Lineage
 ;
 USING PERIODIC COMMIT
