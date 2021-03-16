@@ -127,7 +127,7 @@ This subgraph shows viral strains (green) of the [SARS-CoV-2 virus](https://www.
 ```
 MATCH (o:Outbreak{id: "COVID-19"})<-[:RELATED_TO]-(c:Cases{date: date("2020-08-31"), source: 'JHU'})-[:REPORTED_IN]->(a:Admin2)-[:IN]->(a1:Admin1)
 RETURN a1.name as state, sum(c.cases) as cases, sum(c.deaths) as deaths
-ORDER BY confirmedCases DESC;
+ORDER BY cases DESC;
 ```
 
 ***Result:***
