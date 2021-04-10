@@ -19,23 +19,17 @@ tar -xvzf  "$LDIR"/taxdump.tar.gz -C "$LDIR" >> "$LOGDIR"/download.log 2>&1
 #
 # CNCB Strain Data
 #
-echo "*** Downlading CNCB Strain Data ***"  >> "$LOGDIR"/download.log 2>&1
+echo "*** Downloading CNCB Strain Data currently disabled!!! ***"  >> "$LOGDIR"/download.log 2>&1
+
+# The CNCB FTP site is currently undergoing reorganization. It should be available again around end of April 2021.
+# See GitHub issue: https://github.com/covid-19-net/covid-19-community/issues/321
 
 LDIR="$NEO4J_IMPORT"/cache/raw/cncb
 
-for d in a b c d e f g h i j k l m n
-do
- echo "Downloading:" ftp://download.big.ac.cn/GVM/Coronavirus/gff3/$d  >> "$LOGDIR"/download.log 2>&1
- wget --continue --mirror --no-directories ftp://download.big.ac.cn/GVM/Coronavirus/gff3/$d -P $LDIR/$d  >> "$LOGDIR"/download.log 2>&1
-done
+# for d in a b c d e f g h i j k l m n
+# do
+#  echo "Downloading:" ftp://download.big.ac.cn/GVM/Coronavirus/gff3/$d  >> "$LOGDIR"/download.log 2>&1
+#  wget --continue --mirror --no-directories ftp://download.big.ac.cn/GVM/Coronavirus/gff3/$d -P $LDIR/$d  >> "$LOGDIR"/download.log 2>&1
+#done
 
-# old script
-
-#mkdir -p "$LOGDIR"
-
-#echo "Downloading NCBI Taxonomy Data" >> "$LOGDIR"/download.log 2>&1
-#mkdir -p "$NEO4J_IMPORT"/ncbi_taxonomy
-#curl -o "$NEO4J_IMPORT"/ncbi_taxonomy/taxdump.tar.gz ftp://ftp.ncbi.nih.gov/pub/taxonomy/taxdump.tar.gz >> "$LOGDIR"/download.log 2>&1
-
-#tar -xvzf  "$NEO4J_IMPORT"/ncbi_taxonomy/taxdump.tar.gz -C "$NEO4J_IMPORT"/ncbi_taxonomy/ >> "$LOGDIR"/download.log 2>&1
 
