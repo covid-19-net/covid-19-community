@@ -61,7 +61,6 @@ run_cypher 01g-PfamDomainUniProt.cypher
 run_cypher 01g-ProtCIDInteraction.cypher
 run_cypher 01h-PublicationLink.cypher
 run_cypher 02a-JHUCases.cypher
-run_cypher 02b-CDSCases.cypher
 run_cypher 02c-SDHHSACases.cypher
 run_cypher 03a-USCensusDP02Education.cypher
 run_cypher 03a-USCensusDP02Computers.cypher
