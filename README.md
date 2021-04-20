@@ -166,8 +166,6 @@ Once Jupyter Lab launches, navigate to the `notebooks/queries` and `notebooks/an
 |[RiskFactorsByStateCounty](notebooks/analyses/RiskFactorsByStateCounty.ipynb)| Explore Risk Factors for COVID-19 for Counties in US States|
 |[RiskFactorsSanDiegoCounty](notebooks/analyses/RiskFactorsSanDiegoCounty.ipynb)| Explore Risk Factors for COVID-19 for San Diego County|
 |[CovidRatesByStates](notebooks/analyses/CovidRatesByStates.ipynb)| Explore COVID-19 confirmed cases and death rates for states in a selected country|
-|[CovidRatesByStatesMexico](notebooks/analyses/CovidRatesByStatesMexico.ipynb)| Explore COVID-19 confirmed cases and death rates for states in Mexico|
-[CovidRatesByMunicipalitiesMexico](notebooks/analyses/CovidRatesByMunicipalitiesMexico.ipynb)| Explore COVID-19 confirmed cases and death rates for municipalities in Mexican states|
 |...|add examples here ...|
 
 ## Data Download, Preparation, and Integration
