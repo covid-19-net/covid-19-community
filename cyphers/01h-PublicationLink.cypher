@@ -3,7 +3,7 @@ USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///01h-PMC-Ids.csv' AS row
 MERGE (p:Publication{id: row.id})
-SET p.name = row.id, p.pmcId = row.pmcId, p.doi = row.doi, 
+SET p.name = row.id, p.pmcId = row.pmcId, p.pubmedId = row.pubmedId, p.doi = row.doi, 
     p.year = row.year, p.volume = row.volume, p.issue = row.issue, p.page = row.page, 
     p.journal = row.journal
 RETURN count(p) as Publication_PMC
