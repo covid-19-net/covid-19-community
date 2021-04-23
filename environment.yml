@@ -15,7 +15,7 @@ dependencies:
   - aiohttp
   - requests
   - xlrd
-  - openpyxl
+  - openpyxl=2.6.0
   - lxml
   - matplotlib
   - matplotlib-venn
@@ -32,9 +32,8 @@ dependencies:
   - python-Levenshtein
   - pycountry
   - geopy
-  - nodejs
+#  - nodejs
   - plotly
-  # - ipycytoscape>=1.0.3
   - pip
   - pip:
     - --pre
