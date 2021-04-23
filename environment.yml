@@ -38,4 +38,5 @@ dependencies:
   - pip:
     - --pre
     - py2neo
-    - git+https://github.com/pwrose/ipycytoscape.git 
+# fails to build ipycytoscape
+#    - git+https://github.com/pwrose/ipycytoscape.git 
