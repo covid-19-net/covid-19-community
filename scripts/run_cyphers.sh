@@ -59,6 +59,7 @@ run_cypher 01g-PfamDomainClan.cypher
 run_cypher 01g-PfamDomainPDB.cypher
 run_cypher 01g-PfamDomainUniProt.cypher
 run_cypher 01g-ProtCIDInteraction.cypher
+run_cypher 01h-CORDLineages.cypher
 run_cypher 01h-PublicationLink.cypher
 run_cypher 02a-JHUCases.cypher
 run_cypher 02c-SDHHSACases.cypher
