@@ -17,6 +17,14 @@ wget --continue --mirror --no-directories ftp://ftp.ncbi.nih.gov/pub/taxonomy/ta
 tar -xvzf  "$LDIR"/taxdump.tar.gz -C "$LDIR" >> "$LOGDIR"/download.log 2>&1
 
 #
+# CORD-19 Data set
+#
+echo "*** Downloading CORD-19 data ***" >> "$LOGDIR"/download.log 2>&1
+LDIR="$NEO4J_IMPORT"/cache/cord19
+wget https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/historical_releases/cord-19_2021-04-19.tar.gz -P $LDIR >> "$LOGDIR"/download.log 2>&1
+tar -xvzf  "$LDIR"/cord-19_2021-04-19.tar.gz -C "$LDIR" >> "$LOGDIR"/download.log 2>&1
+
+#
 # CNCB Strain Data
 #
 echo "*** Downloading CNCB Strain Data currently disabled!!! ***"  >> "$LOGDIR"/download.log 2>&1
