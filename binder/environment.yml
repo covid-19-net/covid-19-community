@@ -32,11 +32,11 @@ dependencies:
   - python-Levenshtein
   - pycountry
   - geopy
-  - nodejs
+#  - nodejs
   - plotly
-  # - ipycytoscape>=1.0.3
   - pip
   - pip:
     - --pre
     - py2neo
-    - git+https://github.com/pwrose/ipycytoscape.git 
+# ipycytoscape fails to build
+#    - git+https://github.com/pwrose/ipycytoscape.git 
