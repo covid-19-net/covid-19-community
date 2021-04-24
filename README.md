@@ -177,6 +177,8 @@ COVID-19-Net Knowledge Graph is created from publically available resources, inc
 
 |Notebook|Description|
 |:-------|:----------|
+|[00b-NCBITaxonomy](notebooks/dataprep/00b-NCBITaxonomy.ipynb)| Downloads the NCBI taxonomy for a subset of organisms|
+|[00b-PANGOLineage](notebooks/dataprep/00b-PANGOLineage.ipynb)| Downloads the PANGO lineage designations for SARS-CoV-2|
 |[00e-GeoNamesCountry](notebooks/dataprep/00e-GeoNamesCountry.ipynb)| Downloads country information from GeoNames.org|
 |[00f-GeoNamesAdmin1](notebooks/dataprep/00f-GeoNamesAdmin1.ipynb)| Downloads first administrative divisions (State, Province, Municipality) information from GeoNames.org|
 |[00g-GeoNamesAdmin2](notebooks/dataprep/00g-GeoNamesAdmin2.ipynb)| Downloads second administrative divisions (Counties in the US) information from GeoNames.org|
@@ -196,7 +198,7 @@ COVID-19-Net Knowledge Graph is created from publically available resources, inc
 |[01e-ProteinProteinInteraction](notebooks/dataprep/01e-ProteinProteinInteraction.ipynb)| Downloads SARS-CoV-2 - human protein interaction data from IntAct|
 |[01f-PDBStructure](notebooks/dataprep/01f-PDBStructure.ipynb)| Downloads 3D protein structures from the Protein Data Bank|
 |[01g-PfamDomain](notebooks/dataprep/01g-PfamDomain.ipynb)| Downloads mappings between PDB protein chains and Pfam domains|
-|[01h-CORDLineages](notebooks/dataprep/01h-CORDLineages.ipynb)| Downloads PANGO lineages and maps them to publications and preprints in the CORD-19 data set|
+|[01h-CORDLineages](notebooks/dataprep/01h-CORDLineages.ipynb)| Maps publications and preprints in the CORD-19 data set to PANGO lineages|
 |[01h-PublicationLink](notebooks/dataprep/01h-PublicationLink.ipynb)| Downloads mappings between datasets and publications indexed by PubMed Central (PMC) and Preprints (PPR) and PubMed (PM)|
 |[02a-JHUCases](notebooks/dataprep/02a-JHUCases.ipynb)| Downloads cummulative confimed cases and deaths from the COVID-19 Data Repository by Johns Hopkins University|
 |[02a-JHUCasesLocation](notebooks/dataprep/02a-JHUCasesLocation.ipynb)| Standardizes location data for the COVID-19 Data Repository by Johns Hopkins University|
