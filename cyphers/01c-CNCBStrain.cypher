@@ -44,12 +44,6 @@ MATCH (o2:Organism{id: row.hostTaxonomyId})
 MERGE (o1)-[h:HAS_HOST]->(o2)
 RETURN count(h) as HAS_HOST
 ;
-LOAD CSV WITH HEADERS 
-FROM 'FILE:///01c-CNCBLineage.csv' AS row
-MERGE (l:Lineage{id: row.lineage})
-SET l.name = row.lineage, l.count = toInteger(row.count), l.source = row.source, l.software = row.software
-RETURN count(l) as Lineage
-;
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///01c-CNCBStrain.csv' AS row
@@ -58,38 +52,6 @@ MATCH (l:Lineage{id: row.lineage})
 MERGE (s)-[h:HAS_LINEAGE]->(l)
 RETURN count(h) as HAS_LINEAGE
 ;
-LOAD CSV WITH HEADERS 
-FROM 'FILE:///01c-CNCBLineage.csv' AS row
-WITH row WHERE toInteger(row.levels) >= 2
-MERGE (l1:Lineage{id: row.l1})
-MERGE (l0:Lineage{id: row.l0})
-MERGE (l1)-[i:IS_A]->(l0)
-RETURN count(i) as IS_A
-;
-LOAD CSV WITH HEADERS 
-FROM 'FILE:///01c-CNCBLineage.csv' AS row
-WITH row WHERE toInteger(row.levels) >= 3
-MERGE (l2:Lineage{id: row.l2})
-MERGE (l1:Lineage{id: row.l1})
-MERGE (l2)-[i:IS_A]->(l1)
-RETURN count(i) as IS_A
-;
-LOAD CSV WITH HEADERS 
-FROM 'FILE:///01c-CNCBLineage.csv' AS row
-WITH row WHERE toInteger(row.levels) >= 4
-MERGE (l3:Lineage{id: row.l3})
-MERGE (l2:Lineage{id: row.l2})
-MERGE (l3)-[i:IS_A]->(l2)
-RETURN count(i) as IS_A
-; 
-LOAD CSV WITH HEADERS 
-FROM 'FILE:///01c-CNCBLineage.csv' AS row
-WITH row WHERE toInteger(row.levels) >= 5
-MERGE (l4:Lineage{id: row.l4})
-MERGE (l3:Lineage{id: row.l3})
-MERGE (l4)-[i:IS_A]->(l3)
-RETURN count(i) as IS_A
-; 
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS 
 FROM 'FILE:///01c-CNCBVariant.csv' AS row
