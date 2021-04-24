@@ -38,6 +38,7 @@ fi
 run_cypher 00b-Genome.cypher
 run_cypher 00b-NCBITaxonomy.cypher
 run_cypher 00b-Organism.cypher
+run_cypher 00b-PANGOLineage.cypher
 run_cypher 00c-Outbreak.cypher
 run_cypher 00e-GeoNamesCountry.cypher
 run_cypher 00f-GeoNamesAdmin1.cypher
