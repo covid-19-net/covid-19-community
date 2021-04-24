@@ -171,6 +171,12 @@ node.Strain {
   border-color: #641E16;
   text-color-internal: #FFFFFF;
 }
+node.Lineage {
+  caption: "{name}";
+  color: #A34237;
+  border-color: #641E16;
+  text-color-internal: #FFFFFF;
+}
 node.Organism {
   caption: "{name}";
   color: #E74C3C;
