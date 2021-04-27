@@ -158,6 +158,7 @@ Once Jupyter Lab launches, navigate to the `notebooks/queries` and `notebooks/an
 |[Housing](notebooks/queries/Housing.ipynb)| Runs example queries for housing characteristics from the American Community Survey|
 |[Bioentities](notebooks/queries/Bioentities.ipynb)| Runs example queries for bioentities|
 |[EmergingStrains](notebooks/analyses/EmergingStrains.ipynb)| Analyze emerging SARS-CoV-2 Strains|
+|[EmergingStrainsInLiterature](notebooks/analyses/EmergingStrainsInLiterature.ipynb)| Analyze emerging SARS-CoV-2 Strains based on mentioning in the Literature|
 |[StrainB.1.1.7](notebooks/analyses/StrainB.1.1.7.ipynb)| Analyze B.1.1.7 Strain|
 |[AnalyzeVariantsSpikeGlycoprotein](notebooks/analyses/AnalyzeVariantsSpikeGlycoprotein.ipynb)| Analyze SARS-CoV-2 Spike Glycoprotein Variants|
 |[Coronavirus3DStructures](notebooks/analyses/Coronavirus3DStructures.ipynb)| Inventory of coronavirus 3D protein structures|
