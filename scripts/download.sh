@@ -21,10 +21,9 @@ tar -xvzf  "$LDIR"/taxdump.tar.gz -C "$LDIR" >> "$LOGDIR"/download.log 2>&1
 #
 echo "*** Downloading CORD-19 data ***" >> "$LOGDIR"/download.log 2>&1
 LDIR="$NEO4J_IMPORT"/cache/cord19
-CORD19_DATE=""
-wget https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/historical_releases/cord-19_2021-04-19.tar.gz -P $LDIR >> "$LOGDIR"/download.log 2>&1
-tar -xvzf  "$LDIR"/cord-19_2021-04-19.tar.gz -C "$LDIR" >> "$LOGDIR"/download.log 2>&1
-cp "$LDIR"/2021-04-19/metadata.csv "$LDIR"
+wget https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/historical_releases/cord-19_2021-04-26.tar.gz -P $LDIR >> "$LOGDIR"/download.log 2>&1
+tar -xvzf  "$LDIR"/cord-19_2021-04-26.tar.gz -C "$LDIR" >> "$LOGDIR"/download.log 2>&1
+cp "$LDIR"/2021-04-26/metadata.csv "$LDIR"
 
 #
 # CNCB Strain Data
