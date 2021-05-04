@@ -16,4 +16,4 @@ IntAct,IntAct Molecular Interaction Database,https://www.ebi.ac.uk/intact/,https
 EuropePMC,Europe PMC,https://europepmc.org/,https://www.ebi.ac.uk/about/terms-of-use/
 DO,Disease Ontology,https://disease-ontology.org/,
 CORD-19,COVID-19 Open Research Dataset,https://allenai.org/data/cord-19,http://s2-public-api-prod.us-west-2.elasticbeanstalk.com/corpus/legal/
-PANGO,PANGO Lineages,https://cov-lineages.org/
+PANGO,PANGO Lineages,https://cov-lineages.org/,
