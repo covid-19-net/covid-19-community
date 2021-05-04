@@ -45,9 +45,9 @@ View of Neo4j Browser showing the result of a query about interactions of the Sp
 
 You can browse the Knowledge Graph here (click the launch button and follow the instructions below)
 
-[![Neo4j Browser](https://img.shields.io/badge/Launch-Neo4j%20Browser-bluegreen)](http://132.249.238.185:7474/)
+[![Neo4j Browser](https://img.shields.io/badge/Launch-Neo4j%20Browser-bluegreen)](http://132.249.238.185:7474/browser/?connectURL=neo4j://reader:demo@132.249.238.185:7687)
 
-![](docs/ConnectNeo4j.png)
+![](docs/Neo4jBrowser.png)
 
 ### Run a Full-text Query
 Full-text queries enable a wide range of search options including exact phrase queries, fuzzy and wildcard queries, range queries, regular expression queries, and use of boolean expressions (see tutorial on [FulltextQuery](notebooks/queries/FulltextQuery.ipynb)).
