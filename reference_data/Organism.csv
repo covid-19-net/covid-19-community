@@ -23,8 +23,11 @@ taxonomy:59477,intermediate horseshoe bat,Rhinolophus affinis,Host
 taxonomy:608659,Malayan horseshoe bat,Rhinolophus malayanus,Host
 taxonomy:49442,horseshoe bat,Rhinolophus,Host
 taxonomy:608708,Shamel's horseshoe bat,Rhinolophus shameli,Host
+taxonomy:89399,Chinese rufous horseshoe bat,Rhinolophus sinicus,Host
 taxonomy:9974,Malayan pangolin,Manis javanica,Host
 taxonomy:143292,Chinese pangolin,Manis pentadactyla,Host
+taxonomy:430491,Lesser brown horseshoe bat,Rhinolophus stheno,Host
+taxonomy:159858,Least horseshoe bat,Rhinolophus pusillus,Host
 taxonomy:71116,palm civet,Paradoxurus,Host
 taxonomy:9608,carnivores,Canidae,Host
 taxonomy:9615,dog,Canis lupus familiaris,Host
@@ -36,4 +39,5 @@ taxonomy:452646,American mink,Neovison vison,Host
 taxonomy:10036,golden hamster,Mesocricetus auratus,Host
 taxonomy:9689,lion,Panthera leo,Host
 taxonomy:9694,tiger,Panthera tigris,Host
+taxonomy:300877,Amur leopard cat,Prionailurus bengalensis euptilurus,Host
 taxonomy:151659,environmental samples,environmental samples,Host

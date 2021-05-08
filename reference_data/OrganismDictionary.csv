@@ -19,6 +19,10 @@ mink,taxonomy:9666
 panthera tigris jacksoni,taxonomy:419130
 rhinolophus sp. (bat),taxonomy:49442
 rhinolophus bat,taxonomy:49442
+manis pentadactyla,taxonomy:143292
+rhinolophus sinicus,taxonomy:89399
+rhinolophus stheno,taxonomy:430491
+rhinolophus pusillus,taxonomy:159858
 bat,taxonomy:49442
 manis javanica,taxonomy:9974
 manis pentadactyla,taxonomy:143292
@@ -30,5 +34,6 @@ neovison vison,taxonomy:452646
 mesocricetus auratus,taxonomy:10036
 panthera leo,taxonomy:9689
 panthera tigris,taxonomy:9694
+prionailurus bengalensis euptilurus,taxonomy:300877
 environment,taxonomy:151659
 environmental,taxonomy:151659
