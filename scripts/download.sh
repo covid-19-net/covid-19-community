@@ -82,10 +82,10 @@ echo "*** Downloading CNCB Strain Data currently disabled!!! ***"  >> "$LOGDIR"/
 
 LDIR="$NEO4J_IMPORT"/cache/raw/cncb
 
-# for d in a b c d e f g h i j k l m n
-# do
-#  echo "Downloading:" ftp://download.big.ac.cn/GVM/Coronavirus/gff3/$d  >> "$LOGDIR"/download.log 2>&1
-#  wget --continue --mirror --no-directories ftp://download.big.ac.cn/GVM/Coronavirus/gff3/$d -P $LDIR/$d  >> "$LOGDIR"/download.log 2>&1
-#done
+for d in a b c d e f g h i j k l m n
+do
+  echo "Downloading:" ftp://download.big.ac.cn/GVM/Coronavirus/gff3/$d  >> "$LOGDIR"/download.log 2>&1
+  wget --continue --mirror --no-directories ftp://download.big.ac.cn/GVM/Coronavirus/gff3/$d -P $LDIR/$d  >> "$LOGDIR"/download.log 2>&1
+done
 
 
