@@ -17,13 +17,60 @@ wget --continue --mirror --no-directories ftp://ftp.ncbi.nih.gov/pub/taxonomy/ta
 tar -xvzf  "$LDIR"/taxdump.tar.gz -C "$LDIR" >> "$LOGDIR"/download.log 2>&1
 
 #
+# CORD-19 Data set (loop backwards from current date until the latest version is found)
+#
+LDIR="$NEO4J_IMPORT"/cache/cord19
+
+DAY=`date +%d`
+MONTH=`date +%m`
+YEAR=`date +%Y`
+
+while [ $MONTH -gt 0 ]
+do
+   if [ ${#MONTH} = 1 ]
+   then
+      M=0$MONTH
+   else
+      M=$MONTH
+   fi
+
+   while [ $DAY -gt 0 ]
+   do
+      if [ ${#DAY} = 1 ]
+      then
+         D=0$DAY
+      else
+         D=$DAY
+      fi
+
+      DATE=$YEAR-$M-$D
+      
+      # check if version with this date is available
+      wget -q --spider https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/historical_releases/cord-19_$DATE.tar.gz 
+      if [ $? -eq 0 ]
+      then
+         echo *** Downloading https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/historical_releases/cord-19_$DATE.tar.gz *** >> "$LOGDIR"/download.log 2>&1
+         wget https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/historical_releases/cord-19_$DATE.tar.gz -P $LDIR >> "$LOGDIR"/download.log 2>&1
+         tar -xvzf  "$LDIR"/cord-19_$DATE.tar.gz -C "$LDIR" >> "$LOGDIR"/download.log 2>&1
+         cp "$LDIR"/2021-04-26/metadata.csv "$LDIR"
+         break 2
+      fi
+
+      echo DAY $DAY
+      DAY=$(($DAY-1)) 
+   done
+   DAY=31
+   MONTH="$(($MONTH-1))"
+done
+
+#
 # CORD-19 Data set
 #
-echo "*** Downloading CORD-19 data ***" >> "$LOGDIR"/download.log 2>&1
-LDIR="$NEO4J_IMPORT"/cache/cord19
-wget https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/historical_releases/cord-19_2021-04-26.tar.gz -P $LDIR >> "$LOGDIR"/download.log 2>&1
-tar -xvzf  "$LDIR"/cord-19_2021-04-26.tar.gz -C "$LDIR" >> "$LOGDIR"/download.log 2>&1
-cp "$LDIR"/2021-04-26/metadata.csv "$LDIR"
+# echo "*** Downloading CORD-19 data ***" >> "$LOGDIR"/download.log 2>&1
+# LDIR="$NEO4J_IMPORT"/cache/cord19
+# wget https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/historical_releases/cord-19_2021-04-# 26.tar.gz -P $LDIR >> "$LOGDIR"/download.log 2>&1
+# tar -xvzf  "$LDIR"/cord-19_2021-04-26.tar.gz -C "$LDIR" >> "$LOGDIR"/download.log 2>&1
+# cp "$LDIR"/2021-04-26/metadata.csv "$LDIR"
 
 #
 # CNCB Strain Data
