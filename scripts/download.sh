@@ -52,15 +52,15 @@ do
          echo *** Downloading https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/historical_releases/cord-19_$DATE.tar.gz *** >> "$LOGDIR"/download.log 2>&1
          wget https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/historical_releases/cord-19_$DATE.tar.gz -P $LDIR >> "$LOGDIR"/download.log 2>&1
          tar -xvzf  "$LDIR"/cord-19_$DATE.tar.gz -C "$LDIR" >> "$LOGDIR"/download.log 2>&1
-         cp "$LDIR"/2021-04-26/metadata.csv "$LDIR"
+         cp "$LDIR"/$DATE/metadata.csv "$LDIR"
          break 2
       fi
 
       echo DAY $DAY
-      DAY=$(($DAY-1)) 
+      DAY=$((10#$DAY-1)) 
    done
    DAY=31
-   MONTH="$(($MONTH-1))"
+   MONTH="$((10#$MONTH-1))"
 done
 
 #
