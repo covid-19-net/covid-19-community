@@ -45,6 +45,8 @@ View of Neo4j Browser showing the result of a query about interactions of the Sp
 
 You can browse the Knowledge Graph here (click the launch button and follow the instructions below)
 
+** The COVID-19-Net KG is currently down (June 3, 2021). We are troubleshooting the issue **
+
 [![Neo4j Browser](https://img.shields.io/badge/Launch-Neo4j%20Browser-bluegreen)](http://132.249.238.185:7474/browser/?connectURL=neo4j://reader:demo@132.249.238.185:7687)
 
 ![](docs/Neo4jBrowser.png)
@@ -142,6 +144,8 @@ Note, some cases in the COVID-19 Data Repository by Johns Hopkins University can
 Cypher queries can be run in Jupyter Notebooks to enable reproducible data analyses and visualizations.
 
 You can run the following Jupyter Notebooks in your web browser:
+
+** The COVID-19-Net KG is currently down (June 3, 2021). We are troubleshooting the issue **
 
 [![Binder](https://binder.pangeo.io/badge_logo.svg)](https://binder.pangeo.io/v2/gh/covid-19-net/covid-19-community/master?urlpath=lab)
 
