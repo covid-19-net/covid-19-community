@@ -143,7 +143,9 @@ Cypher queries can be run in Jupyter Notebooks to enable reproducible data analy
 
 You can run the following Jupyter Notebooks in your web browser:
 
-[![Binder](https://binder.pangeo.io/badge_logo.svg)](https://binder.pangeo.io/v2/gh/covid-19-net/covid-19-community/master?urlpath=lab)
+**NOTE:** Authentication is now required to launch binder! Sign into GitHub from your browser, then click on the `launch binder` badge below to launch Jupyter Lab.
+
+[![Binder](https://aws-uswest2-binder.pangeo.io/badge_logo.svg)](https://aws-uswest2-binder.pangeo.io/v2/gh/covid-19-net/covid-19-community/master)
 
 Once Jupyter Lab launches, navigate to the `notebooks/queries` and `notebooks/analyses`directory and run the following notebooks:
 
