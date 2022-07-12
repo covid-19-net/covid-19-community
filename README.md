@@ -145,6 +145,8 @@ You can run the following Jupyter Notebooks in your web browser:
 
 **NOTE:** Authentication is now required to launch binder! Sign into GitHub from your browser, then click on the `launch binder` badge below to launch Jupyter Lab.
 
+
+** Pangeo Binder seems to be unsupported and is currently down. The Binder launch may not work **
 [![Binder](https://aws-uswest2-binder.pangeo.io/badge_logo.svg)](https://aws-uswest2-binder.pangeo.io/v2/gh/covid-19-net/covid-19-community/master)
 
 Once Jupyter Lab launches, navigate to the `notebooks/queries` and `notebooks/analyses`directory and run the following notebooks:
@@ -246,17 +248,12 @@ Activate the conda environment
 conda activate covid-19-community
 ```
 
-Install Jupyter Lab extensions
-```
-jupyter labextension install @jupyter-widgets/jupyterlab-manager jupyterlab-plotly@4.14.3
-```
-
 **3. Launch Jupyter Lab**
 ```
 jupyter lab
 ```
 
-Navigate to the [`notebooks/queries`](notebooks/queries/) directory to run the example Jupyter Notebooks.
+Navigate to the [`notebooks/queries`](notebooks/queries/) directory to run the example Jupyter Notebooks and [`notebooks/analyses`](notebooks/analyses/) directory to run analyses.
 
 ## How to run the Data Download and Preparation steps locally
 
