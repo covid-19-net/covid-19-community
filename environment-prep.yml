@@ -1,4 +1,4 @@
-name: covid-19-community 
+name: covid-19-community-prep
 
 channels:
   - conda-forge
