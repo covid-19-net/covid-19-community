@@ -184,16 +184,10 @@ Prerequisites: Miniconda3 (light-weight, preferred) or Anaconda3 and Mamba
 * Install Mamba: ```conda install mamba -n base -c conda-forge```
 ------
 
-**1. Fork this project**
-
-A [fork](https://help.github.com/en/articles/fork-a-repo) is a copy of a repository in your GitHub account. Forking a repository allows you to freely experiment with changes without affecting the original project.
-
-In the top-right corner of this GitHub page, click ```Fork```.
-
-Then, download all materials to your laptop by cloning your copy of the repository, where ```your-user-name``` is your GitHub user name. To clone the repository from a Terminal window or the Anaconda prompt (Windows), run:
+**1. Clone this Git repository**
 
 ```
-git clone https://github.com/your-user-name/covid-19-community.git
+git clone https://github.com//covid-19-net/covid-19-community.git
 cd covid-19-community
 ```
 
