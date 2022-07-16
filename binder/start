@@ -1,5 +1,5 @@
 #!/bin/bash
 set -eux
-export NEO4J_HOME=${CONDA_DIR}/neo4j-community-4.0.3
-mkdir -p $NEO4J_HOME/import
+export NEO4J_IMPORT=/tmp/import
+mkdir -p $NEO4J_IMPORT
 exec "$@"
