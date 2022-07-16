@@ -181,6 +181,7 @@ To run the example notebooks on your laptop or desktop computer, follow the step
 Prerequisites: Miniconda3 (light-weight, preferred) or Anaconda3 and Mamba
 
 * Install [Miniconda3](https://docs.conda.io/en/latest/miniconda.html)
+* Update an existing miniconda3 installation: ```conda update conda```
 * Install Mamba: ```conda install mamba -n base -c conda-forge```
 ------
 
