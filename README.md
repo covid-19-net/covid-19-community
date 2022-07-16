@@ -1,4 +1,4 @@
-d# Covid-19-Community
+# Covid-19-Community
 
 This project is a community effort to build a Neo4j Knowledge Graph (KG) that integrates heterogeneous biomedical and environmental [datasets](reference_data/DataSource.csv) to help researchers analyze the interplay between host, pathogen, the environment, and COVID-19.
 
