@@ -238,6 +238,7 @@ git clone https://github.com/covid-19-net/covid-19-community.git
 
 
 2. Start an interactive session with the galyleo script
+
     This script will generate a URL for your Jupyter Lab session.
 
 ```
