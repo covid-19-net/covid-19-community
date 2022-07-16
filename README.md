@@ -146,7 +146,8 @@ You can run the following Jupyter Notebooks in your web browser:
 **NOTE:** Authentication is now required to launch binder! Sign into GitHub from your browser, then click on the `launch binder` badge below to launch Jupyter Lab.
 
 
-** Pangeo Binder is unsupported and may not always be available or slow. Launching Jupyter Lab may take a few minutes.**
+**Pangeo Binder is unsupported and may not always be available or slow. Launching Jupyter Lab may take a few minutes.**
+
 [![Binder](https://aws-uswest2-binder.pangeo.io/badge_logo.svg)](https://aws-uswest2-binder.pangeo.io/v2/gh/covid-19-net/covid-19-community/master)
 
 Once Jupyter Lab launches, navigate to the `notebooks/queries` and `notebooks/analyses`directory and run the following notebooks:
