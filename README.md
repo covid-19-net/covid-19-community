@@ -217,9 +217,7 @@ When you are finished with your analysis, deactivate the conda environment or cl
 ```
 conda deactivate
 ```
-------
 > To remove the CONDA environment, run ```conda env remove -n covid-19-community```
-------
 
 ## Run Jupyter Notebook Examples on SDSC Expanse
 To launch Jupyter Lab on [Expanse](https://www.sdsc.edu/services/hpc/expanse/), use the [galyleo](https://github.com/mkandes/galyleo#galyleo) script. Specify your XSEDE account number with the --account option.
@@ -300,11 +298,9 @@ COVID-19-Net Knowledge Graph is created from publically available resources, inc
 
 ## How to run the Data Download and Preparation steps locally
 
-----
 > Note, the following steps have been implemented for MacOS and Linux only. 
 
 > Several data sources have changed or have become unavailable. Some of the preparation notebooks may not work.
-----
 
 ------
 Prerequisites: Miniconda3 (light-weight, preferred) or Anaconda3 and Mamba
