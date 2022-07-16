@@ -1,4 +1,4 @@
-# Covid-19-Community
+d# Covid-19-Community
 
 This project is a community effort to build a Neo4j Knowledge Graph (KG) that integrates heterogeneous biomedical and environmental [datasets](reference_data/DataSource.csv) to help researchers analyze the interplay between host, pathogen, the environment, and COVID-19.
 
@@ -146,7 +146,7 @@ You can run the following Jupyter Notebooks in your web browser:
 **NOTE:** Authentication is now required to launch binder! Sign into GitHub from your browser, then click on the `launch binder` badge below to launch Jupyter Lab.
 
 
-** Pangeo Binder seems to be unsupported and is currently down. The Binder launch may not work **
+** Pangeo Binder is unsupported and may not always be available or slow. Launching Jupyter Lab may take a few minutes.**
 [![Binder](https://aws-uswest2-binder.pangeo.io/badge_logo.svg)](https://aws-uswest2-binder.pangeo.io/v2/gh/covid-19-net/covid-19-community/master)
 
 Once Jupyter Lab launches, navigate to the `notebooks/queries` and `notebooks/analyses`directory and run the following notebooks:
@@ -172,6 +172,86 @@ Once Jupyter Lab launches, navigate to the `notebooks/queries` and `notebooks/an
 |[RiskFactorsSanDiegoCounty](notebooks/analyses/RiskFactorsSanDiegoCounty.ipynb)| Explore Risk Factors for COVID-19 for San Diego County|
 |[CovidRatesByStates](notebooks/analyses/CovidRatesByStates.ipynb)| Explore COVID-19 confirmed cases and death rates for states in a selected country|
 |...|add examples here ...|
+
+## Run Jupyter Notebook Examples locally
+To run the example notebooks on your laptop or desktop computer, follow the steps below.
+
+------
+Prerequisites: Miniconda3 (light-weight, preferred) or Anaconda3 and Mamba
+
+* Install [Miniconda3](https://docs.conda.io/en/latest/miniconda.html)
+* Install Mamba: ```conda install mamba -n base -c conda-forge```
+------
+
+**1. Fork this project**
+
+A [fork](https://help.github.com/en/articles/fork-a-repo) is a copy of a repository in your GitHub account. Forking a repository allows you to freely experiment with changes without affecting the original project.
+
+In the top-right corner of this GitHub page, click ```Fork```.
+
+Then, download all materials to your laptop by cloning your copy of the repository, where ```your-user-name``` is your GitHub user name. To clone the repository from a Terminal window or the Anaconda prompt (Windows), run:
+
+```
+git clone https://github.com/your-user-name/covid-19-community.git
+cd covid-19-community
+```
+
+**2. Create a conda environment**
+
+The file `environment.yml` specifies the Python version and all packages required by the tutorial. 
+```
+mamba env create -f environment.yml
+```
+
+Activate the conda environment
+```
+conda activate covid-19-community
+```
+
+**3. Launch Jupyter Lab**
+```
+jupyter lab
+```
+
+Navigate to the [`notebooks/queries`](notebooks/queries/) directory to run the example Jupyter Notebooks and [`notebooks/analyses`](notebooks/analyses/) directory to run analyses.
+
+**3. Deactivate the conda environment**
+
+When you are finished with your analysis, deactivate the conda environment or close the terminal window.
+
+```
+conda deactivate
+```
+------
+> To remove the CONDA environment, run ```conda env remove -n covid-19-community```
+------
+
+## Run Jupyter Notebook Examples on SDSC Expanse
+To launch Jupyter Lab on [Expanse](https://www.sdsc.edu/services/hpc/expanse/), use the [galyleo](https://github.com/mkandes/galyleo#galyleo) script. Specify your XSEDE account number with the --account option.
+
+1. Clone this git repository
+
+```
+git clone https://github.com/covid-19-net/covid-19-community.git
+```
+
+
+2. Start an interactive session with the galyleo script
+    This script will generate a URL for your Jupyter Lab session.
+
+```
+galyleo launch --account <account_number> --partition shared --cpus 8 --memory 16 --time-limit 01:00:00 --conda-env covid-19-community --conda-yml "${HOME}/covid-19-community/environment.yml"  --mamba
+```
+
+3. Launch Juypter Lab
+
+    Open a new tab in your web browser and paste the Jupyter Lab URL
+    You should see the Satellite Reserver Proxy Servive page launch in your browser. Wait until Jupyter Lab launches. This may take a few minutes.
+
+4. End the interactive session
+
+    From the Jupyter Lab file menu, choose ```Shutdown``` to terminate the session.
+
 
 ## Data Download, Preparation, and Integration
 ![](docs/Workflow.png)
@@ -221,7 +301,21 @@ COVID-19-Net Knowledge Graph is created from publically available resources, inc
 |[03a-USCensusDP05](notebooks/dataprep/03a-USCensusDP05.ipynb)| Downloads demographic data estimates (DP05) from the American Community Survey 5-Year Data 2018|
 |...|Future notebooks that add new data to the knowledge graph|
 
-## How to run Jupyter Notebook Examples locally
+
+## How to run the Data Download and Preparation steps locally
+
+----
+> Note, the following steps have been implemented for MacOS and Linux only. 
+
+> Several data sources have changed or have become unavailable. Some of the preparation notebooks may not work.
+----
+
+------
+Prerequisites: Miniconda3 (light-weight, preferred) or Anaconda3 and Mamba
+
+* Install [Miniconda3](https://docs.conda.io/en/latest/miniconda.html)
+* Install Mamba: ```conda install mamba -n base -c conda-forge```
+------
 
 **1. Fork this project**
 
@@ -238,38 +332,23 @@ cd covid-19-community
 
 **2. Create a conda environment**
 
-The file `environment.yml` specifies the Python version and all packages required by the tutorial. 
+The file `environment-prep.yml` specifies the Python version and all packages required for the data preparation steps.
 ```
-conda env create -f environment.yml
+mamba env create -f environment-prep.yml
 ```
 
 Activate the conda environment
 ```
-conda activate covid-19-community
+conda activate covid-19-community-prep
 ```
 
-**3. Launch Jupyter Lab**
-```
-jupyter lab
-```
-
-Navigate to the [`notebooks/queries`](notebooks/queries/) directory to run the example Jupyter Notebooks and [`notebooks/analyses`](notebooks/analyses/) directory to run analyses.
-
-## How to run the Data Download and Preparation steps locally
-
-Note, the following steps have been implemented for MacOS and Linux only. 
-
-Some steps will take a very long time, e.g., notebook [01d-CNCBStrain](notebooks/dataprep/01d-CNCBStrain.ipynb) may take more than 12 hours to run the first time.
-
-Follow steps 1. - 3. from above.
-
-**4. Install Neo4j Desktop**
+**3. Install Neo4j Desktop**
 
 [Download Neo4j](https://neo4j.com/download/)
 
 Then, launch the Neo4j Browser, create an empty database, set the password to "neo4jbinder", and close the database.
 
-**5. Set Environment Variable**
+**4. Set Environment Variable**
 
 Add the environment variable `NEO4J_HOME` with the path to the Neo4j database installation to your .bash_profile file, e.g.
 
@@ -280,7 +359,7 @@ Add the environment variable `NEO4J_IMPORT` with the path to the Neo4j database 
 
 `export NEO4J_IMPORT="/Users/username/Library/Application Support/Neo4j Desktop/Application/neo4jDatabases/database-.../installation-4.0.3/import"`
 
-**6. Run Data Download Notebooks**
+**5. Run Data Download Notebooks**
 
 Start Jupyter Lab.
 ```
@@ -288,13 +367,13 @@ jupyter lab
 ```
 Navigate to the (`notebooks/dataprep/`) directory and run all notebooks in alphabetical order to download, clean, standardize and save the data in the `NEO4J_HOME/import` directory for ingestion into the Neo4j database.
 
-**7. Upload Data into a Local Neo4j Database**
+**6. Upload Data into a Local Neo4j Database**
 
-Afer all data files have been created in step 6, run (`notebooks/local/2-CreateKGLocal.ipynb` to import the data into your local Neo4j database. Make sure the Neo4j Browser is closed before running the database import!
+Afer all data files have been created in step 5, run (`notebooks/local/2-CreateKGLocal.ipynb` to import the data into your local Neo4j database. Make sure the Neo4j Browser is closed before running the database import!
 
-**8. Browse local KG in Neo4j Browser**
+**7. Browse local KG in Neo4j Browser**
 
-After step 7 has completed, start the database in the Neo4j Browser to interactively explore the KG or run local queries.
+After step 6 has completed, start the database in the Neo4j Browser to interactively explore the KG or run local queries.
 
 ## How can you contribute?
 
