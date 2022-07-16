@@ -210,7 +210,7 @@ jupyter lab
 
 Navigate to the [`notebooks/queries`](notebooks/queries/) directory to run the example Jupyter Notebooks and [`notebooks/analyses`](notebooks/analyses/) directory to run analyses.
 
-**3. Deactivate the conda environment**
+**4. Deactivate the conda environment**
 
 When you are finished with your analysis, deactivate the conda environment or close the terminal window.
 
