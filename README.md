@@ -183,6 +183,7 @@ Prerequisites: Miniconda3 (light-weight, preferred) or Anaconda3 and Mamba
 * Install [Miniconda3](https://docs.conda.io/en/latest/miniconda.html)
 * Update an existing miniconda3 installation: ```conda update conda```
 * Install Mamba: ```conda install mamba -n base -c conda-forge```
+* Install Git (if not installed): ```conda install git -n base -c anaconda```
 ------
 
 **1. Clone this Git repository**
