@@ -188,7 +188,7 @@ Prerequisites: Miniconda3 (light-weight, preferred) or Anaconda3 and Mamba
 **1. Clone this Git repository**
 
 ```
-git clone https://github.com//covid-19-net/covid-19-community.git
+git clone https://github.com/covid-19-net/covid-19-community.git
 cd covid-19-community
 ```
 
